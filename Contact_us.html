@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Crowned K9s</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="pictures/Logos/whitebadgetransCK9s.png" alt="Crowned K9s Logo">
+      </div>
+      <input type="checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="About_us.html">About us</a></li>
+          <li><a href="Training.html">Training</a></li>
+          <li><a href="Boarding.html">Boarding</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="Videos.html">Videos</a></li>
+          <li><a href="Contact_us.html" class="active">Contact us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--light hero--pattern">
+      <div class="container">
+        <div>
+          <h1>Contact Crowned K9s</h1>
+          <p>We’d love to hear from you. Use the form below or pick a time that works for you.</p>
+        </div>
+        <div>
+          <img src="pictures/Logos/K9sQR-01.png" alt="Crowned K9s QR Code" class="qr-image" />
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-info-grid">
+        <div class="info-card">
+          <h2>Get in Touch</h2>
+          <p class="section-subtext">Tell us about your dog and goals. We'll reach out quickly.</p>
+          <form class="contact-form" action="https://formsubmit.co/lorenzo@crownedk9s.com" method="POST">
+            <input type="hidden" name="_subject" value="New Contact Form Submission – Crowned K9s" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button">Submit</button>
+          </form>
+        </div>
+        <div class="info-card">
+          <h2>Contact Information</h2>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.2 2.4 3.2 4.4 5.6 5.6l2-2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3 .5.7 0 1.2.6 1.2 1.2v3.1c0 .7-.6 1.2-1.2 1.2C10.7 20 4 13.3 4 5.6 4 5 4.5 4.4 5.2 4.4h3.1c.7 0 1.2.6 1.2 1.2 0 1 .2 2 .5 3 .1.4 0 .9-.3 1.2l-2 2z"/></svg>
+            <a href="tel:9198162426">919-816-2426</a>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 3l-7 4.5L5 7V6l7 4.5L19 6v1z"/></svg>
+            <a href="mailto:lorenzo@crownedk9s.com">lorenzo@crownedk9s.com</a>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+            <span>Wendell, NC</span>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="#schedule" class="button">Schedule a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule-section">
+      <div class="container">
+        <h2 class="section-title">Schedule a Consultation</h2>
+        <p class="section-subtext">Pick a time that works for your family. It only takes a minute.</p>
+        <div class="calendly-wrapper">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/crownedk9s" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://instagram.com/crownedk9s" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+        </a>
+        <a href="https://youtube.com/@crownedk9s" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2C0 7.9 0 12 0 12s0 4.1.5 5.8a3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 16.1 24 12 24 12s0-4.1-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+        </a>
+        <a href="https://facebook.com/crownedk9s" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.4V12h2.4V9.7c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+      <p>All rights are reserved © 2023</p>
+    </div>
+  </footer>
+</body>
+</html>

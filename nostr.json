@@ -1,0 +1,11 @@
+{
+  "names": {
+    "dogwhisperer": "a873eb08d5d7c7f0b691dbd15d8645b73037803119d0193d763dfe038e1d8376"
+  },
+  "relays": {
+    "a873eb08d5d7c7f0b691dbd15d8645b73037803119d0193d763dfe038e1d8376": [
+      "wss://relay.one",
+      "wss://relay.two"
+    ]
+  }
+}
