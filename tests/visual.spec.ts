@@ -72,4 +72,77 @@ test.describe('Mobile layout checks', () => {
 		expect(scrollW).toBeLessThanOrEqual(clientW + 1);
 		await expect(page.locator('section.hero h1').first()).toBeVisible();
 	});
+
+	test('home hero stacks poster above text on mobile', async ({ page }) => {
+		await page.goto('/home.html');
+		const container = page.locator('section.hero .container');
+		await expect(container).toBeVisible();
+		const children = container.locator('> div');
+		await expect(children).toHaveCount(2);
+		const firstHasImg = await children.nth(0).locator('img').count();
+		const secondHasImg = await children.nth(1).locator('img').count();
+		const posterIdx = firstHasImg > 0 ? 0 : 1;
+		const copyIdx = posterIdx === 0 ? 1 : 0;
+		const posterBox = await children.nth(posterIdx).boundingBox();
+		const copyBox = await children.nth(copyIdx).boundingBox();
+		expect(posterBox && copyBox).toBeTruthy();
+		if (posterBox && copyBox) {
+			expect(posterBox.y).toBeLessThan(copyBox.y - 10);
+		}
+		await expect(children.nth(posterIdx).locator('img')).toBeVisible();
+	});
+
+	test('about hero stacks poster above text on mobile', async ({ page }) => {
+		await page.goto('/About_us.html');
+		const container = page.locator('section.hero .container');
+		await expect(container).toBeVisible();
+		const children = container.locator('> div');
+		await expect(children).toHaveCount(2);
+		const firstHasImg = await children.nth(0).locator('img').count();
+		const posterIdx = firstHasImg > 0 ? 0 : 1;
+		const copyIdx = posterIdx === 0 ? 1 : 0;
+		const posterBox = await children.nth(posterIdx).boundingBox();
+		const copyBox = await children.nth(copyIdx).boundingBox();
+		expect(posterBox && copyBox).toBeTruthy();
+		if (posterBox && copyBox) {
+			expect(posterBox.y).toBeLessThan(copyBox.y - 10);
+		}
+		await expect(children.nth(posterIdx).locator('img')).toBeVisible();
+	});
+
+	test('training hero stacks poster above text on mobile', async ({ page }) => {
+		await page.goto('/training.html');
+		const container = page.locator('section.hero .container');
+		await expect(container).toBeVisible();
+		const children = container.locator('> div');
+		await expect(children).toHaveCount(2);
+		const firstHasImg = await children.nth(0).locator('img').count();
+		const secondHasImg = await children.nth(1).locator('img').count();
+		const posterIdx = firstHasImg > 0 ? 0 : 1;
+		const copyIdx = posterIdx === 0 ? 1 : 0;
+		const posterBox = await children.nth(posterIdx).boundingBox();
+		const copyBox = await children.nth(copyIdx).boundingBox();
+		expect(posterBox && copyBox).toBeTruthy();
+		if (posterBox && copyBox) {
+			// Stacked vertically: poster element should be above copy
+			expect(posterBox.y).toBeLessThan(copyBox.y - 10);
+		}
+		await expect(children.nth(posterIdx).locator('img')).toBeVisible();
+	});
+
+	test('TTP section stacks poster above copy on mobile', async ({ page }) => {
+		await page.goto('/training.html#ttp');
+		const section = page.locator('#ttp .container');
+		await expect(section).toBeVisible();
+		const kids = section.locator('> div');
+		await expect(kids).toHaveCount(2);
+		const box0 = await kids.nth(0).boundingBox();
+		const box1 = await kids.nth(1).boundingBox();
+		expect(box0 && box1).toBeTruthy();
+		if (box0 && box1) {
+			// On mobile, grid becomes single column via CSS .split, so first child (image wrapper) above second (copy)
+			expect(box0.y).toBeLessThan(box1.y - 10);
+		}
+		await expect(kids.nth(0).locator('img')).toBeVisible();
+	});
 });
