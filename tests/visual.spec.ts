@@ -92,6 +92,54 @@ test.describe('Mobile layout checks', () => {
 		await expect(children.nth(posterIdx).locator('img')).toBeVisible();
 	});
 
+	test('home group class section renders and stacks image above copy on mobile', async ({ page }) => {
+		await page.goto('/home.html#group-class');
+		const section = page.locator('#group-class .container');
+		await expect(section).toBeVisible();
+		const kids = section.locator('> div');
+		await expect(kids).toHaveCount(2);
+		// first child should contain flyer image
+		await expect(kids.nth(0).locator('img')).toBeVisible();
+		const box0 = await kids.nth(0).boundingBox();
+		const box1 = await kids.nth(1).boundingBox();
+		expect(box0 && box1).toBeTruthy();
+		if (box0 && box1) {
+			expect(box0.y).toBeLessThan(box1.y - 10);
+		}
+		// CTAs present
+		await expect(section.getByRole('link', { name: /Contact to Reserve/i })).toBeVisible();
+	});
+
+	test('training group class section renders and stacks image above copy on mobile', async ({ page }) => {
+		await page.goto('/training.html#group-class');
+		const section = page.locator('#group-class .container');
+		await expect(section).toBeVisible();
+		const kids = section.locator('> div');
+		await expect(kids).toHaveCount(2);
+		await expect(kids.nth(0).locator('img')).toBeVisible();
+		const box0 = await kids.nth(0).boundingBox();
+		const box1 = await kids.nth(1).boundingBox();
+		expect(box0 && box1).toBeTruthy();
+		if (box0 && box1) {
+			expect(box0.y).toBeLessThan(box1.y - 10);
+		}
+	});
+
+	test('about group class section renders and stacks image above copy on mobile', async ({ page }) => {
+		await page.goto('/About_us.html#group-class');
+		const section = page.locator('#group-class .container');
+		await expect(section).toBeVisible();
+		const kids = section.locator('> div');
+		await expect(kids).toHaveCount(2);
+		await expect(kids.nth(0).locator('img')).toBeVisible();
+		const box0 = await kids.nth(0).boundingBox();
+		const box1 = await kids.nth(1).boundingBox();
+		expect(box0 && box1).toBeTruthy();
+		if (box0 && box1) {
+			expect(box0.y).toBeLessThan(box1.y - 10);
+		}
+	});
+
 	test('about hero stacks poster above text on mobile', async ({ page }) => {
 		await page.goto('/About_us.html');
 		const container = page.locator('section.hero .container');
