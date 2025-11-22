@@ -139,7 +139,8 @@ nav ul li a.active {
     padding: 4rem 0 5rem;
     text-align: center;
 }
-.hero .container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
+.hero .container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; row-gap: 1.25rem; }
+.hero .container > div { min-width: 0; }
 .hero h1 { font-size: 3rem; font-weight: 800; margin: 0; line-height: 1.15; }
 .hero p { font-size: 1.1rem; margin: 1rem 0 1.5rem; opacity: 0.95; }
 .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -214,6 +215,7 @@ nav ul li a.active {
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* clip scaled images to avoid overlap on hover */
 }
 .card .hero-actions { margin-top: auto; }
 .card .price { margin-top: auto; }
@@ -228,7 +230,7 @@ nav ul li a.active {
 
 /* Gallery */
 .gallery { padding: 4rem 0; }
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: stretch; }
 .gallery-img { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.08); display: block; }
 .media-placeholder {
     background: #ffffff;
@@ -458,6 +460,8 @@ main > section:first-of-type {
 
 /* Global section spacing */
 main > section + section { margin-top: 2.5rem; }
+/* Puppy Rehoming page: increase inter-section spacing */
+.rehoming-page > section + section { margin-top: 3rem; }
 
 /* Facebook embed container */
 .fb-embed { display: flex; justify-content: center; max-width: 100%; overflow-x: hidden; }
@@ -474,6 +478,21 @@ html, body { overflow-x: hidden; }
 /* About page CTA spacing */
 .about-cta { margin-top: 4rem; padding-bottom: 4rem; }
 
+/* Puppy Rehoming - current pup layout tweaks */
+.rehoming-current { padding-bottom: 1.5rem; }
+.rehoming-current .card-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+.rehoming-current .rocko-photos { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+/* Included section spacing to prevent overlap with footer note */
+#included .card-grid { margin-bottom: 1rem; }
+#included .section-subtext { margin-top: 0.75rem; }
+@media (max-width: 900px) {
+  .rehoming-current .card-grid { grid-template-columns: 1fr; }
+  .rehoming-current .rocko-photos { grid-template-columns: 1fr; }
+}
+/* Crop to bottom half for select images */
+.crop-bottom { object-position: 50% 100%; clip-path: inset(50% 0 0 0); }
+/* Ensure CTA is not overlapped and add extra breathing room */
+.rehoming-cta { margin-top: 3rem; padding-top: 2.5rem; }
 /* About hero background logo watermark */
 .about-hero { position: relative; overflow: hidden; }
 .about-hero::before {

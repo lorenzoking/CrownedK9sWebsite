@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const pages = ['home.html', 'training.html', 'Boarding.html', 'Contact_us.html', 'Videos.html'];
+const pages = ['home.html', 'training.html', 'puppy-rehoming.html', 'Boarding.html', 'Contact_us.html', 'Videos.html'];
 
 for (const path of pages) {
 	test.describe(`${path} visual layout`, () => {
