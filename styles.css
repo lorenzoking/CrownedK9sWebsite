@@ -82,6 +82,25 @@ header {
 
 nav { display: flex; align-items: center; margin-left: 0; overflow-x: visible; -webkit-overflow-scrolling: touch; }
 
+/* Header text CTA */
+.header-cta {
+    margin-left: 1rem;
+}
+.header-cta-button {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background-color: var(--accent-orange);
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+.header-cta-button:hover {
+    background-color: var(--accent-orange-dark);
+}
+
 nav ul {
     display: flex;
     gap: 0.6rem;
@@ -322,6 +341,7 @@ footer { background-color: var(--primary-dark); color: var(--text-light); paddin
     header { flex-direction: column; padding: 0.5rem 2%; width: 100%; }
     nav ul { gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
     nav ul li a { padding: 0.25rem 0.5rem; font-size: 0.95rem; }
+    .header-cta { margin-left: 0; margin-top: 0.35rem; }
 }
 
 /* Calendly section */
