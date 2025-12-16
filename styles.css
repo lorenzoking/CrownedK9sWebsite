@@ -308,18 +308,16 @@ footer { background-color: var(--primary-dark); color: var(--text-light); paddin
 .nav-toggle-label { display: none; cursor: pointer; padding: 0.5rem; border-radius: 8px; }
 .nav-toggle-label span { display: block; width: 26px; height: 3px; background: #fff; margin: 5px 0; border-radius: 3px; }
 
-/* Force desktop-style menu at all widths; allow wrap */
-.nav-toggle-label { display: none !important; }
-#nav-toggle { display: none !important; }
-
 @media (max-width: 1500px) {
   nav ul { gap: 0.5rem; }
   nav ul li a { padding: 0.3rem 0.5rem; font-size: 0.92rem; }
 }
 
-@media (max-width: 1600px) {
+/* IMPORTANT: keep the "always visible" wrapping menu behavior off of mobile,
+   otherwise it overrides the hamburger dropdown (max-width: 768px). */
+@media (min-width: 769px) and (max-width: 1600px) {
 	/* Keep horizontal menu visible and allow it to wrap to a second line */
-	nav ul { display: flex !important; flex-wrap: wrap; white-space: normal; gap: 0.5rem; }
+	nav ul { display: flex; flex-wrap: wrap; white-space: normal; gap: 0.5rem; }
 	nav ul li a { padding: 0.32rem 0.5rem; font-size: 0.92rem; }
 	.logo-container img { height: 64px; }
 	:root { --header-height: 128px; }
@@ -337,11 +335,63 @@ footer { background-color: var(--primary-dark); color: var(--text-light); paddin
 }
 
 @media (max-width: 768px) {
-    :root { --header-height: 128px; }
-    header { flex-direction: column; padding: 0.5rem 2%; width: 100%; }
-    nav ul { gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
-    nav ul li a { padding: 0.25rem 0.5rem; font-size: 0.95rem; }
-    .header-cta { margin-left: 0; margin-top: 0.35rem; }
+    :root { --header-height: 72px; }
+    header { padding: 0.5rem 0; }
+    .header-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4%;
+    }
+    .logo-container img { height: 52px; }
+    .nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        order: 2;
+    }
+    /* Hide CTA in header row on mobile - it goes inside dropdown */
+    .header-cta { display: none; }
+    nav {
+        order: 3;
+        width: 100%;
+        flex-basis: 100%;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        background: var(--primary-dark);
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    nav ul li a {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        display: block;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    nav ul li:last-child a { border-bottom: none; }
+    #nav-toggle:checked ~ nav ul { display: flex; }
+    /* Mobile CTA styling inside dropdown */
+    nav ul li.mobile-cta { display: list-item; }
+    nav ul li.mobile-cta a {
+        background: var(--accent-orange);
+        color: #fff;
+        text-align: center;
+        border-radius: 8px;
+        margin: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
+        font-weight: 600;
+    }
+    nav ul li.mobile-cta a:hover { background: var(--accent-orange-dark); }
+}
+/* Hide mobile-only CTA on larger screens */
+@media (min-width: 769px) {
+    nav ul li.mobile-cta { display: none; }
 }
 
 /* Calendly section */
