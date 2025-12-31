@@ -129,6 +129,86 @@ nav ul li a.active {
     color: var(--primary-dark);
 }
 
+/* Nav Dropdown */
+nav ul li.has-dropdown {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: -0.5rem;
+}
+nav ul li.has-dropdown > a::after {
+    content: " ▾";
+    font-size: 0.7em;
+    opacity: 0.7;
+}
+nav ul li.has-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: -0.5rem;
+    background: var(--primary-dark);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    min-width: 220px;
+    padding: 0.5rem 0;
+    z-index: 1001;
+}
+/* Invisible bridge to prevent hover gap */
+nav ul li.has-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+}
+nav ul li.has-dropdown .dropdown li {
+    display: block;
+}
+nav ul li.has-dropdown .dropdown li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    white-space: nowrap;
+    border-radius: 0;
+}
+nav ul li.has-dropdown .dropdown li a:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--accent-orange);
+}
+/* Desktop: show on hover */
+@media (min-width: 769px) {
+    nav ul li.has-dropdown:hover .dropdown {
+        display: block;
+    }
+}
+/* Mobile: show on tap via checkbox */
+nav ul li.has-dropdown input.dropdown-toggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    nav ul li.has-dropdown .dropdown {
+        position: static;
+        box-shadow: none;
+        margin-top: 0;
+        padding: 0;
+        background: transparent;
+        min-width: 100%;
+    }
+    nav ul li.has-dropdown .dropdown li a {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    nav ul li.has-dropdown input.dropdown-toggle:checked ~ .dropdown {
+        display: block;
+    }
+    nav ul li.has-dropdown > label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+}
+
 /* Buttons */
 .button, .cta-button {
     display: inline-block;
@@ -577,3 +657,192 @@ html, body { overflow-x: hidden; }
     pointer-events: none;
 }
 .about-hero .container { position: relative; z-index: 1; }
+
+/* University Page */
+.university-hero .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.university-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.university-tagline {
+    font-size: 1.25rem;
+    color: var(--muted);
+    margin: 0 0 1rem;
+    font-weight: 500;
+}
+.university-intro {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+}
+.university-section {
+    padding: 4rem 0;
+}
+.university-center {
+    text-align: center;
+}
+.university-url {
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+    .university-hero {
+        padding-top: 2rem;
+    }
+    .university-hero h1 {
+        font-size: 1.75rem;
+    }
+    .university-tagline { font-size: 1.1rem; }
+    .university-intro { font-size: 0.95rem; }
+    .university-section { padding: 2.5rem 0; }
+}
+
+/* University Plans */
+.university-plans {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+    align-items: stretch;
+}
+@media (max-width: 768px) {
+    .university-plans {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 400px;
+    }
+}
+.plan-card {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    box-sizing: border-box;
+}
+.plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.plan-featured {
+    border-color: var(--accent-orange);
+    box-shadow: 0 8px 24px rgba(230,126,34,0.15);
+}
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-orange);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.plan-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.plan-header h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+.plan-price {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    line-height: 1;
+}
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--muted);
+}
+.plan-includes {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0.75rem 0 0;
+    font-weight: 500;
+}
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    flex: 1;
+}
+.plan-features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.plan-features li:last-child { border-bottom: none; }
+.plan-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+/* Highlighted benefit */
+.plan-features li.plan-highlight {
+    font-weight: 600;
+    color: var(--primary-dark);
+    background: linear-gradient(90deg, rgba(230,126,34,0.1) 0%, transparent 100%);
+    margin: 0 -1.5rem 0.5rem;
+    padding: 0.75rem 1.5rem 0.75rem 3rem;
+    border-radius: 8px;
+    border-bottom: none;
+}
+.plan-features li.plan-highlight::before {
+    left: 1.5rem;
+    color: var(--accent-orange);
+}
+.plan-cta {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+.plan-cta .button,
+.plan-cta .cta-button {
+    width: 100%;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+}
+/* Secondary button style for plans */
+.plan-cta .button.button-secondary {
+    background: transparent;
+    border: 2px solid var(--accent-orange);
+    color: var(--accent-orange);
+}
+.plan-cta .button.button-secondary:hover {
+    background: var(--accent-orange);
+    color: #fff;
+}
+/* Mobile adjustments for plans */
+@media (max-width: 480px) {
+    .plan-card { padding: 1.5rem 1.25rem; }
+    .plan-price { font-size: 2.5rem; }
+    .plan-header h3 { font-size: 1.2rem; }
+    .plan-features li { font-size: 0.9rem; }
+}
