@@ -690,11 +690,12 @@ html, body { overflow-x: hidden; }
     margin-top: 0.5rem;
 }
 @media (max-width: 768px) {
-    .university-hero {
-        padding-top: 2rem;
+    .university-hero-content {
+        padding-top: 3rem;
     }
     .university-hero h1 {
         font-size: 1.75rem;
+        margin-top: 0;
     }
     .university-tagline { font-size: 1.1rem; }
     .university-intro { font-size: 0.95rem; }
