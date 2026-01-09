@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crowned K9s University – Monthly Training Subscription</title>
-  <meta name="description" content="Ongoing dog training support with video library, community, and optional in-person sessions. Subscribe to Crowned K9s University.">
+  <title>Crowned K9s University – Long-Term Training Support</title>
+  <meta name="description" content="A premium ongoing program providing professional guidance and real-world resources — not a one-time course, but a lifelong support system.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../pictures/Logos/Crowned Icons-02.png">
@@ -13,20 +13,731 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://crownedk9s.com/university">
-  <meta property="og:title" content="Crowned K9s University – Monthly Training Subscription">
-  <meta property="og:description" content="Ongoing dog training support with video library, community, and optional in-person sessions.">
+  <meta property="og:title" content="Crowned K9s University – Long-Term Training Support">
+  <meta property="og:description" content="A premium ongoing program providing professional guidance and real-world resources — not a one-time course, but a lifelong support system.">
   <meta property="og:image" content="https://crownedk9s.com/pictures/Logos/whitebadgetransCK9s.png">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Crowned K9s University – Monthly Training Subscription">
-  <meta name="twitter:description" content="Ongoing dog training support with video library, community, and optional in-person sessions.">
+  <meta name="twitter:title" content="Crowned K9s University – Long-Term Training Support">
+  <meta name="twitter:description" content="A premium ongoing program providing professional guidance and real-world resources — not a one-time course, but a lifelong support system.">
   <meta name="twitter:image" content="https://crownedk9s.com/pictures/Logos/whitebadgetransCK9s.png">
   
   <link rel="stylesheet" href="../styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ─────────────────────────────────────────────
+       CROWNED K9S UNIVERSITY - REALFOOD.GOV INSPIRED
+       Minimalist, warm, professional aesthetic
+    ───────────────────────────────────────────── */
+    
+    :root {
+      --uni-bg: #FDFBF7;
+      --uni-bg-alt: #F7F4ED;
+      --uni-text: #2D2A24;
+      --uni-text-muted: #6B6560;
+      --uni-accent: #7A9E6F;
+      --uni-accent-dark: #5C7A52;
+      --uni-warm: #C4A574;
+      --uni-warm-dark: #A68B5B;
+      --uni-border: #E8E4DC;
+      --uni-white: #FFFFFF;
+    }
+    
+    .uni-page {
+      background: var(--uni-bg);
+      color: var(--uni-text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .uni-page main {
+      overflow: hidden;
+    }
+    
+    /* Reset section margins for this page */
+    .uni-page main > section + section {
+      margin-top: 0;
+    }
+    
+    /* ─────────────────────────────────────────────
+       ANIMATIONS
+    ───────────────────────────────────────────── */
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Staggered delays */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    
+    /* ─────────────────────────────────────────────
+       HERO SECTION
+    ───────────────────────────────────────────── */
+    
+    .uni-hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 5% 6rem;
+      background: linear-gradient(180deg, var(--uni-bg) 0%, var(--uni-bg-alt) 100%);
+      position: relative;
+      text-align: center;
+    }
+    
+    .uni-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(122, 158, 111, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(196, 165, 116, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .uni-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease forwards;
+    }
+    
+    .uni-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: 0 0 1.5rem;
+      color: var(--uni-text);
+    }
+    
+    .uni-tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 500;
+      color: var(--uni-accent-dark);
+      margin: 0 0 2rem;
+      line-height: 1.5;
+    }
+    
+    .uni-intro {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.8;
+      color: var(--uni-text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    
+    /* Decorative element */
+    .uni-hero-accent {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--uni-accent), var(--uni-warm));
+      border-radius: 2px;
+      margin: 3rem auto 0;
+      animation: scaleIn 1s ease 0.5s forwards;
+      opacity: 0;
+    }
+    
+    /* ─────────────────────────────────────────────
+       SECTION BASE
+    ───────────────────────────────────────────── */
+    
+    .uni-section {
+      padding: 6rem 5%;
+    }
+    
+    .uni-section--alt {
+      background: var(--uni-bg-alt);
+    }
+    
+    .uni-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .uni-section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    
+    .uni-section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 1rem;
+      color: var(--uni-text);
+    }
+    
+    .uni-section-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--uni-text-muted);
+      margin: 0;
+    }
+    
+    /* ─────────────────────────────────────────────
+       PROBLEM SECTION
+    ───────────────────────────────────────────── */
+    
+    .uni-problem {
+      background: var(--uni-white);
+    }
+    
+    .uni-problem-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .uni-problem-text h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin: 0 0 1.5rem;
+      color: var(--uni-text);
+    }
+    
+    .uni-problem-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--uni-text-muted);
+      margin: 0;
+    }
+    
+    .uni-stat-card {
+      background: var(--uni-bg-alt);
+      border: 1px solid var(--uni-border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    
+    .uni-stat-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, var(--uni-accent), var(--uni-accent-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .uni-stat-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--uni-white);
+    }
+    
+    .uni-stat-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--uni-accent-dark);
+      margin: 0 0 0.5rem;
+    }
+    
+    .uni-stat-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--uni-text);
+      margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .uni-problem-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+    
+    /* ─────────────────────────────────────────────
+       WHO IT'S FOR SECTION
+    ───────────────────────────────────────────── */
+    
+    .uni-audience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    
+    .uni-audience-card {
+      background: var(--uni-white);
+      border: 1px solid var(--uni-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .uni-audience-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(45, 42, 36, 0.08);
+    }
+    
+    .uni-audience-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .uni-audience-icon--green {
+      background: linear-gradient(135deg, rgba(122, 158, 111, 0.15), rgba(122, 158, 111, 0.25));
+    }
+    
+    .uni-audience-icon--warm {
+      background: linear-gradient(135deg, rgba(196, 165, 116, 0.15), rgba(196, 165, 116, 0.25));
+    }
+    
+    .uni-audience-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+    
+    .uni-audience-icon--green svg { fill: var(--uni-accent-dark); }
+    .uni-audience-icon--warm svg { fill: var(--uni-warm-dark); }
+    
+    .uni-audience-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      color: var(--uni-text);
+    }
+    
+    .uni-audience-card p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--uni-text-muted);
+      margin: 0;
+    }
+    
+    @media (max-width: 700px) {
+      .uni-audience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ─────────────────────────────────────────────
+       CORE FEATURES SECTION
+    ───────────────────────────────────────────── */
+    
+    .uni-features {
+      background: var(--uni-white);
+    }
+    
+    .uni-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .uni-feature-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.5rem;
+      background: var(--uni-bg);
+      border-radius: 14px;
+      transition: background 0.3s ease;
+    }
+    
+    .uni-feature-item:hover {
+      background: var(--uni-bg-alt);
+    }
+    
+    .uni-feature-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--uni-white);
+      border: 1px solid var(--uni-border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .uni-feature-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--uni-accent);
+    }
+    
+    .uni-feature-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      color: var(--uni-text);
+    }
+    
+    .uni-feature-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--uni-text-muted);
+      margin: 0;
+    }
+    
+    @media (max-width: 700px) {
+      .uni-features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ─────────────────────────────────────────────
+       PRICING PLANS SECTION
+    ───────────────────────────────────────────── */
+    
+    .uni-pricing {
+      background: var(--uni-bg-alt);
+    }
+    
+    .uni-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 950px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    
+    .uni-plan-card {
+      background: var(--uni-white);
+      border: 1px solid var(--uni-border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .uni-plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(45, 42, 36, 0.1);
+    }
+    
+    .uni-plan-card--featured {
+      border: 2px solid var(--uni-warm);
+      box-shadow: 0 12px 40px rgba(196, 165, 116, 0.15);
+    }
+    
+    .uni-plan-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--uni-warm);
+      color: var(--uni-white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.5rem 1.25rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    
+    .uni-plan-header {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--uni-border);
+    }
+    
+    .uni-plan-header h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: var(--uni-text);
+    }
+    
+    .uni-plan-price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--uni-text);
+      line-height: 1;
+    }
+    
+    .uni-plan-price span {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--uni-text-muted);
+    }
+    
+    .uni-plan-includes {
+      font-size: 0.9rem;
+      color: var(--uni-text-muted);
+      margin: 1rem 0 0;
+      font-weight: 500;
+    }
+    
+    .uni-plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      flex: 1;
+    }
+    
+    .uni-plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--uni-text);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    
+    .uni-plan-features li:last-child {
+      border-bottom: none;
+    }
+    
+    .uni-plan-features li::before {
+      content: "✓";
+      color: var(--uni-warm);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    
+    .uni-plan-features li.highlight {
+      font-weight: 600;
+      color: var(--uni-text);
+      background: linear-gradient(90deg, rgba(196, 165, 116, 0.15) 0%, rgba(196, 165, 116, 0.05) 100%);
+      margin: 0.25rem 0;
+      padding: 0.85rem 0.5rem 0.85rem 0;
+      border-radius: 8px;
+      border-bottom: none;
+    }
+    
+    .uni-plan-features li.highlight::before {
+      color: var(--uni-warm-dark);
+    }
+    
+    .uni-plan-cta {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+    
+    .uni-plan-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      box-sizing: border-box;
+    }
+    
+    .uni-plan-btn--outline {
+      background: transparent;
+      color: var(--uni-warm);
+      border: 2px solid var(--uni-warm);
+    }
+    
+    .uni-plan-btn--outline:hover {
+      background: var(--uni-warm);
+      color: var(--uni-white);
+    }
+    
+    .uni-plan-btn--solid {
+      background: var(--uni-warm);
+      color: var(--uni-white);
+    }
+    
+    .uni-plan-btn--solid:hover {
+      background: var(--uni-warm-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(196, 165, 116, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+      .uni-pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 3rem;
+      }
+      
+      .uni-plan-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .uni-plan-price {
+        font-size: 2.5rem;
+      }
+    }
+    
+    /* ─────────────────────────────────────────────
+       CTA SECTION
+    ───────────────────────────────────────────── */
+    
+    .uni-cta {
+      background: var(--uni-text);
+      color: var(--uni-white);
+      text-align: center;
+      padding: 5rem 5%;
+    }
+    
+    .uni-cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .uni-cta h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin: 0 0 1rem;
+      color: var(--uni-white);
+    }
+    
+    .uni-cta p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      margin: 0 0 2rem;
+    }
+    
+    .uni-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    
+    .uni-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .uni-btn--primary {
+      background: var(--uni-accent);
+      color: var(--uni-white);
+    }
+    
+    .uni-btn--primary:hover {
+      background: var(--uni-accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(122, 158, 111, 0.3);
+    }
+    
+    .uni-btn--secondary {
+      background: transparent;
+      color: var(--uni-white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    
+    .uni-btn--secondary:hover {
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.05);
+    }
+    
+    .uni-cta-url {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+    
+    /* ─────────────────────────────────────────────
+       FOOTER OVERRIDE
+    ───────────────────────────────────────────── */
+    
+    .uni-page footer {
+      background: var(--uni-text);
+    }
+    
+    /* ─────────────────────────────────────────────
+       MOBILE ADJUSTMENTS
+    ───────────────────────────────────────────── */
+    
+    @media (max-width: 768px) {
+      .uni-hero {
+        min-height: auto;
+        padding: 6rem 5% 4rem;
+      }
+      
+      .uni-section {
+        padding: 4rem 5%;
+      }
+      
+      .uni-section-header {
+        margin-bottom: 2.5rem;
+      }
+      
+      .uni-premium-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .uni-cta {
+        padding: 4rem 5%;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="uni-page">
   <header>
     <div class="header-container">
       <div class="logo-container">
@@ -64,31 +775,141 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero hero--light hero--pattern university-hero">
-      <div class="container">
-        <div class="university-hero-content">
-          <h1>Crowned K9s University</h1>
-          <p class="university-tagline">Subscription Program</p>
-          <p class="university-intro">Get ongoing training support, expert guidance, and a community of dog owners committed to raising well-mannered dogs — all for one simple monthly price.</p>
+    <!-- ─────────────────────────────────────────────
+         HERO SECTION
+    ───────────────────────────────────────────── -->
+    <section class="uni-hero">
+      <div class="uni-hero-content">
+        <h1>Crowned K9s University</h1>
+        <p class="uni-tagline">Long-Term Structure, Consistency, and Accountability for Lasting Dog Training Success</p>
+        <p class="uni-intro">A premium ongoing program providing professional guidance and real-world resources — not a one-time course, but a lifelong support system.</p>
+        <div class="uni-hero-accent"></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────
+         PROBLEM SECTION
+    ───────────────────────────────────────────── -->
+    <section class="uni-section uni-problem">
+      <div class="uni-container">
+        <div class="uni-problem-content">
+          <div class="uni-problem-text animate-on-scroll">
+            <h2>The Real Challenge in Dog Training</h2>
+            <p>Most dogs don't regress because owners stop caring. Life gets busy — work demands increase, routines shift, and without ongoing support and accountability, consistency fades. The skills are there, but without reinforcement, they slip away quietly over time.</p>
+          </div>
+          <div class="uni-stat-card animate-on-scroll delay-2">
+            <div class="uni-stat-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <p class="uni-stat-label">Common Issue</p>
+            <p class="uni-stat-title">Training Regression Due to Inconsistency</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PRICING PLANS -->
-    <section id="plans" class="university-section">
-      <div class="container">
-        <h2 class="section-title university-center">Choose Your Plan</h2>
-        <p class="section-subtext university-center">Two options designed to fit your training journey.</p>
+    <!-- ─────────────────────────────────────────────
+         WHO IT'S FOR SECTION
+    ───────────────────────────────────────────── -->
+    <section class="uni-section uni-section--alt">
+      <div class="uni-container">
+        <div class="uni-section-header animate-on-scroll">
+          <h2 class="uni-section-title">Designed for Two Key Audiences</h2>
+          <p class="uni-section-subtitle">Whether you're maintaining progress or building from scratch, this program meets you where you are.</p>
+        </div>
         
-        <div class="university-plans">
-          <!-- University Access -->
-          <article class="plan-card">
-            <div class="plan-header">
-              <h3>University Access</h3>
-              <div class="plan-price">$20<span>/month</span></div>
+        <div class="uni-audience-grid">
+          <article class="uni-audience-card animate-on-scroll delay-1">
+            <div class="uni-audience-icon uni-audience-icon--green">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
             </div>
-            <ul class="plan-features">
+            <h3>Maintaining Your Progress</h3>
+            <p>You've completed initial training and your dog has solid foundations. You want ongoing support to maintain results, troubleshoot new challenges, and continue growing together.</p>
+          </article>
+          
+          <article class="uni-audience-card animate-on-scroll delay-2">
+            <div class="uni-audience-icon uni-audience-icon--warm">
+              <svg viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 4.12 13.38 3 12 3S9.5 4.12 9.5 5.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/></svg>
+            </div>
+            <h3>Starting From Scratch</h3>
+            <p>You're new to structured training and want guided support over time — not isolated sessions that leave you guessing. A steady path forward with professional insight at every step.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────
+         CORE FEATURES SECTION
+    ───────────────────────────────────────────── -->
+    <section class="uni-section uni-features">
+      <div class="uni-container">
+        <div class="uni-section-header animate-on-scroll">
+          <h2 class="uni-section-title">Your Central Training Hub</h2>
+          <p class="uni-section-subtitle">Everything you need for ongoing success, accessible from anywhere.</p>
+        </div>
+        
+        <div class="uni-features-grid">
+          <div class="uni-feature-item animate-on-scroll delay-1">
+            <div class="uni-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            </div>
+            <div class="uni-feature-content">
+              <h4>Ongoing Weekly Guidance</h4>
+              <p>Fresh training focuses and accountability touchpoints delivered each week to keep momentum alive.</p>
+            </div>
+          </div>
+          
+          <div class="uni-feature-item animate-on-scroll delay-2">
+            <div class="uni-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+            </div>
+            <div class="uni-feature-content">
+              <h4>Real Training Video Library</h4>
+              <p>Unedited sessions showing authentic progress, mistakes, and breakthroughs — not polished highlight reels.</p>
+            </div>
+          </div>
+          
+          <div class="uni-feature-item animate-on-scroll delay-3">
+            <div class="uni-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <div class="uni-feature-content">
+              <h4>Private Community</h4>
+              <p>Connect with other committed owners for support, discussion, shared wins, and real accountability.</p>
+            </div>
+          </div>
+          
+          <div class="uni-feature-item animate-on-scroll delay-4">
+            <div class="uni-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            </div>
+            <div class="uni-feature-content">
+              <h4>Professional Insight</h4>
+              <p>Continued access to experienced guidance when questions arise — you're never left figuring it out alone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────
+         PRICING PLANS
+    ───────────────────────────────────────────── -->
+    <section class="uni-section uni-pricing" id="plans">
+      <div class="uni-container">
+        <div class="uni-section-header animate-on-scroll">
+          <h2 class="uni-section-title">Choose Your Plan</h2>
+          <p class="uni-section-subtitle">Two options designed to fit your training journey.</p>
+        </div>
+        
+        <div class="uni-pricing-grid">
+          <!-- University Access -->
+          <article class="uni-plan-card animate-on-scroll delay-1">
+            <div class="uni-plan-header">
+              <h3>University Access</h3>
+              <div class="uni-plan-price">$20<span>/month</span></div>
+            </div>
+            <ul class="uni-plan-features">
               <li>Full on-demand video library</li>
               <li>Weekly content drops</li>
               <li>Private online community</li>
@@ -96,48 +917,48 @@
               <li>Guided training focus & accountability</li>
               <li>Submit 1–2 videos/month for feedback</li>
             </ul>
-            <div class="plan-cta">
-              <a href="https://buy.stripe.com/8x228rbxHfaI3y47X24wM0k" target="_blank" class="button button-secondary">Subscribe Now</a>
+            <div class="uni-plan-cta">
+              <a href="https://buy.stripe.com/8x228rbxHfaI3y47X24wM0k" target="_blank" class="uni-plan-btn uni-plan-btn--outline">Subscribe Now</a>
             </div>
           </article>
 
           <!-- University Elite -->
-          <article class="plan-card plan-featured">
-            <div class="plan-badge">Most Popular</div>
-            <div class="plan-header">
+          <article class="uni-plan-card uni-plan-card--featured animate-on-scroll delay-2">
+            <span class="uni-plan-badge">Most Popular</span>
+            <div class="uni-plan-header">
               <h3>University Elite</h3>
-              <div class="plan-price">$175<span>/month</span></div>
-              <p class="plan-includes">Includes everything in University Access, plus:</p>
+              <div class="uni-plan-price">$175<span>/month</span></div>
+              <p class="uni-plan-includes">Includes everything in University Access, plus:</p>
             </div>
-            <ul class="plan-features">
-              <li class="plan-highlight">1 monthly Training Day or Private Session</li>
-              <li class="plan-highlight">University Elite pricing: $125 per private session, $150/day Board & Train, $80/day boarding</li>
+            <ul class="uni-plan-features">
+              <li class="highlight">1 monthly Training Day or Private Session</li>
+              <li class="highlight">University Elite pricing: $125 per private session, $150/day Board & Train, $80/day boarding</li>
               <li>Direct message access — text me anytime, I'll respond</li>
               <li>Follow-up recap documentation after each session</li>
               <li>1-on-1 private 30-min call each month</li>
             </ul>
-            <div class="plan-cta">
-              <a href="https://buy.stripe.com/6oU8wPcBLbYw7Ok7X24wM0j" target="_blank" class="cta-button">Subscribe Now</a>
+            <div class="uni-plan-cta">
+              <a href="https://buy.stripe.com/6oU8wPcBLbYw7Ok7X24wM0j" target="_blank" class="uni-plan-btn uni-plan-btn--solid">Subscribe Now</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section id="enroll" class="contact-section university-section">
-      <div class="container">
-        <div class="cta-banner">
-          <div>
-            <h2>Ready to Get Started?</h2>
-            <p>Choose the plan that fits your training journey and start building a better-behaved dog today.</p>
-            <p class="university-url">crownedk9s.com</p>
-          </div>
-          <div class="cta-actions">
-            <a href="#plans" class="button">View Plans</a>
-            <a href="tel:9198162426" class="button button-secondary">Questions? Text 919-816-2426</a>
-          </div>
+    <!-- ─────────────────────────────────────────────
+         CALL TO ACTION
+    ───────────────────────────────────────────── -->
+    <section class="uni-section uni-cta">
+      <div class="uni-cta-content animate-on-scroll">
+        <h2>Questions?</h2>
+        <p>Not sure which plan is right for you? Reach out — I'm happy to help you find the best fit.</p>
+        
+        <div class="uni-cta-buttons">
+          <a href="tel:9198162426" class="uni-btn uni-btn--primary">Text Lorenzo: 919-816-2426</a>
+          <a href="#plans" class="uni-btn uni-btn--secondary">View Plans</a>
         </div>
+        
+        <p class="uni-cta-url">crownedk9s.com</p>
       </div>
     </section>
   </main>
@@ -158,6 +979,29 @@
       <p>© 2025 Crowned K9s University</p>
     </div>
   </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
-
