@@ -610,7 +610,7 @@ main > section:first-of-type {
 
 /* Global section spacing */
 main > section + section { margin-top: 2.5rem; }
-/* Puppy Rehoming page: increase inter-section spacing */
+/* Premium Puppy Placement page: increase inter-section spacing */
 .rehoming-page > section + section { margin-top: 3rem; }
 
 /* Facebook embed container */
@@ -628,7 +628,7 @@ html, body { overflow-x: hidden; }
 /* About page CTA spacing */
 .about-cta { margin-top: 4rem; padding-bottom: 4rem; }
 
-/* Puppy Rehoming - current pup layout tweaks */
+/* Premium Puppy Placement - current pup layout tweaks */
 .rehoming-current { padding-bottom: 1.5rem; }
 .rehoming-current .card-grid { grid-template-columns: 1fr 1fr; align-items: start; }
 .rehoming-current .rocko-photos { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
@@ -929,7 +929,7 @@ html, body { overflow-x: hidden; }
 }
 
 /* ─────────────────────────────────────────────
-   PUP FEATURE - Puppy Rehoming Page
+   PUP FEATURE - Premium Puppy Placement Page
 ───────────────────────────────────────────── */
 .pup-feature {
     padding: 4rem 0;

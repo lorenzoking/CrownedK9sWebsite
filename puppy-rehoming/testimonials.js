@@ -1,5 +1,5 @@
 /**
- * Testimonials Data for Puppy Rehoming Program
+ * Testimonials Data for Premium Puppy Placement Program
  * 
  * HOW TO EDIT:
  * - Add new testimonials to the array below
