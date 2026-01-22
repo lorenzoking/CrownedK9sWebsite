@@ -70,7 +70,7 @@ const VALUE_TABLE_ITEMS = [
   },
   {
     name: "University Elite Pricing / Lifetime Trained-Dog Perks",
-    value: "Ongoing Savings",
+    value: "$10 per month and $160 per month",
     included: true
   },
   {
