@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Puppy Placement – Crowned K9s</title>
+  <meta name="description" content="Adopt a trained puppy from Crowned K9s. Our rehome pups come with foundation obedience, crate training, and ongoing support.">
+  <link rel="canonical" href="https://crownedk9s.com/premium-puppy-placement/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../pictures/Logos/Crowned Icons-02.png">
+  <link rel="apple-touch-icon" href="../pictures/Logos/Crowned Icons-02.png">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://crownedk9s.com/premium-puppy-placement/">
+  <meta property="og:title" content="Premium Puppy Placement – Crowned K9s">
+  <meta property="og:description" content="Adopt a trained puppy from Crowned K9s. Our rehome pups come with foundation obedience and ongoing support.">
+  <meta property="og:image" content="https://crownedk9s.com/pictures/Logos/whitebadgetransCK9s.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Premium Puppy Placement – Crowned K9s">
+  <meta name="twitter:description" content="Adopt a trained puppy from Crowned K9s. Our rehome pups come with foundation obedience and ongoing support.">
+  <meta name="twitter:image" content="https://crownedk9s.com/pictures/Logos/whitebadgetransCK9s.png">
+  
+  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Page-specific styles -->
+  <style>
+    /* ─────────────────────────────────────────────
+       REHOMING PAGE - VALUE TABLE & COMPONENTS
+    ───────────────────────────────────────────── */
+    
+    /* Hero Enhancements */
+    .hero-outcome-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .hero-outcome-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .hero-outcome-bullets li::before {
+      content: "✓";
+      color: var(--accent-orange);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .hero-cta-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      font-style: italic;
+    }
+    
+    /* Value Table Section */
+    .value-section {
+      padding: 4rem 0;
+      background: linear-gradient(180deg, #f8faf5 0%, #ffffff 100%);
+    }
+    .value-table-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .value-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .value-table thead {
+      background: var(--primary-dark);
+      color: var(--text-light);
+    }
+    .value-table th {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .value-table th:last-child {
+      text-align: center;
+      width: 100px;
+    }
+    .value-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .value-table td:last-child {
+      text-align: center;
+      font-weight: 600;
+      color: #27ae60;
+    }
+    .value-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .value-table tbody tr:hover {
+      background: rgba(166,207,111,0.08);
+    }
+    .value-item-name {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .value-item-value {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .value-summary {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+      color: var(--text-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .value-summary-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .value-summary-item {
+      text-align: center;
+    }
+    .value-summary-label {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-bottom: 0.25rem;
+    }
+    .value-summary-amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .value-summary-note {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+    
+    /* Mobile: Stack value table into cards */
+    .value-cards {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .value-table { display: none !important; }
+      .value-cards { display: block !important; }
+    }
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .value-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .value-card-name {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .value-card-included {
+      background: #e8f5e9;
+      color: #27ae60;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .value-card-value {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.35rem;
+    }
+    
+    /* Process Steps */
+    .process-section {
+      padding: 4rem 0;
+      background: var(--surface);
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .process-step {
+      position: relative;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .process-step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-orange);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin: 0 auto 1rem;
+    }
+    .process-step h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    /* Foundation Training Grid */
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .training-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .training-item h4 {
+      margin: 0 0 0.4rem;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+    }
+    .training-item-benefit {
+      color: var(--accent-orange);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.4;
+    }
+    
+    /* Success Stories / Testimonials */
+    .success-section {
+      padding: 4rem 0;
+      background: linear-gradient(180deg, #ffffff 0%, #f8faf5 100%);
+    }
+    .testimonial-badge {
+      display: inline-block;
+      background: var(--accent-orange);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+    .pup-testimonial {
+      background: rgba(166,207,111,0.1);
+      border-left: 3px solid var(--accent-orange);
+      padding: 0.75rem 1rem;
+      margin-top: 0.75rem;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+    .pup-testimonial-author {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+    }
+    
+    /* CTA Blocks */
+    .cta-block {
+      background: var(--primary-dark);
+      color: var(--text-light);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .cta-block h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+    }
+    .cta-block p {
+      margin: 0 0 1.25rem;
+      opacity: 0.9;
+    }
+    .cta-block .hero-actions {
+      justify-content: center;
+    }
+    
+    /* Pricing Note */
+    .pricing-note {
+      background: #fff8f0;
+      border: 1px solid #ffd2a8;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .pricing-note p {
+      margin: 0;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+    }
+    .pricing-note strong {
+      color: var(--accent-orange);
+    }
+    
+    /* ─────────────────────────────────────────────
+       MOBILE-FRIENDLY FEATURE LISTS
+       Fix "Why a Trained Puppy Costs More" and 
+       "Real-Life Training & Socialization" sections
+    ───────────────────────────────────────────── */
+    
+    /* Container for feature lists with max-width on desktop */
+    #why-program .feature-list,
+    #socialization .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 1.5rem 0 0;
+      width: 100%;
+    }
+    
+    #why-program .feature-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 0.75rem;
+      row-gap: 0.35rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      line-height: 1.6;
+      align-items: start;
+    }
+    
+    /* Special styling for blue background section */
+    #socialization .feature-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 0.75rem;
+      row-gap: 0.35rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      line-height: 1.6;
+      backdrop-filter: blur(10px);
+      align-items: start;
+    }
+    
+    #why-program .feature-list li::before,
+    #socialization .feature-list li::before {
+      content: "✓";
+      color: var(--accent-orange);
+      font-weight: 700;
+      font-size: 1.1rem;
+      grid-column: 1;
+      grid-row: 1;
+      line-height: 1.4;
+      width: 24px;
+      text-align: center;
+      margin-top: 0.1rem;
+    }
+    
+    #why-program .feature-list li strong,
+    #socialization .feature-list li strong {
+      grid-column: 2;
+      grid-row: 1;
+      display: block;
+      margin: 0;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    #why-program .feature-list li .feature-desc,
+    #socialization .feature-list li .feature-desc {
+      grid-column: 2;
+      grid-row: 2;
+      display: block;
+      margin: 0;
+    }
+    
+    /* Mobile: Single column, improved spacing */
+    @media (max-width: 639px) {
+      #why-program .feature-list,
+      #socialization .feature-list {
+        gap: 1rem;
+      }
+      
+      #why-program .feature-list li {
+        padding: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+      
+      #socialization .feature-list li {
+        padding: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+      
+      #why-program .feature-list li strong,
+      #socialization .feature-list li strong {
+        font-size: 0.98rem;
+        margin-bottom: 0.4rem;
+      }
+      
+      /* Adjust section padding on mobile */
+      #why-program {
+        padding: 2.5rem 0;
+      }
+      
+      #socialization {
+        padding: 2.5rem 0;
+      }
+    }
+    
+    /* Tablet: Clean 2-column grid */
+    @media (min-width: 640px) and (max-width: 1023px) {
+      #why-program .feature-list,
+      #socialization .feature-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        max-width: 100%;
+      }
+      
+      #why-program .feature-list li,
+      #socialization .feature-list li {
+        padding: 1.15rem 1.25rem;
+      }
+    }
+    
+    /* Desktop: Intentional 3-column grid (3+2 centered layout for 5 items) */
+    @media (min-width: 1024px) {
+      #why-program .feature-list,
+      #socialization .feature-list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      /* First 3 items: each spans 2 columns (creating 3 equal columns on row 1) */
+      /* Item 1: columns 1-2, Item 2: columns 3-4, Item 3: columns 5-6 */
+      #why-program .feature-list li:nth-child(1),
+      #socialization .feature-list li:nth-child(1) {
+        grid-column: 1 / 3; /* Spans columns 1-2 */
+      }
+      
+      #why-program .feature-list li:nth-child(2),
+      #socialization .feature-list li:nth-child(2) {
+        grid-column: 3 / 5; /* Spans columns 3-4 */
+      }
+      
+      #why-program .feature-list li:nth-child(3),
+      #socialization .feature-list li:nth-child(3) {
+        grid-column: 5 / 7; /* Spans columns 5-6 */
+      }
+      
+      /* Last 2 items: each spans 2 columns, centered on second row */
+      /* Item 4: columns 2-3 (leaving column 1 empty on left) */
+      /* Item 5: columns 4-5 (leaving column 6 empty on right) */
+      /* This creates a visually centered 2-item row */
+      #why-program .feature-list li:nth-child(4),
+      #socialization .feature-list li:nth-child(4) {
+        grid-column: 2 / 4; /* Spans columns 2-3 */
+        grid-row: 2; /* Explicitly place on row 2 */
+      }
+      
+      #why-program .feature-list li:nth-child(5),
+      #socialization .feature-list li:nth-child(5) {
+        grid-column: 4 / 6; /* Spans columns 4-5 */
+        grid-row: 2; /* Explicitly place on row 2 */
+      }
+      
+      #why-program .feature-list li,
+      #socialization .feature-list li {
+        padding: 1.5rem 1.75rem;
+        min-width: 0; /* Prevent overflow */
+      }
+    }
+    
+    /* Large Desktop: Slightly wider container for better proportions */
+    @media (min-width: 1280px) {
+      #why-program .feature-list,
+      #socialization .feature-list {
+        max-width: 1100px;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="../pictures/Logos/whitebadgetransCK9s.png" alt="Crowned K9s Logo">
+        </a>
+      </div>
+      <input type="checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          <li class="has-dropdown">
+            <input type="checkbox" id="training-dropdown" class="dropdown-toggle" />
+            <label for="training-dropdown"><a href="/training">Training</a></label>
+            <ul class="dropdown">
+              <li><a href="/training">Training Programs</a></li>
+              <li><a href="/university">Crowned K9s University</a></li>
+            </ul>
+          </li>
+          <li><a href="/premium-puppy-placement" class="active">Premium Puppy Placement</a></li>
+          <li><a href="/boarding">Boarding</a></li>
+          <li><a href="/#schedule">Schedule</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:9198162426" class="header-cta-button">Text Lorenzo: 919-816-2426</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="rehoming-page">
+    <!-- ═══════════════════════════════════════════════════════════
+         A) HERO SECTION - Outcome-first messaging
+    ════════════════════════════════════════════════════════════ -->
+    <section class="hero hero--light hero--pattern">
+      <div class="container">
+        <div>
+          <h1>Skip the Chaos. Bring Home a Puppy with a Head Start.</h1>
+          <p>This isn't a typical rehoming. These pups are thoughtfully matched and already have structure and training, so you can settle in faster and enjoy the early days.</p>
+          
+          <ul class="hero-outcome-bullets">
+            <li><strong>Sleep through the night</strong> — a calm crate routine is already established</li>
+            <li><strong>Clear communication</strong> — foundational obedience established so daily life is easier for both of you</li>
+            <li><strong>Potty habits underway</strong> — fewer accidents and less stress from day one</li>
+          </ul>
+          
+          <div class="hero-actions">
+            <a href="/contact" class="cta-button">Inquire / Apply</a>
+            <a href="#current" class="button button-secondary">See Current Puppy</a>
+          </div>
+          <p class="hero-cta-note">Rehoming fee reflects the puppy + training + included support.</p>
+        </div>
+        <div>
+          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="poster-img" onclick="openLightbox(this.src)" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         B) "WHY THIS PROGRAM" SECTION - Benefits > Features
+    ════════════════════════════════════════════════════════════ -->
+    <section id="why-program">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center;">Why a Trained Puppy Costs More</h2>
+        <p class="section-subtext" style="text-align: center;">It's not about the price — it's about what you're getting in return.</p>
+        
+        <ul class="feature-list">
+          <li><strong>You're not starting from scratch.</strong><span class="feature-desc">These pups already understand structure, commands, and calm behavior — saving you months of trial and error.</span></li>
+          <li><strong>Peace of mind from day one.</strong><span class="feature-desc">Less frustration, fewer accidents, and a smoother transition into your home.</span></li>
+          <li><strong>Skip expensive mistakes.</strong><span class="feature-desc">New puppy owners often spend hundreds on emergency vet visits, damaged furniture, or trainers to fix bad habits. You're ahead of that curve.</span></li>
+          <li><strong>Ongoing support included.</strong><span class="feature-desc">You're not on your own — you get follow-up sessions and direct access to the trainer who raised your pup.</span></li>
+          <li><strong>A better long-term fit.</strong><span class="feature-desc">Each puppy is evaluated for temperament and matched to the right family, reducing the risk of behavioral surprises.</span></li>
+        </ul>
+        
+        <!-- CTA Block after Why This Program -->
+        <div class="cta-block">
+          <h3>Interested in a Trained Puppy?</h3>
+          <p>Let's talk about whether this program is right for your family.</p>
+          <div class="hero-actions">
+            <a href="/contact" class="button">Message Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         C) FOUNDATION TRAINING SECTION - Skills + Real-Life Meaning
+    ════════════════════════════════════════════════════════════ -->
+    <section id="training">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center;">Foundational Obedience Training Included</h2>
+        <p class="section-subtext" style="text-align: center;">Every rehome pup leaves with these skills — and here's what they mean for you.</p>
+        
+        <div class="training-grid">
+          <div class="training-item">
+            <h4>Name Recognition</h4>
+            <p class="training-item-benefit">→ Get their attention instantly, even across the room</p>
+          </div>
+          <div class="training-item">
+            <h4>Sit</h4>
+            <p class="training-item-benefit">→ A calm default for greetings and waiting patiently</p>
+          </div>
+          <div class="training-item">
+            <h4>Down</h4>
+            <p class="training-item-benefit">→ Settle into a relaxed state during family time</p>
+          </div>
+          <div class="training-item">
+            <h4>Place</h4>
+            <p class="training-item-benefit">→ Go to their spot and stay — great for guests or dinner time</p>
+          </div>
+          <div class="training-item">
+            <h4>Come (Recall)</h4>
+            <p class="training-item-benefit">→ Come when called, even with distractions around</p>
+          </div>
+          <div class="training-item">
+            <h4>Loose-Leash Walking</h4>
+            <p class="training-item-benefit">→ Enjoyable walks without pulling your arm off</p>
+          </div>
+          <div class="training-item">
+            <h4>Crate Training + Sleeping Through the Night</h4>
+            <p class="training-item-benefit">→ Restful nights for you and a calm, secure pup</p>
+          </div>
+          <div class="training-item">
+            <h4>Doorway Manners</h4>
+            <p class="training-item-benefit">→ No more rushing the door when guests arrive</p>
+          </div>
+          <div class="training-item">
+            <h4>Impulse Control</h4>
+            <p class="training-item-benefit">→ Wait calmly instead of lunging at food, toys, or people</p>
+          </div>
+          <div class="training-item">
+            <h4>Release Word ("Okay")</h4>
+            <p class="training-item-benefit">→ Clear communication when a command ends</p>
+          </div>
+          <div class="training-item">
+            <h4>Potty Training + "Bathroom on Command"</h4>
+            <p class="training-item-benefit">→ Know when and where they'll go — no guesswork</p>
+          </div>
+          <div class="training-item">
+            <h4>Drop It / Leave It</h4>
+            <p class="training-item-benefit">→ Safe, polite behavior around food and objects</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         D) SOCIALIZATION & DAILY LIFE TRAINING
+    ════════════════════════════════════════════════════════════ -->
+    <section class="why-section" id="socialization">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center;">Real-Life Training & Socialization</h2>
+        <p class="section-subtext" style="text-align: center;" style="color: rgba(255,255,255,0.85);">Training is woven into every day — not just a session here and there.</p>
+        
+        <ul class="feature-list" style="color: var(--text-light);">
+          <li><strong>Daily structure, not occasional lessons.</strong><span class="feature-desc">Training happens throughout the day, integrated into routine activities for natural learning.</span></li>
+          <li><strong>Confident in new environments.</strong><span class="feature-desc">Exposure to different surfaces, sounds, places, and situations so they're adaptable, not anxious.</span></li>
+          <li><strong>Handled with care.</strong><span class="feature-desc">Regular handling for grooming, vet visits, and general touch tolerance.</span></li>
+          <li><strong>Calm around distractions.</strong><span class="feature-desc">Practice focusing and settling even when there's activity, people, or other dogs nearby.</span></li>
+          <li><strong>Appropriate dog socialization.</strong><span class="feature-desc">Safe, structured interactions that build confidence without reinforcing over-excitement or fear.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         E) VALUE BREAKDOWN TABLE
+    ════════════════════════════════════════════════════════════ -->
+    <section class="value-section" id="value">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center;">Value Included With Each Puppy</h2>
+        <p class="section-subtext" style="text-align: center;">See the total value you receive compared to the actual rehoming fee.</p>
+        
+        <div class="value-table-wrapper">
+          <!-- Desktop: Table View -->
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Included Item</th>
+                <th>Typical Value</th>
+                <th>Included?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="value-item-name">The Puppy Itself</span></td>
+                <td><span class="value-item-value">$1,000 – $2,000</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">2–3 Week Board & Train Equivalent</span></td>
+                <td><span class="value-item-value">$2,000 – $3,000</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">2 Follow-Up Private Sessions</span></td>
+                <td><span class="value-item-value">$300</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Go-Home Gear (collar, harness, leash, toys, food)</span></td>
+                <td><span class="value-item-value">$75–$150</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Vaccinations & Vet Visits (up to date)</span></td>
+                <td><span class="value-item-value">~$300</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Lifetime Support / Direct Line to Trainer</span></td>
+                <td><span class="value-item-value">Priceless</span></td>
+                <td>✓ Included</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">University Elite Pricing / Lifetime Trained-Dog Perks</span></td>
+                <td><span class="value-item-value">Ongoing Savings</span></td>
+                <td>✓ Included</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Free Entry to Puppy Group Class</span></td>
+                <td><span class="value-item-value">$80</span></td>
+                <td>✓ Yes</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <!-- Mobile: Card View -->
+          <div class="value-cards">
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">The Puppy Itself</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $1,000 – $2,000</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">2–3 Week Board & Train Equivalent</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $2,000 – $3,000</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">2 Follow-Up Private Sessions</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $300</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Go-Home Gear (collar, harness, leash, toys, food)</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $75–$150</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Vaccinations & Vet Visits (up to date)</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: ~$300</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Lifetime Support / Direct Line to Trainer</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Priceless</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">University Elite Pricing / Lifetime Trained-Dog Perks</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: Ongoing Savings</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Free Entry to Puppy Group Class</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $80</p>
+            </div>
+          </div>
+          
+          <!-- Value Summary -->
+          <div class="value-summary">
+            <div class="value-summary-row">
+              <div class="value-summary-item">
+                <p class="value-summary-label">Estimated Included Value (not the fee)</p>
+                <p class="value-summary-amount">$4,000 – $5,000+</p>
+              </div>
+              <div class="value-summary-item">
+                <p class="value-summary-label">Typical Rehoming Fee (actual price)</p>
+                <p class="value-summary-amount">$2,500 – $3,500</p>
+              </div>
+            </div>
+            <p class="value-summary-note">The included value is higher than the rehoming fee, so you're getting more than you pay for.</p>
+          </div>
+        </div>
+        
+        <!-- CTA Block after Value Chart -->
+        <div class="cta-block" style="margin-top: 2.5rem;">
+          <h3>See the Value? Let's Talk.</h3>
+          <p>Reach out to learn about current availability and next steps.</p>
+          <div class="hero-actions">
+            <a href="/contact" class="button">Apply Now</a>
+            <a href="tel:9198162426" class="button button-secondary">Call 919-816-2426</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ═══════════════════════════════════════════════════════════
+         F) HOW IT WORKS - PROCESS SECTION
+    ════════════════════════════════════════════════════════════ -->
+    <section class="process-section" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center;">How It Works</h2>
+        <p class="section-subtext" style="text-align: center;">A clear, low-pressure process from first inquiry to go-home day.</p>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-number">1</div>
+            <h4>Inquiry</h4>
+            <p>Send us a message with a bit about your home, family, and what you're looking for in a pup.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">2</div>
+            <h4>Quick Fit Call</h4>
+            <p>We'll hop on a quick call to answer questions and see if there's a good match.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">3</div>
+            <h4>Meet & Greet</h4>
+            <p>If it feels right, you'll meet the pup in person to confirm the connection.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">4</div>
+            <h4>Rehoming Agreement</h4>
+            <p>We'll finalize details, set a go-home date, and walk through your transition plan.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">5</div>
+            <h4>Follow-Up & Support</h4>
+            <p>Your follow-up sessions are scheduled, and you have direct trainer access for questions.</p>
+          </div>
+        </div>
+        
+        <!-- Pricing Note -->
+        <div class="pricing-note">
+          <p><strong>Rehoming fees typically range $2,500 – $3,500</strong> depending on the puppy, training level, and breed.</p>
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted);">Payment plans may be available after fit is confirmed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CURRENT PUP: IZZY
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pup-feature" id="current">
+      <div class="container">
+        <div class="pup-feature-header">
+          <h2 class="section-title">Meet Izzy</h2>
+          <p class="section-subtext">Olde English Bulldogge · Female · Born November 25, 2025</p>
+          <span class="pup-status pup-status--available">Available Now</span>
+        </div>
+
+        <div class="pup-feature-grid">
+          <!-- Main Photo -->
+          <div class="pup-main-photo">
+            <img src="/pictures/PRP/Izzie/IMG_8421.jpeg" alt="Izzy – Olde English Bulldogge puppy" class="lightbox-img" loading="lazy" />
+            <span class="photo-hint">Click to enlarge</span>
+          </div>
+
+          <!-- Info -->
+          <div class="pup-info">
+            <p>Izzy is a beautiful brindle Olde English Bulldogge puppy with a sweet, calm temperament. Our goal with Izzy is to put her on the path to becoming a <strong>service animal</strong> — we'll be training her with that level of focus, public access skills, and task-readiness in mind.</p>
+            <p>She'll go through our full Crowned K9s Academy program plus specialized service dog foundations. If all goes well, she'll be rehomed as a service-ready companion to the right family.</p>
+            <div class="hero-actions">
+              <a href="/contact" class="cta-button">Inquire About Izzy</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo & Video Gallery -->
+        <div class="pup-gallery">
+          <h3>Photos & Video</h3>
+          <div class="pup-gallery-grid">
+            <img src="/pictures/PRP/Izzie/IMG_8421.jpeg" alt="Izzy puppy photo" class="lightbox-img" loading="lazy" />
+            <video controls playsinline poster="/pictures/PRP/Izzie/IMG_8420.jpeg" preload="metadata">
+              <source src="/pictures/PRP/Izzie/IMG_6061.MOV" type="video/quicktime">
+              <p>Your browser doesn't support this video. <a href="/pictures/PRP/Izzie/IMG_6061.MOV" download>Download it instead</a>.</p>
+            </video>
+          </div>
+        </div>
+
+        <!-- Parents -->
+        <div class="pup-parents">
+          <h3>Meet the Parents</h3>
+          <div class="pup-parents-grid">
+            <div class="parent-card">
+              <img src="/pictures/PRP/Izzie/IMG_8238.JPG" alt="Izzy's Mom" class="lightbox-img" loading="lazy" />
+              <span>Mom</span>
+            </div>
+            <div class="parent-card">
+              <img src="/pictures/PRP/Izzie/IMG_8239.JPG" alt="Izzy's Dad" class="lightbox-img" loading="lazy" />
+              <span>Dad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         G) SUCCESS STORIES (Enhanced Past Pups)
+    ════════════════════════════════════════════════════════════ -->
+    <section class="success-section" id="success">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center;">Success Stories</h2>
+        <p class="section-subtext" style="text-align: center;"><span class="pill" style="font-size: 1rem;">🏠 10 Pups Officially Rehomed</span></p>
+        
+        <div class="card-grid">
+          <!-- Rocko -->
+          <article class="card">
+            <img src="../pictures/PRP/rocko.jpg" alt="Rocko the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Rocko</h3>
+            <p class="subtext">French Bulldog</p>
+            <p>Sweet, social, and fully trained — found his forever home with a loving family!</p>
+            <div class="pup-testimonial">
+              "Crowned k9s is awesome trained Rocko so he could be ready for his forever home he is so well mannered and Listens to commands and is potty trained I couldn’t ask for a better trainer! Thank you"
+              <p class="pup-testimonial-author">— Rocko's Family</p>
+            </div>
+          </article>
+          
+          <!-- Kai -->
+          <article class="card">
+            <img src="../pictures/PRP/Kai.jpeg" alt="Kai the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Kai</h3>
+            <p class="subtext">Olde English Bulldogge</p>
+            <p>Settled beautifully into family life — calm leash walks and great house manners.</p>
+            <div class="pup-testimonial">
+              "Everywhere we go, he is so loved! He has the most confidence and sweet disposition of any dog I have ever known."
+              <p class="pup-testimonial-author">— Kai's Family</p>
+            </div>
+          </article>
+          
+          <!-- Charlie -->
+          <article class="card">
+            <img src="../pictures/PRP/Charlie.jpeg" alt="Charlie the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Charlie</h3>
+            <p class="subtext">Olde English Bulldogge</p>
+            <div class="pup-testimonial">
+              "Our kids tell me how much they love Charlie every single day. Im so happy we ran into you that night. He is the chillest, sweetest chunk"
+              <p class="pup-testimonial-author">— Charlie's Family</p>
+            </div>
+          </article>
+          
+          <!-- Brutus -->
+          <article class="card">
+            <img src="../pictures/PRP/brutus.jpg" alt="Brutus the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Brutus</h3>
+            <p class="subtext">Amstaff</p>
+          </article>
+          
+          <!-- Mozzie -->
+          <article class="card">
+            <img src="../pictures/PRP/mozzie.jpeg" alt="Mozzie the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Mozzie</h3>
+            <p class="subtext">Mini Australian Shepherd</p>
+          </article>
+          
+          <!-- Maple -->
+          <article class="card">
+            <img src="../pictures/PRP/maple.jpeg" alt="Maple the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Maple</h3>
+            <p class="subtext">Amstaff</p>
+          </article>
+          
+          <!-- Gwen -->
+          <article class="card">
+            <img src="../pictures/PRP/gwen.jpg" alt="Gwen the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Gwen</h3>
+            <p class="subtext">Olde English Bulldogge</p>
+          </article>
+          
+          <!-- Pawly -->
+          <article class="card">
+            <img src="../pictures/PRP/pawly.jpeg" alt="Pawly the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Pawly</h3>
+            <p class="subtext">Olde English Bulldogge</p>
+          </article>
+          
+          <!-- Puma -->
+          <article class="card">
+            <img src="../pictures/PRP/puma.jpg" alt="Puma the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Puma</h3>
+            <p class="subtext">Olde English Bulldogge</p>
+          </article>
+          
+          <!-- Wynter -->
+          <article class="card">
+            <img src="../pictures/PRP/wynter.jpg" alt="Wynter the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Wynter</h3>
+            <p class="subtext">Olde English Bulldogge</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img id="lightbox-img" src="" alt="Full size image">
+    </div>
+    <script>
+      // Lightbox functions
+      function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      // Attach click handlers to all lightbox images
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.lightbox-img').forEach(function(img) {
+          img.addEventListener('click', function() {
+            openLightbox(this.src);
+          });
+        });
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeLightbox();
+        });
+      });
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         I) FINAL CTA
+    ════════════════════════════════════════════════════════════ -->
+    <section class="contact-section rehoming-cta">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <h2>Ready to Meet Your New Best Friend?</h2>
+            <p>Reach out and we'll help you decide if a trained rehome pup is right for your family, talk through current availability, and outline clear next steps.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="/contact" class="button">Contact Us</a>
+            <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://instagram.com/crownedk9s" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+        </a>
+        <a href="https://youtube.com/@crownedk9s" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2C0 7.9 0 12 0 12s0 4.1.5 5.8a3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 16.1 24 12 24 12s0-4.1-.5-5.8z"/></svg>
+        </a>
+        <a href="https://facebook.com/crownedk9s" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.4V12h2.4V9.7c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+      <p>© 2025 Crowned K9s</p>
+    </div>
+  </footer>
+</body>
+</html>
