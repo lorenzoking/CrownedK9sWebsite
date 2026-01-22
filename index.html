@@ -74,15 +74,15 @@
     <section class="hero">
       <div class="container">
         <div>
-          <h1>Welcome to Crowned K9s</h1>
-          <p>We help family dogs become calm, confident companions. If walks are stressful, your arm is sore from pulling, you’re embarrassed by barking at people or dogs, or you’re worried about aggression, we’ll show you a clear path to change.</p>
-          <div class="hero-actions">
+          <h1 class="reveal">Welcome to Crowned K9s</h1>
+          <p class="reveal reveal-delay-1">We help family dogs become calm, confident companions. If walks are stressful, your arm is sore from pulling, you’re embarrassed by barking at people or dogs, or you’re worried about aggression, we’ll show you a clear path to change.</p>
+          <div class="hero-actions reveal reveal-delay-2">
             <a href="/training" class="cta-button">Explore Training</a>
             <a href="#services" class="button button-secondary">Our Services</a>
           </div>
         </div>
         <div>
-          <img src="pictures/Doggies/grouppic.jpg" alt="Happy dogs at Crowned K9s" loading="eager" fetchpriority="high" decoding="async" />
+          <img src="pictures/Doggies/grouppic.jpg" alt="Happy dogs at Crowned K9s" class="reveal reveal--scale" loading="eager" fetchpriority="high" decoding="async" />
         </div>
       </div>
     </section>
@@ -110,17 +110,17 @@
     <!-- SERVICES -->
     <section id="services">
       <div class="container">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title reveal">Our Services</h2>
         <div class="card-grid">
 
-          <article class="card">
+          <article class="card reveal reveal-delay-1">
             <h3>Training Programs</h3>
             <p class="subtext">Three clear options: Private Session, Transformation Package, and Academy.</p>
             <p>Start small with a <strong>Single Private Session</strong>, get weekly coaching with our <strong>Transformation Package</strong>, or choose the <strong>Crowned K9s Academy</strong> board &amp; train for the fastest, most hands-off results.</p>
         
           </article>
           
-          <article class="card">
+          <article class="card reveal reveal-delay-2">
             <h3>Premium Puppy Placement</h3>
             <p class="subtext">Training-first rehoming for the right family fit.</p>
             <p>We take in select puppies, put them through our Crowned K9s Academy, and place them with loving, prepared families ready for a well-started dog.</p>
@@ -128,7 +128,7 @@
 
           
 
-          <article class="card">
+          <article class="card reveal reveal-delay-3">
             <h3>Group Classes</h3>
             <p class="subtext">Small‑group learning, confidence, and real‑world practice.</p>
             <p>Fun, focused classes that build obedience, leash manners, and calm around distractions with 4–6 dogs per group.</p>
@@ -138,7 +138,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Boarding & Drop‑Ins</h3>
             <p class="subtext">Personal, low-volume care.</p>
             <p>Comfortable, structured boarding on our peaceful 1‑acre property for both trained and new dogs.</p>
@@ -153,7 +153,7 @@
     </section>
 
     <!-- CROWNED K9S UNIVERSITY - NEW -->
-    <section class="university-promo">
+    <section class="university-promo reveal">
       <div class="container">
         <div class="university-promo-inner">
           <div class="university-promo-badge">NEW</div>
@@ -180,10 +180,10 @@
     </section>
 
     <!-- PREMIUM PUPPY PLACEMENT - IZZY -->
-    <section class="gallery">
+    <section class="gallery reveal">
       <div class="container split">
         <div>
-          <img src="pictures/PRP/Izzie/IMG_8215.JPG" alt="Meet Izzy – Olde English Bulldogge puppy" class="gallery-img" loading="lazy" decoding="async" />
+          <img src="pictures/PRP/Izzie/IMG_8420.jpeg" alt="Meet Izzy – Olde English Bulldogge puppy" class="gallery-img" loading="lazy" decoding="async" />
         </div>
         <div>
           <h2 class="section-title">Meet Izzy – Available Now</h2>
@@ -199,10 +199,10 @@
     </section>
 
     <!-- SCHEDULING -->
-    <section id="schedule" class="schedule-section">
+    <section id="schedule" class="schedule-section reveal">
       <div class="container">
-        <h2 class="section-title">Schedule a Consultation</h2>
-        <p class="section-subtext">Pick a time that works for your family. When you schedule, we’ll email you our free Puppy Potty Training Schedule and Reliable Recall guide.</p>
+        <h2 class="section-title reveal">Schedule a Consultation</h2>
+        <p class="section-subtext reveal reveal-delay-1">Pick a time that works for your family. When you schedule, we’ll email you our free Puppy Potty Training Schedule and Reliable Recall guide.</p>
         <div class="calendly-wrapper">
           <div class="calendly-inline-widget" data-url="https://calendly.com/crownedk9s" style="min-width:320px;height:700px;"></div>
           <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -211,7 +211,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="contact-section">
+    <section class="contact-section reveal">
       <div class="container">
         <div class="cta-banner">
           <div>
@@ -242,5 +242,34 @@
       <p>© 2025 Crowned K9s</p>
     </div>
   </footer>
+  <script>
+    (() => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const revealElements = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || revealElements.length === 0) {
+        revealElements.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+      );
+
+      revealElements.forEach((el) => observer.observe(el));
+    })();
+  </script>
 </body>
 </html>

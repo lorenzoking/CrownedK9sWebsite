@@ -1145,3 +1145,37 @@ html, body { overflow-x: hidden; }
 .lightbox-close:hover {
     background: rgba(255,255,255,0.2);
 }
+
+/* ─────────────────────────────────────────────
+   SUBTLE SCROLL REVEALS (HOMEPAGE)
+───────────────────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+}
+.reveal.reveal--scale {
+    transform: scale(0.98);
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+.reveal-delay-1 {
+    transition-delay: 0.08s;
+}
+.reveal-delay-2 {
+    transition-delay: 0.16s;
+}
+.reveal-delay-3 {
+    transition-delay: 0.24s;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.reveal--scale {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
