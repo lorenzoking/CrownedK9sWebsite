@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Pack Is Growing – Crowned K9s</title>
+  <meta name="description" content="Support our growing family. A simple way for friends and family to help as we prepare for our newest pack member.">
+  
+  <!-- SEO Protection: Do not index this page -->
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../pictures/Logos/Crowned Icons-02.png">
+  <link rel="apple-touch-icon" href="../pictures/Logos/Crowned Icons-02.png">
+  
+  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ─────────────────────────────────────────────
+       OUR PACK IS GROWING - Page Styles
+    ───────────────────────────────────────────── */
+    
+    :root {
+      --pack-warm: #c4a574;
+      --pack-warm-light: rgba(196, 165, 116, 0.15);
+      --pack-bg-soft: #fdfbf7;
+    }
+    
+    .pack-page {
+      background: var(--pack-bg-soft);
+    }
+    
+    /* Hero Section */
+    .pack-hero {
+      padding: 5rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, var(--pack-bg-soft) 100%);
+    }
+    
+    .pack-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin: 0 0 1rem;
+      line-height: 1.2;
+    }
+    
+    .pack-hero .hero-subtext {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    
+    .pack-hero .pack-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .pack-cta-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--pack-warm);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    
+    .pack-cta-btn:hover {
+      background: #b39561;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 165, 116, 0.3);
+    }
+    
+    /* Section Styling */
+    .pack-section {
+      padding: 4rem 0;
+    }
+    
+    .pack-section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    
+    .pack-section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 0.5rem;
+    }
+    
+    .pack-section-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Support Options Grid */
+    .support-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    
+    .support-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .support-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    
+    .support-card.primary {
+      border: 2px solid var(--pack-warm);
+      background: linear-gradient(180deg, #fff 0%, rgba(196, 165, 116, 0.05) 100%);
+    }
+    
+    .support-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .support-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 0.75rem;
+    }
+    
+    .support-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 1.25rem;
+    }
+    
+    .support-card .zelle-info {
+      background: var(--pack-warm-light);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    
+    .support-card .placeholder-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    
+    /* Fund Cards Grid */
+    .fund-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 700px) {
+      .fund-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .fund-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .fund-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    
+    .fund-card-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .fund-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 0.5rem;
+    }
+    
+    .fund-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 1rem;
+      flex: 1;
+    }
+    
+    .fund-goal {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--pack-warm);
+      margin-bottom: 1rem;
+    }
+    
+    .fund-btn {
+      display: block;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: var(--pack-warm);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    
+    .fund-btn:hover {
+      background: #b39561;
+      transform: translateY(-2px);
+    }
+    
+    .fund-affiliate-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+    
+    /* FAQ Section */
+    .pack-faq {
+      background: #fff;
+    }
+    
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+    
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    
+    .faq-item h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 0 0 0.5rem;
+    }
+    
+    .faq-item p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* Affiliate Disclosure */
+    .pack-disclosure {
+      padding: 2rem 0 3rem;
+      text-align: center;
+    }
+    
+    .disclosure-text {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      padding: 1.25rem 1.5rem;
+      background: rgba(0,0,0,0.02);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .pack-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .pack-hero .hero-subtext {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+      
+      .pack-section-title {
+        font-size: 1.65rem;
+      }
+      
+      .support-options {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Staggered animation delays for fund cards */
+    .reveal-delay-4 { transition-delay: 0.32s; }
+    .reveal-delay-5 { transition-delay: 0.40s; }
+    .reveal-delay-6 { transition-delay: 0.48s; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="../pictures/Logos/whitebadgetransCK9s.png" alt="Crowned K9s Logo">
+        </a>
+      </div>
+      <input type="checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          <li class="has-dropdown">
+            <input type="checkbox" id="training-dropdown" class="dropdown-toggle" />
+            <label for="training-dropdown"><a href="/training">Training</a></label>
+            <ul class="dropdown">
+              <li><a href="/training">Training Programs</a></li>
+              <li><a href="/university">Crowned K9s University</a></li>
+            </ul>
+          </li>
+          <li><a href="/premium-puppy-placement">Premium Puppy Placement</a></li>
+          <li><a href="/boarding">Boarding</a></li>
+          <li><a href="/#schedule">Schedule</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:9198162426" class="header-cta-button">Text Lorenzo: 919-816-2426</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pack-page">
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO SECTION
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pack-hero">
+      <div class="container">
+        <span class="pack-icon reveal">🐾</span>
+        <h1 class="reveal reveal-delay-1">Our Pack Is Growing</h1>
+        <p class="hero-subtext reveal reveal-delay-2">
+          We're expecting a new addition to the family! This page is a simple way for friends and family who want to help us prepare for our newest pack member. We're grateful for any support — it truly means the world to us.
+        </p>
+        <a href="#support" class="pack-cta-btn reveal reveal-delay-3">How You Can Support</a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HOW YOU CAN SUPPORT - OVERVIEW
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pack-section" id="support">
+      <div class="container">
+        <div class="pack-section-header">
+          <h2 class="pack-section-title reveal">How You Can Support</h2>
+          <p class="pack-section-subtitle reveal reveal-delay-1">A few simple options to help our family prepare.</p>
+        </div>
+        
+        <div class="support-options">
+          <!-- Option A: General Contribution -->
+          <div class="support-card primary reveal reveal-delay-2">
+            <div class="support-card-icon">💛</div>
+            <h3>Contribute Any Amount</h3>
+            <p>Your contribution helps with baby essentials, medical costs, and giving us time to rest and bond as a family.</p>
+            <a href="https://example.com/stripe-general-contribution" 
+               class="pack-cta-btn" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Make a general contribution via Stripe">
+              Contribute Now
+            </a>
+          </div>
+          
+          <!-- Option B: Zelle -->
+          <div class="support-card reveal reveal-delay-3">
+            <div class="support-card-icon">📱</div>
+            <h3>Send via Zelle</h3>
+            <p>For family and friends who prefer Zelle — quick, easy, and no fees.</p>
+            <div class="zelle-info">Zelle to: [email or phone placeholder]</div>
+            <span class="placeholder-note">Update with real Zelle info</span>
+          </div>
+          
+          <!-- Option C: Specific Essentials -->
+          <div class="support-card reveal reveal-delay-4">
+            <div class="support-card-icon">🎁</div>
+            <h3>Fund Specific Essentials</h3>
+            <p>Help us fund specific big-ticket items we need. See the essentials below and choose what feels right.</p>
+            <a href="#funds" class="pack-cta-btn" style="background: transparent; color: var(--pack-warm); border: 2px solid var(--pack-warm);">
+              See Essentials
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         FUND SPECIFIC ESSENTIALS
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pack-section" id="funds" style="background: #fff;">
+      <div class="container">
+        <div class="pack-section-header">
+          <h2 class="pack-section-title reveal">Help Fund Specific Essentials</h2>
+          <p class="pack-section-subtitle reveal reveal-delay-1">These are the bigger items that will make a real difference in our first weeks and months as a new family.</p>
+        </div>
+        
+        <div class="fund-grid">
+          <!-- Fund 1: Nursing Chair -->
+          <article class="fund-card reveal reveal-delay-2">
+            <div class="fund-card-icon">🪑</div>
+            <h4>Nursing Chair Fund</h4>
+            <p>A comfortable, supportive chair for late-night feedings and quiet bonding moments.</p>
+            <div class="fund-goal">Goal: $450</div>
+            <a href="https://example.com/stripe-nursing-chair-fund" 
+               class="fund-btn" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Nursing Chair Fund">
+              Fund This Purchase
+            </a>
+            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
+          </article>
+          
+          <!-- Fund 2: Bedside Bassinet -->
+          <article class="fund-card reveal reveal-delay-3">
+            <div class="fund-card-icon">🛏️</div>
+            <h4>Bedside Bassinet Fund</h4>
+            <p>A safe, close-by sleeping space for baby's first months — right next to us.</p>
+            <div class="fund-goal">Goal: $250</div>
+            <a href="https://example.com/stripe-bassinet-fund" 
+               class="fund-btn" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Bedside Bassinet Fund">
+              Fund This Purchase
+            </a>
+            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
+          </article>
+          
+          <!-- Fund 3: Everyday Essentials -->
+          <article class="fund-card reveal reveal-delay-4">
+            <div class="fund-card-icon">🧷</div>
+            <h4>Everyday Essentials Fund</h4>
+            <p>Diapers, wipes, bottles, and all the little things that add up quickly.</p>
+            <div class="fund-goal">Goal: $300</div>
+            <a href="https://example.com/stripe-essentials-fund" 
+               class="fund-btn" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Everyday Essentials Fund">
+              Fund This Purchase
+            </a>
+            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
+          </article>
+          
+          <!-- Fund 4: Recovery & Rest -->
+          <article class="fund-card reveal reveal-delay-5">
+            <div class="fund-card-icon">🌿</div>
+            <h4>Recovery & Rest Fund</h4>
+            <p>Postpartum support, meal delivery, and recovery items to help mom heal and rest.</p>
+            <div class="fund-goal">Goal: $400</div>
+            <a href="https://example.com/stripe-recovery-fund" 
+               class="fund-btn" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Recovery and Rest Fund">
+              Fund This Purchase
+            </a>
+            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         FAQ SECTION
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pack-section pack-faq" id="faq">
+      <div class="container">
+        <div class="pack-section-header">
+          <h2 class="pack-section-title reveal">Questions You Might Have</h2>
+        </div>
+        
+        <div class="faq-list">
+          <div class="faq-item reveal reveal-delay-1">
+            <h4>Why a page instead of a traditional registry?</h4>
+            <p>We wanted something simple and flexible. This lets friends and family contribute in whatever way feels right — whether that's funding a specific item, sending Zelle, or just giving to the general fund. Less pressure, more heart.</p>
+          </div>
+          
+          <div class="faq-item reveal reveal-delay-2">
+            <h4>What happens if a fund goes over its goal?</h4>
+            <p>Any extra goes straight toward baby essentials, time off to bond as a family, and covering the unexpected costs that come with a new baby. Nothing wasted.</p>
+          </div>
+          
+          <div class="faq-item reveal reveal-delay-3">
+            <h4>Can I give a gift in another way?</h4>
+            <p>Of course! If you'd rather send something directly or give a gift in person, we'd love that too. This page is just one option — not the only one. Your thoughtfulness is what matters most.</p>
+          </div>
+          
+          <div class="faq-item reveal reveal-delay-4">
+            <h4>Is there a deadline?</h4>
+            <p>No hard deadline. We're grateful for support whenever it arrives — before, during, or after baby gets here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         AFFILIATE DISCLOSURE
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pack-disclosure">
+      <div class="container">
+        <p class="disclosure-text reveal">
+          <strong>Disclosure:</strong> Some links on this page may be affiliate links in the future. If you choose to purchase through them, it can help support our growing family at no extra cost to you. Thank you for understanding.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://instagram.com/crownedk9s" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+        </a>
+        <a href="https://youtube.com/@crownedk9s" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2C0 7.9 0 12 0 12s0 4.1.5 5.8a3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 16.1 24 12 24 12s0-4.1-.5-5.8z"/></svg>
+        </a>
+        <a href="https://facebook.com/crownedk9s" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.4V12h2.4V9.7c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+      <p>© 2025 Crowned K9s</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    (() => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const revealElements = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || revealElements.length === 0) {
+        revealElements.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+      );
+
+      revealElements.forEach((el) => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
