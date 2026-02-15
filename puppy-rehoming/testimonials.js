@@ -100,10 +100,11 @@ const CURRENT_PUPS = [
     breed: "Olde English Bulldogge",
     gender: "Female",
     birthDate: "November 25, 2025",
-    status: "available", // "available" | "coming" | "reserved" | "rehomed"
+    status: "rehomed", // "available" | "coming" | "reserved" | "rehomed"
     arrivalDate: "January 18, 2026",
-    description: "Beautiful brindle Olde English Bulldogge puppy with a sweet, calm temperament. Training for service dog potential.",
+    description: "Izzy has been adopted and is with her forever family.",
     mainImage: "/pictures/PRP/Izzie/IMG_8420.jpeg",
+    familyImage: "/pictures/PRP/Izzy_family.jpeg",
     images: [
       "/pictures/PRP/Izzie/IMG_8421.jpeg"
     ],
