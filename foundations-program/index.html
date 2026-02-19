@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crowned K9s Foundations Program – Crowned K9s</title>
+  <meta name="description" content="Rescue and transitional dogs developed through structure, stability, and foundational training before placement.">
+
+  <link rel="icon" type="image/png" href="../pictures/Logos/Crowned Icons-02.png">
+  <link rel="apple-touch-icon" href="../pictures/Logos/Crowned Icons-02.png">
+  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .foundations-page .section {
+      padding: 4rem 0;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+    .hero-bullets li::before {
+      content: "✓";
+      color: var(--accent-orange);
+      font-weight: 700;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .compare-card h3 {
+      margin: 0 0 0.7rem;
+      font-size: 1.2rem;
+    }
+    .compare-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.45;
+    }
+    .compare-list li::before {
+      content: "•";
+      color: var(--accent-orange);
+      font-weight: 700;
+    }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .training-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .training-item h4 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+    }
+    .training-benefit {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .trust-note {
+      background: #f7f9fc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .who-column {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.2rem;
+    }
+    .who-column h3 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1.1rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .process-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .process-step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.65rem;
+      background: var(--accent-orange);
+      color: #fff;
+      font-weight: 700;
+    }
+    .process-step h4 {
+      margin: 0 0 0.45rem;
+    }
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .subsection-title {
+      margin: 0 0 0.8rem;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    .dog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.9rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+    .dog-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.65rem;
+    }
+    .dog-card h4 {
+      margin: 0 0 0.3rem;
+    }
+    .dog-card p {
+      margin: 0 0 0.45rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .dog-status {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      background: #eef6ff;
+      color: #1f4d7a;
+      border: 1px solid #cfe4f7;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    .foundations-cta {
+      padding: 0 0 5rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    @media (max-width: 900px) {
+      .split-grid,
+      .who-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="../pictures/Logos/whitebadgetransCK9s.png" alt="Crowned K9s Logo">
+        </a>
+      </div>
+      <input type="checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          <li class="has-dropdown">
+            <input type="checkbox" id="training-dropdown" class="dropdown-toggle" />
+            <label for="training-dropdown"><a href="/training">Training</a></label>
+            <ul class="dropdown">
+              <li><a href="/training">Training Programs</a></li>
+              <li><a href="/university">Crowned K9s University</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <input type="checkbox" id="placement-dropdown" class="dropdown-toggle" />
+            <label for="placement-dropdown"><a href="/premium-puppy-placement">Placement</a></label>
+            <ul class="dropdown">
+              <li><a href="/premium-puppy-placement">Premium Puppy Placement</a></li>
+              <li><a href="/foundations-program" class="active">Foundations Program</a></li>
+            </ul>
+          </li>
+          <li><a href="/boarding">Boarding</a></li>
+          <li><a href="/#schedule">Schedule</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:9198162426" class="header-cta-button">Text Lorenzo: 919-816-2426</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="foundations-page">
+    <section class="hero hero--light hero--pattern">
+      <div class="container">
+        <div>
+          <h1 class="reveal">Crowned K9s Foundations Program</h1>
+          <p class="reveal reveal-delay-1"><strong>Rescue and transitional pups developed through structure, stability, and foundational training before placement.</strong></p>
+          <p class="reveal reveal-delay-1">This lane is designed for puppies and young dogs entering from rescue or transitional situations. They are not placed as-is. Each dog enters our training system first so they can leave with clearer habits, better communication, and a stronger start in family life.</p>
+
+          <ul class="hero-bullets reveal reveal-delay-2">
+            <li>Rescue roots with professional training</li>
+            <li>Crate, leash, and household structure built in</li>
+            <li>Matched intentionally with the right home</li>
+          </ul>
+
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="/contact" class="cta-button">Ask About Foundations Dogs</a>
+            <a href="/premium-puppy-placement" class="button button-secondary">Learn About Premium Puppy Placement</a>
+          </div>
+        </div>
+        <div>
+          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Foundations training program" class="poster-img reveal reveal-delay-2">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="difference">
+      <div class="container">
+        <h2 class="section-title reveal" style="text-align:center;">Foundations vs. Premium Puppy Placement</h2>
+        <p class="section-subtext reveal reveal-delay-1" style="text-align:center;">Both lanes run through the Crowned K9s training system. They simply start from different backgrounds and goals.</p>
+
+        <div class="split-grid">
+          <article class="compare-card reveal reveal-delay-2">
+            <h3>Foundations Program</h3>
+            <ul class="compare-list">
+              <li>Rescue or transitional intake</li>
+              <li>Typically 3-4 weeks of foundational training and structure</li>
+              <li>Focus on stability, manners, and real-life living skills</li>
+              <li>More accessible investment level than Premium Puppy Placement</li>
+            </ul>
+          </article>
+
+          <article class="compare-card reveal reveal-delay-3">
+            <h3>Premium Puppy Placement</h3>
+            <ul class="compare-list">
+              <li>Purpose-bred, carefully selected puppies</li>
+              <li>Raised in-home with service-level foundation and advanced structure</li>
+              <li>Heavier training load and more included perks</li>
+              <li>Higher investment and more limited availability</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="development" style="background:#f8faf5;">
+      <div class="container">
+        <h2 class="section-title reveal" style="text-align:center;">Rescue + Development, Not Just Rehoming</h2>
+        <p class="section-subtext reveal reveal-delay-1" style="text-align:center;">We bring dogs into our program from rescue and transitional situations, then put them on a structured development plan before placement. The goal is to turn potential into stability.</p>
+
+        <div class="training-grid">
+          <article class="training-item reveal reveal-delay-1">
+            <h4>Crate training and calm indoor behavior</h4>
+            <p class="training-benefit">What this means for you: a dog who can settle at home without constant chaos.</p>
+          </article>
+          <article class="training-item reveal reveal-delay-2">
+            <h4>Potty structure and consistent routines</h4>
+            <p class="training-benefit">What this means for you: clearer daily rhythm and fewer avoidable accidents.</p>
+          </article>
+          <article class="training-item reveal reveal-delay-3">
+            <h4>Basic obedience and leash manners</h4>
+            <p class="training-benefit">What this means for you: smoother walks and easier day-to-day handling.</p>
+          </article>
+          <article class="training-item reveal reveal-delay-1">
+            <h4>Confidence building and real-life exposure</h4>
+            <p class="training-benefit">What this means for you: a dog better prepared for normal family environments.</p>
+          </article>
+          <article class="training-item reveal reveal-delay-2">
+            <h4>Clear communication markers</h4>
+            <p class="training-benefit">What this means for you: faster learning and less confusion for both of you.</p>
+          </article>
+          <article class="training-item reveal reveal-delay-3">
+            <h4>Doorway manners and people respect</h4>
+            <p class="training-benefit">What this means for you: safer greetings and better household boundaries.</p>
+          </article>
+          <article class="training-item reveal reveal-delay-2">
+            <h4>Early focus and impulse control</h4>
+            <p class="training-benefit">What this means for you: better decisions under distraction and calmer behavior.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="health">
+      <div class="container">
+        <h2 class="section-title reveal" style="text-align:center;">Clarity Through Testing and Vet Care</h2>
+        <p class="section-subtext reveal reveal-delay-1" style="text-align:center;">When appropriate, we include genetic testing to better understand breed mix and possible health considerations. Foundations dogs also receive vet evaluation, vaccinations, and deworming before placement. Our focus is transparency, not guarantees. We share what we know so families can make informed decisions.</p>
+        <div class="trust-note reveal reveal-delay-2">
+          We do not promise perfect outcomes. We provide honest information, structured development, and practical support so each placement starts on solid ground.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fit" style="background:#f8faf5;">
+      <div class="container">
+        <h2 class="section-title reveal" style="text-align:center;">Is the Foundations Program Right For You?</h2>
+        <div class="who-grid">
+          <article class="who-column reveal reveal-delay-1">
+            <h3>Foundations Program is great for:</h3>
+            <ul class="compare-list">
+              <li>Families who want to help a rescue dog succeed with structure</li>
+              <li>People who value training and are open to mixed-breed or rescue backgrounds</li>
+              <li>Homes looking for a more accessible investment than Premium Puppy Placement</li>
+              <li>Adopters who value transformation and second-chance placements</li>
+            </ul>
+          </article>
+          <article class="who-column reveal reveal-delay-2">
+            <h3>Premium Puppy Placement might be better if:</h3>
+            <ul class="compare-list">
+              <li>You want a very specific breed or temperament profile</li>
+              <li>You're looking for service or therapy potential</li>
+              <li>You want a puppy raised in-home from the very beginning with intensive structure</li>
+            </ul>
+          </article>
+        </div>
+        <p class="section-subtext reveal reveal-delay-3" style="text-align:center; margin-top:1.5rem;">Not sure which lane is right for you? <a href="/contact">Contact us</a> and we'll help you decide.</p>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <h2 class="section-title reveal" style="text-align:center;">How the Foundations Program Works</h2>
+        <div class="process-steps">
+          <article class="process-step reveal reveal-delay-1">
+            <div class="process-step-number">1</div>
+            <h4>Inquiry</h4>
+            <p>You reach out and share your home, goals, and what you're looking for.</p>
+          </article>
+          <article class="process-step reveal reveal-delay-2">
+            <div class="process-step-number">2</div>
+            <h4>Match & Fit Call</h4>
+            <p>We review available Foundations dog(s), temperament, and lifestyle fit.</p>
+          </article>
+          <article class="process-step reveal reveal-delay-3">
+            <div class="process-step-number">3</div>
+            <h4>Development Phase</h4>
+            <p>The dog continues in structured training (typically 3-4 weeks) while we prepare both dog and family.</p>
+          </article>
+          <article class="process-step reveal reveal-delay-1">
+            <div class="process-step-number">4</div>
+            <h4>Placement & Go-Home Session</h4>
+            <p>We transfer commands, structure, and routines so you can continue what we've built.</p>
+          </article>
+          <article class="process-step reveal reveal-delay-2">
+            <div class="process-step-number">5</div>
+            <h4>Follow-Up & Support</h4>
+            <p>We stay available for questions and, where applicable, follow-up training options.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dogs" style="background:#f8faf5;">
+      <div class="container">
+        <h2 class="section-title reveal" style="text-align:center;">Current & Past Foundations Dogs</h2>
+
+        <h3 class="subsection-title reveal reveal-delay-1">Current Foundations Dogs</h3>
+        <div class="card-grid" id="foundations-current-dogs"></div>
+
+        <h3 class="subsection-title reveal" style="margin-top:2.2rem;">Past Foundations Success Stories</h3>
+        <div class="card-grid" id="foundations-past-dogs"></div>
+        <p class="section-subtext reveal" style="text-align:center; margin-top:1rem;">We've also placed many pups through our <a href="/premium-puppy-placement#success">Premium Puppy Placement program</a>.</p>
+      </div>
+    </section>
+
+    <section class="contact-section foundations-cta">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div>
+            <h2>Ready to Learn More About the Foundations Program?</h2>
+            <p>This is a structured, training-first path to adopt a rescue or transitional dog with more stability from day one.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="/contact" class="button">Inquire About Foundations Dogs</a>
+            <a href="/premium-puppy-placement" class="button button-secondary">Compare With Premium Puppy Placement</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="social-links">
+        <a href="https://instagram.com/crownedk9s" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+        </a>
+        <a href="https://youtube.com/@crownedk9s" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2C0 7.9 0 12 0 12s0 4.1.5 5.8a3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 16.1 24 12 24 12s0-4.1-.5-5.8z"/></svg>
+        </a>
+        <a href="https://facebook.com/crownedk9s" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.4V12h2.4V9.7c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+      <p>© 2025 Crowned K9s</p>
+    </div>
+  </footer>
+
+  <script>
+    // Replace placeholder card data with real Foundations dogs and success stories.
+    const FOUNDATIONS_DATA = {
+      currentDogs: [
+        
+      ],
+      pastDogs: [
+        {
+          name: "Rocko",
+          breed: "French Bulldog",
+          status: "Placed",
+          image: "../pictures/PRP/rocko.jpg",
+          blurb: "\"Crowned k9s is awesome trained Rocko so he could be ready for his forever home he is so well mannered and Listens to commands and is potty trained I couldn’t ask for a better trainer! Thank you\" — Rocko's Family"
+        },
+        {
+          name: "Brutus",
+          breed: "American Staffordshire Terrier",
+          status: "Placed",
+          image: "../pictures/PRP/brutus.jpg",
+          blurb: "Placed through our Foundations Program and thriving in his forever home."
+        },
+        {
+          name: "Maple",
+          breed: "American Staffordshire Terrier",
+          status: "Placed",
+          image: "../pictures/PRP/maple.jpeg",
+          blurb: "Placed through our Foundations Program and thriving in her forever home."
+        }
+      ]
+    };
+
+    const renderDogCards = (items, targetId) => {
+      const container = document.getElementById(targetId);
+      if (!container) return;
+      container.innerHTML = items.map((dog) => `
+        <article class="dog-card reveal">
+          <img src="${dog.image}" alt="${dog.name} Foundations dog">
+          <h4>${dog.name}</h4>
+          ${dog.breed ? `<p class="subtext">${dog.breed}</p>` : ""}
+          <p>${dog.blurb}</p>
+          <span class="dog-status">${dog.status}</span>
+        </article>
+      `).join("");
+    };
+
+    (() => {
+      renderDogCards(FOUNDATIONS_DATA.currentDogs, "foundations-current-dogs");
+      renderDogCards(FOUNDATIONS_DATA.pastDogs, "foundations-past-dogs");
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealEls = document.querySelectorAll(".reveal");
+      if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+        revealEls.forEach((el) => el.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+      revealEls.forEach((el) => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
