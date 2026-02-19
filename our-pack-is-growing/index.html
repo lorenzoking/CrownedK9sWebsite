@@ -170,19 +170,14 @@
     /* Fund Cards Grid */
     .fund-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.5rem;
-      max-width: 900px;
+      max-width: 980px;
       margin: 0 auto;
     }
     
-    @media (max-width: 700px) {
-      .fund-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
     .fund-card {
+      position: relative;
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -195,6 +190,11 @@
     .fund-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .fund-card.is-funded {
+      border-color: rgba(72, 130, 89, 0.5);
+      background: linear-gradient(180deg, #ffffff 0%, rgba(72, 130, 89, 0.06) 100%);
     }
     
     .fund-card-icon {
@@ -223,6 +223,46 @@
       color: var(--pack-warm);
       margin-bottom: 1rem;
     }
+
+    .fund-progress {
+      margin-bottom: 1rem;
+    }
+
+    .fund-progress-track {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.09);
+      overflow: hidden;
+    }
+
+    .fund-progress-fill {
+      display: block;
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pack-warm) 0%, #d2b98f 100%);
+      transition: width 0.45s ease;
+    }
+
+    .fund-progress-meta {
+      margin: 0.5rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .fund-status-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #2e6f44;
+      background: rgba(72, 130, 89, 0.15);
+      border-radius: 999px;
+      padding: 0.35rem 0.65rem;
+      margin-bottom: 0.8rem;
+    }
     
     .fund-btn {
       display: block;
@@ -249,6 +289,21 @@
       text-align: center;
       margin-top: 0.75rem;
       font-style: italic;
+    }
+
+    .fund-item-link {
+      font-size: 0.82rem;
+      text-align: center;
+      margin-top: 0.7rem;
+      color: var(--pack-warm);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .fund-item-link:hover {
+      color: #b39561;
+      text-decoration: underline;
     }
     
     /* FAQ Section */
@@ -320,6 +375,10 @@
       .support-options {
         grid-template-columns: 1fr;
       }
+
+      .fund-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* Staggered animation delays for fund cards */
@@ -383,9 +442,9 @@
         <span class="pack-icon reveal">🐾</span>
         <h1 class="reveal reveal-delay-1">Our Pack Is Growing</h1>
         <p class="hero-subtext reveal reveal-delay-2">
-          We're expecting a new addition to the family! This page is a simple way for friends and family who want to help us prepare for our newest pack member. We're grateful for any support — it truly means the world to us.
+          We're so excited, our family is growing. If you'd like to help us get ready for our newest little one, this page is a simple way to do it. Every bit of love and support means the world to us.
         </p>
-        <a href="#support" class="pack-cta-btn reveal reveal-delay-3">How You Can Support</a>
+        <a href="#support" class="pack-cta-btn reveal reveal-delay-3">See How You Can Help</a>
       </div>
     </section>
 
@@ -395,41 +454,40 @@
     <section class="pack-section" id="support">
       <div class="container">
         <div class="pack-section-header">
-          <h2 class="pack-section-title reveal">How You Can Support</h2>
-          <p class="pack-section-subtitle reveal reveal-delay-1">A few simple options to help our family prepare.</p>
+          <h2 class="pack-section-title reveal">A Few Ways to Help</h2>
+          <p class="pack-section-subtitle reveal reveal-delay-1">The easiest option is a cash gift, but every type of support is appreciated.</p>
         </div>
         
         <div class="support-options">
           <!-- Option A: General Contribution -->
           <div class="support-card primary reveal reveal-delay-2">
             <div class="support-card-icon">💛</div>
-            <h3>Contribute Any Amount</h3>
-            <p>Your contribution helps with baby essentials, medical costs, and giving us time to rest and bond as a family.</p>
+            <h3>Send Some Love</h3>
+            <p>Every little bit helps us prepare for baby, from essentials to medical costs and time to rest and bond as a family.</p>
             <a href="https://example.com/stripe-general-contribution" 
                class="pack-cta-btn" 
                target="_blank" 
                rel="noopener noreferrer"
                aria-label="Make a general contribution via Stripe">
-              Contribute Now
+              Contribute Any Amount
             </a>
           </div>
           
           <!-- Option B: Zelle -->
           <div class="support-card reveal reveal-delay-3">
             <div class="support-card-icon">📱</div>
-            <h3>Send via Zelle</h3>
-            <p>For family and friends who prefer Zelle — quick, easy, and no fees.</p>
-            <div class="zelle-info">Zelle to: [email or phone placeholder]</div>
-            <span class="placeholder-note">Update with real Zelle info</span>
+            <h3>Zelle Us Directly</h3>
+            <p>Quick and easy with no fees. If you already use Zelle, this is the fastest way to help.</p>
+            <div class="zelle-info">Zelle tag: crownedk9s</div>
           </div>
           
           <!-- Option C: Specific Essentials -->
           <div class="support-card reveal reveal-delay-4">
             <div class="support-card-icon">🎁</div>
-            <h3>Fund Specific Essentials</h3>
-            <p>Help us fund specific big-ticket items we need. See the essentials below and choose what feels right.</p>
+            <h3>Help Fund a Specific Item</h3>
+            <p>Want your gift to go toward something specific? You can chip in to any item below and help us avoid duplicate purchases.</p>
             <a href="#funds" class="pack-cta-btn" style="background: transparent; color: var(--pack-warm); border: 2px solid var(--pack-warm);">
-              See Essentials
+              See Nursery Funds
             </a>
           </div>
         </div>
@@ -442,73 +500,149 @@
     <section class="pack-section" id="funds" style="background: #fff;">
       <div class="container">
         <div class="pack-section-header">
-          <h2 class="pack-section-title reveal">Help Fund Specific Essentials</h2>
-          <p class="pack-section-subtitle reveal reveal-delay-1">These are the bigger items that will make a real difference in our first weeks and months as a new family.</p>
+          <h2 class="pack-section-title reveal">Help Us Build the Nursery</h2>
+          <p class="pack-section-subtitle reveal reveal-delay-1">You can contribute any amount to a specific item fund. If you'd rather buy an item directly, use the item link and let us know so we can prevent duplicates.</p>
         </div>
         
         <div class="fund-grid">
-          <!-- Fund 1: Nursing Chair -->
-          <article class="fund-card reveal reveal-delay-2">
-            <div class="fund-card-icon">🪑</div>
-            <h4>Nursing Chair Fund</h4>
-            <p>A comfortable, supportive chair for late-night feedings and quiet bonding moments.</p>
-            <div class="fund-goal">Goal: $450</div>
-            <a href="https://example.com/stripe-nursing-chair-fund" 
-               class="fund-btn" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Nursing Chair Fund">
-              Fund This Purchase
-            </a>
-            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
-          </article>
-          
-          <!-- Fund 2: Bedside Bassinet -->
-          <article class="fund-card reveal reveal-delay-3">
+          <article class="fund-card reveal reveal-delay-2" data-fund-id="crib">
             <div class="fund-card-icon">🛏️</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Baby's First Bed Fund</h4>
+            <p>We're still deciding on the final crib model. This fund helps us cover the crib and setup without duplicate purchases.</p>
+            <div class="fund-goal">Goal: $849</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://example.com/stripe-crib-fund"
+               class="fund-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Baby's First Bed Fund">
+              Chip In
+            </a>
+            <a href="https://www.nestig.com/products/the-wave-crib?_pos=4&_sid=b3d3231ef&_ss=r&variant=34526002118824" class="fund-item-link" target="_blank" rel="noopener noreferrer">View one crib option</a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-3" data-fund-id="kiwiChair">
+            <div class="fund-card-icon">🪑</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Cozy Corner Chair Fund</h4>
+            <p>A comfy nursery chair for feedings, snuggles, and long newborn nights at home.</p>
+            <div class="fund-goal">Goal: $899</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://example.com/stripe-cozy-corner-chair-fund"
+               class="fund-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Cozy Corner Chair Fund">
+              Chip In
+            </a>
+            <a href="https://www.target.com/p/babyletto-kiwi-recliner-and-swivel-glider-performance-beach-eco-weave/-/A-1006652465" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-4" data-fund-id="nurseryGlider">
+            <div class="fund-card-icon">💺</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Nursery Glider Fund</h4>
+            <p>An extra glider option that gives us flexibility and comfort in our nursery setup.</p>
+            <div class="fund-goal">Goal: $550</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://example.com/stripe-nursery-glider-fund"
+               class="fund-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Nursery Glider Fund">
+              Chip In
+            </a>
+            <a href="https://a.co/d/06cYgtSB" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-5" data-fund-id="changingStation">
+            <div class="fund-card-icon">🧸</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Changing Station Fund</h4>
+            <p>A dedicated setup for safe diaper changes and organized daily essentials.</p>
+            <div class="fund-goal">Goal: $430</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://example.com/stripe-changing-station-fund"
+               class="fund-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Changing Station Fund">
+              Chip In
+            </a>
+            <a href="https://www.wayfair.com/baby-kids/pdp/millwood-pines-55-w-10-drawer-baby-changing-table-with-guardrail-and-anti-tip-kit-natural-finish-w116071078.html" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-6" data-fund-id="dresser">
+            <div class="fund-card-icon">🗄️</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Baby's Dresser Fund</h4>
+            <p>A roomy dresser to keep clothes, blankets, and nursery essentials organized from day one.</p>
+            <div class="fund-goal">Goal: $379</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://example.com/stripe-baby-dresser-fund"
+               class="fund-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Baby's Dresser Fund">
+              Chip In
+            </a>
+            <a href="https://www.ashleyfurniture.com/p/davinci_jayden_6_drawer_double_wide_dresser/B600000890.html" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-2" data-fund-id="bassinet">
+            <div class="fund-card-icon">🍼</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
             <h4>Bedside Bassinet Fund</h4>
-            <p>A safe, close-by sleeping space for baby's first months — right next to us.</p>
-            <div class="fund-goal">Goal: $250</div>
-            <a href="https://example.com/stripe-bassinet-fund" 
-               class="fund-btn" 
-               target="_blank" 
+            <p>Helps us keep baby close at night in a safe bedside sleeper during the early months.</p>
+            <div class="fund-goal">Goal: $190</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://example.com/stripe-bedside-bassinet-fund"
+               class="fund-btn"
+               target="_blank"
                rel="noopener noreferrer"
                aria-label="Contribute to the Bedside Bassinet Fund">
-              Fund This Purchase
+              Chip In
             </a>
-            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
+            <a href="https://a.co/d/0jd8FCsM" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
           </article>
-          
-          <!-- Fund 3: Everyday Essentials -->
-          <article class="fund-card reveal reveal-delay-4">
+
+          <article class="fund-card reveal reveal-delay-3" data-fund-id="essentials">
             <div class="fund-card-icon">🧷</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
             <h4>Everyday Essentials Fund</h4>
-            <p>Diapers, wipes, bottles, and all the little things that add up quickly.</p>
-            <div class="fund-goal">Goal: $300</div>
-            <a href="https://example.com/stripe-essentials-fund" 
-               class="fund-btn" 
-               target="_blank" 
+            <p>Diapers, wipes, bottles, postpartum care, and the little things that add up quickly.</p>
+            <div class="fund-goal">Goal: $500</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://example.com/stripe-everyday-essentials-fund"
+               class="fund-btn"
+               target="_blank"
                rel="noopener noreferrer"
                aria-label="Contribute to the Everyday Essentials Fund">
-              Fund This Purchase
+              Chip In
             </a>
-            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
-          </article>
-          
-          <!-- Fund 4: Recovery & Rest -->
-          <article class="fund-card reveal reveal-delay-5">
-            <div class="fund-card-icon">🌿</div>
-            <h4>Recovery & Rest Fund</h4>
-            <p>Postpartum support, meal delivery, and recovery items to help mom heal and rest.</p>
-            <div class="fund-goal">Goal: $400</div>
-            <a href="https://example.com/stripe-recovery-fund" 
-               class="fund-btn" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Recovery and Rest Fund">
-              Fund This Purchase
-            </a>
-            <p class="fund-affiliate-note">View item details (affiliate link coming soon)</p>
+            <p class="fund-affiliate-note">General fund for day-to-day needs.</p>
           </article>
         </div>
       </div>
@@ -526,22 +660,22 @@
         <div class="faq-list">
           <div class="faq-item reveal reveal-delay-1">
             <h4>Why a page instead of a traditional registry?</h4>
-            <p>We wanted something simple and flexible. This lets friends and family contribute in whatever way feels right — whether that's funding a specific item, sending Zelle, or just giving to the general fund. Less pressure, more heart.</p>
+            <p>We wanted to avoid duplicates and keep things simple. Fund contributions give us flexibility to buy exactly what we still need as we prepare for baby.</p>
           </div>
           
           <div class="faq-item reveal reveal-delay-2">
-            <h4>What happens if a fund goes over its goal?</h4>
-            <p>Any extra goes straight toward baby essentials, time off to bond as a family, and covering the unexpected costs that come with a new baby. Nothing wasted.</p>
+            <h4>Can I buy an item directly instead of funding it?</h4>
+            <p>Absolutely. Each card includes an item link, and we'd love that support too. Just let us know so we can update this page and avoid duplicate gifts.</p>
           </div>
           
           <div class="faq-item reveal reveal-delay-3">
-            <h4>Can I give a gift in another way?</h4>
-            <p>Of course! If you'd rather send something directly or give a gift in person, we'd love that too. This page is just one option — not the only one. Your thoughtfulness is what matters most.</p>
+            <h4>What happens if a fund goes over its goal?</h4>
+            <p>Any extra goes to baby essentials, medical costs, and time off so we can rest and bond as a family. Nothing goes to waste.</p>
           </div>
           
           <div class="faq-item reveal reveal-delay-4">
             <h4>Is there a deadline?</h4>
-            <p>No hard deadline. We're grateful for support whenever it arrives — before, during, or after baby gets here.</p>
+            <p>No hard deadline. We are grateful for support whenever it arrives, before, during, or after baby gets here.</p>
           </div>
         </div>
       </div>
@@ -578,32 +712,68 @@
 
   <!-- Scroll Animation Script -->
   <script>
+    const FUNDS = {
+      crib: { raised: 0, goal: 849 },
+      kiwiChair: { raised: 0, goal: 899 },
+      nurseryGlider: { raised: 0, goal: 550 },
+      changingStation: { raised: 0, goal: 430 },
+      dresser: { raised: 0, goal: 379 },
+      bassinet: { raised: 0, goal: 190 },
+      essentials: { raised: 0, goal: 500 }
+    };
+
+    const formatCurrency = (value) =>
+      new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+
+    const hydrateFundProgress = () => {
+      const fundCards = document.querySelectorAll('.fund-card[data-fund-id]');
+      fundCards.forEach((card) => {
+        const fundId = card.getAttribute('data-fund-id');
+        const fund = FUNDS[fundId];
+        if (!fund) return;
+
+        const raised = Number(fund.raised || 0);
+        const goal = Number(fund.goal || 0);
+        const percent = goal > 0 ? Math.min((raised / goal) * 100, 100) : 0;
+        const fill = card.querySelector('.fund-progress-fill');
+        const meta = card.querySelector('.fund-progress-meta');
+        const badge = card.querySelector('.fund-status-badge');
+
+        if (fill) fill.style.width = `${percent}%`;
+        if (meta) meta.textContent = `${formatCurrency(raised)} of ${formatCurrency(goal)} funded`;
+
+        if (raised >= goal && goal > 0) {
+          card.classList.add('is-funded');
+          if (badge) badge.hidden = false;
+        }
+      });
+    };
+
     (() => {
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReducedMotion) {
         document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
-        return;
+      } else {
+        const revealElements = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window) || revealElements.length === 0) {
+          revealElements.forEach((el) => el.classList.add('is-visible'));
+        } else {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+          );
+
+          revealElements.forEach((el) => observer.observe(el));
+        }
       }
-
-      const revealElements = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window) || revealElements.length === 0) {
-        revealElements.forEach((el) => el.classList.add('is-visible'));
-        return;
-      }
-
-      const observer = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
-      );
-
-      revealElements.forEach((el) => observer.observe(el));
+      hydrateFundProgress();
     })();
   </script>
 </body>
