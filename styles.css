@@ -612,6 +612,7 @@ main > section:first-of-type {
 main > section + section { margin-top: 2.5rem; }
 /* Premium Puppy Placement page: increase inter-section spacing */
 .rehoming-page > section + section { margin-top: 3rem; }
+.placement-page > section + section { margin-top: 3rem; }
 
 /* Facebook embed container */
 .fb-embed { display: flex; justify-content: center; max-width: 100%; overflow-x: hidden; }
@@ -643,6 +644,22 @@ html, body { overflow-x: hidden; }
 .crop-bottom { object-position: 50% 100%; clip-path: inset(50% 0 0 0); }
 /* Ensure CTA is not overlapped and add extra breathing room */
 .rehoming-cta { margin-top: 3rem; padding-top: 2.5rem; }
+.placement-cta { margin-top: 3rem; padding-top: 2.5rem; }
+/* Success section cross-link block */
+.success-cross-link-section {
+  margin-top: 0;
+}
+.success-cross-link {
+  width: 100%;
+  margin-top: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+  clear: both;
+}
+.success-cross-link .section-subtext {
+  margin: 0;
+}
 /* About hero background logo watermark */
 .about-hero { position: relative; overflow: hidden; }
 .about-hero::before {
@@ -972,6 +989,10 @@ html, body { overflow-x: hidden; }
     background: linear-gradient(135deg, var(--accent-orange), #f39c12);
     color: #fff;
     animation: pup-badge-glow 2.5s ease-in-out infinite alternate;
+}
+.pup-status--rehomed {
+    background: #5a6c5d;
+    color: #fff;
 }
 @keyframes pup-badge-glow {
     0% { box-shadow: 0 0 0 0 rgba(230,126,34,0.3); }
