@@ -457,11 +457,12 @@
             <div class="support-card-icon">💛</div>
             <h3>Send Some Love</h3>
             <p>Every little bit helps us prepare for baby, from essentials to medical costs and time to rest and bond as a family.</p>
-            <a href="https://example.com/stripe-general-contribution" 
+            <a href="#" 
                class="pack-cta-btn" 
                target="_blank" 
                rel="noopener noreferrer"
-               aria-label="Make a general contribution via Stripe">
+               aria-label="Make a general contribution via Stripe"
+               data-stripe-link="general">
               Contribute Any Amount
             </a>
           </div>
@@ -508,11 +509,12 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-crib-fund"
+            <a href="#"
                class="fund-btn"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Baby's First Bed Fund">
+               aria-label="Contribute to the Baby's First Bed Fund"
+               data-stripe-link="general">
               Chip In
             </a>
             <a href="https://www.nestig.com/products/the-wave-crib?_pos=4&_sid=b3d3231ef&_ss=r&variant=34526002118824" class="fund-item-link" target="_blank" rel="noopener noreferrer">View one crib option</a>
@@ -528,11 +530,12 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-cozy-corner-chair-fund"
+            <a href="#"
                class="fund-btn"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Cozy Corner Chair Fund">
+               aria-label="Contribute to the Cozy Corner Chair Fund"
+               data-stripe-link="nursingChair">
               Chip In
             </a>
             <a href="https://www.target.com/p/babyletto-kiwi-recliner-and-swivel-glider-performance-beach-eco-weave/-/A-1006652465" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
@@ -548,11 +551,12 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-nursery-glider-fund"
+            <a href="#"
                class="fund-btn"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Nursery Glider Fund">
+               aria-label="Contribute to the Nursery Glider Fund"
+               data-stripe-link="general">
               Chip In
             </a>
             <a href="https://a.co/d/06cYgtSB" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
@@ -568,11 +572,12 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-changing-station-fund"
+            <a href="#"
                class="fund-btn"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Changing Station Fund">
+               aria-label="Contribute to the Changing Station Fund"
+               data-stripe-link="general">
               Chip In
             </a>
             <a href="https://www.wayfair.com/baby-kids/pdp/millwood-pines-55-w-10-drawer-baby-changing-table-with-guardrail-and-anti-tip-kit-natural-finish-w116071078.html" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
@@ -588,11 +593,12 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-baby-dresser-fund"
+            <a href="#"
                class="fund-btn"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Baby's Dresser Fund">
+               aria-label="Contribute to the Baby's Dresser Fund"
+               data-stripe-link="general">
               Chip In
             </a>
             <a href="https://www.ashleyfurniture.com/p/davinci_jayden_6_drawer_double_wide_dresser/B600000890.html" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
@@ -608,11 +614,12 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-bedside-bassinet-fund"
+            <a href="#"
                class="fund-btn"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Bedside Bassinet Fund">
+               aria-label="Contribute to the Bedside Bassinet Fund"
+               data-stripe-link="bassinet">
               Chip In
             </a>
             <a href="https://a.co/d/0jd8FCsM" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
@@ -628,14 +635,36 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-everyday-essentials-fund"
+            <a href="#"
                class="fund-btn"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Everyday Essentials Fund">
+               aria-label="Contribute to the Everyday Essentials Fund"
+               data-stripe-link="essentials">
               Chip In
             </a>
             <p class="fund-affiliate-note">General fund for day-to-day needs.</p>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-4" data-fund-id="recoveryRest">
+            <div class="fund-card-icon">💛</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Recovery & Rest Fund</h4>
+            <p>Help support postpartum recovery, meals, and little comforts that give us room to rest and heal.</p>
+            <div class="fund-goal">Goal: $400</div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="#"
+               class="fund-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Recovery & Rest Fund"
+               data-stripe-link="recoveryRest">
+              Chip In
+            </a>
+            <p class="fund-affiliate-note">Supporting mom's recovery and family bonding time.</p>
           </article>
         </div>
       </div>
@@ -703,6 +732,9 @@
     </div>
   </footer>
 
+  <!-- Stripe Payment Link Config -->
+  <script src="ourPackConfig.js"></script>
+
   <!-- Scroll Animation Script -->
   <script>
     const FUNDS = {
@@ -712,7 +744,26 @@
       changingStation: { raised: 0, goal: 430 },
       dresser: { raised: 0, goal: 379 },
       bassinet: { raised: 0, goal: 190 },
-      essentials: { raised: 0, goal: 500 }
+      essentials: { raised: 0, goal: 500 },
+      recoveryRest: { raised: 0, goal: 400 }
+    };
+
+    const hydrateStripeLinks = () => {
+      const urls = window.OUR_PACK_STRIPE_URLS;
+      if (!urls) {
+        console.warn('OUR_PACK_STRIPE_URLS config not loaded');
+        return;
+      }
+      document.querySelectorAll('[data-stripe-link]').forEach((link) => {
+        const key = link.getAttribute('data-stripe-link');
+        const url = urls[key];
+        if (url && !url.includes('REPLACE_WITH')) {
+          link.href = url;
+        } else {
+          link.href = '#';
+          console.warn(`Stripe link "${key}" not configured yet`);
+        }
+      });
     };
 
     const formatCurrency = (value) =>
@@ -767,6 +818,7 @@
         }
       }
       hydrateFundProgress();
+      hydrateStripeLinks();
     })();
   </script>
 </body>
