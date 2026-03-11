@@ -306,11 +306,69 @@
 
           <div class="hero-actions reveal reveal-delay-3">
             <a href="/contact" class="cta-button">Ask About Foundations Dogs</a>
-            <a href="/premium-puppy-placement" class="button button-secondary">Learn About Premium Puppy Placement</a>
+            <a href="#current-foundations-dog" class="button button-secondary">Meet Cookie / Daisy</a>
           </div>
         </div>
         <div>
           <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Foundations training program" class="poster-img reveal reveal-delay-2">
+        </div>
+      </div>
+    </section>
+
+    <section class="pup-feature" id="current-foundations-dog">
+      <div class="container">
+        <div class="pup-feature-header reveal">
+          <h2 class="section-title">Meet Cookie / Daisy</h2>
+          <p class="section-subtext">Pit Mix · Female · Born December 22, 2025</p>
+          <div class="pup-status-group">
+            <span class="pup-status pup-status--coming">In Training</span>
+          </div>
+        </div>
+
+        <div class="pup-feature-grid">
+          <div class="pup-main-photo reveal">
+            <img src="../pictures/PRP/Cookie-Daisy/IMG_9203.jpeg" alt="Cookie or Daisy the Pit Mix puppy" class="lightbox-img" loading="lazy" />
+          </div>
+
+          <div class="pup-info reveal reveal-delay-1">
+            <p>Cookie / Daisy is a sweet little Pit Mix puppy who came to us from an accidental breeding situation that needed a safe, immediate solution before surrender became the next step.</p>
+            <p>She arrived tiny and needed veterinary care for worms that were holding back her weight gain, but she is now up to date on vaccinations, gaining ground, and building confidence more every day. She is affectionate, adorable, and progressing nicely inside the structure of our Foundations program.</p>
+
+            <div class="pup-skills">
+              <p class="pup-skills-title"><strong>She is currently being developed with:</strong></p>
+              <ul class="pup-skills-list">
+                <li>Confidence building and positive exposure</li>
+                <li>Crate comfort and household routines</li>
+                <li>Potty schedule and daily consistency</li>
+                <li>Leash comfort and gentle handling</li>
+                <li>Basic obedience foundations</li>
+                <li>Calmer recovery after new experiences</li>
+              </ul>
+            </div>
+
+            <div class="hero-actions">
+              <a href="/contact" class="cta-button">Ask About Cookie / Daisy</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pup-gallery pup-section-divider reveal">
+          <h3>Photos & Videos</h3>
+          <div class="pup-gallery-grid">
+            <img src="../pictures/PRP/Cookie-Daisy/IMG_9203.jpeg" alt="Cookie or Daisy puppy photo" class="lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Cookie-Daisy/IMG_9171.jpeg" alt="Cookie or Daisy puppy photo" class="lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Cookie-Daisy/IMG_9217.jpeg" alt="Cookie or Daisy puppy photo" class="lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Cookie-Daisy/IMG_1599.jpeg" alt="Cookie or Daisy puppy photo" class="lightbox-img" loading="lazy" />
+            <video controls playsinline preload="metadata" class="pup-video-vertical" poster="../pictures/PRP/Cookie-Daisy/IMG_9203.jpeg">
+              <source src="../pictures/PRP/Cookie-Daisy/IMG_9227.mp4" type="video/mp4" />
+            </video>
+            <video controls playsinline preload="metadata" class="pup-video-vertical" poster="../pictures/PRP/Cookie-Daisy/IMG_9217.jpeg">
+              <source src="../pictures/PRP/Cookie-Daisy/IMG_9233.mp4" type="video/mp4" />
+            </video>
+            <video controls playsinline preload="metadata" class="pup-video-vertical" poster="../pictures/PRP/Cookie-Daisy/IMG_9171.jpeg">
+              <source src="../pictures/PRP/Cookie-Daisy/IMG_9241.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </section>
@@ -480,6 +538,11 @@
     </section>
   </main>
 
+  <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="Full size image">
+  </div>
+
   <footer>
     <div class="footer-inner">
       <div class="social-links">
@@ -501,7 +564,13 @@
     // Replace placeholder card data with real Foundations dogs and success stories.
     const FOUNDATIONS_DATA = {
       currentDogs: [
-        
+        {
+          name: "Cookie / Daisy",
+          breed: "Pit Mix",
+          status: "In Training",
+          image: "../pictures/PRP/Cookie-Daisy/IMG_9203.jpeg",
+          blurb: "A rescued puppy from an accidental breeding situation who is gaining weight, building confidence, and settling into structure beautifully."
+        }
       ],
       pastDogs: [
         {
@@ -545,6 +614,27 @@
     (() => {
       renderDogCards(FOUNDATIONS_DATA.currentDogs, "foundations-current-dogs");
       renderDogCards(FOUNDATIONS_DATA.pastDogs, "foundations-past-dogs");
+
+      window.openLightbox = (src) => {
+        document.getElementById("lightbox-img").src = src;
+        document.getElementById("lightbox").classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+
+      window.closeLightbox = () => {
+        document.getElementById("lightbox").classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      document.querySelectorAll(".lightbox-img").forEach((img) => {
+        img.addEventListener("click", () => openLightbox(img.src));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+      });
 
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const revealEls = document.querySelectorAll(".reveal");
