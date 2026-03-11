@@ -686,6 +686,18 @@ html, body { overflow-x: hidden; }
   flex-shrink: 0;
   margin-top: 0;
 }
+.presentation-cta-bar .button,
+.presentation-cta-bar .cta-button {
+  background-color: var(--accent-orange);
+  color: var(--primary-dark);
+  border: 1px solid rgba(198, 151, 88, 0.7);
+}
+.presentation-cta-bar .button:hover,
+.presentation-cta-bar .cta-button:hover {
+  background-color: var(--accent-orange-dark);
+  border-color: var(--accent-orange-dark);
+  color: #ffffff;
+}
 /* Success section cross-link block */
 .success-cross-link-section {
   margin-top: 0;
