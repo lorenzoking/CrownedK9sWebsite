@@ -593,7 +593,41 @@ main > section:first-of-type {
 
 /* Split layout utility */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
-@media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
+.puppy-placement-split {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
+  gap: 1.75rem;
+}
+.puppy-placement-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.puppy-placement-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+.puppy-placement-card-body {
+  padding: 1.5rem 1.6rem 1.6rem;
+}
+.puppy-placement-card .button-secondary {
+  color: var(--primary-dark);
+  border: 2px solid #d1d5db;
+}
+.puppy-placement-card .button-secondary:hover {
+  border-color: var(--primary-dark);
+  background-color: rgba(0,0,0,0.02);
+}
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; }
+  .puppy-placement-card img {
+    height: 280px;
+  }
+}
 
 /* Boarding hero: full-bleed background with centered content */
 .hero.hero-boarding {
