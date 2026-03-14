@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="training-page">
   <header>
     <div class="header-container">
       <div class="logo-container">
@@ -73,6 +73,20 @@
   </header>
 
   <main>
+    <section class="program-finder-hero">
+      <div class="container program-finder-hero-grid program-finder-hero-grid--compact">
+        <div class="program-finder-hero-copy">
+          <p class="program-finder-eyebrow">Training Program Match</p>
+          <h1>Not sure which training program you need?</h1>
+          <p class="program-finder-lead">Answer 5 quick questions and we'll match you with the best Crowned K9s program for your dog.</p>
+          <div class="hero-actions">
+            <a href="/find-my-dogs-program" class="cta-button">Find My Dog's Program</a>
+          </div>
+          <p class="program-finder-note">This quiz lives on its own page so you can focus on the questions without the rest of the training page getting in the way.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- HERO -->
     <section class="hero">
       <div class="container">
@@ -133,7 +147,7 @@
       <div class="container">
         <h2 class="section-title">Pricing</h2>
         <div class="card-grid">
-          <article class="card">
+          <article class="card" id="transformation-program-card">
             <h3>Transformation Training Package</h3>
             <p class="subtext">One session per week, in person (Raleigh-Durham area)</p>
             <p class="subtext"><strong>3 sessions = 1 session/week for 3 weeks. 4 sessions = 1 session/week for 4 weeks.</strong></p>
@@ -148,22 +162,21 @@
               <p class="price">4 weeks: $550 total</p>
             </div>
           </article>
-          <article class="card">
-            <h3>Transformation Training Package - Online</h3>
-            <p class="subtext">One session per week via video call, geared toward puppies</p>
-            <p class="subtext"><strong>3 sessions = 1 session/week for 3 weeks. 4 sessions = 1 session/week for 4 weeks.</strong></p>
+          <article class="card" id="puppy-package-card">
+            <h3>3-4 Session Puppy Training Package</h3>
+            <p class="subtext">Weekly coaching for puppies—online from anywhere or in person in the Raleigh-Durham area.</p>
             <ul>
-              <li>Best for puppy foundations, manners, and early structure from anywhere in the world</li>
-              <li>Unlimited consultations during the package so you can check in between sessions</li>
-              <li>Training documentation with homework after every session to keep momentum week to week</li>
-              <li>For reactivity or aggression, we typically recommend in-person sessions so we can work directly with you and your dog</li>
+              <li>Best for puppy foundations, manners, and early structure</li>
+              <li>Unlimited consultations and homework after each session</li>
+              <li>For reactivity or aggression we recommend in-person; package details at consultation</li>
             </ul>
             <div class="price-group">
-              <p class="price">$100 per online session</p>
-              <p class="subtext" style="margin-top: 0.5rem;">Example: 3 sessions = $300 total | 4 sessions = $400 total</p>
+              <p class="price">Online: $100 per session</p>
+              <p class="subtext" style="margin-top: 0.25rem;">In person: $150 per session, or discounted 3- or 4-session package.</p>
+              <p class="subtext" style="margin-top: 0.5rem;">Schedule a consultation for package rates and full program details.</p>
             </div>
           </article>
-          <article class="card">
+          <article class="card" id="academy-program-card">
             <h3>Crowned K9s Academy</h3>
             <p class="subtext">Board & Train daily rate</p>
             <ul>
@@ -172,8 +185,9 @@
               <li>One‑on‑one attention (limited intake) instead of a crowded kennel feel</li>
               <li>Unlimited support for your dog's lifetime for long‑term peace of mind</li>
             </ul>
-            <p class="subtext">Save more when you book over a week.</p>
+            <p class="subtext">Save more when you book over two weeks.</p>
             <p class="price">$179 per day</p>
+            <p class="subtext" style="margin-top: 0.5rem;">2 weeks: <strong>$2,500</strong> · 3 weeks: <strong>$3,000</strong></p>
             <p class="subtext" style="margin-top: 0.5rem;">University Elite: <strong>$150/day</strong></p>
           </article>
           <article class="card">
@@ -243,21 +257,29 @@
       </div>
     </section>
 
-    <!-- PAST PUPPY CLASSES -->
+    <!-- PUPPY GROUP CLASSES -->
     <section id="past-puppy-classes">
       <div class="container">
-        <h2 class="section-title">Past Puppy Classes</h2>
+        <h2 class="section-title">Puppy Group Classes</h2>
         <p class="section-subtext">Small-group puppy classes hosted with local partners around Raleigh.</p>
-        <p>Our recent puppy classes helped families build fundamentals like focus, leash manners, calm around dogs and people, and confidence in a fun, supportive environment. They were perfect for puppies and families who wanted hands-on coaching and clear practice steps at home.</p>
-        <p>If you’re interested in being notified about the next puppy class, reach out and we’ll keep you in the loop.</p>
-        <div class="hero-posters">
-          <img src="../pictures/Posters/CK9GroupClassOakCity.png" alt="Past Puppy Class at Oak City" class="poster-img" />
-          <img src="../pictures/Posters/CK9GroupClassWoofGang.png" alt="Past Puppy Class at Woof Gang" class="poster-img" />
+
+        <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">Upcoming: March 21st at Woof Gang Wendell</h3>
+        <p>Join us for our next puppy group class at Woof Gang Wendell. Contact us to reserve your spot.</p>
+        <div class="hero-posters" style="margin-bottom: 2rem;">
+          <img src="../pictures/Posters/CK9GroupClass.pdf.png" alt="Puppy Group Class March 21st – Woof Gang Wendell" class="poster-img" loading="lazy" />
         </div>
-        <div class="hero-actions">
-          <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
+        <div class="hero-actions" style="margin-bottom: 2rem;">
+          <a href="/contact" class="cta-button">Reserve Your Spot</a>
           <a href="mailto:lorenzo@crownedk9s.com" class="button button-secondary">Email Us</a>
         </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">Past Classes</h3>
+        <p>Our recent puppy classes helped families build fundamentals like focus, leash manners, calm around dogs and people, and confidence in a fun, supportive environment.</p>
+        <div class="hero-posters">
+          <img src="../pictures/Posters/CK9GroupClassOakCity.png" alt="Past Puppy Class at Oak City" class="poster-img" loading="lazy" />
+          <img src="../pictures/Posters/CK9GroupClassWoofGang.png" alt="Past Puppy Class at Woof Gang" class="poster-img" loading="lazy" />
+        </div>
+        <p style="margin-top: 1rem;">Want to be notified about future classes? <a href="tel:9198162426">Text/Call 919-816-2426</a> or <a href="mailto:lorenzo@crownedk9s.com">email us</a>.</p>
       </div>
     </section>
 
