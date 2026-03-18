@@ -278,8 +278,31 @@ Requirements:
       timeLifestyle === "high_involvement" &&
       mainIssue !== "aggression_safety";
 
+    // Boarding train is recommended for two cases:
+    // 1) The situation is getting stressful/urgent AND involves serious behavior/safety (aggression/safety or leash reactivity/barking).
+    // 2) The owner picked `packed_schedule` (they'll be away / want training while the dog is away), even if the issue isn't "dangerous".
+    const selectedIssues = Array.isArray(answers.main_issue)
+      ? answers.main_issue
+      : answers.main_issue
+        ? [answers.main_issue]
+        : [];
+    const hasAggressionSafety = selectedIssues.some((issue) => issue.value === "aggression_safety");
+    const hasBarkingReactivity = selectedIssues.some((issue) => issue.value === "barking_reactivity");
+    const isGoingOutOfTown = timeLifestyle === "packed_schedule";
+    const needsBoardingTrain =
+      isGoingOutOfTown ||
+      ((urgency === "stressful" || urgency === "urgent") && (hasAggressionSafety || hasBarkingReactivity));
+
     let primaryProgram = "TRANSFORMATION";
     let secondaryPrograms = [];
+
+    if (needsBoardingTrain) {
+      return {
+        primaryProgram: "ACADEMY",
+        secondaryPrograms: [],
+        hasSingleSessionOption: false
+      };
+    }
 
     if (dogAge === "puppy") {
       primaryProgram = "PUPPY_PACKAGE";

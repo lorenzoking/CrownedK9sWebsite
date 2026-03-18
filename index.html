@@ -29,6 +29,92 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="pictures/Doggies/grouppic.jpg">
+
+  <!-- Home page lead magnet styling -->
+  <style>
+    .home-lead-magnet-section {
+      padding: 3rem 0;
+    }
+    .home-lead-magnet {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .home-lead-magnet h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+    .home-lead-magnet p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+    .home-lead-magnet ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      text-align: left;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .home-lead-magnet li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+    .home-lead-magnet li::before {
+      content: "✓";
+      color: var(--accent-orange);
+      font-weight: 800;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    .home-lead-magnet-form {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .home-lead-magnet-form input[type="email"] {
+      flex: 1;
+      min-width: 240px;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-dark);
+      font-size: 1rem;
+      outline: none;
+    }
+    .home-lead-magnet-form input[type="email"]::placeholder {
+      color: rgba(107,114,128,0.9);
+    }
+    @media (max-width: 520px) {
+      .home-lead-magnet-form {
+        flex-direction: column;
+      }
+      .home-lead-magnet-form input[type="email"] {
+        width: 100%;
+        min-width: 100%;
+      }
+      .home-lead-magnet {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -82,9 +168,9 @@
       <div class="container">
         <div>
           <h1 class="reveal">Welcome to Crowned K9s</h1>
-          <p class="reveal reveal-delay-1">We help family dogs become calm, confident companions. If walks are stressful, your arm is sore from pulling, you’re embarrassed by barking at people or dogs, or you’re worried about aggression, we’ll show you a clear path to change.</p>
+          <p class="reveal reveal-delay-1">Crowned K9s is a professional dog training team that helps family dogs build calm, confident behavior through Private Sessions, Transformation Training Packages, and Crowned K9s Academy board-and-train. Premium Puppy Placement (PPP) is our flagship placement lane—built on the same leadership-based system—so families who want a fully trained head start can bring home a puppy ready to thrive from day one.</p>
           <div class="hero-actions reveal reveal-delay-2">
-            <a href="/training" class="cta-button">Explore Training</a>
+            <a href="/premium-puppy-placement" class="cta-button">Explore Premium Puppy Placement</a>
             <a href="#services" class="button button-secondary">Our Services</a>
           </div>
         </div>
@@ -128,9 +214,9 @@
           </article>
           
           <article class="card reveal reveal-delay-2">
-            <h3>Premium Puppy Placement</h3>
-            <p class="subtext">Training-first rehoming for the right family fit.</p>
-            <p>We take in select puppies, put them through our Crowned K9s Academy, and place them with loving, prepared families ready for a well-started dog.</p>
+            <h3>Placement Services</h3>
+            <p class="subtext">Training-first placement through PPP and Foundations Rescue.</p>
+            <p>Our team develops select puppies through our Crowned K9s Academy board-and-train system, then matches them with loving, prepared families—whether it's a Premium Puppy Placement (PPP) pup or a structured Foundations rescue placement.</p>
           </article>
 
           
@@ -146,10 +232,10 @@
           </article>
 
           <article class="card reveal">
-            <h3>Boarding & Drop‑Ins</h3>
-            <p class="subtext">Personal, low-volume care.</p>
-            <p>Comfortable, structured boarding on our peaceful 1‑acre property for both trained and new dogs.</p>
-            <p>Daily enrichment and low‑volume care so your dog gets personal attention while you’re away.</p>
+            <h3>Boarding</h3>
+            <p class="subtext">Training-forward, structured boarding.</p>
+            <p>Comfortable, structured boarding on our peaceful 1‑acre property for dogs who need dependable care and daily enrichment while you’re away.</p>
+            <p>Low-volume, personal attention so training momentum stays on track.</p>
             <div class="hero-actions">
               <a href="/boarding" class="button button-secondary">Boarding Details</a>
             </div>
@@ -186,6 +272,30 @@
       </div>
     </section>
 
+
+    <!-- LEAD MAGNET (Homepage) -->
+    <section class="home-lead-magnet-section reveal" id="puppy-chaos-guide">
+      <div class="container">
+        <div class="home-lead-magnet">
+          <h3>Skip the Worst 6 Months of Puppy Chaos</h3>
+          <p>What Smart Families Do Instead — a free guide.</p>
+          <ul>
+            <li>The reality of the first 6 months (and why most families struggle)</li>
+            <li>What a well-started puppy actually looks like (crate, leash, place, recall)</li>
+            <li>Your two paths: train from scratch or start with a trained puppy</li>
+          </ul>
+          <p style="margin-top:0.25rem; color: var(--text-dark);">Crowned K9s is training-first—and Premium Puppy Placement (PPP) is built on that same system.</p>
+          <form class="home-lead-magnet-form" action="https://formsubmit.co/lorenzo@crownedk9s.com" method="POST">
+            <input type="hidden" name="_subject" value="Lead Magnet Request - Skip the Worst 6 Months" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="email" name="email" placeholder="Your email" required />
+            <button type="submit" class="cta-button" style="border:none; cursor:pointer; white-space:nowrap;">Send Me the Guide</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
     <!-- PUPPY PLACEMENT - CURRENT PUPS (PPP + Foundations) -->
     <section class="gallery reveal">
       <div class="container">
@@ -196,9 +306,9 @@
             <img src="pictures/PRP/Kobe/IMG_9118.jpeg" alt="Kobe the Golden Retriever puppy" class="gallery-img" loading="lazy" decoding="async" />
             <div class="puppy-placement-card-body">
               <p class="pill" style="margin:0 0 0.5rem;">Premium Puppy Placement</p>
-              <h3 class="section-title" style="font-size:1.5rem; margin:0 0 0.35rem;">Kobe – Available Now</h3>
-              <p class="section-subtext" style="margin:0 0 0.5rem;">Golden Retriever · Male · Born December 2025</p>
-              <p style="margin:0;">Kobe is the newest puppy in our Premium Puppy Placement program and is being developed through our full training-first process for families who want to start ahead.</p>
+              <h3 class="section-title" style="font-size:1.5rem; margin:0 0 0.35rem;">Kobe – Ready for Adoption</h3>
+              <p class="section-subtext" style="margin:0 0 0.5rem;">Golden Retriever · Male · Born December 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
+              <p style="margin:0;">Kobe is officially ready for his new home. He is fully trained with structure from day one, so his family can step into a calmer, well-started routine from day one.</p>
               <div class="hero-actions" style="margin-top:0.9rem;">
                 <a href="/contact" class="cta-button">Inquire About Kobe</a>
                 <a href="/premium-puppy-placement#current" class="button button-secondary">See PPP Details</a>
@@ -211,7 +321,7 @@
             <div class="puppy-placement-card-body">
               <p class="pill" style="margin:0 0 0.5rem;">Foundations Rescue Program</p>
               <h3 class="section-title" style="font-size:1.5rem; margin:0 0 0.35rem;">Stella – In Training</h3>
-              <p class="section-subtext" style="margin:0 0 0.5rem;">Pit Mix · Female · Born December 22, 2025</p>
+              <p class="section-subtext" style="margin:0 0 0.5rem;">Pit Mix · Female · Born December 22, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-22"></span></p>
               <p style="margin:0;">Stella is a rescued puppy in our Crowned K9s Foundations Rescue, gaining weight, confidence, and structure after coming from an urgent accidental breeding situation.</p>
               <div class="hero-actions" style="margin-top:0.9rem;">
                 <a href="/contact" class="cta-button">Ask About Stella</a>
@@ -294,6 +404,34 @@
       );
 
       revealElements.forEach((el) => observer.observe(el));
+    })();
+
+    // Update pup "weeks old" dynamically from their birthdates.
+    // Using Math.ceil matches your requested example (12 weeks / 13 weeks).
+    (() => {
+      const els = document.querySelectorAll('.pup-age-weeks[data-birthdate]');
+      if (!els.length) return;
+
+      const calcWeeksOld = (birthdateISO) => {
+        const birth = new Date(`${birthdateISO}T00:00:00Z`);
+        const now = new Date();
+        const diffMs = now - birth;
+        const diffDays = diffMs / 86400000;
+        if (Number.isNaN(diffDays) || diffDays < 0) return 0;
+        return Math.ceil(diffDays / 7);
+      };
+
+      const render = () => {
+        els.forEach((el) => {
+          const birth = el.getAttribute('data-birthdate');
+          const weeks = calcWeeksOld(birth);
+          el.textContent = `${weeks} week${weeks === 1 ? '' : 's'} old`;
+        });
+      };
+
+      render();
+      // Re-render once per day so it stays accurate without code updates.
+      window.setInterval(render, 24 * 60 * 60 * 1000);
     })();
   </script>
 </body>

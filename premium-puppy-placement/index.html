@@ -46,8 +46,8 @@
       display: flex;
       align-items: flex-start;
       gap: 0.75rem;
-      font-size: 1.05rem;
-      line-height: 1.5;
+      font-size: 1rem;
+      line-height: 1.45;
     }
     .hero-outcome-bullets li::before {
       content: "✓";
@@ -61,6 +61,43 @@
       color: var(--muted);
       margin-top: 1rem;
       font-style: italic;
+    }
+    .hero-support-highlight {
+      margin: 1rem 0 1.25rem;
+      padding: 0.95rem 1rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+    .hero-support-highlight h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+    .hero-support-highlight ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .hero-support-highlight li {
+      font-size: 0.94rem;
+      color: var(--text-dark);
+      line-height: 1.45;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+    }
+    .hero-support-highlight li::before {
+      content: "•";
+      color: var(--accent-orange);
+      font-weight: 700;
+      margin-top: 1px;
+      flex-shrink: 0;
     }
     
     /* Value Table Section */
@@ -597,7 +634,17 @@
             <li><strong>Sleep through the night</strong> — a calm crate routine is already established</li>
             <li><strong>Clear communication</strong> — foundational obedience established so daily life is easier for both of you</li>
             <li><strong>Potty habits underway</strong> — fewer accidents and less stress from day one</li>
+            <li><strong>Built-in support after go-home</strong> — 2 follow-up training sessions + University Elite access</li>
           </ul>
+
+          <div class="hero-support-highlight">
+            <h3>What Happens After Go-Home</h3>
+            <ul>
+              <li>2 follow-up training sessions are included and scheduled.</li>
+              <li>Automatic Crowned K9s University Elite enrollment.</li>
+              <li>Private community, lifetime training support, and discounts.</li>
+            </ul>
+          </div>
           
           <div class="hero-actions">
             <a href="/contact" class="cta-button">Inquire / Apply</a>
@@ -747,7 +794,7 @@
                 <td>✓ Yes</td>
               </tr>
               <tr>
-                <td><span class="value-item-name">2 Follow-Up Private Sessions</span></td>
+                <td><span class="value-item-name">2 Follow-Up Training Sessions (scheduled after go-home)</span></td>
                 <td><span class="value-item-value">$300</span></td>
                 <td>✓ Yes</td>
               </tr>
@@ -767,7 +814,7 @@
                 <td>✓ Included</td>
               </tr>
               <tr>
-                <td><span class="value-item-name">University Elite Pricing / Lifetime Trained-Dog Perks</span></td>
+                <td><span class="value-item-name">University Elite Auto-Enrollment (private community + lifetime support + discounts)</span></td>
                 <td><span class="value-item-value">$10 per month and $160 per month</span></td>
                 <td>✓ Included</td>
               </tr>
@@ -797,7 +844,7 @@
             </div>
             <div class="value-card">
               <div class="value-card-header">
-                <span class="value-card-name">2 Follow-Up Private Sessions</span>
+                <span class="value-card-name">2 Follow-Up Training Sessions</span>
                 <span class="value-card-included">✓ Included</span>
               </div>
               <p class="value-card-value">Typical value: $300</p>
@@ -825,7 +872,7 @@
             </div>
             <div class="value-card">
               <div class="value-card-header">
-                <span class="value-card-name">University Elite Pricing / Lifetime Trained-Dog Perks</span>
+                <span class="value-card-name">University Elite Auto-Enrollment</span>
                 <span class="value-card-included">✓ Included</span>
               </div>
               <p class="value-card-value">Typical value: $10 per month and $160 per month</p>
@@ -899,7 +946,7 @@
           <div class="process-step">
             <div class="process-step-number">5</div>
             <h4>Follow-Up & Support</h4>
-            <p>Your follow-up sessions are scheduled, and you have direct trainer access for questions.</p>
+            <p>Your follow-up sessions are scheduled, and you&rsquo;re auto-enrolled into University Elite for a private community, lifetime training support, and discounts—plus direct trainer access for questions.</p>
           </div>
         </div>
         
@@ -918,9 +965,9 @@
       <div class="container">
         <div class="pup-feature-header reveal">
           <h2 class="section-title">Meet Kobe</h2>
-          <p class="section-subtext">Golden Retriever · Male · Born December 29, 2025</p>
+          <p class="section-subtext">Golden Retriever · Male · Born December 29, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
           <div class="pup-status-group">
-            <span class="pup-status pup-status--available">Available Now</span>
+            <span class="pup-status pup-status--ready">Ready for Adoption</span>
           </div>
         </div>
 
@@ -933,16 +980,17 @@
 
           <!-- Info -->
           <div class="pup-info reveal reveal-delay-1">
-            <p>Kobe is the newest addition to our Premium Puppy Placement program and is being raised with structure from day one.</p>
-            <p>He is going through our full Crowned K9s Academy process so his future family can bring home a puppy with clearer communication, better routines, and a calmer start.</p>
+            <p>Kobe has officially finished our <strong>Crowned K9s Academy</strong> program and is ready for adoption. He’s trained through the same leadership-based system Crowned K9s uses to transform dogs every day, applied from day one so his family can step into a calmer, well-started routine from day one.</p>
+            <p>His completed command set includes <strong>Sit, Down, Place</strong>, <strong>Recall</strong>, <strong>crate confidence</strong>, <strong>potty structure with “Hurry Up”</strong>, <strong>loose-leash comfort</strong>, <strong>doorway manners + impulse control</strong>, and <strong>clear Yes/Good/Break/Okay communication</strong>.</p>
             
             <div class="pup-skills">
-              <p class="pup-skills-title"><strong>He is being developed with:</strong></p>
+              <p class="pup-skills-title"><strong>Already trained with:</strong></p>
               <ul class="pup-skills-list">
                 <li>Sit, Down, Place</li>
+                <li>Yes / Good / Break / Okay communication markers</li>
                 <li>Crate comfort and sleep routines</li>
                 <li>Recall (Come when called)</li>
-                <li>Potty structure and consistency</li>
+                <li>Potty structure with “Hurry Up” and consistency</li>
                 <li>Leash comfort & leash pressure</li>
                 <li>Impulse control & doorway manners</li>
               </ul>
@@ -958,6 +1006,9 @@
         <div class="pup-gallery pup-section-divider reveal">
           <h3>Photos</h3>
           <div class="pup-gallery-grid">
+            <video controls playsinline preload="metadata" poster="../pictures/PRP/Kobe/kobeimpulsecontrol-thumb.jpg" class="pup-video-vertical reveal-gallery">
+              <source src="../pictures/PRP/Kobe/kobeimpulsecontrol.mp4" type="video/mp4" />
+            </video>
             <img src="../pictures/PRP/Kobe/IMG_9003.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
             <img src="../pictures/PRP/Kobe/IMG_9020.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
             <img src="../pictures/PRP/Kobe/IMG_9112.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
@@ -1180,6 +1231,34 @@
 
       const firstGalleryItem = document.querySelector('.pup-gallery-grid .reveal-gallery');
       if (firstGalleryItem) galleryObserver.observe(firstGalleryItem);
+    })();
+
+    // Update pup "weeks old" dynamically from their birthdates.
+    // Uses Math.ceil so it matches your requested example (12 weeks / 13 weeks).
+    (() => {
+      const els = document.querySelectorAll(".pup-age-weeks[data-birthdate]");
+      if (!els.length) return;
+
+      const calcWeeksOld = (birthdateISO) => {
+        const birth = new Date(`${birthdateISO}T00:00:00Z`);
+        const now = new Date();
+        const diffMs = now - birth;
+        const diffDays = diffMs / 86400000;
+        if (Number.isNaN(diffDays) || diffDays < 0) return 0;
+        return Math.ceil(diffDays / 7);
+      };
+
+      const render = () => {
+        els.forEach((el) => {
+          const birth = el.getAttribute("data-birthdate");
+          const weeks = calcWeeksOld(birth);
+          el.textContent = `${weeks} week${weeks === 1 ? "" : "s"} old`;
+        });
+      };
+
+      render();
+      // Re-render once per day so it stays accurate without code updates.
+      window.setInterval(render, 24 * 60 * 60 * 1000);
     })();
   </script>
 </body>

@@ -205,6 +205,56 @@
       padding: 0 0 5rem;
     }
 
+    .lead-magnet-block {
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .lead-magnet-form input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+    @media (max-width: 500px) {
+      .lead-magnet-form {
+        flex-direction: column !important;
+      }
+      .lead-magnet-form input {
+        min-width: 100% !important;
+      }
+      .lead-magnet-form button {
+        width: 100%;
+      }
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .faq-item {
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .faq-item h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+    }
+    .faq-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+    .faq-item p a {
+      color: var(--accent-orange);
+      font-weight: 500;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(14px);
@@ -284,33 +334,33 @@
       <div class="container">
         <div class="presentation-cta-bar">
           <div>
-            <p class="presentation-cta-eyebrow">Start With the Overview</p>
-            <p class="presentation-cta-copy">See the full placement presentation first if you want a quick walkthrough of both Foundations and Premium Puppy Placement before choosing a path.</p>
+            <p class="presentation-cta-eyebrow">Placement Overview</p>
+            <p class="presentation-cta-copy">Want a quick walkthrough of both placement lanes first? Watch the presentation before exploring Foundations details.</p>
           </div>
           <a href="/ppp-presentation" class="button button-secondary">Watch the Placement Presentation</a>
         </div>
       </div>
     </section>
+
     <section class="hero hero--light hero--pattern">
       <div class="container">
         <div>
           <h1 class="reveal">Crowned K9s Foundations Rescue</h1>
-          <p class="reveal reveal-delay-1"><strong>Rescue and transitional pups developed through structure, stability, and foundational training before placement.</strong></p>
-          <p class="reveal reveal-delay-1">This lane is designed for puppies and young dogs entering from rescue or transitional situations. They are not placed as-is. Each dog enters our training system first so they can leave with clearer habits, better communication, and a stronger start in family life.</p>
+          <p class="reveal reveal-delay-1"><strong>A rescue-first, training-first placement program.</strong> Every Foundations pup enters structure before placement. We focus on stability, communication, and day-to-day manners so each dog can transition into family life with a stronger start.</p>
 
           <ul class="hero-bullets reveal reveal-delay-2">
-            <li>Rescue roots with professional training</li>
-            <li>Crate, leash, and household structure built in</li>
-            <li>Matched intentionally with the right home</li>
+            <li>Rescue and transitional pups are developed before placement</li>
+            <li>Crate routine, potty rhythm, leash handling, and household structure are built in</li>
+            <li>Each placement includes one follow-up training session after go-home</li>
           </ul>
 
           <div class="hero-actions reveal reveal-delay-3">
-            <a href="/contact" class="cta-button">Ask About Foundations Dogs</a>
-            <a href="#current-foundations-dog" class="button button-secondary">Meet Stella</a>
+            <a href="/contact" class="cta-button">Inquire About Foundations Rescue</a>
+            <a href="#current-foundations-dog" class="button button-secondary">Meet Our Current Foundations Pup</a>
           </div>
         </div>
         <div>
-          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Foundations training program" class="poster-img reveal reveal-delay-2">
+          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Foundations Rescue training program" class="poster-img reveal reveal-delay-2">
         </div>
       </div>
     </section>
@@ -319,7 +369,7 @@
       <div class="container">
         <div class="pup-feature-header reveal">
           <h2 class="section-title">Meet Stella</h2>
-          <p class="section-subtext">Pit Mix · Female · Born December 22, 2025</p>
+          <p class="section-subtext">Pit Mix · Female · Born December 22, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-22"></span></p>
           <div class="pup-status-group">
             <span class="pup-status pup-status--coming">In Training</span>
           </div>
@@ -373,34 +423,6 @@
       </div>
     </section>
 
-    <section class="section" id="difference">
-      <div class="container">
-        <h2 class="section-title reveal" style="text-align:center;">Foundations vs. Premium Puppy Placement</h2>
-        <p class="section-subtext reveal reveal-delay-1" style="text-align:center;">Both lanes run through the Crowned K9s training system. They simply start from different backgrounds and goals.</p>
-
-        <div class="split-grid">
-          <article class="compare-card reveal reveal-delay-2">
-            <h3>Foundations Rescue</h3>
-            <ul class="compare-list">
-              <li>Rescue or transitional intake</li>
-              <li>Typically 3-4 weeks of foundational training and structure</li>
-              <li>Focus on stability, manners, and real-life living skills</li>
-              <li>More accessible investment level than Premium Puppy Placement</li>
-            </ul>
-          </article>
-
-          <article class="compare-card reveal reveal-delay-3">
-            <h3>Premium Puppy Placement</h3>
-            <ul class="compare-list">
-              <li>Purpose-bred, carefully selected puppies</li>
-              <li>Raised in-home with service-level foundation and advanced structure</li>
-              <li>Heavier training load and more included perks</li>
-              <li>Higher investment and more limited availability</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="development" style="background:#f8faf5;">
       <div class="container">
@@ -452,27 +474,28 @@
 
     <section class="section" id="fit" style="background:#f8faf5;">
       <div class="container">
-        <h2 class="section-title reveal" style="text-align:center;">Is Crowned K9s Foundations Rescue Right For You?</h2>
+        <h2 class="section-title reveal" style="text-align:center;">Who Foundations Rescue Is Built For</h2>
         <div class="who-grid">
           <article class="who-column reveal reveal-delay-1">
-            <h3>Foundations Rescue is great for families who want to change a rescue dog's story:</h3>
+            <h3>Great fit for families who want a rescue dog with a stronger start:</h3>
             <ul class="compare-list">
-              <li>Families who want to help a rescue dog succeed with structure</li>
-              <li>People who value training and are open to mixed-breed or rescue backgrounds</li>
-              <li>Homes looking for a more accessible investment than Premium Puppy Placement</li>
-              <li>Adopters who value transformation and second-chance placements</li>
+              <li>Families who believe in second-chance placements with structure</li>
+              <li>Homes that want calm daily routines, crate rhythm, and household boundaries already started</li>
+              <li>People who value training and want clear transfer guidance at go-home</li>
+              <li>Adopters who want continued support through one follow-up training session</li>
             </ul>
           </article>
           <article class="who-column reveal reveal-delay-2">
-            <h3>Premium Puppy Placement might be better if:</h3>
+            <h3>What to expect from Foundations pups:</h3>
             <ul class="compare-list">
-              <li>You want a very specific breed or temperament profile</li>
-              <li>You're looking for service or therapy potential</li>
-              <li>You want a puppy raised in-home from the very beginning with intensive structure</li>
+              <li>Rescue or transitional background, developed before placement</li>
+              <li>Visible progress in confidence, handling, and real-life manners</li>
+              <li>Transparent updates on health, temperament, and development</li>
+              <li>Intentional matching based on home fit and lifestyle</li>
             </ul>
           </article>
         </div>
-        <p class="section-subtext reveal reveal-delay-3" style="text-align:center; margin-top:1.5rem;">Not sure which lane is right for you? <a href="/contact">Contact us</a> and we'll help you decide.</p>
+        <p class="section-subtext reveal reveal-delay-3" style="text-align:center; margin-top:1.5rem;">If you are considering Foundations Rescue, <a href="/contact">contact us</a> and we will walk you through fit, timeline, and next steps.</p>
       </div>
     </section>
 
@@ -503,7 +526,7 @@
           <article class="process-step reveal reveal-delay-2">
             <div class="process-step-number">5</div>
             <h4>Follow-Up & Support</h4>
-            <p>We stay available for questions and, where applicable, follow-up training options.</p>
+            <p>After placement, your Foundations package includes one follow-up training session to reinforce transfer at home and keep progress moving.</p>
           </article>
         </div>
       </div>
@@ -518,7 +541,7 @@
 
         <h3 class="subsection-title reveal" style="margin-top:2.2rem;">Past Foundations Success Stories</h3>
         <div class="card-grid" id="foundations-past-dogs"></div>
-        <p class="section-subtext reveal" style="text-align:center; margin-top:1rem;">We've also placed many pups through our <a href="/premium-puppy-placement#success">Premium Puppy Placement program</a>.</p>
+        <p class="section-subtext reveal" style="text-align:center; margin-top:1rem;">Every Foundations dog listed here was developed through structure, handling, and real-world training before placement.</p>
       </div>
     </section>
 
@@ -531,7 +554,7 @@
           </div>
           <div class="cta-actions">
             <a href="/contact" class="button">Inquire About Foundations Dogs</a>
-            <a href="/premium-puppy-placement" class="button button-secondary">Compare With Premium Puppy Placement</a>
+            <a href="#current-foundations-dog" class="button button-secondary">See Current Foundations Pup</a>
           </div>
         </div>
       </div>
@@ -653,6 +676,34 @@
       }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
 
       revealEls.forEach((el) => observer.observe(el));
+    })();
+
+    // Update pup "weeks old" dynamically from their birthdates.
+    // Uses Math.ceil so it matches your requested example (12 weeks / 13 weeks).
+    (() => {
+      const els = document.querySelectorAll(".pup-age-weeks[data-birthdate]");
+      if (!els.length) return;
+
+      const calcWeeksOld = (birthdateISO) => {
+        const birth = new Date(`${birthdateISO}T00:00:00Z`);
+        const now = new Date();
+        const diffMs = now - birth;
+        const diffDays = diffMs / 86400000;
+        if (Number.isNaN(diffDays) || diffDays < 0) return 0;
+        return Math.ceil(diffDays / 7);
+      };
+
+      const render = () => {
+        els.forEach((el) => {
+          const birth = el.getAttribute("data-birthdate");
+          const weeks = calcWeeksOld(birth);
+          el.textContent = `${weeks} week${weeks === 1 ? "" : "s"} old`;
+        });
+      };
+
+      render();
+      // Re-render once per day so it stays accurate without code updates.
+      window.setInterval(render, 24 * 60 * 60 * 1000);
     })();
   </script>
 </body>

@@ -1232,10 +1232,10 @@ html, body { overflow-x: hidden; }
 .pup-gallery-grid video {
     background: #000;
 }
-/* Vertical (portrait) video - show full frame, no crop */
+/* Match image tiles in the gallery grid (symmetry over full-frame portrait). */
 .pup-gallery-grid video.pup-video-vertical {
-    aspect-ratio: 9 / 16;
-    object-fit: contain;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 /* ── Facebook video link tile ────────────── */
 .pup-gallery-grid .pup-video-link {

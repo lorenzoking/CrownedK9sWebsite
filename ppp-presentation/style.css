@@ -269,6 +269,69 @@ h3 {
   gap: 0.65rem;
 }
 
+.lead-magnet-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.lead-magnet-label {
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.lead-magnet-input {
+  width: 100%;
+  border: 1px solid rgba(196, 165, 116, 0.32);
+  background: rgba(8, 10, 15, 0.65);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.72rem 0.82rem;
+}
+
+.lead-magnet-input::placeholder {
+  color: rgba(165, 173, 186, 0.75);
+}
+
+.lead-magnet-submit {
+  justify-self: start;
+}
+
+.lead-magnet-note {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.faq-grid {
+  margin-top: 1.35rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.faq-card {
+  background: linear-gradient(180deg, rgba(18, 23, 33, 0.9), rgba(8, 10, 15, 0.95));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.2rem;
+}
+
+.faq-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.faq-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .story-groups {
   margin-top: 1.8rem;
   display: grid;
@@ -511,7 +574,8 @@ h3 {
   .benefit-grid,
   .inclusion-layout,
   .current-grid,
-  .pup-grid--large {
+  .pup-grid--large,
+  .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -541,8 +605,13 @@ h3 {
   .current-grid,
   .pup-grid,
   .pup-grid--large,
-  .path-choice-row {
+  .path-choice-row,
+  .faq-grid {
     grid-template-columns: 1fr;
+  }
+
+  .lead-magnet-submit {
+    width: 100%;
   }
 
   .slide-dots {
