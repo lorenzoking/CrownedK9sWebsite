@@ -7,7 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx http-server -p 4173 . -c-1",
+    "test:playbook": "npx playwright test tests/kobe-playbook.spec.ts"
   },
   "keywords": [],
   "author": "",

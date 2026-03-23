@@ -161,6 +161,127 @@
       line-height: 1.45;
     }
 
+    .value-section {
+      padding: 4rem 0;
+      background: linear-gradient(180deg, #f8faf5 0%, #ffffff 100%);
+    }
+    .value-table-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .value-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .value-table thead {
+      background: var(--primary-dark);
+      color: var(--text-light);
+    }
+    .value-table th {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .value-table th:last-child {
+      text-align: center;
+      width: 100px;
+    }
+    .value-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .value-table td:last-child {
+      text-align: center;
+      font-weight: 600;
+      color: #27ae60;
+    }
+    .value-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .value-table tbody tr:hover {
+      background: rgba(166,207,111,0.08);
+    }
+    .value-item-name {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .value-item-value {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .value-summary {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+      color: var(--text-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .value-summary-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .value-summary-item {
+      text-align: center;
+    }
+    .value-summary-label {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-bottom: 0.25rem;
+    }
+    .value-summary-amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .value-summary-note {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+    .value-cards {
+      display: none;
+    }
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .value-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .value-card-name {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .value-card-included {
+      background: #e8f5e9;
+      color: #27ae60;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .value-card-value {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.35rem;
+    }
+
     .subsection-title {
       margin: 0 0 0.8rem;
       font-size: 1.4rem;
@@ -274,6 +395,14 @@
         grid-template-columns: 1fr;
       }
     }
+    @media (max-width: 600px) {
+      .value-table {
+        display: none !important;
+      }
+      .value-cards {
+        display: block !important;
+      }
+    }
     @media (prefers-reduced-motion: reduce) {
       .reveal {
         opacity: 1;
@@ -346,7 +475,7 @@
       <div class="container">
         <div>
           <h1 class="reveal">Crowned K9s Foundations Rescue</h1>
-          <p class="reveal reveal-delay-1"><strong>A rescue-first, training-first placement program.</strong> Every Foundations pup enters structure before placement. We focus on stability, communication, and day-to-day manners so each dog can transition into family life with a stronger start.</p>
+          <p class="reveal reveal-delay-1"><strong>A rescue-first, training-first placement program.</strong> Every Foundations pup enters structure before placement. We focus on stability, communication, and day-to-day manners so each dog can transition into family life with a stronger start. <strong>Right now, Stella is our top priority to rehome.</strong></p>
 
           <ul class="hero-bullets reveal reveal-delay-2">
             <li>Rescue and transitional pups are developed before placement</li>
@@ -371,6 +500,7 @@
           <h2 class="section-title">Meet Stella</h2>
           <p class="section-subtext">Pit Mix · Female · Born December 22, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-22"></span></p>
           <div class="pup-status-group">
+            <span class="pup-status pup-status--priority">Our #1 Placement Focus</span>
             <span class="pup-status pup-status--coming">In Training</span>
           </div>
         </div>
@@ -528,6 +658,104 @@
             <h4>Follow-Up & Support</h4>
             <p>After placement, your Foundations package includes one follow-up training session to reinforce transfer at home and keep progress moving.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-section" id="foundations-investment">
+      <div class="container">
+        <h2 class="section-title reveal" style="text-align: center;">Foundations Investment & Included Value</h2>
+        <p class="section-subtext reveal reveal-delay-1" style="text-align: center;">Same transparent format as PPP: what is included, what it is worth, and what families actually pay.</p>
+
+        <div class="value-table-wrapper reveal reveal-delay-2">
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Included Item</th>
+                <th>Typical Value</th>
+                <th>Included?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="value-item-name">Rescue / Transitional Dog Placement</span></td>
+                <td><span class="value-item-value">$400 - $900</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Structured Development (crate, potty rhythm, leash, household manners)</span></td>
+                <td><span class="value-item-value">$1,500 - $2,500</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Vet Intake + Up-to-Date Vaccinations / Deworming</span></td>
+                <td><span class="value-item-value">$200 - $450</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Go-Home Transfer Session + One Follow-Up Training Session</span></td>
+                <td><span class="value-item-value">$250 - $400</span></td>
+                <td>✓ Yes</td>
+              </tr>
+              <tr>
+                <td><span class="value-item-name">Placement Matching + Ongoing Transition Support</span></td>
+                <td><span class="value-item-value">$150 - $300</span></td>
+                <td>✓ Included</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="value-cards">
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Rescue / Transitional Dog Placement</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $400 - $900</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Structured Development (crate, potty rhythm, leash, manners)</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $1,500 - $2,500</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Vet Intake + Vaccinations / Deworming</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $200 - $450</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Go-Home Transfer + One Follow-Up Session</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $250 - $400</p>
+            </div>
+            <div class="value-card">
+              <div class="value-card-header">
+                <span class="value-card-name">Matching + Transition Support</span>
+                <span class="value-card-included">✓ Included</span>
+              </div>
+              <p class="value-card-value">Typical value: $150 - $300</p>
+            </div>
+          </div>
+
+          <div class="value-summary">
+            <div class="value-summary-row">
+              <div class="value-summary-item">
+                <p class="value-summary-label">Estimated Included Value (not the fee)</p>
+                <p class="value-summary-amount">$2,500 - $4,000</p>
+              </div>
+              <div class="value-summary-item">
+                <p class="value-summary-label">Foundations Placement Fee (actual price)</p>
+                <p class="value-summary-amount">$1,300 - $2,000</p>
+              </div>
+            </div>
+            <p class="value-summary-note">Foundations is our lower-cost placement lane while still including structured development, vet prep, and hands-on transfer support before and after go-home.</p>
+          </div>
         </div>
       </div>
     </section>

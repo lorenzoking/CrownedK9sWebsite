@@ -1081,6 +1081,10 @@ html, body { overflow-x: hidden; }
     background: #5a6c5d;
     color: #fff;
 }
+.pup-status--priority {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    color: #fff;
+}
 @keyframes pup-badge-glow {
     0% { box-shadow: 0 0 0 0 rgba(230,126,34,0.3); }
     100% { box-shadow: 0 0 12px 4px rgba(230,126,34,0.25); }

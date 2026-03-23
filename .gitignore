@@ -1,0 +1,6 @@
+.DS_Store
+.cursor/
+test-results/
+
+# Large local media (exceeds GitHub 100MB limit) — host elsewhere or use Git LFS
+pictures/PRP/Kobe/kobeimpulsecontrol.MOV
