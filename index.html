@@ -303,7 +303,7 @@
         <p class="section-subtext" style="text-align:center;">Two different lanes, same training-first standard. <strong>Right now, Stella (Foundations) is our main focus to rehome.</strong> Our next Premium Puppy Placement is a male Golden Retriever expected in April.</p>
         <div class="split puppy-placement-split">
           <article class="puppy-placement-card">
-            <img src="pictures/PRP/Stella/IMG_9203.jpeg" alt="Stella the Pit Mix puppy" class="gallery-img" loading="lazy" decoding="async" />
+            <img src="pictures/PRP/Stella/IMG_9545.jpg" alt="Stella the Pit Mix puppy" class="gallery-img" loading="lazy" decoding="async" />
             <div class="puppy-placement-card-body">
               <p class="pill" style="margin:0 0 0.5rem;">Foundations Rescue Program</p>
               <h3 class="section-title" style="font-size:1.5rem; margin:0 0 0.35rem;">Stella – Our Main Placement Focus</h3>
@@ -321,7 +321,7 @@
             <div class="puppy-placement-card-body">
               <p class="pill" style="margin:0 0 0.5rem;">Premium Puppy Placement</p>
               <h3 class="section-title" style="font-size:1.5rem; margin:0 0 0.35rem;">Kobe – Placed (Most Recent PPP)</h3>
-              <p class="section-subtext" style="margin:0 0 0.5rem;">Golden Retriever · Male · Born December 29, 2025</p>
+              <p class="section-subtext" style="margin:0 0 0.5rem;">Golden Retriever · Male · Born December 29, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
               <p style="margin:0;">Kobe has officially gone to his forever home—our most recent Premium Puppy Placement success. A male Golden Retriever is next in our PPP lane, expected in <strong>April</strong>. <strong>PPP placement fees run $3,000–$5,000</strong> depending on the pup and training, with an estimated <strong>$6,000–$7,000</strong> in bundled value—including a 1-week board & train you can use before his first birthday.</p>
               <div class="hero-actions" style="margin-top:0.9rem;">
                 <a href="/contact" class="cta-button">Ask About April PPP Pup</a>
@@ -407,18 +407,21 @@
     })();
 
     // Update pup "weeks old" dynamically from their birthdates.
-    // Using Math.ceil matches your requested example (12 weeks / 13 weeks).
+    // Calculate completed weeks from local calendar dates for stable age display.
     (() => {
       const els = document.querySelectorAll('.pup-age-weeks[data-birthdate]');
       if (!els.length) return;
 
       const calcWeeksOld = (birthdateISO) => {
-        const birth = new Date(`${birthdateISO}T00:00:00Z`);
+        const parts = birthdateISO.split('-').map(Number);
+        if (parts.length !== 3 || parts.some(Number.isNaN)) return 0;
+        const birth = new Date(parts[0], parts[1] - 1, parts[2]);
         const now = new Date();
-        const diffMs = now - birth;
-        const diffDays = diffMs / 86400000;
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const diffMs = today - birth;
+        const diffDays = Math.floor(diffMs / 86400000);
         if (Number.isNaN(diffDays) || diffDays < 0) return 0;
-        return Math.ceil(diffDays / 7);
+        return Math.floor(diffDays / 7);
       };
 
       const render = () => {

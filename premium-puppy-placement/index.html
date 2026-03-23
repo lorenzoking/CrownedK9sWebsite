@@ -1009,7 +1009,7 @@
       <div class="container">
         <div class="pup-feature-header reveal">
           <h2 class="section-title">Kobe — Placed (Most Recent PPP)</h2>
-          <p class="section-subtext">Golden Retriever · Male · Born December 29, 2025</p>
+          <p class="section-subtext">Golden Retriever · Male · Born December 29, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
           <div class="pup-status-group">
             <span class="pup-status pup-status--rehomed">Placed · Forever Home</span>
           </div>
@@ -1278,18 +1278,21 @@
     })();
 
     // Update pup "weeks old" dynamically from their birthdates.
-    // Uses Math.ceil so it matches your requested example (12 weeks / 13 weeks).
+    // Calculate completed weeks from local calendar dates for stable age display.
     (() => {
       const els = document.querySelectorAll(".pup-age-weeks[data-birthdate]");
       if (!els.length) return;
 
       const calcWeeksOld = (birthdateISO) => {
-        const birth = new Date(`${birthdateISO}T00:00:00Z`);
+        const parts = birthdateISO.split('-').map(Number);
+        if (parts.length !== 3 || parts.some(Number.isNaN)) return 0;
+        const birth = new Date(parts[0], parts[1] - 1, parts[2]);
         const now = new Date();
-        const diffMs = now - birth;
-        const diffDays = diffMs / 86400000;
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const diffMs = today - birth;
+        const diffDays = Math.floor(diffMs / 86400000);
         if (Number.isNaN(diffDays) || diffDays < 0) return 0;
-        return Math.ceil(diffDays / 7);
+        return Math.floor(diffDays / 7);
       };
 
       const render = () => {

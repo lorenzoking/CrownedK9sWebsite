@@ -149,12 +149,12 @@
         <p class="eyebrow">Placement Focus</p>
         <div class="current-grid">
           <div class="current-media">
-            <img src="../pictures/PRP/Stella/IMG_9203.jpeg" alt="Stella the Pit Mix puppy">
+            <img src="../pictures/PRP/Stella/IMG_9545.jpg" alt="Stella the Pit Mix puppy">
           </div>
           <div class="current-copy">
             <span class="status-pill">Top Priority</span>
             <h2>Meet Stella — Foundations Rescue</h2>
-            <p class="current-meta">Pit Mix • Female • Born December 22, 2025</p>
+            <p class="current-meta">Pit Mix • Female • Born December 22, 2025 • <span class="pup-age-weeks" data-birthdate="2025-12-22"></span></p>
             <p>
               Stella is our <strong>main placement focus right now</strong>. She is a Foundations rescue pup being developed with structure,
               communication, and calmer daily routines before she goes home.
@@ -163,6 +163,7 @@
               <li>Confidence, crate routine, and potty rhythm</li>
               <li>Leash comfort and gentle handling</li>
               <li>Basic obedience foundations</li>
+              <li>Health screening + genetic testing completed before placement</li>
               <li>One follow-up training session included after placement</li>
             </ul>
             <div class="current-foundations">
@@ -180,7 +181,7 @@
               <img src="../pictures/PRP/Kobe/KobeHome.jpg" alt="Kobe placed with his adopter" class="current-foundations-thumb">
               <div>
                 <h3>Most recent PPP: Kobe — placed</h3>
-                <p class="current-meta">Golden Retriever • Male • Crowned K9s Academy graduate</p>
+                <p class="current-meta">Golden Retriever • Male • Born Dec 29, 2025 • <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
                 <p>
                   Kobe is officially <strong>home with his forever family</strong>—our most recent Premium Puppy Placement success.
                 </p>
@@ -301,5 +302,34 @@
   </main>
 
   <script src="script.js"></script>
+  <script>
+    (() => {
+      const els = document.querySelectorAll('.pup-age-weeks[data-birthdate]');
+      if (!els.length) return;
+
+      const calcWeeksOld = (birthdateISO) => {
+        const parts = birthdateISO.split('-').map(Number);
+        if (parts.length !== 3 || parts.some(Number.isNaN)) return 0;
+        const birth = new Date(parts[0], parts[1] - 1, parts[2]);
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const diffMs = today - birth;
+        const diffDays = Math.floor(diffMs / 86400000);
+        if (Number.isNaN(diffDays) || diffDays < 0) return 0;
+        return Math.floor(diffDays / 7);
+      };
+
+      const render = () => {
+        els.forEach((el) => {
+          const birth = el.getAttribute('data-birthdate');
+          const weeks = calcWeeksOld(birth);
+          el.textContent = `${weeks} week${weeks === 1 ? '' : 's'} old`;
+        });
+      };
+
+      render();
+      window.setInterval(render, 24 * 60 * 60 * 1000);
+    })();
+  </script>
 </body>
 </html>
