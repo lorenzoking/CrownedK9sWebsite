@@ -194,6 +194,8 @@
     @media (max-width: 600px) {
       .value-table { display: none !important; }
       .value-cards { display: block !important; }
+      .coming-soon-grid,
+      .parents-media-grid { grid-template-columns: 1fr; }
     }
     .value-card {
       background: var(--surface);
@@ -367,6 +369,173 @@
     }
     .pricing-note strong {
       color: var(--accent-orange);
+    }
+
+    .coming-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-orange);
+      margin: 0 0 0.65rem;
+    }
+    .coming-intro {
+      max-width: 760px;
+      margin: 0.85rem auto 0;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .coming-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .coming-pup-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      height: 100%;
+    }
+    .coming-pup-card--featured {
+      border-color: rgba(230,126,34,0.35);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    }
+    .coming-pup-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(230,126,34,0.2);
+      background: linear-gradient(135deg, rgba(27,58,95,0.06) 0%, rgba(166,207,111,0.12) 100%);
+    }
+    .coming-pup-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .coming-pup-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .coming-pup-header h3 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .coming-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .coming-status--reserved {
+      background: #eef1f4;
+      color: #4f5f70;
+      border: 1px solid #d7dde5;
+    }
+    .coming-status--available {
+      background: #fff3e9;
+      color: #9a4a00;
+      border: 1px solid #ffd2a8;
+    }
+    .coming-pup-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .coming-pup-card p {
+      margin: 0;
+      line-height: 1.65;
+      color: var(--text-dark);
+    }
+    .coming-owen-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+    .parents-media-block {
+      margin-top: 2.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .parents-media-block h3 {
+      margin: 0 0 0.5rem;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .parents-media-copy {
+      max-width: 760px;
+      margin: 0 auto 1.25rem;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .parents-names-line {
+      max-width: 760px;
+      margin: 0 auto 0.85rem;
+      text-align: center;
+      color: var(--text-dark);
+      line-height: 1.65;
+    }
+    .parents-health-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.35rem 1rem;
+      margin: 0 auto 1.25rem;
+      max-width: 760px;
+      font-size: 0.95rem;
+    }
+    .parents-health-links a {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .parents-media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+    .parents-media-item {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .parents-media-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .parents-media-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #111;
+    }
+    .coming-cta-block {
+      margin-top: 2rem;
+    }
+    @media (max-width: 900px) {
+      .coming-soon-grid,
+      .parents-media-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* ─────────────────────────────────────────────
@@ -649,10 +818,10 @@
           
           <div class="hero-actions">
             <a href="/contact" class="cta-button">Inquire / Apply</a>
-            <a href="#next-ppp" class="button button-secondary">Next PPP Pup (April)</a>
+            <a href="#next-ppp" class="button button-secondary">Meet Charlie &amp; Owen</a>
           </div>
           <p class="hero-cta-note">Placement fee reflects the puppy + training + included support.</p>
-          <p class="hero-cta-note" style="margin-top:0.65rem;">Kobe, our most recent Premium Puppy Placement, is now in his forever home. Our <strong>next PPP pup</strong> is a male Golden Retriever expected in <strong>April</strong>. For our <strong>main placement focus right now</strong>, see <a href="/foundations-program#current-foundations-dog">Stella in Foundations Rescue</a>.</p>
+          <p class="hero-cta-note" style="margin-top:0.65rem;">Our <strong>next featured PPP puppies</strong> are Golden Retriever brothers <strong>Charlie and Owen</strong>. Charlie is already reserved, and Owen is the remaining opportunity for a family wanting a Crowned K9s PPP head start. Recent PPP graduate <strong>Kobe</strong> is featured with our other success stories below. For our <strong>main placement focus right now</strong>, see <a href="/foundations-program#current-foundations-dog">Stella in Foundations Rescue</a>.</p>
         </div>
         <div>
           <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="poster-img" onclick="openLightbox(this.src)" />
@@ -973,98 +1142,81 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         NEXT PPP PUP (APRIL)
+         NEXT PPP LITTER - CHARLIE & OWEN
     ════════════════════════════════════════════════════════════ -->
     <section class="pup-feature" id="next-ppp">
       <div class="container">
         <div class="pup-feature-header reveal">
-          <h2 class="section-title">Next in Premium Puppy Placement</h2>
-          <p class="section-subtext">Male Golden Retriever · Expected <strong>April</strong></p>
-          <div class="pup-status-group">
-            <span class="pup-status pup-status--coming">Coming Soon</span>
-          </div>
+          <p class="coming-kicker">Coming Soon to PPP</p>
+          <h2 class="section-title">Meet Charlie &amp; Owen</h2>
+          <p class="coming-intro">Two Golden Retriever brothers are the next puppies entering our Premium Puppy Placement lane. Charlie is already reserved, and Owen is the remaining brother we&rsquo;ll be developing through the Crowned K9s training-first process before placement.</p>
         </div>
-        <div class="pup-feature-grid">
-          <div class="pup-main-photo reveal">
-            <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="lightbox-img" loading="lazy" />
-            <span class="photo-hint">Next PPP pup details will be posted as we get closer</span>
-          </div>
-          <div class="pup-info reveal reveal-delay-1">
-            <p>Our <strong>next Premium Puppy Placement</strong> will be a <strong>male Golden Retriever</strong>, expected to enter the program around <strong>April</strong>. He will be raised with the same structure, communication, and Crowned K9s Academy foundation as our previous PPP pups.</p>
-            <p><strong>Investment typically ranges from $3,000 to $5,000</strong> depending on the pup and training level, with an estimated <strong>$6,000–$7,000</strong> in bundled value—including a <strong>1-week board & train credit</strong> you can redeem anytime before his first birthday.</p>
-            <p>If you want first access to updates, fit questions, and placement timing, reach out now and we’ll add you to the conversation.</p>
+
+        <div class="coming-soon-grid">
+          <article class="coming-pup-card reveal">
+            <div class="coming-pup-media">
+              <img src="../pictures/PRP/Charlie/charliewalk.jpg" alt="Charlie, a Golden Retriever puppy, walking outdoors" width="1200" height="900" loading="lazy" decoding="async">
+            </div>
+            <div class="coming-pup-header">
+              <div>
+                <h3>Charlie</h3>
+                <p class="coming-pup-meta">Golden Retriever · Male</p>
+              </div>
+              <span class="coming-status coming-status--reserved">Reserved</span>
+            </div>
+            <p>Charlie has already found his family and is officially reserved. We&rsquo;re still featuring him here because he is part of this special brother pair and gives families a look at the next puppies entering our PPP process.</p>
+          </article>
+
+          <article class="coming-pup-card coming-pup-card--featured reveal reveal-delay-1">
+            <div class="coming-pup-media">
+              <img src="../pictures/PRP/Owen/charlie&amp;owen.JPG" alt="Charlie and Owen together; Owen is the golden with lighter patches around his eyes and nose" width="1200" height="900" loading="lazy" decoding="async">
+            </div>
+            <div class="coming-pup-header">
+              <div>
+                <h3>Owen</h3>
+                <p class="coming-pup-meta">Golden Retriever · Male</p>
+              </div>
+              <span class="coming-status coming-status--available">Coming Soon · Inquiries Open</span>
+            </div>
+            <p class="coming-owen-note">In photos of the brothers together, <strong>Owen</strong> is the golden with the lighter &ldquo;mask&rdquo; around his eyes and nose.</p>
+            <p>Owen is Charlie&rsquo;s brother and the remaining puppy from the litter. He will be entering our Premium Puppy Placement process and developed with the same structure, communication, and training-first foundation that defines Crowned K9s PPP.</p>
+            <p>For the family who moves forward with Owen, this is not just bringing home a puppy. It is bringing home a calmer start, clearer communication, and a structured head start through Crowned K9s training.</p>
             <div class="hero-actions">
-              <a href="/contact" class="cta-button">Ask About the April PPP Pup</a>
-              <a href="/foundations-program#current-foundations-dog" class="button button-secondary">Our main focus: Stella (Foundations)</a>
+              <a href="/contact" class="cta-button">Inquire About Owen</a>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         MOST RECENT PPP PLACEMENT – KOBE (PLACED)
-    ════════════════════════════════════════════════════════════ -->
-    <section class="pup-feature" id="recent-placement">
-      <div class="container">
-        <div class="pup-feature-header reveal">
-          <h2 class="section-title">Kobe — Placed (Most Recent PPP)</h2>
-          <p class="section-subtext">Golden Retriever · Male · Born December 29, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
-          <div class="pup-status-group">
-            <span class="pup-status pup-status--rehomed">Placed · Forever Home</span>
-          </div>
+          </article>
         </div>
 
-        <div class="pup-feature-grid">
-          <!-- Main Photo -->
-          <div class="pup-main-photo reveal">
-          <img src="../pictures/PRP/Kobe/KobeHome.jpg" alt="Kobe with his adopter and Crowned K9s trainer at go-home" class="lightbox-img" loading="lazy" />
-            <span class="photo-hint">Click to enlarge</span>
+        <div class="parents-media-block reveal reveal-delay-2">
+          <h3>Meet the Parents</h3>
+          <p class="parents-media-copy">Both brothers come from health-tested parents and a well-cared-for background.</p>
+          <p class="parents-names-line"><strong>Summer</strong> (mom) is the darker golden; <strong>Cooper</strong> (dad) is the classic lighter golden.</p>
+          <p class="parents-health-links">
+            <span>Health testing (Wisdom Panel):</span>
+            <a href="https://www.wisdompanel.com/app/s/nc0q2mz" target="_blank" rel="noopener noreferrer">Cooper (dad)</a>
+            <span aria-hidden="true">&middot;</span>
+            <a href="https://www.wisdompanel.com/app/s/51lhdz9" target="_blank" rel="noopener noreferrer">Summer (mom)</a>
+          </p>
+          <div class="parents-media-grid">
+            <div class="parents-media-item">
+              <img src="../pictures/PRP/charlieandowenparents/dadandmom.jpg" alt="Cooper and Summer, Golden Retriever parents—Summer is the darker golden and Cooper the lighter" width="1200" height="900" loading="lazy" decoding="async">
+            </div>
+            <div class="parents-media-item">
+              <video controls playsinline preload="metadata" poster="../pictures/PRP/charlieandowenparents/dadandmom.jpg" aria-label="Charlie and Owen&rsquo;s parents playing">
+                <source src="../pictures/PRP/charlieandowenparents/parentsplaying.MP4" type="video/mp4">
+              </video>
+            </div>
           </div>
 
-          <!-- Info -->
-          <div class="pup-info reveal reveal-delay-1">
-            <p>Kobe has officially finished our <strong>Crowned K9s Academy</strong> program and is now <strong>home with his forever family</strong>—our most recent Premium Puppy Placement success. He was trained through the same leadership-based system Crowned K9s uses every day, so his family could step into a calmer, well-started routine from day one.</p>
-            <p>His completed command set includes <strong>Sit, Down, Place</strong>, <strong>Recall</strong>, <strong>crate confidence</strong>, <strong>potty structure with “Hurry Up”</strong>, <strong>loose-leash comfort</strong>, <strong>doorway manners + impulse control</strong>, and <strong>clear Yes/Good/Break/Okay communication</strong>.</p>
-            
-            <div class="pup-skills">
-              <p class="pup-skills-title"><strong>He left with:</strong></p>
-              <ul class="pup-skills-list">
-                <li>Sit, Down, Place</li>
-                <li>Yes / Good / Break / Okay communication markers</li>
-                <li>Crate comfort and sleep routines</li>
-                <li>Recall (Come when called)</li>
-                <li>Potty structure with “Hurry Up” and consistency</li>
-                <li>Leash comfort & leash pressure</li>
-                <li>Impulse control & doorway manners</li>
-              </ul>
-            </div>
-            
+          <div class="cta-block coming-cta-block">
+            <h3>Interested in Owen?</h3>
+            <p>Inquire about Owen&rsquo;s Premium Puppy Placement and we&rsquo;ll walk you through fit, timing, and next steps.</p>
             <div class="hero-actions">
-              <a href="/contact" class="cta-button">Ask About the Next PPP Pup</a>
+              <a href="/contact" class="button">Ask About Owen</a>
+              <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
             </div>
           </div>
         </div>
-
-        <!-- Photo & Video Gallery -->
-        <div class="pup-gallery pup-section-divider reveal">
-          <h3>Photos &amp; videos from his time with us</h3>
-          <div class="pup-gallery-grid">
-            <video controls playsinline preload="metadata" poster="../pictures/PRP/Kobe/kobeimpulsecontrol-thumb.jpg" class="pup-video-vertical reveal-gallery">
-              <source src="../pictures/PRP/Kobe/kobeimpulsecontrol.mp4" type="video/mp4" />
-            </video>
-            <img src="../pictures/PRP/Kobe/IMG_9003.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
-            <img src="../pictures/PRP/Kobe/IMG_9020.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
-            <img src="../pictures/PRP/Kobe/IMG_9112.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
-            <img src="../pictures/PRP/Kobe/IMG_9118.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
-            <img src="../pictures/PRP/Kobe/IMG_9259.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
-            <img src="../pictures/PRP/Kobe/IMG_9287.jpeg" alt="Kobe Golden Retriever puppy photo" class="lightbox-img reveal-gallery" loading="lazy" />
-            <video controls playsinline preload="metadata" class="pup-video-vertical reveal-gallery">
-              <source src="../pictures/PRP/Kobe/IMG_9233.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -1077,6 +1229,16 @@
         <p class="section-subtext" style="text-align: center;"><span class="pill" style="font-size: 1rem;">🏠 9 Pups Officially Placed</span></p>
         
         <div class="card-grid">
+          <!-- Kobe (PPP) -->
+          <article class="card">
+            <img src="../pictures/PRP/Kobe/KobeHome.jpg" alt="Kobe with his adopter and Crowned K9s trainer at go-home" class="gallery-img lightbox-img" loading="lazy" />
+            <h3>Kobe</h3>
+            <p class="subtext">Golden Retriever · Premium Puppy Placement</p>
+            <div class="pup-testimonial">
+              Finished Crowned K9s Academy and went home through Premium Puppy Placement—the same training-first path we use for every placement pup, so his family could start with structure and calm from day one.
+            </div>
+          </article>
+
           <!-- Izzy -->
           <article class="card">
             <img src="../pictures/PRP/Izzy_family.jpeg" alt="Izzy with her forever family" class="gallery-img lightbox-img" loading="lazy" />
@@ -1193,7 +1355,7 @@
         <div class="cta-banner">
           <div>
             <h2>Ready to Meet Your New Best Friend?</h2>
-            <p>Reach out and we'll help you decide if a trained placement puppy is right for your family—whether you're interested in our <strong>April</strong> male Golden Retriever PPP lane or our <strong>main Foundations focus</strong> right now (<a href="/foundations-program#current-foundations-dog">Stella</a>).</p>
+            <p>Reach out and we'll help you decide if a trained placement puppy is right for your family, whether you're interested in <strong>Owen&rsquo;s upcoming PPP lane</strong> or our <strong>main Foundations focus</strong> right now (<a href="/foundations-program#current-foundations-dog">Stella</a>).</p>
           </div>
           <div class="cta-actions">
             <a href="/contact" class="button">Contact Us</a>
