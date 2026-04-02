@@ -282,34 +282,6 @@
       margin-top: 0.35rem;
     }
 
-    .birthday-tracker-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.9rem;
-      margin-top: 1.25rem;
-    }
-    .birthday-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 0.95rem 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
-    .birthday-card h4 {
-      margin: 0 0 0.35rem;
-      font-size: 1rem;
-    }
-    .birthday-card p {
-      margin: 0.2rem 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.45;
-    }
-    .birthday-card .birthday-age {
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-
     .subsection-title {
       margin: 0 0 0.8rem;
       font-size: 1.4rem;
@@ -790,50 +762,7 @@
       </div>
     </section>
 
-    <section class="section" id="placement-birthdays">
-      <div class="container">
-        <h2 class="section-title reveal" style="text-align:center;">Placement Birthdays & Age Tracker</h2>
-        <p class="section-subtext reveal reveal-delay-1" style="text-align:center;">A running log for Crowned K9s placement pups so birthdays and ages are always easy to reference later.</p>
-        <div class="birthday-tracker-grid reveal reveal-delay-2">
-          <article class="birthday-card">
-            <h4>Stella (Foundations)</h4>
-            <p><strong>Birthday:</strong> Dec 22, 2025</p>
-            <p class="birthday-age">Current age: <span class="pup-age-weeks" data-birthdate="2025-12-22"></span></p>
-            <p><strong>Status:</strong> Main placement focus</p>
-          </article>
-          <article class="birthday-card">
-            <h4>Kobe (PPP)</h4>
-            <p><strong>Birthday:</strong> Dec 29, 2025</p>
-            <p class="birthday-age">Current age: <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
-            <p><strong>Status:</strong> Placed (most recent PPP)</p>
-          </article>
-          <article class="birthday-card">
-            <h4>Rocko</h4>
-            <p><strong>Birthday:</strong> Not documented yet</p>
-            <p class="birthday-age">Current age: Add birthdate to track</p>
-            <p><strong>Status:</strong> Foundations placed</p>
-          </article>
-          <article class="birthday-card">
-            <h4>Brutus</h4>
-            <p><strong>Birthday:</strong> Not documented yet</p>
-            <p class="birthday-age">Current age: Add birthdate to track</p>
-            <p><strong>Status:</strong> Foundations placed</p>
-          </article>
-          <article class="birthday-card">
-            <h4>Maple</h4>
-            <p><strong>Birthday:</strong> Not documented yet</p>
-            <p class="birthday-age">Current age: Add birthdate to track</p>
-            <p><strong>Status:</strong> Foundations placed</p>
-          </article>
-          <article class="birthday-card">
-            <h4>Wynter</h4>
-            <p><strong>Birthday:</strong> Not documented yet</p>
-            <p class="birthday-age">Current age: Add birthdate to track</p>
-            <p><strong>Status:</strong> PPP placed</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    
 
     <section class="section" id="dogs" style="background:#f8faf5;">
       <div class="container">
@@ -987,23 +916,54 @@
       const els = document.querySelectorAll(".pup-age-weeks[data-birthdate]");
       if (!els.length) return;
 
-      const calcWeeksOld = (birthdateISO) => {
+      const parseIsoDate = (birthdateISO) => {
         const parts = birthdateISO.split('-').map(Number);
-        if (parts.length !== 3 || parts.some(Number.isNaN)) return 0;
-        const birth = new Date(parts[0], parts[1] - 1, parts[2]);
+        if (parts.length !== 3 || parts.some(Number.isNaN)) return null;
+        return new Date(parts[0], parts[1] - 1, parts[2]);
+      };
+
+      const calendarAge = (birthdateISO) => {
+        const birth = parseIsoDate(birthdateISO);
+        if (!birth) return null;
+
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        const diffMs = today - birth;
-        const diffDays = Math.floor(diffMs / 86400000);
-        if (Number.isNaN(diffDays) || diffDays < 0) return 0;
-        return Math.floor(diffDays / 7);
+        const diffDays = Math.floor((today - birth) / 86400000);
+        if (Number.isNaN(diffDays) || diffDays < 0) return { weeks: 0, months: 0 };
+
+        const weeks = Math.floor(diffDays / 7);
+        let months = (today.getFullYear() - birth.getFullYear()) * 12 + (today.getMonth() - birth.getMonth());
+        if (today.getDate() < birth.getDate()) months -= 1;
+        if (months < 0) months = 0;
+
+        return { weeks, months };
+      };
+
+      const formatAge = (birthdateISO) => {
+        const age = calendarAge(birthdateISO);
+        if (!age) return '';
+
+        if (age.weeks <= 16) {
+          return `${age.weeks} week${age.weeks === 1 ? '' : 's'} old`;
+        }
+
+        if (age.months <= 12) {
+          return `${age.months} month${age.months === 1 ? '' : 's'} old`;
+        }
+
+        const years = Math.floor(age.months / 12);
+        const remMonths = age.months % 12;
+        if (remMonths === 0) {
+          return `${years} year${years === 1 ? '' : 's'} old`;
+        }
+
+        return `${years} year${years === 1 ? '' : 's'}, ${remMonths} month${remMonths === 1 ? '' : 's'} old`;
       };
 
       const render = () => {
         els.forEach((el) => {
-          const birth = el.getAttribute("data-birthdate");
-          const weeks = calcWeeksOld(birth);
-          el.textContent = `${weeks} week${weeks === 1 ? "" : "s"} old`;
+          const birth = el.getAttribute('data-birthdate') || el.getAttribute("data-birthdate");
+          el.textContent = formatAge(birth || '');
         });
       };
 

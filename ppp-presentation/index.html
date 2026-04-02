@@ -307,27 +307,59 @@
       const els = document.querySelectorAll('.pup-age-weeks[data-birthdate]');
       if (!els.length) return;
 
-      const calcWeeksOld = (birthdateISO) => {
+      const parseIsoDate = (birthdateISO) => {
         const parts = birthdateISO.split('-').map(Number);
-        if (parts.length !== 3 || parts.some(Number.isNaN)) return 0;
-        const birth = new Date(parts[0], parts[1] - 1, parts[2]);
+        if (parts.length !== 3 || parts.some(Number.isNaN)) return null;
+        return new Date(parts[0], parts[1] - 1, parts[2]);
+      };
+
+      const calendarAge = (birthdateISO) => {
+        const birth = parseIsoDate(birthdateISO);
+        if (!birth) return null;
+
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        const diffMs = today - birth;
-        const diffDays = Math.floor(diffMs / 86400000);
-        if (Number.isNaN(diffDays) || diffDays < 0) return 0;
-        return Math.floor(diffDays / 7);
+        const diffDays = Math.floor((today - birth) / 86400000);
+        if (Number.isNaN(diffDays) || diffDays < 0) return { weeks: 0, months: 0 };
+
+        const weeks = Math.floor(diffDays / 7);
+        let months = (today.getFullYear() - birth.getFullYear()) * 12 + (today.getMonth() - birth.getMonth());
+        if (today.getDate() < birth.getDate()) months -= 1;
+        if (months < 0) months = 0;
+
+        return { weeks, months };
+      };
+
+      const formatAge = (birthdateISO) => {
+        const age = calendarAge(birthdateISO);
+        if (!age) return '';
+
+        if (age.weeks <= 16) {
+          return `${age.weeks} week${age.weeks === 1 ? '' : 's'} old`;
+        }
+
+        if (age.months <= 12) {
+          return `${age.months} month${age.months === 1 ? '' : 's'} old`;
+        }
+
+        const years = Math.floor(age.months / 12);
+        const remMonths = age.months % 12;
+        if (remMonths === 0) {
+          return `${years} year${years === 1 ? '' : 's'} old`;
+        }
+
+        return `${years} year${years === 1 ? '' : 's'}, ${remMonths} month${remMonths === 1 ? '' : 's'} old`;
       };
 
       const render = () => {
         els.forEach((el) => {
-          const birth = el.getAttribute('data-birthdate');
-          const weeks = calcWeeksOld(birth);
-          el.textContent = `${weeks} week${weeks === 1 ? '' : 's'} old`;
+          const birth = el.getAttribute('data-birthdate') || el.getAttribute("data-birthdate");
+          el.textContent = formatAge(birth || '');
         });
       };
 
       render();
+      // Re-render once per day so it stays accurate without code updates.
       window.setInterval(render, 24 * 60 * 60 * 1000);
     })();
   </script>
