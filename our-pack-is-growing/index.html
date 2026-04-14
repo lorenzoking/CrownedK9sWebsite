@@ -184,6 +184,7 @@
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
+      scroll-margin-top: 110px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
@@ -305,6 +306,194 @@
       color: #b39561;
       text-decoration: underline;
     }
+
+    .fund-derived-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: -0.35rem 0 1rem;
+    }
+
+    .fund-card.is-highlighted {
+      border-color: var(--pack-warm);
+      box-shadow: 0 0 0 3px rgba(196, 165, 116, 0.18), 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .registry-section {
+      background: var(--pack-bg-soft);
+    }
+
+    .registry-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      max-width: 980px;
+    }
+
+    .registry-filter-pill {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-dark);
+      border-radius: 999px;
+      padding: 0.7rem 1rem;
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    }
+
+    .registry-filter-pill:hover,
+    .registry-filter-pill:focus-visible {
+      border-color: var(--pack-warm);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .registry-filter-pill.is-active {
+      background: var(--pack-warm);
+      border-color: var(--pack-warm);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(196, 165, 116, 0.22);
+    }
+
+    .registry-summary {
+      max-width: 980px;
+      margin: 0 auto 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .registry-item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .registry-item-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.25s ease;
+    }
+
+    .registry-item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border-color: rgba(196, 165, 116, 0.3);
+    }
+
+    .registry-item-category {
+      display: inline-flex;
+      align-self: flex-start;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--pack-warm);
+      background: var(--pack-warm-light);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .registry-item-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 0.5rem;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .registry-item-price {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.45rem;
+    }
+
+    .registry-item-fund {
+      font-size: 0.87rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .registry-item-note {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+
+    .registry-item-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-top: 0.1rem;
+    }
+
+    .registry-item-primary,
+    .registry-item-secondary {
+      font: inherit;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      padding: 0.85rem 1rem;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+      min-height: 46px;
+    }
+
+    .registry-item-primary {
+      border: 1px solid var(--pack-warm);
+      background: var(--pack-warm);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(196, 165, 116, 0.18);
+    }
+
+    .registry-item-primary:hover,
+    .registry-item-primary:focus-visible {
+      background: #b39561;
+      border-color: #b39561;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .registry-item-secondary {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--pack-warm);
+    }
+
+    .registry-item-secondary:hover,
+    .registry-item-secondary:focus-visible {
+      border-color: var(--pack-warm);
+      color: #b39561;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .registry-empty-state {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      text-align: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--muted);
+    }
     
     /* FAQ Section */
     .pack-faq {
@@ -357,6 +546,18 @@
       border: 1px solid var(--border);
     }
     
+    @media (min-width: 1200px) {
+      .registry-item-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 840px) and (max-width: 1199px) {
+      .registry-item-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .pack-hero h1 {
@@ -366,6 +567,10 @@
       .pack-hero .hero-subtext {
         font-size: 1rem;
         padding: 0 1rem;
+      }
+
+      .pack-hero {
+        padding: 4.25rem 0 3.25rem;
       }
       
       .pack-section-title {
@@ -379,12 +584,105 @@
       .fund-grid {
         grid-template-columns: 1fr;
       }
+
+      .fund-card {
+        padding: 1.35rem;
+      }
+
+      .registry-item-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .registry-toolbar {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.3rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+
+      .registry-filter-pill {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
+      .registry-summary {
+        text-align: left;
+        font-size: 0.9rem;
+      }
     }
     
     /* Staggered animation delays for fund cards */
     .reveal-delay-4 { transition-delay: 0.32s; }
     .reveal-delay-5 { transition-delay: 0.40s; }
     .reveal-delay-6 { transition-delay: 0.48s; }
+
+    /* Print optimization for PDF exports */
+    @media print {
+      header,
+      footer,
+      .pack-hero .pack-cta-btn,
+      .support-card .pack-cta-btn,
+      .support-card .placeholder-note {
+        display: none !important;
+      }
+
+      body,
+      .pack-page,
+      .pack-hero,
+      .pack-section,
+      .pack-faq,
+      .registry-section {
+        background: #fff !important;
+      }
+
+      .pack-hero {
+        padding: 1.2rem 0 1.1rem !important;
+      }
+
+      .pack-section {
+        padding: 1.2rem 0 !important;
+      }
+
+      .support-options,
+      .fund-grid,
+      .registry-item-grid {
+        display: block !important;
+      }
+
+      .support-card,
+      .fund-card,
+      .registry-item-card,
+      .faq-item,
+      .disclosure-text {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        margin: 0 0 0.85rem !important;
+        box-shadow: none !important;
+      }
+
+      .registry-toolbar {
+        display: none !important;
+      }
+
+      .registry-summary {
+        text-align: left !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      .fund-progress-track {
+        height: 6px !important;
+      }
+
+      .registry-item-primary,
+      .registry-item-secondary,
+      .fund-btn,
+      .fund-item-link {
+        min-height: 0 !important;
+        padding: 0.55rem 0.75rem !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -442,7 +740,7 @@
         <span class="pack-icon reveal">🐾</span>
         <h1 class="reveal reveal-delay-1">Our Pack Is Growing</h1>
         <p class="hero-subtext reveal reveal-delay-2">
-          We're so excited, our family is growing. If you'd like to help us get ready for our newest little one, this page is a simple way to do it. Every bit of love and support means the world to us.
+          We're so excited, our family is growing. If you'd like to help us get ready for our newest little one, this page is a simple way to do it. The easiest path is to contribute toward a fund here on our site, and if you'd rather connect your gift to a specific item, we've added our registry list below too. Every bit of love and support means the world to us.
         </p>
         <a href="#support" class="pack-cta-btn reveal reveal-delay-3">See How You Can Help</a>
       </div>
@@ -455,7 +753,7 @@
       <div class="container">
         <div class="pack-section-header">
           <h2 class="pack-section-title reveal">A Few Ways to Help</h2>
-          <p class="pack-section-subtitle reveal reveal-delay-1">The easiest option is a cash gift, but every type of support is appreciated.</p>
+          <p class="pack-section-subtitle reveal reveal-delay-1">The simplest option is contributing to a fund here on the site, but we've also added registry items below for anyone who prefers a more specific gift path.</p>
         </div>
         
         <div class="support-options">
@@ -463,7 +761,7 @@
           <div class="support-card primary reveal reveal-delay-2">
             <div class="support-card-icon">💛</div>
             <h3>Send Some Love</h3>
-            <p>Every little bit helps us prepare for baby, from essentials to medical costs and time to rest and bond as a family.</p>
+            <p>Every little bit helps us prepare for baby, from essentials to medical costs and time to rest and bond as a family. This is the easiest fund-first option on the page.</p>
             <a href="https://example.com/stripe-general-contribution" 
                class="pack-cta-btn" 
                target="_blank" 
@@ -485,7 +783,7 @@
           <div class="support-card reveal reveal-delay-4">
             <div class="support-card-icon">🎁</div>
             <h3>Help Fund a Specific Item</h3>
-            <p>Want your gift to go toward something specific? You can chip in to any item below and help us avoid duplicate purchases.</p>
+            <p>Want your gift tied to something more specific? Start with the nursery funds below, then scroll into the registry items section to browse by category and individual gift.</p>
             <a href="#funds" class="pack-cta-btn" style="background: transparent; color: var(--pack-warm); border: 2px solid var(--pack-warm);">
               See Nursery Funds
             </a>
@@ -501,7 +799,7 @@
       <div class="container">
         <div class="pack-section-header">
           <h2 class="pack-section-title reveal">Help Us Build the Nursery</h2>
-          <p class="pack-section-subtitle reveal reveal-delay-1">You can contribute any amount to a specific item fund. If you'd rather buy an item directly, use the item link and let us know so we can prevent duplicates.</p>
+          <p class="pack-section-subtitle reveal reveal-delay-1">You can contribute any amount to a specific nursery fund here first, then use the registry items section below if you'd like to connect your gift to a specific item or category.</p>
         </div>
         
         <div class="fund-grid">
@@ -629,7 +927,7 @@
             <div class="fund-card-icon">🧷</div>
             <span class="fund-status-badge" hidden>Fully Funded</span>
             <h4>Everyday Essentials Fund</h4>
-            <p>Diapers, wipes, bottles, postpartum care, and the little things that add up quickly.</p>
+            <p>Diapers, wipes, bottles, postpartum care, feeding tools, and the little things that add up quickly. Many of the registry items below roll up into this broader essentials lane.</p>
             <div class="fund-goal">Goal: $500</div>
             <div class="fund-progress">
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
@@ -645,6 +943,35 @@
             <p class="fund-affiliate-note">General fund for day-to-day needs.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         REGISTRY ITEMS
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pack-section registry-section" id="registry-items">
+      <div class="container">
+        <div class="pack-section-header">
+          <h2 class="pack-section-title reveal">Registry Items by Category</h2>
+          <p class="pack-section-subtitle reveal reveal-delay-1">If you prefer to connect your gift to a specific item, you can use the list below to contribute toward a fund or view more details. You can also browse our full Babylist registry anytime.</p>
+        </div>
+
+        <div class="registry-toolbar reveal reveal-delay-2" role="toolbar" aria-label="Filter registry items by category">
+          <button type="button" class="registry-filter-pill is-active" data-filter-category="All" aria-pressed="true">All</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Feeding" aria-pressed="false">Feeding</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Sleeping" aria-pressed="false">Sleeping</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Diapering" aria-pressed="false">Diapering</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Baby gear" aria-pressed="false">Baby gear</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Health & safety" aria-pressed="false">Health &amp; safety</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Bathing" aria-pressed="false">Bathing</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Clothing" aria-pressed="false">Clothing</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Playing" aria-pressed="false">Playing</button>
+          <button type="button" class="registry-filter-pill" data-filter-category="Cash & gift cards" aria-pressed="false">Gift cards</button>
+        </div>
+
+        <p class="registry-summary reveal reveal-delay-3" id="registry-summary">Browse the full registry by category, or use the buttons on each card to jump back to the matching nursery fund. Prefer the full list view? <a href="https://my.babylist.com/jennaandlorenzo" target="_blank" rel="noopener noreferrer">Open our Babylist registry</a>.</p>
+
+        <div class="registry-item-grid" id="registry-item-grid" aria-live="polite"></div>
       </div>
     </section>
 
@@ -716,14 +1043,123 @@
       crib: { raised: 0, goal: 849 },
       kiwiChair: { raised: 0, goal: 899 },
       nurseryGlider: { raised: 0, goal: 550 },
-      changingStation: { raised: 0, goal: 430 },
+      changingStation: { raised: 0, goal: 430, derivedFromItems: true, registryGroups: ['Diapering fund'] },
       dresser: { raised: 0, goal: 379 },
-      bassinet: { raised: 0, goal: 190 },
-      essentials: { raised: 0, goal: 500 }
+      bassinet: { raised: 0, goal: 190, derivedFromItems: true, registryGroups: ['Sleep fund'] },
+      essentials: {
+        raised: 0,
+        goal: 500,
+        derivedFromItems: true,
+        registryGroups: [
+          'Feeding fund',
+          'Diapering fund',
+          'Health & safety fund',
+          'Bathing & care fund',
+          'Clothing fund',
+          'General baby fund'
+        ]
+      }
+    };
+
+    const REGISTRY_ITEMS = [
+      { id: "feeding-1",  name: "Munchkin Bristle Bottle Brush, Grey", category: "Feeding", fundGroup: "Feeding fund", price: 4.47 },
+      { id: "feeding-2",  name: "8-Pack Organic Baby Bibs", category: "Feeding", fundGroup: "Feeding fund", price: 18.96 },
+      { id: "feeding-3",  name: "Lansinoh Breast Therapy Packs", category: "Feeding", fundGroup: "Feeding fund", price: 23.94, note: "Postpartum and breastfeeding support" },
+      { id: "feeding-4",  name: "Small Story Organic Cotton Burp Cloth (4 Pack)", category: "Feeding", fundGroup: "Feeding fund", price: 19.99 },
+      { id: "feeding-5",  name: "Frida Baby Push Pop Feeder Set", category: "Feeding", fundGroup: "Feeding fund", price: 12.99 },
+      { id: "feeding-6",  name: "Baby Burp Cloth 100% Cotton Muslin", category: "Feeding", fundGroup: "Feeding fund", price: 9.99 },
+
+      { id: "sleep-1",    name: "Meracorallo Muslin Swaddle Blanket", category: "Sleeping", fundGroup: "Sleep fund", price: 9.99 },
+      { id: "sleep-2",    name: "Nanit Pro Smart Baby Monitor and Wall Mount", category: "Sleeping", fundGroup: "Sleep fund", price: 289.99 },
+
+      { id: "diaper-1",   name: "Aquaphor Baby Healing Ointment", category: "Diapering", fundGroup: "Diapering fund", price: 12.97 },
+      { id: "diaper-2",   name: "Aquaphor Baby Diaper Rash Paste", category: "Diapering", fundGroup: "Diapering fund", price: 7.47 },
+      { id: "diaper-3",   name: "Blissful Diary Vegan Leather Baby Changing Pad", category: "Diapering", fundGroup: "Diapering fund", price: 36.99 },
+      { id: "diaper-4",   name: "Pail Buddies Diaper Bags", category: "Diapering", fundGroup: "Diapering fund", price: 21.40 },
+      { id: "diaper-5",   name: "Ubbi Steel Diaper Pail", category: "Diapering", fundGroup: "Diapering fund", price: 69.99 },
+      { id: "diaper-6",   name: "Diaper Sprayer Splatter Shield", category: "Diapering", fundGroup: "Diapering fund", price: 27.95 },
+      { id: "diaper-7",   name: "Pampers AMORE Diapers", category: "Diapering", fundGroup: "Diapering fund", price: 29.99 },
+      { id: "diaper-8",   name: "Thirsties Natural One-Size All-in-One Diaper (Any color)", category: "Diapering", fundGroup: "Diapering fund", price: 29.50 },
+      { id: "diaper-9",   name: "Osocozy Two Sized Fitted Cloth Diaper Size 2 - 6 Pack", category: "Diapering", fundGroup: "Diapering fund", price: 59.95 },
+      { id: "diaper-10",  name: "Osocozy Two Sized Fitted Cloth Diaper Size 1", category: "Diapering", fundGroup: "Diapering fund", price: 49.95 },
+      { id: "diaper-11",  name: "Try Both Cloth Diaper Kit (size small)", category: "Diapering", fundGroup: "Diapering fund", price: 127.25 },
+      { id: "diaper-12",  name: "Millie Moon Luxury Diapers", category: "Diapering", fundGroup: "Diapering fund", price: 59.28 },
+      { id: "diaper-13",  name: "Purrfectzone Bidet Sprayer for Toilet", category: "Diapering", fundGroup: "Diapering fund", price: 27.99 },
+      { id: "diaper-14",  name: "Amazon Elements Baby Wipes", category: "Diapering", fundGroup: "Diapering fund", price: 20.45 },
+
+      { id: "gear-1",     name: "Graco TriRide 3-in-1 Reclining Car Seat", category: "Baby gear", fundGroup: "Baby gear fund", price: 199.99 },
+      { id: "gear-2",     name: "Graco Close2Baby Playard", category: "Baby gear", fundGroup: "Baby gear fund", price: 199.99 },
+      { id: "gear-3",     name: "Graco Redmond Modes Pramette Stroller", category: "Baby gear", fundGroup: "Baby gear fund", price: 249.99 },
+      { id: "gear-4",     name: "Large Baby Playpen", category: "Baby gear", fundGroup: "Baby gear fund", price: 69.98 },
+      { id: "gear-5",     name: "Funbliss Baby Car Mirror", category: "Baby gear", fundGroup: "Baby gear fund", price: 9.99 },
+      { id: "gear-6",     name: "Momcozy USB Rechargeable Handheld Cooling Fan", category: "Baby gear", fundGroup: "Baby gear fund", price: 29.99 },
+      { id: "gear-7",     name: "Momcozy Lightweight Baby Carrier", category: "Baby gear", fundGroup: "Baby gear fund", price: 50.99 },
+      { id: "gear-8",     name: "Boba Baby Wrap Carrier", category: "Baby gear", fundGroup: "Baby gear fund", price: 39.99 },
+
+      { id: "health-1",   name: "Heimlich Assistant Choking Rescue Device Bag", category: "Health & safety", fundGroup: "Health & safety fund", price: 35.99 },
+      { id: "health-2",   name: "Frida Baby 3-in-1 Picker", category: "Health & safety", fundGroup: "Health & safety fund", price: 9.99 },
+      { id: "health-3",   name: "Frida Baby 3-in-1 True Temp Thermometer", category: "Health & safety", fundGroup: "Health & safety fund", price: 19.99 },
+      { id: "health-4",   name: "DMI Reusable Nasal Aspirator", category: "Health & safety", fundGroup: "Health & safety fund", price: 5.00 },
+      { id: "health-5",   name: "Tommee Tippee Ultimate Fit Newborn Pacifiers", category: "Health & safety", fundGroup: "Health & safety fund", price: 9.99 },
+      { id: "health-6",   name: "5-Pack Silicone Pacifier Clip", category: "Health & safety", fundGroup: "Health & safety fund", price: 6.99 },
+      { id: "health-7",   name: "Philips Avent Pacifier", category: "Health & safety", fundGroup: "Health & safety fund", price: 16.18 },
+      { id: "health-8",   name: "Frida Mom Postpartum Recovery Essentials Kit", category: "Health & safety", fundGroup: "Health & safety fund", price: 49.98 },
+
+      { id: "bath-1",     name: "Carter's Baby Hooded Towel (2-pack)", category: "Bathing", fundGroup: "Bathing & care fund", price: 27.34 },
+      { id: "bath-2",     name: "SheaMoisture Baby Wash and Shampoo Coconut Oil", category: "Bathing", fundGroup: "Bathing & care fund", price: 7.97 },
+      { id: "bath-3",     name: "SheaMoisture Baby Wash & Shampoo Raw Shea", category: "Bathing", fundGroup: "Bathing & care fund", price: 7.97 },
+      { id: "bath-4",     name: "Munchkin Rinse Shampoo Bath Rinser Cup", category: "Bathing", fundGroup: "Bathing & care fund", price: 5.99 },
+
+      { id: "clothing-1", name: "Simple Joys by Carter's Long-Sleeve Bodysuit Pack", category: "Clothing", fundGroup: "Clothing fund", price: 18.00 },
+      { id: "clothing-2", name: "Baby Boy Ribbed Knitted Romper and Pants Set", category: "Clothing", fundGroup: "Clothing fund", price: 18.99 },
+      { id: "clothing-3", name: "3-pack Sleep and Play", category: "Clothing", fundGroup: "Clothing fund", price: 28.50 },
+      { id: "clothing-4", name: "Simple Joys by Carter's Short-Sleeve Bodysuit", category: "Clothing", fundGroup: "Clothing fund", price: 20.00 },
+      { id: "clothing-5", name: "FURTALK Baby Beanie Winter Hat", category: "Clothing", fundGroup: "Clothing fund", price: 14.99 },
+      { id: "clothing-6", name: "JAKIDAR Baby Toddler Socks (12 pairs)", category: "Clothing", fundGroup: "Clothing fund", price: 14.49 },
+      { id: "clothing-7", name: "JAKIDAR Baby Toddler Socks (12 pairs)", category: "Clothing", fundGroup: "Clothing fund", price: 13.99 },
+
+      { id: "play-1",     name: "Nugget Original Play Couch", category: "Playing", fundGroup: "Play fund", price: 274.00 },
+
+      { id: "giftcard-1", name: "Babylist Shop Gift Card", category: "Cash & gift cards", fundGroup: "General baby fund", price: 25.00, note: "Registry shows $25–$1,000; treat $25 as the minimum gift" }
+    ];
+
+    const BABYLIST_REGISTRY_URL = 'https://my.babylist.com/jennaandlorenzo';
+
+    const REGISTRY_FUND_TO_PAGE_FUND = {
+      'Sleep fund': 'bassinet',
+      'Diapering fund': 'changingStation',
+      'Feeding fund': 'essentials',
+      'Health & safety fund': 'essentials',
+      'Bathing & care fund': 'essentials',
+      'Clothing fund': 'essentials',
+      'General baby fund': 'essentials',
+      'Baby gear fund': 'essentials',
+      'Play fund': 'essentials'
     };
 
     const formatCurrency = (value) =>
-      new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+      new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: value % 1 === 0 ? 0 : 2 }).format(value);
+
+    const getRegistryTotalsByFund = () =>
+      REGISTRY_ITEMS.reduce((acc, item) => {
+        if (!acc[item.fundGroup]) {
+          acc[item.fundGroup] = { total: 0, count: 0, items: [] };
+        }
+        acc[item.fundGroup].total += Number(item.price || 0);
+        acc[item.fundGroup].count += 1;
+        acc[item.fundGroup].items.push(item);
+        return acc;
+      }, {});
+
+    const REGISTRY_TOTALS_BY_FUND = getRegistryTotalsByFund();
+
+    Object.values(FUNDS).forEach((fund) => {
+      if (!fund.derivedFromItems || !Array.isArray(fund.registryGroups)) return;
+      const derived = fund.registryGroups.reduce((sum, groupName) => sum + (REGISTRY_TOTALS_BY_FUND[groupName]?.total || 0), 0);
+      const itemCount = fund.registryGroups.reduce((sum, groupName) => sum + (REGISTRY_TOTALS_BY_FUND[groupName]?.count || 0), 0);
+      fund.estimatedFromRegistryItems = derived;
+      fund.estimatedItemCount = itemCount;
+    });
 
     const hydrateFundProgress = () => {
       const fundCards = document.querySelectorAll('.fund-card[data-fund-id]');
@@ -742,10 +1178,110 @@
         if (fill) fill.style.width = `${percent}%`;
         if (meta) meta.textContent = `${formatCurrency(raised)} of ${formatCurrency(goal)} funded`;
 
+        if (fund.derivedFromItems && fund.estimatedFromRegistryItems > 0 && !card.querySelector('.fund-derived-note')) {
+          const goalEl = card.querySelector('.fund-goal');
+          const derivedNote = document.createElement('p');
+          derivedNote.className = 'fund-derived-note';
+          derivedNote.textContent = `Estimated from registry items: ${formatCurrency(fund.estimatedFromRegistryItems)} across ${fund.estimatedItemCount} item${fund.estimatedItemCount === 1 ? '' : 's'}`;
+          goalEl?.insertAdjacentElement('afterend', derivedNote);
+        }
+
         if (raised >= goal && goal > 0) {
           card.classList.add('is-funded');
           if (badge) badge.hidden = false;
         }
+      });
+    };
+
+    const getFundButtonLabel = (fundGroup) => {
+      const cleaned = fundGroup.replace(/\s+fund$/i, '');
+      return `Contribute to ${cleaned}`;
+    };
+
+    const highlightFundCard = (fundId) => {
+      const targetCard = document.querySelector(`.fund-card[data-fund-id="${fundId}"]`);
+      if (!targetCard) return;
+
+      targetCard.classList.add('is-highlighted');
+      window.setTimeout(() => targetCard.classList.remove('is-highlighted'), 2600);
+    };
+
+    const renderRegistryItems = (filterCategory = 'All') => {
+      const grid = document.getElementById('registry-item-grid');
+      const summary = document.getElementById('registry-summary');
+      if (!grid) return;
+
+      const filteredItems = filterCategory === 'All'
+        ? REGISTRY_ITEMS
+        : REGISTRY_ITEMS.filter((item) => item.category === filterCategory);
+
+      if (summary) {
+        summary.textContent = filterCategory === 'All'
+          ? `Showing all ${REGISTRY_ITEMS.length} registry items across every category. Start with a fund contribution here, or use any card below to connect your gift to a specific item.`
+          : `Showing ${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'} in ${filterCategory}. Use the primary button to contribute toward the matching fund, or use the secondary action to open our Babylist registry.`;
+      }
+
+      if (!filteredItems.length) {
+        grid.innerHTML = '<div class="registry-empty-state">No registry items match that filter yet. Try another category or go back to All.</div>';
+        return;
+      }
+
+      grid.innerHTML = filteredItems.map((item) => {
+        const mappedFundId = REGISTRY_FUND_TO_PAGE_FUND[item.fundGroup] || 'essentials';
+        const note = item.note ? `<p class="registry-item-note">${item.note}</p>` : '<p class="registry-item-note">This item is part of our registry planning and helps us build the right category without duplicate gifts.</p>';
+        return `
+          <article class="registry-item-card reveal is-visible" data-registry-item-id="${item.id}">
+            <span class="registry-item-category">${item.category}</span>
+            <h3>${item.name}</h3>
+            <div class="registry-item-price">${formatCurrency(item.price)}</div>
+            <div class="registry-item-fund">Grouped under: ${item.fundGroup}</div>
+            ${note}
+            <div class="registry-item-actions">
+              <button
+                type="button"
+                class="registry-item-primary"
+                data-registry-fund-target="${mappedFundId}"
+                data-registry-fund-group="${item.fundGroup}"
+                aria-label="${getFundButtonLabel(item.fundGroup)}">
+                ${getFundButtonLabel(item.fundGroup)}
+              </button>
+              <a
+                href="${BABYLIST_REGISTRY_URL}"
+                class="registry-item-secondary"
+                data-registry-id="${item.id}"
+                data-registry-name="${item.name}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View item details or buy this gift for ${item.name}">
+                View item details / Buy this gift
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      grid.querySelectorAll('[data-registry-fund-target]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const fundId = button.getAttribute('data-registry-fund-target');
+          if (fundId) highlightFundCard(fundId);
+        });
+      });
+
+      // Secondary action now routes to the live Babylist registry.
+    };
+
+    const setupRegistryFilters = () => {
+      const filterButtons = document.querySelectorAll('.registry-filter-pill[data-filter-category]');
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const nextCategory = button.getAttribute('data-filter-category') || 'All';
+          filterButtons.forEach((pill) => {
+            const isActive = pill === button;
+            pill.classList.toggle('is-active', isActive);
+            pill.setAttribute('aria-pressed', String(isActive));
+          });
+          renderRegistryItems(nextCategory);
+        });
       });
     };
 
@@ -774,6 +1310,8 @@
         }
       }
       hydrateFundProgress();
+      setupRegistryFilters();
+      renderRegistryItems();
     })();
   </script>
 </body>

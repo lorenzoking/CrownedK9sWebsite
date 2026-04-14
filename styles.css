@@ -611,6 +611,13 @@ main > section:first-of-type {
   height: 320px;
   object-fit: cover;
 }
+
+/* Skye family placement photo: bias crop toward top + slight zoom-out so heads aren’t clipped */
+.puppy-placement-card img.skye-family-photo {
+  object-position: center 30%;
+  transform: scale(0.94);
+  transform-origin: center top;
+}
 .puppy-placement-card-body {
   padding: 1.5rem 1.6rem 1.6rem;
 }
@@ -626,6 +633,11 @@ main > section:first-of-type {
   .split { grid-template-columns: 1fr; }
   .puppy-placement-card img {
     height: 280px;
+  }
+
+  .puppy-placement-card img.skye-family-photo {
+    object-position: center 5%;
+    transform: scale(0.92);
   }
 }
 

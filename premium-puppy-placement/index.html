@@ -49,6 +49,18 @@
       font-size: 1rem;
       line-height: 1.45;
     }
+    .hero-outcome-bullets li strong {
+      display: block;
+      margin: 0;
+      line-height: 1.35;
+      font-size: 1.02rem;
+    }
+    .hero-outcome-desc {
+      display: block;
+      margin-top: 0.22rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
     .hero-outcome-bullets li::before {
       content: "✓";
       color: var(--accent-orange);
@@ -98,6 +110,60 @@
       font-weight: 700;
       margin-top: 1px;
       flex-shrink: 0;
+    }
+
+    @media (max-width: 760px) {
+      .hero.hero--light .container > div:first-child {
+        max-width: 100%;
+      }
+      .hero.hero--light h1 {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.95rem;
+      }
+      .hero.hero--light p {
+        font-size: 1.02rem;
+        line-height: 1.68;
+      }
+      .hero-outcome-bullets {
+        gap: 0.95rem;
+        margin: 1.15rem 0 1.35rem;
+      }
+      .hero-outcome-bullets li {
+        gap: 0.62rem;
+        font-size: 0.98rem;
+      }
+      .hero-outcome-bullets li strong {
+        font-size: 1.03rem;
+      }
+      .hero-outcome-bullets li::before {
+        margin-top: 0.04rem;
+      }
+      .hero-support-highlight {
+        padding: 1rem;
+        margin: 1rem 0 1.2rem;
+      }
+      .hero-support-highlight h3 {
+        font-size: 1.03rem;
+      }
+      .hero-support-highlight li {
+        line-height: 1.55;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+      .hero-actions .cta-button,
+      .hero-actions .button {
+        width: 100%;
+        text-align: center;
+      }
+      .hero-cta-note {
+        font-size: 0.97rem;
+        line-height: 1.55;
+      }
     }
     
     /* Value Table Section */
@@ -813,11 +879,11 @@
           <p>This isn't a typical placement. These pups are thoughtfully matched and already have structure and training, so you can settle in faster and enjoy the early days. <strong>Every Premium Puppy Placement pup includes genetic testing</strong> (e.g. Embark-style DNA health and breed insight) so families can review results before committing.</p>
           
           <ul class="hero-outcome-bullets">
-            <li><strong>Sleep through the night</strong> — a calm crate routine is already established</li>
-            <li><strong>Clear communication</strong> — foundational obedience established so daily life is easier for both of you</li>
-            <li><strong>Potty habits underway</strong> — fewer accidents and less stress from day one</li>
-            <li><strong>Academy training included</strong> — typically a <strong>3–4 week</strong> Crowned K9s Academy stay (board-and-train equivalent) before go-home</li>
-            <li><strong>Built-in support after go-home</strong> — 2 follow-up sessions, a 1-week board & train credit (before age 1), and University Elite access</li>
+            <li><strong>Sleep through the night</strong><span class="hero-outcome-desc">A calm crate routine is already established.</span></li>
+            <li><strong>Clear communication</strong><span class="hero-outcome-desc">Foundational obedience is in place so daily life is easier for both of you.</span></li>
+            <li><strong>Potty habits underway</strong><span class="hero-outcome-desc">Fewer accidents and less stress from day one.</span></li>
+            <li><strong>Academy training included</strong><span class="hero-outcome-desc">Typically a <strong>3-4 week</strong> Crowned K9s Academy stay (board-and-train equivalent) before go-home.</span></li>
+            <li><strong>Built-in support after go-home</strong><span class="hero-outcome-desc">2 follow-up sessions, a 1-week board &amp; train credit (before age 1), and University Elite access.</span></li>
           </ul>
 
           <div class="hero-support-highlight">
@@ -835,7 +901,7 @@
             <a href="#next-ppp" class="button button-secondary">Meet Charlie &amp; Owen</a>
           </div>
           <p class="hero-cta-note">Placement fee reflects the puppy + training + included support.</p>
-          <p class="hero-cta-note" style="margin-top:0.65rem;">Our <strong>next featured PPP puppies</strong> are Golden Retriever brothers <strong>Charlie and Owen</strong>. Charlie is reserved; we&rsquo;re taking <strong>inquiries for Owen</strong>. <a href="#next-ppp">Why we brought home both brothers</a>—and how that shapes Owen&rsquo;s training path—is in <strong>Meet Charlie &amp; Owen</strong> below. Recent PPP graduate <strong>Kobe</strong> is with our success stories below. For our <strong>main placement focus right now</strong>, see <a href="/foundations-program#current-foundations-dog">Stella in Foundations Rescue</a>. <strong>Embark genetic testing applies to PPP puppies only</strong>—Foundations rescues use veterinarian-documented health screening, not DNA panel testing.</p>
+          <p class="hero-cta-note" style="margin-top:0.65rem;">Our <strong>next featured PPP puppies</strong> are Golden Retriever brothers <strong>Charlie and Owen</strong>. Charlie is reserved; we&rsquo;re taking <strong>inquiries for Owen</strong>. <a href="#next-ppp">Why we brought home both brothers</a>—and how that shapes Owen&rsquo;s training path—is in <strong>Meet Charlie &amp; Owen</strong> below. Recent PPP graduate <strong>Kobe</strong> is with our success stories below. In Foundations, <strong>Stella has officially been placed</strong> and is now home as <strong>Skye</strong>—see the update on <a href="/foundations-program#dogs">Foundations Rescue</a>. <strong>Embark genetic testing applies to PPP puppies only</strong>—Foundations rescues use veterinarian-documented health screening, not DNA panel testing.</p>
         </div>
         <div>
           <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="poster-img" onclick="openLightbox(this.src)" />
@@ -1386,7 +1452,7 @@
         <div class="cta-banner">
           <div>
             <h2>Ready to Meet Your New Best Friend?</h2>
-            <p>Reach out and we'll help you decide if a trained placement puppy is right for your family, whether you're interested in <strong>Owen&rsquo;s upcoming PPP lane</strong> or our <strong>main Foundations focus</strong> right now (<a href="/foundations-program#current-foundations-dog">Stella</a>).</p>
+            <p>Reach out and we'll help you decide if a trained placement puppy is right for your family, whether you're interested in <strong>Owen&rsquo;s upcoming PPP lane</strong> or upcoming Foundations dogs (recent placement update: <a href="/foundations-program#dogs">Skye, formerly Stella</a>).</p>
           </div>
           <div class="cta-actions">
             <a href="/contact" class="button">Contact Us</a>
