@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Owen – Crowned K9s PPP Card</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&f[]=cabinet-grotesk@700,800,900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dark: #A07830;
+    --gold-soft: rgba(201, 168, 76, 0.16);
+    --gold-line: rgba(201, 168, 76, 0.35);
+
+    --charcoal: #141414;
+    --charcoal-mid: #1E1E1E;
+    --charcoal-soft: #2A2A2A;
+
+    --white: #FFFFFF;
+    --off-white: #FAF8F3;
+    --cream: #F1ECDE;
+    --cream-dark: #E6DFCB;
+    --ink: #1A1A1A;
+    --ink-soft: #44433D;
+    --text-muted: #8A8779;
+
+    --radius: 14px;
+    --card-w: 3.5in;
+    --card-h: 2in;
+
+    --logo-url: url('../../pictures/Logos/blackbadgewhitecrown.png');
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+  body {
+    background: #EFEBE1;
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(201,168,76,0.06), transparent 40%),
+      radial-gradient(circle at 80% 100%, rgba(20,20,20,0.05), transparent 40%);
+    font-family: 'Satoshi', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 48px 20px 64px;
+    gap: 36px;
+  }
+
+  h1 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  /* ─────────────────────────────  FRONT  ───────────────────────────── */
+  .card-front {
+    width: var(--card-w);
+    height: var(--card-h);
+    background: var(--charcoal);
+    background-image:
+      radial-gradient(circle at 85% 15%, rgba(201,168,76,0.10), transparent 55%),
+      linear-gradient(155deg, #1B1B1B 0%, #0F0F0F 100%);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.28);
+    color: var(--white);
+  }
+
+  /* Photo column */
+  .card-front .photo-area {
+    width: 40%;
+    height: 100%;
+    background: var(--charcoal-mid);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .card-front .photo-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Soft vignette to blend photo into dark right panel */
+  .card-front .photo-area::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 70%, rgba(20,20,20,0.35) 100%);
+    pointer-events: none;
+  }
+
+  .gold-stripe {
+    position: absolute;
+    right: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent 0%, var(--gold-light) 25%, var(--gold-dark) 75%, transparent 100%);
+    opacity: 0.9;
+  }
+
+  /* Info column */
+  .card-front .info {
+    flex: 1;
+    padding: 16px 18px 14px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-width: 0;
+  }
+
+  /* Logo monogram top-right corner */
+  .card-front .logo-mark {
+    position: absolute;
+    top: 12px;
+    left: 154px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    opacity: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+  }
+
+  .card-front .top {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-right: 32px; /* reserve space for logo mark */
+  }
+
+  .card-front .ppp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--gold-soft);
+    border: 1px solid var(--gold-line);
+    border-radius: 100px;
+    padding: 2px 8px 2px 7px;
+    width: fit-content;
+    margin-bottom: 4px;
+  }
+
+  .card-front .ppp-badge::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 6px rgba(232, 201, 106, 0.6);
+  }
+
+  .card-front .ppp-badge span {
+    font-size: 6.5px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .card-front .dog-name {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-top: 2px;
+    text-align: center;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .card-front .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .card-front .breed {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .card-front .dot {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .card-front .dob {
+    font-size: 8.5px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .card-front .trait {
+    font-size: 8.5px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.45;
+    font-style: italic;
+    border-left: 1.5px solid var(--gold-line);
+    padding-left: 7px;
+    margin-top: 6px;
+    padding-right: 4px;
+  }
+
+  /* Bottom lockup */
+  .card-front .bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(201,168,76,0.14);
+  }
+
+  .card-front .brand-lockup {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .card-front .brand {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    position: absolute;
+    left: 18px;
+    top: 175px;
+  }
+
+  .card-front .brand span { color: var(--gold); }
+
+  .card-front .website {
+    font-size: 7px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .card-front .edition {
+    text-align: right;
+    font-size: 6.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.55);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .card-front .edition strong {
+    display: block;
+    color: var(--gold-light);
+    font-weight: 800;
+    font-size: 7px;
+  }
+
+  /* ─────────────────────────────  BACK  ───────────────────────────── */
+  .card-back {
+    width: var(--card-w);
+    height: var(--card-h);
+    background: var(--off-white);
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(201,168,76,0.08), transparent 45%),
+      radial-gradient(circle at 0% 100%, rgba(20,20,20,0.03), transparent 40%);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    color: var(--ink);
+  }
+
+  .gold-bar {
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
+    flex-shrink: 0;
+  }
+
+  .card-back .header {
+    background: var(--charcoal);
+    padding: 9px 16px 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .card-back .header-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+  }
+
+  .card-back .header-text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+
+  .card-back .header-text {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.1;
+  }
+
+  .card-back .header-sub {
+    font-size: 7px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .card-back .content {
+    flex: 1;
+    padding: 10px 14px 8px 16px;
+    display: flex;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  .card-back .bullets {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .card-back .bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .bullet-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 4px;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1.5px rgba(201, 168, 76, 0.18);
+  }
+
+  .card-back .bullet-text {
+    font-size: 7.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+  }
+
+  .card-back .bullet-text strong {
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  /* Right column: QR + caption */
+  .card-back .right-col {
+    width: 78px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .card-back .qr-box {
+    width: 62px;
+    height: 62px;
+    background: var(--charcoal);
+    border-radius: 8px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .card-back .qr-box::before,
+  .card-back .qr-box::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: 1px solid var(--gold);
+  }
+  .card-back .qr-box::before {
+    top: 3px; left: 3px;
+    border-right: none; border-bottom: none;
+  }
+  .card-back .qr-box::after {
+    bottom: 3px; right: 3px;
+    border-left: none; border-top: none;
+  }
+
+  .card-back .qr-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .card-back .qr-caption {
+    font-size: 6.5px;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .card-back .qr-caption strong {
+    display: block;
+    color: var(--gold-dark);
+    font-weight: 800;
+  }
+
+  /* Footer */
+  .card-back .footer {
+    padding: 6px 16px;
+    background: var(--cream);
+    border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .card-back .footer-brand {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+
+  .card-back .footer-brand span { color: var(--gold-dark); }
+
+  .card-back .footer-contact {
+    font-size: 5.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: right;
+  }
+
+  /* ───── Print styles ───── */
+  @media print {
+    body {
+      background: white;
+      background-image: none;
+      padding: 0;
+      gap: 0;
+    }
+    h1, .label { display: none; }
+    .cards-wrapper { gap: 0.25in; }
+    .card-front, .card-back {
+      box-shadow: none;
+      page-break-after: always;
+      border-radius: 0;
+    }
+    .card-front { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card-back  { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Owen · Premium Puppy Placement Card</h1>
+
+<div class="cards-wrapper">
+
+  <!-- ── FRONT ── -->
+  <div>
+    <div class="label">Front</div>
+    <div class="card-front">
+      <div class="photo-area">
+        <img src="./IMG_0107-preview.jpg" alt="Owen, Golden Retriever puppy">
+        <div class="gold-stripe"></div>
+      </div>
+
+      <div class="info">
+        <img class="logo-mark" src="../../pictures/Logos/blackbadgewhitecrown.png" alt="Crowned K9s logo">
+
+        <div class="top">
+          <div class="ppp-badge">
+            <span>Premium Puppy Placement</span>
+          </div>
+          <div class="dog-name">Owen</div>
+          <div class="meta-row">
+            <span class="breed">Golden Retriever</span>
+            <span class="dot"></span>
+            <span class="dob">Born Feb 13, 2026</span>
+          </div>
+          <div class="trait">"Deeply connected to his human — calm, loving, and built for family life."</div>
+        </div>
+
+        <div class="bottom">
+          <div class="brand-lockup">
+            <div class="website">crownedk9s.com · @crownedk9s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BACK ── -->
+  <div>
+    <div class="label">Back</div>
+    <div class="card-back">
+      <div class="gold-bar"></div>
+
+      <div class="header">
+        <img class="header-logo" src="../../pictures/Logos/blackbadgewhitecrown.png" alt="Crowned K9s logo">
+        <div class="header-text-wrap">
+          <div class="header-text">What Owen Is Being Trained For</div>
+          <div class="header-sub">Crowned K9s · 3–4 Week Leadership System</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="bullets">
+          <div class="bullet">
+            <div class="bullet-dot"></div>
+            <div class="bullet-text"><strong>Crate confidence & routine</strong> — settles with less whining; structured days from day one.</div>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot"></div>
+            <div class="bullet-text"><strong>Foundational obedience</strong> — sit, down, leave it,recall, and "place" for real-life calm at home.</div>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot"></div>
+            <div class="bullet-text"><strong>Doorway manners & leash skills</strong> — waits at every threshold; comfortable with a leash.</div>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot"></div>
+            <div class="bullet-text"><strong>Bathroom on command</strong> — fast & on cue, so you're not standing outside waiting.</div>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot"></div>
+            <div class="bullet-text"><strong>Real-world socialization</strong> — confident and social.</div>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="qr-box">
+            <img src="./Image 4-17-26 at 10.50 AM.PNG" alt="QR code for Owen's progress">
+          </div>
+          <div class="qr-caption">
+            <strong>Scan</strong>
+            Owen's Progress
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-brand">Crowned <span>K9s</span> Academy</div>
+        <div class="footer-contact">Follow-up Training Included · Lifetime Discounts</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

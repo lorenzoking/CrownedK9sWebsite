@@ -809,6 +809,540 @@
         gap: 2rem;
       }
     }
+
+    /* ─────────────────────────────────────────────
+       PPP REFRESH — calmer hierarchy + accordions
+    ───────────────────────────────────────────── */
+
+    /* Slimmer trust microcopy under hero CTAs */
+    .hero-trust-line {
+      margin: 1.1rem 0 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.55;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem 0.85rem;
+    }
+    .hero-trust-line span {
+      display: inline-flex;
+      align-items: center;
+    }
+    .hero-trust-line span + span::before {
+      content: "·";
+      color: rgba(0,0,0,0.25);
+      margin-right: 0.85rem;
+    }
+
+    /* Availability strip — keeps conversion path visible without crowding the hero */
+    .availability-strip-section {
+      padding: 2rem 0 0;
+    }
+    .availability-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem 1.75rem;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 16px;
+      padding: 1.1rem 1.4rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    .availability-strip-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-orange);
+      margin: 0 0 0.35rem;
+    }
+    .availability-strip-title {
+      margin: 0 0 0.3rem;
+      font-size: 1.08rem;
+      color: var(--text-dark);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .availability-strip-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+    .availability-strip-meta strong { color: var(--text-dark); }
+    .availability-strip .button { white-space: nowrap; }
+
+    @media (max-width: 720px) {
+      .availability-strip {
+        grid-template-columns: 1fr;
+        padding: 1.1rem;
+      }
+      .availability-strip .button { width: 100%; text-align: center; }
+    }
+
+    /* Program details (accordion) section */
+    .program-details-section {
+      padding: 3.5rem 0 4.5rem;
+    }
+    .program-details-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+    }
+    .program-details-header .program-details-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-orange);
+      margin: 0 0 0.5rem;
+    }
+    .program-details-header h2 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+    .program-details-header .lede {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .disclosure-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .disclosure {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      overflow: hidden;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+      scroll-margin-top: 90px;
+    }
+    .disclosure[open] {
+      box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+      border-color: rgba(230,126,34,0.35);
+    }
+    .disclosure > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.15rem 1.35rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+      transition: background-color 0.2s ease;
+    }
+    .disclosure > summary::-webkit-details-marker { display: none; }
+    .disclosure > summary:hover { background: rgba(230,126,34,0.04); }
+    .disclosure > summary:focus-visible {
+      outline: 2px solid var(--accent-orange);
+      outline-offset: -2px;
+    }
+    .disclosure-summary-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+      min-width: 0;
+    }
+    .disclosure-summary-text .title {
+      font-weight: 700;
+      font-size: 1.06rem;
+      color: var(--text-dark);
+      letter-spacing: -0.005em;
+      line-height: 1.3;
+    }
+    .disclosure-summary-text .meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .disclosure-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(230,126,34,0.1);
+      color: var(--accent-orange);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background-color 0.2s ease;
+    }
+    .disclosure-icon::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translateY(-1px);
+      transition: transform 0.3s ease;
+    }
+    .disclosure[open] > summary .disclosure-icon {
+      background: var(--accent-orange);
+      color: #fff;
+    }
+    .disclosure[open] > summary .disclosure-icon::before {
+      transform: rotate(225deg) translateY(-1px);
+    }
+
+    .disclosure-body {
+      padding: 0 1.35rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-dark);
+    }
+    .disclosure-body > :first-child { margin-top: 1.1rem; }
+    .disclosure-body > :last-child { margin-bottom: 0; }
+    .disclosure-body > p {
+      line-height: 1.65;
+      color: var(--text-dark);
+      max-width: 64ch;
+    }
+
+    /* Feature list (used in "How PPP is different" + "After go-home") */
+    .disclosure-body .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.85rem;
+    }
+    .disclosure-body .feature-list li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 0.6rem;
+      row-gap: 0.25rem;
+      padding: 0.95rem 1rem;
+      background: #f8faf5;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      align-items: start;
+      line-height: 1.55;
+    }
+    .disclosure-body .feature-list li::before {
+      content: "✓";
+      color: var(--accent-orange);
+      font-weight: 700;
+      grid-column: 1;
+      grid-row: 1;
+      line-height: 1.4;
+    }
+    .disclosure-body .feature-list li strong {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 0.98rem;
+      color: var(--text-dark);
+    }
+    .disclosure-body .feature-list li .feature-desc {
+      grid-column: 2;
+      grid-row: 2;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Skill grid for "What your puppy already knows" */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem;
+      margin: 1rem 0 0;
+    }
+    .skill-chip {
+      background: #f8faf5;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+    }
+    .skill-chip h4 {
+      margin: 0 0 0.2rem;
+      font-size: 0.97rem;
+      color: var(--text-dark);
+    }
+    .skill-chip p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* Fit-check two-column */
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 0;
+    }
+    .fit-card {
+      background: #f8faf5;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+    }
+    .fit-card.fit-card--no { background: #fff8f0; border-color: #ffd2a8; }
+    .fit-card h4 {
+      margin: 0 0 0.65rem;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+    .fit-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .fit-card li {
+      font-size: 0.94rem;
+      line-height: 1.5;
+      color: var(--text-dark);
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 0.4rem;
+    }
+    .fit-card.fit-card--yes li::before { content: "✓"; color: #27ae60; font-weight: 700; }
+    .fit-card.fit-card--no li::before { content: "—"; color: var(--accent-orange-dark); font-weight: 700; }
+
+    .program-details-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      justify-content: center;
+      margin: 2.5rem auto 0;
+      max-width: 820px;
+    }
+
+    /* Tighten value table when nested inside a disclosure */
+    .disclosure .value-table-wrapper { margin: 1rem 0 0; max-width: 100%; }
+    .disclosure .value-summary { margin-top: 1.25rem; padding: 1.25rem; }
+    .disclosure .pricing-note { margin-top: 1.25rem; }
+    .disclosure .process-steps { margin-top: 0.5rem; }
+
+    /* Mobile tweaks */
+    @media (max-width: 640px) {
+      .program-details-section { padding: 2.5rem 0 3rem; }
+      .availability-strip-section { padding-top: 1.5rem; }
+      .disclosure > summary { padding: 1rem 1.05rem; gap: 0.6rem; }
+      .disclosure-summary-text .title { font-size: 1rem; }
+      .disclosure-summary-text .meta { font-size: 0.84rem; }
+      .disclosure-body { padding: 0 1.05rem 1.25rem; }
+      .program-details-cta { flex-direction: column; align-items: stretch; }
+      .program-details-cta .button,
+      .program-details-cta .cta-button { width: 100%; text-align: center; }
+    }
+
+    /* ─────────────────────────────────────────────
+       MOBILE-FIRST CONVERSION TUNING
+    ───────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .placement-page > section + section {
+        margin-top: 1.9rem;
+      }
+
+      /* Keep section CTAs centered consistently on PPP mobile layouts. */
+      .placement-page .presentation-cta-bar {
+        align-items: center;
+      }
+      .placement-page .presentation-cta-bar > div {
+        width: 100%;
+        text-align: center;
+      }
+      .placement-page .presentation-cta-bar .button {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 360px;
+      }
+
+      /* Keep the hero message and CTA visible sooner on phones. */
+      .hero.hero--light .container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .hero.hero--light .container > div:first-child {
+        order: 1;
+      }
+      .hero.hero--light .container > div:last-child {
+        order: 2;
+      }
+      .hero.hero--light .poster-img {
+        max-width: 280px;
+        margin-top: 0.5rem;
+      }
+      .hero.hero--light {
+        padding-bottom: 2.4rem;
+      }
+      .hero.hero--light h1 {
+        font-size: clamp(1.9rem, 7.4vw, 2.35rem);
+      }
+      .hero.hero--light p {
+        font-size: 0.98rem;
+        line-height: 1.58;
+      }
+      .hero-outcome-bullets {
+        gap: 0.75rem;
+        margin: 1rem 0 1.15rem;
+      }
+      .hero-outcome-bullets li {
+        font-size: 0.95rem;
+      }
+      .hero-outcome-bullets li strong {
+        font-size: 0.97rem;
+      }
+      .hero-trust-line {
+        margin-top: 0.9rem;
+        font-size: 0.86rem;
+        gap: 0.25rem 0.7rem;
+      }
+      .hero-trust-line span + span::before {
+        margin-right: 0.7rem;
+      }
+      .hero-actions .cta-button,
+      .hero-actions .button {
+        min-height: 48px;
+      }
+
+      /* Keep presentation CTA compact and scan-friendly on mobile. */
+      .presentation-cta-bar {
+        padding: 0.9rem 1rem;
+        gap: 0.75rem;
+      }
+      .presentation-cta-copy {
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+
+      /* Improve touch interaction confidence for accordions. */
+      .disclosure > summary {
+        min-height: 56px;
+      }
+      .disclosure-icon {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .presentation-cta-copy {
+        display: none;
+      }
+      .presentation-cta-bar {
+        border-radius: 14px;
+      }
+      .placement-page .availability-strip {
+        text-align: center;
+      }
+      .availability-strip-title {
+        font-size: 1rem;
+      }
+      .availability-strip-meta {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Center final CTA actions on this page for consistency. */
+    .placement-page .cta-actions {
+      justify-content: center;
+    }
+
+    /* Force-center CTA rows called out in review:
+       Inquire / Apply, Meet Available Pups, Inquire About Owen, Ask About Owen, Text/Call */
+    .placement-page .hero-actions,
+    .placement-page .program-details-cta,
+    .placement-page #next-ppp .coming-cta-block .hero-actions,
+    .placement-page #next-ppp .coming-pup-card .hero-actions {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+    }
+    .placement-page .hero-actions > a,
+    .placement-page .program-details-cta > a,
+    .placement-page #next-ppp .coming-cta-block .hero-actions > a,
+    .placement-page #next-ppp .coming-pup-card .hero-actions > a {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .placement-page .button,
+    .placement-page .cta-button {
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    /* On phones/tablets, keep PPP CTAs centered and content-width
+       (avoid full-width stretch/overflow from inherited width:100 rules). */
+    @media (max-width: 900px) {
+      .placement-page .hero-actions .button,
+      .placement-page .hero-actions .cta-button,
+      .placement-page .program-details-cta .button,
+      .placement-page .program-details-cta .cta-button,
+      .placement-page .availability-strip .button,
+      .placement-page .presentation-cta-bar .button,
+      .placement-page .cta-actions .button,
+      .placement-page .cta-actions .cta-button {
+        width: auto;
+      }
+    }
+
+    /* Sticky mobile CTA keeps inquiry action in reach on small screens. */
+    .mobile-sticky-cta {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: calc(88px + env(safe-area-inset-bottom));
+      }
+      .mobile-sticky-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        display: flex;
+        gap: 0.6rem;
+        padding: 0.65rem 0.8rem calc(0.65rem + env(safe-area-inset-bottom));
+        background: rgba(255,255,255,0.96);
+        border-top: 1px solid var(--border);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 -10px 24px rgba(0,0,0,0.08);
+      }
+      .mobile-sticky-cta a {
+        flex: 1;
+        margin: 0;
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+      .mobile-sticky-cta .button-secondary {
+        color: var(--primary-dark);
+        border-color: #d1d5db;
+      }
+    }
+
+    /* Honor reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .disclosure,
+      .disclosure-icon,
+      .disclosure-icon::before,
+      .disclosure > summary { transition: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -876,32 +1410,25 @@
       <div class="container">
         <div>
           <h1>Skip the Chaos. Bring Home a Puppy with a Head Start.</h1>
-          <p>This isn't a typical placement. These pups are thoughtfully matched and already have structure and training, so you can settle in faster and enjoy the early days. <strong>Every Premium Puppy Placement pup includes genetic testing</strong> (e.g. Embark-style DNA health and breed insight) so families can review results before committing.</p>
-          
+          <p>A thoughtfully selected puppy, raised through the same leadership-based system we use in Crowned K9s Academy &mdash; so day one with your family feels calm, not chaotic.</p>
+
           <ul class="hero-outcome-bullets">
-            <li><strong>Sleep through the night</strong><span class="hero-outcome-desc">A calm crate routine is already established.</span></li>
-            <li><strong>Clear communication</strong><span class="hero-outcome-desc">Foundational obedience is in place so daily life is easier for both of you.</span></li>
-            <li><strong>Potty habits underway</strong><span class="hero-outcome-desc">Fewer accidents and less stress from day one.</span></li>
-            <li><strong>Academy training included</strong><span class="hero-outcome-desc">Typically a <strong>3-4 week</strong> Crowned K9s Academy stay (board-and-train equivalent) before go-home.</span></li>
-            <li><strong>Built-in support after go-home</strong><span class="hero-outcome-desc">2 follow-up sessions, a 1-week board &amp; train credit (before age 1), and University Elite access.</span></li>
+            <li><strong>Sleep through the night</strong><span class="hero-outcome-desc">Calm crate routine already in place.</span></li>
+            <li><strong>Clear communication</strong><span class="hero-outcome-desc">Foundational obedience your pup actually understands.</span></li>
+            <li><strong>Potty habits underway</strong><span class="hero-outcome-desc">Fewer accidents, less stress from day one.</span></li>
+            <li><strong>Academy head start</strong><span class="hero-outcome-desc">Typically a 3&ndash;4 week Crowned K9s Academy stay before go-home.</span></li>
           </ul>
 
-          <div class="hero-support-highlight">
-            <h3>What Happens After Go-Home</h3>
-            <ul>
-              <li>2 follow-up training sessions are included and scheduled.</li>
-              <li>A <strong>1-week board & train credit</strong> you can redeem anytime before your pup&rsquo;s first birthday.</li>
-              <li>Automatic Crowned K9s University Elite enrollment.</li>
-              <li>Private community, lifetime training support, and discounts.</li>
-            </ul>
-          </div>
-          
           <div class="hero-actions">
             <a href="/contact" class="cta-button">Inquire / Apply</a>
-            <a href="#next-ppp" class="button button-secondary">Meet Charlie &amp; Owen</a>
+            <a href="#next-ppp" class="button button-secondary">Meet Available Pups</a>
           </div>
-          <p class="hero-cta-note">Placement fee reflects the puppy + training + included support.</p>
-          <p class="hero-cta-note" style="margin-top:0.65rem;">Our <strong>next featured PPP puppies</strong> are Golden Retriever brothers <strong>Charlie and Owen</strong>. Charlie is reserved; we&rsquo;re taking <strong>inquiries for Owen</strong>. <a href="#next-ppp">Why we brought home both brothers</a>—and how that shapes Owen&rsquo;s training path—is in <strong>Meet Charlie &amp; Owen</strong> below. Recent PPP graduate <strong>Kobe</strong> is with our success stories below. In Foundations, <strong>Stella has officially been placed</strong> and is now home as <strong>Skye</strong>—see the update on <a href="/foundations-program#dogs">Foundations Rescue</a>. <strong>Embark genetic testing applies to PPP puppies only</strong>—Foundations rescues use veterinarian-documented health screening, not DNA panel testing.</p>
+
+          <p class="hero-trust-line">
+            <span>Genetic testing every pup</span>
+            <span>9 pups officially placed</span>
+            <span>Lifetime trainer support</span>
+          </p>
         </div>
         <div>
           <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="poster-img" onclick="openLightbox(this.src)" />
@@ -910,121 +1437,93 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         B) "WHY THIS PROGRAM" SECTION - Benefits > Features
+         AVAILABILITY STRIP — keeps live conversion path visible
     ════════════════════════════════════════════════════════════ -->
-    <section id="why-program">
+    <section class="availability-strip-section">
       <div class="container">
-        <h2 class="section-title" style="text-align: center;">Why a Trained Puppy Costs More</h2>
-        <p class="section-subtext" style="text-align: center;">It's not about the price — it's about what you're getting in return.</p>
-        
-        <ul class="feature-list">
-          <li><strong>You're not starting from scratch.</strong><span class="feature-desc">These pups already understand structure, commands, and calm behavior — saving you months of trial and error.</span></li>
-          <li><strong>Peace of mind from day one.</strong><span class="feature-desc">Less frustration, fewer accidents, and a smoother transition into your home.</span></li>
-          <li><strong>Skip expensive mistakes.</strong><span class="feature-desc">New puppy owners often spend hundreds on emergency vet visits, damaged furniture, or trainers to fix bad habits. You're ahead of that curve.</span></li>
-          <li><strong>Ongoing support included.</strong><span class="feature-desc">You're not on your own — you get follow-up sessions and direct access to the trainer who raised your pup.</span></li>
-          <li><strong>A better long-term fit.</strong><span class="feature-desc">Each puppy is evaluated for temperament and matched to the right family, reducing the risk of behavioral surprises.</span></li>
-          <li><strong>Genetic testing for every pup.</strong><span class="feature-desc">DNA health and breed insight (e.g. Embark) is part of the package—not an add-on—so you can review results with confidence.</span></li>
-        </ul>
-        
-        <!-- CTA Block after Why This Program -->
-        <div class="cta-block">
-          <h3>Interested in a Trained Puppy?</h3>
-          <p>Let's talk about whether this program is right for your family.</p>
-          <div class="hero-actions">
-            <a href="/contact" class="button">Message Us</a>
+        <div class="availability-strip">
+          <div>
+            <p class="availability-strip-eyebrow">Currently in Academy</p>
+            <p class="availability-strip-title">Charlie &amp; Owen &mdash; Golden Retriever brothers</p>
+            <p class="availability-strip-meta">Both brothers are <strong>home and officially in training</strong> at Crowned K9s Academy. <strong>Charlie</strong> is reserved &middot; <strong>Owen</strong> &mdash; inquiries open.</p>
           </div>
+          <a href="#next-ppp" class="button button-secondary">Meet Charlie &amp; Owen</a>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         C) FOUNDATION TRAINING SECTION - Skills + Real-Life Meaning
+         PROGRAM DETAILS — collapsed by default for calm hierarchy
     ════════════════════════════════════════════════════════════ -->
-    <section id="training">
+    <section id="program-details" class="program-details-section">
       <div class="container">
-        <h2 class="section-title" style="text-align: center;">Foundational Obedience Training Included</h2>
-        <p class="section-subtext" style="text-align: center;">Every placement pup leaves with these skills — and here's what they mean for you.</p>
-        
-        <div class="training-grid">
-          <div class="training-item">
-            <h4>Name Recognition</h4>
-            <p class="training-item-benefit">→ Get their attention instantly, even across the room</p>
-          </div>
-          <div class="training-item">
-            <h4>Sit</h4>
-            <p class="training-item-benefit">→ A calm default for greetings and waiting patiently</p>
-          </div>
-          <div class="training-item">
-            <h4>Down</h4>
-            <p class="training-item-benefit">→ Settle into a relaxed state during family time</p>
-          </div>
-          <div class="training-item">
-            <h4>Place</h4>
-            <p class="training-item-benefit">→ Go to their spot and stay — great for guests or dinner time</p>
-          </div>
-          <div class="training-item">
-            <h4>Come (Recall)</h4>
-            <p class="training-item-benefit">→ Come when called, even with distractions around</p>
-          </div>
-          <div class="training-item">
-            <h4>Leash Comfort & Leash Pressure</h4>
-            <p class="training-item-benefit">→ Puppy comfortable with a leash and understanding leash pressure (foundation for future walks)</p>
-          </div>
-          <div class="training-item">
-            <h4>Crate Training + Sleeping Through the Night</h4>
-            <p class="training-item-benefit">→ Restful nights for you and a calm, secure pup</p>
-          </div>
-          <div class="training-item">
-            <h4>Doorway Manners</h4>
-            <p class="training-item-benefit">→ No more rushing the door when guests arrive</p>
-          </div>
-          <div class="training-item">
-            <h4>Impulse Control</h4>
-            <p class="training-item-benefit">→ Wait calmly instead of lunging at food, toys, or people</p>
-          </div>
-          <div class="training-item">
-            <h4>Release Word ("Break")</h4>
-            <p class="training-item-benefit">→ Clear communication when a command ends</p>
-          </div>
-          <div class="training-item">
-            <h4>Potty Training + "Bathroom on Command"</h4>
-            <p class="training-item-benefit">→ Know when and where they'll go — no guesswork</p>
-          </div>
-          <div class="training-item">
-            <h4>Drop It / Leave It</h4>
-            <p class="training-item-benefit">→ Safe, polite behavior around food and objects</p>
-          </div>
+        <div class="program-details-header">
+          <p class="program-details-eyebrow">Program Details</p>
+          <h2>Everything else, when you&rsquo;re ready.</h2>
+          <p class="lede">Tap any section to expand. Scan now &mdash; dig deeper before you reach out.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         D) SOCIALIZATION & DAILY LIFE TRAINING
-    ════════════════════════════════════════════════════════════ -->
-    <section class="why-section" id="socialization">
-      <div class="container">
-        <h2 class="section-title" style="text-align: center;">Real-Life Training & Socialization</h2>
-        <p class="section-subtext" style="text-align: center;" style="color: rgba(255,255,255,0.85);">Training is woven into every day — not just a session here and there.</p>
-        
-        <ul class="feature-list" style="color: var(--text-light);">
-          <li><strong>Daily structure, not occasional lessons.</strong><span class="feature-desc">Training happens throughout the day, integrated into routine activities for natural learning.</span></li>
-          <li><strong>Confident in new environments.</strong><span class="feature-desc">Exposure to different surfaces, sounds, places, and situations so they're adaptable, not anxious.</span></li>
-          <li><strong>Handled with care.</strong><span class="feature-desc">Regular handling for grooming, vet visits, and general touch tolerance.</span></li>
-          <li><strong>Calm around distractions.</strong><span class="feature-desc">Practice focusing and settling even when there's activity, people, or other dogs nearby.</span></li>
-          <li><strong>Appropriate dog socialization.</strong><span class="feature-desc">Safe, structured interactions that build confidence without reinforcing over-excitement or fear.</span></li>
-        </ul>
-      </div>
-    </section>
+        <div class="disclosure-list">
 
-    <!-- ═══════════════════════════════════════════════════════════
-         E) VALUE BREAKDOWN TABLE
-    ════════════════════════════════════════════════════════════ -->
-    <section class="value-section" id="value">
-      <div class="container">
-        <h2 class="section-title" style="text-align: center;">Value Included With Each Puppy</h2>
-        <p class="section-subtext" style="text-align: center;">See the total value you receive compared to the actual placement fee. <strong>Genetic testing is included for every PPP puppy.</strong> Academy development reflects a typical <strong>3–4 week</strong> stay—not a shorter board-and-train window.</p>
-        
-        <div class="value-table-wrapper">
+          <details id="training" class="disclosure">
+            <summary>
+              <span class="disclosure-summary-text">
+                <span class="title">What your puppy already knows</span>
+                <span class="meta">12 foundation skills, trained at Academy</span>
+              </span>
+              <span class="disclosure-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="disclosure-body">
+              <p>Every PPP pup leaves with these skills &mdash; and here&rsquo;s what each one actually means in your day-to-day life.</p>
+              <div class="skill-grid">
+                <div class="skill-chip"><h4>Name Recognition</h4><p>Get their attention instantly, even across the room.</p></div>
+                <div class="skill-chip"><h4>Sit</h4><p>A calm default for greetings and waiting patiently.</p></div>
+                <div class="skill-chip"><h4>Down</h4><p>Settle into a relaxed state during family time.</p></div>
+                <div class="skill-chip"><h4>Place</h4><p>Go to their spot and stay &mdash; great for guests or dinner.</p></div>
+                <div class="skill-chip"><h4>Come (Recall)</h4><p>Come when called, even with distractions around.</p></div>
+                <div class="skill-chip"><h4>Leash Comfort &amp; Pressure</h4><p>Comfortable on a leash and understanding leash pressure.</p></div>
+                <div class="skill-chip"><h4>Crate &amp; Sleeping Through the Night</h4><p>Restful nights for you and a calm, secure pup.</p></div>
+                <div class="skill-chip"><h4>Doorway Manners</h4><p>No more rushing the door when guests arrive.</p></div>
+                <div class="skill-chip"><h4>Impulse Control</h4><p>Wait calmly instead of lunging at food, toys, or people.</p></div>
+                <div class="skill-chip"><h4>Release Word (&ldquo;Break&rdquo;)</h4><p>Clear communication when a command ends.</p></div>
+                <div class="skill-chip"><h4>Potty Training &amp; On-Command</h4><p>Know when and where they&rsquo;ll go &mdash; no guesswork.</p></div>
+                <div class="skill-chip"><h4>Drop It / Leave It</h4><p>Safe, polite behavior around food and objects.</p></div>
+              </div>
+            </div>
+          </details>
+
+          <details id="why-program" class="disclosure">
+            <summary>
+              <span class="disclosure-summary-text">
+                <span class="title">How PPP is different</span>
+                <span class="meta">Why a trained puppy costs more &mdash; and saves more</span>
+              </span>
+              <span class="disclosure-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="disclosure-body">
+              <p>This isn&rsquo;t a breeder-style placement. It&rsquo;s a puppy raised through the same leadership-based system that runs our Academy program &mdash; so what you bring home is structure, not a blank slate.</p>
+              <ul class="feature-list">
+                <li><strong>You&rsquo;re not starting from scratch.</strong><span class="feature-desc">These pups already understand structure, commands, and calm behavior.</span></li>
+                <li><strong>Skip expensive mistakes.</strong><span class="feature-desc">Fewer emergency vet visits, damaged furniture, and trainers brought in to fix bad habits.</span></li>
+                <li><strong>Daily structure, not occasional lessons.</strong><span class="feature-desc">Training is woven through everyday life, not a session here and there.</span></li>
+                <li><strong>Confident in new environments.</strong><span class="feature-desc">Exposure to surfaces, sounds, places, and situations so your pup is adaptable, not anxious.</span></li>
+                <li><strong>Matched, not just sold.</strong><span class="feature-desc">Each puppy is evaluated for temperament and matched to the right family.</span></li>
+                <li><strong>Genetic testing for every pup.</strong><span class="feature-desc">DNA health and breed insight (e.g. Embark) is part of the package &mdash; not an add-on.</span></li>
+              </ul>
+            </div>
+          </details>
+
+          <details id="value" class="disclosure">
+            <summary>
+              <span class="disclosure-summary-text">
+                <span class="title">What&rsquo;s included &amp; investment</span>
+                <span class="meta">Full value breakdown vs. placement fee</span>
+              </span>
+              <span class="disclosure-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="disclosure-body">
+              <p>Genetic testing is included for every PPP puppy. Academy development reflects a typical <strong>3&ndash;4 week</strong> stay &mdash; not a shorter board-and-train window.</p>
+              <div class="value-table-wrapper">
           <!-- Desktop: Table View -->
           <table class="value-table">
             <thead>
@@ -1174,62 +1673,114 @@
                 <p class="value-summary-amount">$3,000 – $5,000</p>
               </div>
             </div>
-            <p class="value-summary-note">That estimate includes the puppy, a typical <strong>3–4 week</strong> Academy stay (valued above), <strong>genetic testing for every pup</strong>, go-home support, University Elite access, and a 1-week board &amp; train credit you can use before their first birthday—so bundled value stays ahead of the placement fee.</p>
+            <p class="value-summary-note">That estimate includes the puppy, a typical <strong>3&ndash;4 week</strong> Academy stay (valued above), <strong>genetic testing for every pup</strong>, go-home support, University Elite access, and a 1-week board &amp; train credit you can use before their first birthday &mdash; so bundled value stays ahead of the placement fee.</p>
           </div>
+              </div>
+
+              <div class="pricing-note">
+                <p><strong>Placement fees start at $3,000</strong> and can reach <strong>up to $5,000</strong> depending on the puppy and how much training is included.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted);">Payment plans may be available after fit is confirmed.</p>
+              </div>
+            </div>
+          </details>
+
+          <details id="after-go-home" class="disclosure">
+            <summary>
+              <span class="disclosure-summary-text">
+                <span class="title">What happens after go-home</span>
+                <span class="meta">Lifetime support, not a one-time handoff</span>
+              </span>
+              <span class="disclosure-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="disclosure-body">
+              <p>You don&rsquo;t leave Academy and lose your trainer. Every PPP family is set up for the first year and beyond.</p>
+              <ul class="feature-list">
+                <li><strong>2 follow-up training sessions.</strong><span class="feature-desc">Scheduled with you after go-home so the foundation sticks.</span></li>
+                <li><strong>1-week board &amp; train credit.</strong><span class="feature-desc">Redeem anytime before your pup&rsquo;s first birthday.</span></li>
+                <li><strong>University Elite auto-enrollment.</strong><span class="feature-desc">Private community, lifetime training resources, and member discounts.</span></li>
+                <li><strong>Direct line to your trainer.</strong><span class="feature-desc">For the questions every new puppy family has &mdash; without paying per session.</span></li>
+                <li><strong>Free entry to puppy group class.</strong><span class="feature-desc">Real-world reps in a structured, social environment.</span></li>
+              </ul>
+            </div>
+          </details>
+
+          <details id="how-it-works" class="disclosure">
+            <summary>
+              <span class="disclosure-summary-text">
+                <span class="title">The process: from inquiry to go-home</span>
+                <span class="meta">Five low-pressure steps</span>
+              </span>
+              <span class="disclosure-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="disclosure-body">
+              <p>A clear path from first message to go-home day &mdash; no surprises, no pressure.</p>
+              <div class="process-steps">
+                <div class="process-step">
+                  <div class="process-step-number">1</div>
+                  <h4>Inquiry</h4>
+                  <p>Send us a message with a bit about your home, family, and what you&rsquo;re looking for.</p>
+                </div>
+                <div class="process-step">
+                  <div class="process-step-number">2</div>
+                  <h4>Quick Fit Call</h4>
+                  <p>We&rsquo;ll hop on a quick call to answer questions and see if there&rsquo;s a good match.</p>
+                </div>
+                <div class="process-step">
+                  <div class="process-step-number">3</div>
+                  <h4>Meet &amp; Greet</h4>
+                  <p>If it feels right, you&rsquo;ll meet the pup in person to confirm the connection.</p>
+                </div>
+                <div class="process-step">
+                  <div class="process-step-number">4</div>
+                  <h4>Placement Agreement</h4>
+                  <p>We&rsquo;ll finalize details, set a go-home date, and walk through your transition plan.</p>
+                </div>
+                <div class="process-step">
+                  <div class="process-step-number">5</div>
+                  <h4>Follow-Up &amp; Support</h4>
+                  <p>Your follow-up sessions are scheduled and you&rsquo;re auto-enrolled into University Elite.</p>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details id="fit-check" class="disclosure">
+            <summary>
+              <span class="disclosure-summary-text">
+                <span class="title">Is PPP right for your family?</span>
+                <span class="meta">Quick honest fit check</span>
+              </span>
+              <span class="disclosure-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="disclosure-body">
+              <p>PPP is a premium placement &mdash; not for everyone. Here&rsquo;s how to tell.</p>
+              <div class="fit-grid">
+                <div class="fit-card fit-card--yes">
+                  <h4>You&rsquo;ll love PPP if you&hellip;</h4>
+                  <ul>
+                    <li>Want to skip the chaos of the first few months.</li>
+                    <li>Value training-first over a blank-slate puppy.</li>
+                    <li>Want lifetime trainer access, not a one-time handoff.</li>
+                    <li>Are ready to follow the structure your pup already learned.</li>
+                  </ul>
+                </div>
+                <div class="fit-card fit-card--no">
+                  <h4>PPP may not be the right fit if you&hellip;</h4>
+                  <ul>
+                    <li>Specifically want to raise a young puppy from scratch.</li>
+                    <li>Prefer a no-structure household.</li>
+                    <li>Aren&rsquo;t ready for the placement-fee range above.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+
         </div>
-        
-        <!-- CTA Block after Value Chart -->
-        <div class="cta-block" style="margin-top: 2.5rem;">
-          <h3>See the Value? Let's Talk.</h3>
-          <p>Reach out to learn about our program and when the next trained puppy may be available.</p>
-          <div class="hero-actions">
-            <a href="/contact" class="button">Apply Now</a>
-            <a href="tel:9198162426" class="button button-secondary">Call 919-816-2426</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ═══════════════════════════════════════════════════════════
-         F) HOW IT WORKS - PROCESS SECTION
-    ════════════════════════════════════════════════════════════ -->
-    <section class="process-section" id="how-it-works">
-      <div class="container">
-        <h2 class="section-title" style="text-align: center;">How It Works</h2>
-        <p class="section-subtext" style="text-align: center;">A clear, low-pressure process from first inquiry to go-home day.</p>
-        
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="process-step-number">1</div>
-            <h4>Inquiry</h4>
-            <p>Send us a message with a bit about your home, family, and what you're looking for in a pup.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-step-number">2</div>
-            <h4>Quick Fit Call</h4>
-            <p>We'll hop on a quick call to answer questions and see if there's a good match.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-step-number">3</div>
-            <h4>Meet & Greet</h4>
-            <p>If it feels right, you'll meet the pup in person to confirm the connection.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-step-number">4</div>
-            <h4>Placement Agreement</h4>
-            <p>We'll finalize details, set a go-home date, and walk through your transition plan.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-step-number">5</div>
-            <h4>Follow-Up & Support</h4>
-            <p>Your follow-up sessions are scheduled, and you&rsquo;re auto-enrolled into University Elite for a private community, lifetime training support, and discounts—plus direct trainer access for questions.</p>
-          </div>
-        </div>
-        
-        <!-- Pricing Note -->
-        <div class="pricing-note">
-          <p><strong>Placement fees start at $3,000</strong> and can reach <strong>up to $5,000</strong> depending on the puppy and how much training is included.</p>
-          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted);">Payment plans may be available after fit is confirmed.</p>
+
+        <div class="program-details-cta">
+          <a href="/contact" class="cta-button">Inquire / Apply</a>
+          <a href="#next-ppp" class="button button-secondary">Meet Available Pups</a>
         </div>
       </div>
     </section>
@@ -1240,11 +1791,11 @@
     <section class="pup-feature" id="next-ppp">
       <div class="container">
         <div class="pup-feature-header reveal">
-          <p class="coming-kicker">Coming Soon to PPP</p>
+          <p class="coming-kicker">Now in Academy</p>
           <h2 class="section-title">Meet Charlie &amp; Owen</h2>
-          <p class="coming-intro"><strong>Charlie</strong> is reserved. <strong>Owen</strong> is currently the available brother, and we&rsquo;re taking inquiries while both boys move through Academy.</p>
+          <p class="coming-intro"><strong>Charlie</strong> is reserved. <strong>Owen</strong> is currently the available brother, and we&rsquo;re taking inquiries while both boys are in training.</p>
           <div class="coming-story">
-            <p>We&rsquo;re bringing Charlie and Owen home on <strong>April 12</strong> and putting <strong>both brothers</strong> through Crowned K9s Academy. The family that raised them met everything we look for&mdash;parents health-tested, intentional early socialization, microchipped puppies, current vaccinations, AKC registration, and consistent transparency.</p>
+            <p>Charlie and Owen are <strong>home with us now</strong> and officially in training at <strong>Crowned K9s Academy</strong>. The family that raised them met everything we look for&mdash;parents health-tested, intentional early socialization, microchipped puppies, current vaccinations, AKC registration, and consistent transparency.</p>
             <p>Owen stood out early as the second-smallest and more reserved in group interactions. In our experience, puppies with that softer, shy temperament need especially thoughtful structure and socialization to build confidence. Training both brothers through Academy gives us the right environment to develop Owen well while keeping him available for the best-fit family.</p>
           </div>
         </div>
@@ -1252,7 +1803,7 @@
         <div class="coming-soon-grid">
           <article class="coming-pup-card reveal">
             <div class="coming-pup-media">
-              <img src="../pictures/PRP/Charlie/charliewalk.jpg" alt="Charlie, a Golden Retriever puppy, walking outdoors" width="1200" height="900" loading="lazy" decoding="async">
+              <img src="../pictures/PRP/Charlie/charlie-ppp-hero.jpg" alt="Charlie, a Golden Retriever puppy" width="1600" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="coming-pup-header">
               <div>
@@ -1261,22 +1812,22 @@
               </div>
               <span class="coming-status coming-status--reserved">Reserved</span>
             </div>
-            <p>Charlie has already found his family and is officially reserved. He&rsquo;ll still move through Crowned K9s Academy alongside Owen before go-home so both brothers get the same training-first foundation.</p>
+            <p>Charlie has already found his family and is officially reserved. He&rsquo;s moving through Crowned K9s Academy alongside Owen right now so both brothers get the same training-first foundation before go-home.</p>
           </article>
 
           <article class="coming-pup-card coming-pup-card--featured reveal reveal-delay-1">
             <div class="coming-pup-media">
-              <img src="../pictures/PRP/Owen/charlie&amp;owen.JPG" alt="Charlie and Owen together; Owen is the golden with lighter patches around his eyes and nose" width="1200" height="900" loading="lazy" decoding="async">
+              <img src="../pictures/PRP/Owen/owen-ppp-hero.jpg" alt="Owen, Golden Retriever puppy at Crowned K9s Academy" width="1600" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="coming-pup-header">
               <div>
                 <h3>Owen</h3>
                 <p class="coming-pup-meta">Golden Retriever · Male · Born February 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
               </div>
-              <span class="coming-status coming-status--available">Coming Soon · Inquiries Open</span>
+              <span class="coming-status coming-status--available">In Academy · Inquiries Open</span>
             </div>
             <p class="coming-owen-note">In photos of the brothers together, <strong>Owen</strong> is the golden with the lighter &ldquo;mask&rdquo; around his eyes and nose.</p>
-            <p>Owen is Charlie&rsquo;s brother and will move through our Premium Puppy Placement process with the same structure, communication, and training-first foundation that defines Crowned K9s PPP.</p>
+            <p>Owen is Charlie&rsquo;s brother and is actively moving through our Premium Puppy Placement process with the same structure, communication, and training-first foundation that defines Crowned K9s PPP.</p>
             <p>For the family who moves forward with Owen, this is not just bringing home a puppy. It is bringing home a calmer start, clearer communication, and a structured head start through Crowned K9s training.</p>
             <div class="hero-actions">
               <a href="/contact" class="cta-button">Inquire About Owen</a>
@@ -1442,6 +1993,24 @@
           if (e.key === 'Escape') closeLightbox();
         });
       });
+
+      // Open the program-details accordion that matches the URL hash so existing
+      // deep links (e.g. /premium-puppy-placement#value) still land on the right content.
+      (function () {
+        function openHashTarget() {
+          var id = (window.location.hash || '').replace('#', '');
+          if (!id) return;
+          var el = document.getElementById(id);
+          if (el && el.tagName === 'DETAILS' && !el.open) {
+            el.open = true;
+            setTimeout(function () {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 60);
+          }
+        }
+        window.addEventListener('hashchange', openHashTarget);
+        document.addEventListener('DOMContentLoaded', openHashTarget);
+      })();
     </script>
 
     <!-- ═══════════════════════════════════════════════════════════
@@ -1461,6 +2030,11 @@
         </div>
       </div>
     </section>
+
+    <div class="mobile-sticky-cta" aria-label="Quick actions">
+      <a href="/contact" class="cta-button">Inquire / Apply</a>
+      <a href="tel:9198162426" class="button button-secondary">Text/Call</a>
+    </div>
   </main>
 
   <footer>
