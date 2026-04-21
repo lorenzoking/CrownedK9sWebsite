@@ -536,6 +536,27 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
+    .coming-pup-lane {
+      display: inline-block;
+      margin: 0.5rem 0 0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      line-height: 1.2;
+    }
+    .coming-pup-lane--fmp {
+      background: #fff3e9;
+      color: #9a4a00;
+      border: 1px solid #ffd2a8;
+    }
+    .coming-pup-lane--ppp {
+      background: #eef3fb;
+      color: #2f4a7a;
+      border: 1px solid #cdd9ee;
+    }
     .coming-pup-card p {
       margin: 0;
       line-height: 1.65;
@@ -881,6 +902,249 @@
         padding: 1.1rem;
       }
       .availability-strip .button { width: 100%; text-align: center; }
+    }
+
+    /* Find My Puppy — Concierge Placement */
+    .concierge-section {
+      padding: 4rem 0 4.5rem;
+      background:
+        radial-gradient(120% 80% at 10% 0%, rgba(255, 176, 87, 0.14), transparent 60%),
+        radial-gradient(100% 80% at 100% 100%, rgba(93, 120, 184, 0.10), transparent 60%),
+        linear-gradient(180deg, #fbf8f3 0%, #f5f1ea 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .concierge-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .concierge-eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--accent-orange);
+      background: #fff3e9;
+      border: 1px solid #ffd2a8;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      margin: 0 0 0.9rem;
+    }
+    .concierge-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.6vw, 2.35rem);
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .concierge-lede {
+      font-size: 1.06rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 64ch;
+      margin: 0 0 1.4rem;
+    }
+    .concierge-lede strong { color: var(--text-dark); }
+    .concierge-positioning {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin: 0 0 1.6rem;
+    }
+    .concierge-pos-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.95rem 1.05rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .concierge-pos-card h4 {
+      margin: 0 0 0.35rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .concierge-pos-card p {
+      margin: 0;
+      color: var(--text-dark);
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+    .concierge-pos-card--ours {
+      border-left: 4px solid var(--accent-orange);
+    }
+    .concierge-pos-card--yours {
+      border-left: 4px solid #5d78b8;
+    }
+    .concierge-steps {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.25rem 1.25rem 0.6rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin: 0 0 1.6rem;
+    }
+    .concierge-steps ol {
+      list-style: none;
+      counter-reset: concierge;
+      padding: 0;
+      margin: 0;
+    }
+    .concierge-steps li {
+      counter-increment: concierge;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.9rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .concierge-steps li:last-child { border-bottom: 0; }
+    .concierge-steps li::before {
+      content: counter(concierge);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--accent-orange);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      font-family: 'Cabinet Grotesk', sans-serif;
+    }
+    .concierge-steps li strong {
+      display: block;
+      color: var(--text-dark);
+      font-size: 1rem;
+      margin: 0.15rem 0 0.15rem;
+    }
+    .concierge-steps li span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      display: block;
+    }
+    .concierge-includes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0 0 1.4rem;
+    }
+    .concierge-includes span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+    }
+    .concierge-includes span::before {
+      content: "\2713";
+      color: var(--accent-orange);
+      font-weight: 800;
+    }
+    .concierge-fee {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+      margin: 0 0 1.4rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.97rem;
+    }
+    .concierge-fee strong { color: var(--text-dark); }
+    .concierge-proof {
+      display: grid;
+      grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+      gap: 1.1rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1rem;
+      margin: 0 0 1.4rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .concierge-proof-media {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #eef2f7;
+    }
+    .concierge-proof-media img {
+      width: 100%;
+      height: 100%;
+      max-height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .concierge-proof-body { min-width: 0; }
+    .concierge-proof-eyebrow {
+      margin: 0 0 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-orange);
+    }
+    .concierge-proof-body h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+    .concierge-proof-body p {
+      margin: 0 0 0.6rem;
+      color: var(--text-dark);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+    .concierge-proof-body p:last-child { margin-bottom: 0; }
+    .concierge-proof-aside {
+      color: var(--muted) !important;
+      font-size: 0.9rem !important;
+      padding-top: 0.55rem;
+      border-top: 1px dashed var(--border);
+    }
+    .concierge-proof-aside a {
+      color: var(--accent-orange);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid transparent;
+    }
+    .concierge-proof-aside a:hover { border-bottom-color: var(--accent-orange); }
+    @media (max-width: 640px) {
+      .concierge-proof {
+        grid-template-columns: 1fr;
+      }
+      .concierge-proof-media img { max-height: 280px; }
+    }
+    .concierge-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .concierge-cta .button,
+    .concierge-cta .cta-button { white-space: nowrap; }
+    @media (max-width: 720px) {
+      .concierge-section { padding: 3rem 0 3.25rem; }
+      .concierge-positioning { grid-template-columns: 1fr; }
+      .concierge-steps { padding: 1rem 1rem 0.4rem; }
+      .concierge-cta { flex-direction: column; align-items: stretch; }
+      .concierge-cta .button,
+      .concierge-cta .cta-button { width: 100%; text-align: center; }
     }
 
     /* Program details (accordion) section */
@@ -1258,7 +1522,7 @@
     }
 
     /* Force-center CTA rows called out in review:
-       Inquire / Apply, Meet Available Pups, Inquire About Owen, Ask About Owen, Text/Call */
+       Start My Puppy Search, Inquire / Apply, See Find My Puppy, Text/Call */
     .placement-page .hero-actions,
     .placement-page .program-details-cta,
     .placement-page #next-ppp .coming-cta-block .hero-actions,
@@ -1420,8 +1684,8 @@
           </ul>
 
           <div class="hero-actions">
-            <a href="/contact" class="cta-button">Inquire / Apply</a>
-            <a href="#next-ppp" class="button button-secondary">Meet Available Pups</a>
+            <a href="#find-my-puppy" class="cta-button">Start My Puppy Search</a>
+            <a href="/contact" class="button button-secondary">Inquire / Apply</a>
           </div>
 
           <p class="hero-trust-line">
@@ -1443,11 +1707,109 @@
       <div class="container">
         <div class="availability-strip">
           <div>
-            <p class="availability-strip-eyebrow">Currently in Academy</p>
-            <p class="availability-strip-title">Charlie &amp; Owen &mdash; Golden Retriever brothers</p>
-            <p class="availability-strip-meta">Both brothers are <strong>home and officially in training</strong> at Crowned K9s Academy. <strong>Charlie</strong> is reserved &middot; <strong>Owen</strong> &mdash; inquiries open.</p>
+            <p class="availability-strip-eyebrow">PPP Update</p>
+            <p class="availability-strip-title">Charlie &amp; Owen &mdash; both officially reserved</p>
+            <p class="availability-strip-meta">Our current brothers are placed. Want the <strong>next Crowned K9s puppy</strong> to be yours? Hire me to source, select, and train the puppy <strong>for your family</strong>.</p>
           </div>
-          <a href="#next-ppp" class="button button-secondary">Meet Charlie &amp; Owen</a>
+          <a href="#find-my-puppy" class="button button-secondary">See Find My Puppy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         FIND MY PUPPY — Concierge Placement (client-commissioned PPP)
+    ════════════════════════════════════════════════════════════ -->
+    <section id="find-my-puppy" class="concierge-section">
+      <div class="container">
+        <div class="concierge-wrap">
+          <div>
+            <span class="concierge-eyebrow">New &middot; Concierge Placement</span>
+            <h2 class="concierge-heading">Find My Puppy &mdash; let me raise the next Crowned K9s pup <em>for your family</em>.</h2>
+            <p class="concierge-lede">Same training-first system as PPP. Same go-home standard. The difference: <strong>you commission the puppy</strong>. I source the breeder, pick the pup that fits your lifestyle, raise and train them from <strong>8&ndash;11 weeks</strong>, handle vet care, and send them home ready. One <strong>flat concierge fee</strong>.</p>
+          </div>
+
+          <div class="concierge-positioning">
+            <div class="concierge-pos-card concierge-pos-card--ours">
+              <h4>Standard PPP</h4>
+              <p>I pick the breeder and the puppy, then find the right family after training.</p>
+            </div>
+            <div class="concierge-pos-card concierge-pos-card--yours">
+              <h4>Find My Puppy</h4>
+              <p>You hire me first. I find the breeder, pick the pup <em>for you</em>, and train them before go-home.</p>
+            </div>
+          </div>
+
+          <div class="concierge-steps">
+            <ol>
+              <li>
+                <div>
+                  <strong>I source the breeder.</strong>
+                  <span>Health-tested parents, intentional early socialization, transparent communication &mdash; the same standard I use for every Crowned K9s puppy.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>I pick the right puppy for you.</strong>
+                  <span>Remote temperament evaluation tuned to your household, lifestyle, and goals. It&rsquo;s a read I&rsquo;ve sharpened across many placements &mdash; even without meeting the litter in person.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>I handle the breeder and the handoff.</strong>
+                  <span>Communication, paperwork, logistics, and in-person pick-up of the pup. You don&rsquo;t have to travel or coordinate.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>I raise &amp; train them from 8&ndash;11 weeks.</strong>
+                  <span>Your puppy goes straight into my Academy &mdash; potty training, crate, leadership, socialization, foundation obedience. The same work every PPP pup gets.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>I handle vet care during training.</strong>
+                  <span>Vaccinations and early vet visits while the puppy is with me, so you inherit a healthy, current pup.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Go-home, ready for real life.</strong>
+                  <span>Your puppy comes home with starter supplies, a structured handoff, and the same communication and support PPP families get.</span>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="concierge-includes" aria-label="What's included">
+            <span>Breeder sourcing</span>
+            <span>Temperament matching</span>
+            <span>Pick-up logistics</span>
+            <span>8&ndash;11 weeks of training</span>
+            <span>Vet visits &amp; vaccinations</span>
+            <span>Go-home supplies</span>
+            <span>Post-placement support</span>
+          </div>
+
+          <div class="concierge-proof">
+            <div class="concierge-proof-media">
+              <img src="../pictures/PRP/Charlie/IMG_0051.jpg" alt="Charlie, our current Find My Puppy client pup" width="1600" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="concierge-proof-body">
+              <p class="concierge-proof-eyebrow">Real example &middot; happening right now</p>
+              <h3>Meet Charlie &mdash; our current Find My Puppy pup.</h3>
+              <p>Charlie&rsquo;s family hired me <em>before</em> they had a puppy. I picked him from a <strong>litter of nine</strong> &mdash; seven still available &mdash; based on the family&rsquo;s energy level, schedule, and the activities they wanted to share with their dog. He&rsquo;s now reserved and in Crowned K9s Academy before go-home.</p>
+              <p class="concierge-proof-aside">Bonus: when I arrived for pick-up, one brother was still without a home. That&rsquo;s Owen &mdash; now also reserved through standard PPP. <a href="#next-ppp">See the brothers &rarr;</a></p>
+            </div>
+          </div>
+
+          <div class="concierge-fee">
+            <strong>Flat concierge fee.</strong> Because every search is a little different (breed, timing, travel), I&rsquo;ll walk you through scope, timeline, and the exact flat fee on a quick call. No guessing &mdash; one transparent number, one training-first handoff.
+          </div>
+
+          <div class="concierge-cta">
+            <a href="/contact" class="cta-button">Start my puppy search</a>
+            <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1793,26 +2155,28 @@
         <div class="pup-feature-header reveal">
           <p class="coming-kicker">Now in Academy</p>
           <h2 class="section-title">Meet Charlie &amp; Owen</h2>
-          <p class="coming-intro"><strong>Charlie</strong> is reserved. <strong>Owen</strong> is currently the available brother, and we&rsquo;re taking inquiries while both boys are in training.</p>
+          <p class="coming-intro">Both brothers are <strong>officially reserved</strong> and moving through Crowned K9s Academy together before go-home. Their story is also the clearest real-life proof of how <a href="#find-my-puppy"><strong>Find My Puppy</strong></a> works.</p>
           <div class="coming-story">
-            <p>Charlie and Owen are <strong>home with us now</strong> and officially in training at <strong>Crowned K9s Academy</strong>. The family that raised them met everything we look for&mdash;parents health-tested, intentional early socialization, microchipped puppies, current vaccinations, AKC registration, and consistent transparency.</p>
-            <p>Owen stood out early as the second-smallest and more reserved in group interactions. In our experience, puppies with that softer, shy temperament need especially thoughtful structure and socialization to build confidence. Training both brothers through Academy gives us the right environment to develop Owen well while keeping him available for the best-fit family.</p>
+            <p><strong>Charlie was a Find My Puppy pick.</strong> His family hired me <em>before</em> they had a puppy and asked me to find the right one. I picked him from a litter of nine &mdash; seven of them still available &mdash; based on the family&rsquo;s energy level, schedule, and the kind of activities they wanted to do with their dog. That temperament read is a skill I&rsquo;ve sharpened across many placements, and Charlie was the clear match for them.</p>
+            <p><strong>Owen is how classic PPP happens.</strong> When I arrived at the breeder&rsquo;s to pick up Charlie, one puppy was still there without a home &mdash; the outlier of the pack. That&rsquo;s Owen. I took the challenge of training both brothers at once and brought him into our standard Premium Puppy Placement lane. He&rsquo;s now reserved too, moving through Academy alongside Charlie so both boys go home with the same training-first foundation.</p>
+            <p>The parents met every standard we look for &mdash; health-tested, intentional early socialization, microchipped puppies, current vaccinations, AKC registration, and consistent transparency.</p>
           </div>
         </div>
 
         <div class="coming-soon-grid">
           <article class="coming-pup-card reveal">
             <div class="coming-pup-media">
-              <img src="../pictures/PRP/Charlie/charlie-ppp-hero.jpg" alt="Charlie, a Golden Retriever puppy" width="1600" height="1200" loading="lazy" decoding="async">
+              <img src="../pictures/PRP/Charlie/IMG_0051.jpg" alt="Charlie, a Golden Retriever puppy" width="1600" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="coming-pup-header">
               <div>
                 <h3>Charlie</h3>
                 <p class="coming-pup-meta">Golden Retriever · Male · Born February 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
+                <p class="coming-pup-lane coming-pup-lane--fmp">Find My Puppy · Client-commissioned</p>
               </div>
               <span class="coming-status coming-status--reserved">Reserved</span>
             </div>
-            <p>Charlie has already found his family and is officially reserved. He&rsquo;s moving through Crowned K9s Academy alongside Owen right now so both brothers get the same training-first foundation before go-home.</p>
+            <p>Charlie&rsquo;s family hired me <em>before</em> they had a puppy. I picked him from a litter of nine &mdash; seven still available &mdash; based on their energy level, schedule, and the activities they wanted to share with their dog. He&rsquo;s now in Crowned K9s Academy alongside Owen before go-home.</p>
           </article>
 
           <article class="coming-pup-card coming-pup-card--featured reveal reveal-delay-1">
@@ -1823,15 +2187,12 @@
               <div>
                 <h3>Owen</h3>
                 <p class="coming-pup-meta">Golden Retriever · Male · Born February 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
+                <p class="coming-pup-lane coming-pup-lane--ppp">Classic PPP · I picked, then placed</p>
               </div>
-              <span class="coming-status coming-status--available">In Academy · Inquiries Open</span>
+              <span class="coming-status coming-status--reserved">Reserved</span>
             </div>
             <p class="coming-owen-note">In photos of the brothers together, <strong>Owen</strong> is the golden with the lighter &ldquo;mask&rdquo; around his eyes and nose.</p>
-            <p>Owen is Charlie&rsquo;s brother and is actively moving through our Premium Puppy Placement process with the same structure, communication, and training-first foundation that defines Crowned K9s PPP.</p>
-            <p>For the family who moves forward with Owen, this is not just bringing home a puppy. It is bringing home a calmer start, clearer communication, and a structured head start through Crowned K9s training.</p>
-            <div class="hero-actions">
-              <a href="/contact" class="cta-button">Inquire About Owen</a>
-            </div>
+            <p>When I arrived to pick up Charlie, Owen was the one puppy still at the breeder&rsquo;s without a home &mdash; the outlier of the pack. I took the challenge of training both brothers at once and brought him into standard Premium Puppy Placement. He&rsquo;s now officially reserved too.</p>
           </article>
         </div>
 
@@ -1857,10 +2218,10 @@
           </div>
 
           <div class="cta-block coming-cta-block">
-            <h3>Interested in Owen?</h3>
-            <p>Inquire about Owen&rsquo;s Premium Puppy Placement and we&rsquo;ll walk you through fit, timing, and next steps.</p>
+            <h3>Want the next Crowned K9s puppy to be yours?</h3>
+            <p>Charlie and Owen are reserved &mdash; but our <strong>Find My Puppy</strong> concierge lane lets you commission the next one. I source the breeder, pick the pup for your family, and train them from 8&ndash;11 weeks before go-home.</p>
             <div class="hero-actions">
-              <a href="/contact" class="button">Ask About Owen</a>
+              <a href="#find-my-puppy" class="button">See Find My Puppy</a>
               <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
             </div>
           </div>
@@ -1911,7 +2272,7 @@
           
           <!-- Charlie -->
           <article class="card">
-            <img src="../pictures/PRP/Charlie.jpeg" alt="Charlie the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Charlie/IMG_0051.jpg" alt="Charlie the pup" class="gallery-img lightbox-img" loading="lazy" />
             <h3>Charlie</h3>
             <p class="subtext">Olde English Bulldogge</p>
             <div class="pup-testimonial">
@@ -2021,10 +2382,10 @@
         <div class="cta-banner">
           <div>
             <h2>Ready to Meet Your New Best Friend?</h2>
-            <p>Reach out and we'll help you decide if a trained placement puppy is right for your family, whether you're interested in <strong>Owen&rsquo;s upcoming PPP lane</strong> or upcoming Foundations dogs (recent placement update: <a href="/foundations-program#dogs">Skye, formerly Stella</a>).</p>
+            <p>Charlie and Owen are reserved, so the active path is <a href="#find-my-puppy"><strong>Find My Puppy</strong></a> &mdash; hire me to source, select, and train the next Crowned K9s puppy for your family. Also ask about upcoming Foundations dogs (recent placement update: <a href="/foundations-program#dogs">Skye, formerly Stella</a>).</p>
           </div>
           <div class="cta-actions">
-            <a href="/contact" class="button">Contact Us</a>
+            <a href="#find-my-puppy" class="button">See Find My Puppy</a>
             <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
           </div>
         </div>

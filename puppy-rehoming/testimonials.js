@@ -121,7 +121,7 @@ const CURRENT_PUPS = [
 const PAST_PUPS = [
   { name: "Rocko", breed: "French Bulldog", image: "../pictures/PRP/rocko.jpg" },
   { name: "Kai", breed: "Olde English Bulldogge", image: "../pictures/PRP/Kai.jpeg" },
-  { name: "Charlie", breed: "Olde English Bulldogge", image: "../pictures/PRP/Charlie.jpeg" },
+  { name: "Charlie", breed: "Olde English Bulldogge", image: "../pictures/PRP/Charlie/charlie-ppp-hero.jpg" },
   { name: "Brutus", breed: "Amstaff", image: "../pictures/PRP/brutus.jpg" },
   { name: "Mozzie", breed: "Mini Australian Shepherd", image: "../pictures/PRP/mozzie.jpeg" },
   { name: "Maple", breed: "Amstaff", image: "../pictures/PRP/maple.jpeg" },

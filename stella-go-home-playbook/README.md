@@ -8,6 +8,10 @@ After deploy, open:
 
 `https://crownedk9s.com/stella-go-home-playbook/`
 
+Spanish version:
+
+`https://crownedk9s.com/stella-go-home-playbook/index-es.html`
+
 ### Test locally (recommended)
 
 From the repo root:
