@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dog Boarding – Crowned K9s</title>
-  <meta name="description" content="Premium dog boarding in Wendell, NC. Your dog stays in our home with daily training, exercise, and personal attention.">
+  <title>Crowned K9s Academy – Board &amp; Train in Raleigh, NC</title>
+  <meta name="description" content="Crowned K9s Academy board-and-train programs in the Raleigh–Durham area. Basic and Advanced tiers — structured, training-first stays with daily skill-building. We do not offer standalone boarding.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../pictures/Logos/Crowned Icons-02.png">
@@ -13,18 +13,337 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://crownedk9s.com/boarding">
-  <meta property="og:title" content="Dog Boarding – Crowned K9s">
-  <meta property="og:description" content="Premium dog boarding in Wendell, NC. Your dog stays in our home with daily training and personal attention.">
+  <meta property="og:title" content="Crowned K9s Academy – Board &amp; Train in Raleigh, NC">
+  <meta property="og:description" content="Crowned K9s Academy board-and-train programs — Basic and Advanced tiers. Training-first stays with structure, impulse control, and daily skill-building. We do not offer standalone boarding.">
   <meta property="og:image" content="https://crownedk9s.com/pictures/Logos/whitebadgetransCK9s.png">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dog Boarding – Crowned K9s">
-  <meta name="twitter:description" content="Premium dog boarding in Wendell, NC. Your dog stays in our home with daily training and personal attention.">
+  <meta name="twitter:title" content="Crowned K9s Academy – Board &amp; Train in Raleigh, NC">
+  <meta name="twitter:description" content="Crowned K9s Academy board-and-train programs — Basic and Advanced tiers. Structured, training-first stays. We do not offer standalone boarding.">
   <meta name="twitter:image" content="https://crownedk9s.com/pictures/Logos/whitebadgetransCK9s.png">
   
   <link rel="stylesheet" href="../styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Academy hero — transparent logo featured prominently */
+    .academy-hero-logo {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
+      animation: academyLogoFadeIn 0.9s ease-out both;
+    }
+    @keyframes academyLogoFadeIn {
+      from { opacity: 0; transform: translateY(-12px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @media (max-width: 768px) {
+      .academy-hero-logo { max-width: 240px; margin-bottom: 1rem; }
+    }
+
+    /* Academy branding strip — reinforces the mark on the page */
+    .academy-brand-strip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 2.5rem 1rem 0;
+    }
+    .academy-brand-strip img {
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+      opacity: 0.9;
+    }
+    .academy-brand-strip p {
+      margin: 0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* NC compliance notice */
+    .compliance-banner {
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem auto 0;
+      max-width: 980px;
+      border-radius: 14px;
+      border: 1px solid #ffd2a8;
+      background: linear-gradient(135deg, #fffaf4 0%, #fff3e9 100%);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+    .compliance-banner-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--accent-orange);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      line-height: 1;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+    .compliance-banner p {
+      margin: 0;
+      color: var(--text-dark);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+    .compliance-banner strong {
+      color: #9a4a00;
+    }
+
+    /* Academy Pricing — sleek, modern tier cards */
+    .academy-pricing {
+      padding: 5rem 0 4rem;
+      background: linear-gradient(180deg, #fafafa 0%, #f3f4f6 100%);
+    }
+    .academy-pricing-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+    .academy-pricing-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-orange);
+      background: #fff3e9;
+      border: 1px solid #ffd2a8;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .academy-pricing-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem;
+      color: var(--primary-dark);
+    }
+    .academy-pricing-header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .academy-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      align-items: stretch;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .academy-tier {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.25rem 1.85rem 2rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .academy-tier:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(17, 24, 39, 0.1);
+    }
+    .academy-tier--featured {
+      border: 2px solid var(--accent-orange);
+      background: linear-gradient(180deg, #ffffff 0%, #fffaf4 100%);
+      box-shadow: 0 18px 50px rgba(230, 126, 34, 0.15);
+    }
+    .academy-tier-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-orange);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 6px 14px rgba(230, 126, 34, 0.35);
+    }
+    .academy-tier-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.5rem;
+    }
+    .academy-tier--featured .academy-tier-kicker {
+      color: var(--accent-orange);
+    }
+    .academy-tier-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--primary-dark);
+      margin: 0 0 0.6rem;
+    }
+    .academy-tier-promise {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.55;
+      margin: 0 0 1.5rem;
+    }
+    .academy-price-block {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem 1.15rem 1.1rem;
+      margin-bottom: 1.4rem;
+    }
+    .academy-tier--featured .academy-price-block {
+      background: #fff;
+      border-color: #ffd9b3;
+    }
+    .academy-price-row + .academy-price-row {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed var(--border);
+    }
+    .academy-price-amount {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary-dark);
+      line-height: 1;
+      margin: 0;
+    }
+    .academy-price-amount .academy-price-unit {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-left: 0.15rem;
+    }
+    .academy-price-audience {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin: 0.3rem 0 0;
+    }
+    .academy-price-audience--muted { color: var(--muted); font-weight: 500; }
+    .academy-price-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0.55rem 0 0;
+      line-height: 1.5;
+    }
+    .academy-tier-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      flex: 1;
+    }
+    .academy-tier-features li {
+      position: relative;
+      padding: 0.5rem 0 0.5rem 1.85rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--text-dark);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    .academy-tier-features li:last-child { border-bottom: none; }
+    .academy-tier-features li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      background: var(--accent-orange) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>") center/0.9rem no-repeat;
+      flex-shrink: 0;
+    }
+    .academy-tier-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 0.95rem 1rem;
+      border-radius: 12px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: 2px solid transparent;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.25;
+    }
+    .academy-tier-cta--solid {
+      background: var(--accent-orange);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(230, 126, 34, 0.25);
+    }
+    .academy-tier-cta--solid:hover {
+      background: var(--accent-orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(230, 126, 34, 0.3);
+    }
+    .academy-tier-cta--outline {
+      background: transparent;
+      color: var(--accent-orange);
+      border-color: var(--accent-orange);
+    }
+    .academy-tier-cta--outline:hover {
+      background: var(--accent-orange);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .academy-pricing-foot {
+      text-align: center;
+      margin: 2.25rem auto 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .academy-pricing-foot a {
+      color: var(--accent-orange);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    .academy-pricing-foot a:hover { border-bottom-color: var(--accent-orange); }
+
+    @media (max-width: 820px) {
+      .academy-tier-grid {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+        max-width: 480px;
+      }
+      .academy-tier { padding: 2rem 1.4rem 1.75rem; }
+      .academy-price-amount { font-size: 1.75rem; }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -60,7 +379,7 @@
               <li><a href="/foundations-program">Crowned K9s Foundations Rescue</a></li>
             </ul>
           </li>
-          <li><a href="/boarding" class="active">Boarding</a></li>
+          <li><a href="/boarding" class="active">Academy</a></li>
           <li><a href="/#schedule">Schedule</a></li>
           <li><a href="/contact">Contact us</a></li>
           <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
@@ -76,8 +395,19 @@
     <section class="hero hero-boarding">
       <div class="container">
         <div>
-          <h1>Welcome To Crowned K9s Boarding</h1>
-          <p>Personalized boarding in Raleigh, NC. Cozy rooms, structured play, and daily enrichment on our peaceful 1-acre property.</p>
+          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="academy-hero-logo" fetchpriority="high" decoding="async" />
+          <h1>Crowned K9s Academy</h1>
+          <p>Every stay at Crowned K9s is a <strong>board-and-train</strong>. Dogs live with us in a structured, training-first environment &mdash; we do not offer standalone boarding.</p>
+          <p class="section-subtext" style="color: rgb(255, 255, 255);">Based in the Raleigh&ndash;Durham area, with Academy clients welcomed from anywhere in North Carolina.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="compliance-banner" role="note" aria-label="North Carolina compliance notice">
+          <span class="compliance-banner-badge">NC</span>
+          <p><strong>Compliance update:</strong> To align with North Carolina animal welfare requirements, Crowned K9s offers <strong>board-and-train programs only</strong> under Crowned K9s Academy. We do not provide standalone boarding services.</p>
         </div>
       </div>
     </section>
@@ -85,84 +415,126 @@
     <section>
       <div class="container card-grid">
         <article class="card">
-          <h3>Our Environment</h3>
-          <p>At our home-away-from-home location in Raleigh, NC, we specialize in giving every dog a truly personalized boarding experience. As a family-owned and operated business, we believe your pet deserves the same comfort, safety, and attention they get at home—complete with their own cozy room and plenty of supervised playtime. Our 1-acre countryside property offers a peaceful setting where your pup can relax, explore, and enjoy daily enrichment.</p>
+          <h3>Training-First By Design</h3>
+          <p>We are a Board &amp; Train program, not a kennel. Every day includes structure, boundaries, and impulse-control work in a real home setting&mdash;crate etiquette, threshold manners, leash manners around the house, and calm settling. Dogs leave more regulated than they arrived.</p>
         </article>
         <article class="card">
-          <h3>More Than Boarding</h3>
-          <p>Beyond boarding, we also provide day classes and specialized board & train programs to meet each dog’s unique needs. With limited spots available, every guest benefits from one-on-one interaction and a warm, family-like environment that sets our facility apart. We’re here to ensure your furry companion feels right at home.</p>
+          <h3>Two Academy Tiers</h3>
+          <p><strong>Basic Board &amp; Train</strong> is perfect for owners who need a trusted stay that also builds structure, impulse control, separation-anxiety support, and safe, supervised socialization. <strong>Advanced Board &amp; Train</strong> is our full Crowned K9s Academy protocol for foundational obedience, behavior modification, reactivity, and aggression work.</p>
         </article>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section>
+    <section id="pricing" class="academy-pricing">
       <div class="container">
-        <h2 class="section-title">Boarding Pricing</h2>
-        <p class="section-subtext">Personalized care with limited spots—unlike traditional kennels that board dozens of dogs, we focus on quality time and individual attention for better value.</p>
-        <div class="card-grid">
-          <article class="card">
-            <h3>University Elite Members</h3>
-            <p class="price">$80 per day</p>
-            <ul>
-              <li>Best rate for University Elite subscribers</li>
-              <li>Continued reinforcement of learned behaviors</li>
-              <li>One-on-one attention in small groups</li>
+        <div class="academy-brand-strip">
+          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" loading="lazy" decoding="async" />
+          <p>Board &amp; Train Programs</p>
+        </div>
+        <div class="academy-pricing-header">
+          <span class="academy-pricing-eyebrow">Crowned K9s Academy</span>
+          <h2>Pick Your Board &amp; Train Tier</h2>
+          <p>Every stay is training-first. Choose the level of work that matches your dog&rsquo;s goals.</p>
+        </div>
+
+        <div class="academy-tier-grid">
+          <article class="academy-tier">
+            <p class="academy-tier-kicker">Tier 1 &middot; Everyday Structure</p>
+            <h3 class="academy-tier-name">Basic Board &amp; Train</h3>
+            <p class="academy-tier-promise">Structure, boundaries, impulse control, and safe socialization in a real home setting — perfect for dogs who need a trusted stay that still builds good habits.</p>
+
+            <div class="academy-price-block">
+              <div class="academy-price-row">
+                <p class="academy-price-amount">$80<span class="academy-price-unit">/ day</span></p>
+                <p class="academy-price-audience">University Elite &amp; Academy graduates</p>
+              </div>
+              <div class="academy-price-row">
+                <p class="academy-price-amount">$95<span class="academy-price-unit">/ day</span></p>
+                <p class="academy-price-audience academy-price-audience--muted">All other clients</p>
+              </div>
+            </div>
+
+            <ul class="academy-tier-features">
+              <li>Clear daily routine &mdash; no free-for-all</li>
+              <li>Impulse control at doors, thresholds, and meals</li>
+              <li>Separation-anxiety support with calm crate &amp; place work</li>
+              <li>Safe, supervised socialization with our trained pack</li>
+              <li>Reinforcement of behaviors your dog already knows</li>
             </ul>
-            <p class="subtext" style="margin-top: 0.5rem;"><a href="/university" style="color: var(--accent-orange);">Join University Elite →</a></p>
+
+            <a href="/university" class="academy-tier-cta academy-tier-cta--outline">Join University Elite</a>
           </article>
-          <article class="card">
-            <h3>Standard Boarding</h3>
-            <p class="price">$90 per day</p>
-            <ul>
-              <li>Premium care for all boarding clients</li>
-              <li>Custom introduction to our structured environment</li>
-              <li>Limited intake for personalized experience</li>
+
+          <article class="academy-tier academy-tier--featured">
+            <span class="academy-tier-badge">Most Comprehensive</span>
+            <p class="academy-tier-kicker">Tier 2 &middot; Behavior &amp; Obedience</p>
+            <h3 class="academy-tier-name">Advanced Board &amp; Train</h3>
+            <p class="academy-tier-promise">The full Crowned K9s Academy protocol: foundational obedience, behavior modification, and reactivity or aggression rehab &mdash; with daily progress videos and lifetime support.</p>
+
+            <div class="academy-price-block">
+              <div class="academy-price-row">
+                <p class="academy-price-amount">$180<span class="academy-price-unit">/ day</span></p>
+                <p class="academy-price-audience">2 weeks <strong>$2,500</strong> &middot; 3 weeks <strong>$3,000</strong></p>
+                <p class="academy-price-note">Stays over 3 weeks: <strong>$1,000 / week</strong> (4 weeks = $4,000)</p>
+              </div>
+            </div>
+
+            <ul class="academy-tier-features">
+              <li>Three minimum personalized training sessions per day</li>
+              <li>Foundational obedience taught to real-world reliability</li>
+              <li>Reactivity &amp; aggression addressed with a structured protocol</li>
+              <li>Daily progress videos and a tailored recap</li>
+              <li>Unlimited lifetime support after go-home</li>
             </ul>
+
+            <a href="https://calendly.com/crownedk9s/consultation" target="_blank" rel="noopener" class="academy-tier-cta academy-tier-cta--solid">Book a Free Consultation</a>
           </article>
         </div>
+
+        <p class="academy-pricing-foot">Not sure which tier fits? <a href="/find-my-dogs-program">Take the 5-question program finder</a> or <a href="tel:9198162426">text Lorenzo: 919-816-2426</a>.</p>
       </div>
     </section>
 
     <!-- FUN DOG PICTURES GALLERY -->
     <section class="gallery">
       <div class="container">
-        <h2 class="section-title">Fun Moments from Our Boarded Pups</h2>
-        <p class="section-subtext">Silly and fun pictures of boarded dogs.</p>
+        <h2 class="section-title">Life Inside the Academy</h2>
+        <p class="section-subtext">Real moments from dogs staying and training with us.</p>
         <div class="gallery-grid" id="boarding-gallery">
-          <img src="../pictures/Boarding/IMG_0129.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_0298.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_0368.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_0498.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_1369.JPG" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_2097.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_2236.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_3208.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_3471.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_3640.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_3941.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_4122.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_4793.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_4984.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5011.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5037.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5108.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5149.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5378.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5720.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5752.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5804.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5807.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5857.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5960.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_5976.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_6068.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_6092.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_6142.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_6210.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_8686.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/IMG_8887.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
-          <img src="../pictures/Boarding/77509419470__9ED0C0A2-247A-49FC-9CB1-F70E9665B265%202.jpg" alt="Boarded dog fun moment" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_0129.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_0298.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_0368.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_0498.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_1369.JPG" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_2097.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_2236.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_3208.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_3471.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_3640.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_3941.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_4122.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_4793.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_4984.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5011.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5037.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5108.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5149.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5378.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5720.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5752.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5804.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5807.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5857.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5960.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_5976.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_6068.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_6092.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_6142.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_6210.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_8686.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/IMG_8887.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
+          <img src="../pictures/Boarding/77509419470__9ED0C0A2-247A-49FC-9CB1-F70E9665B265%202.jpg" alt="Dog at Crowned K9s Academy" class="gallery-img" loading="lazy" onclick="openLightbox(this.src)" />
         </div>
       </div>
     </section>
@@ -188,7 +560,7 @@
         <div class="cta-banner">
           <div>
             <h2>Text or email us!</h2>
-            <p>We’ll help you find the best dates and setup for your pup’s stay.</p>
+            <p>We'll help you pick the right Academy tier and find dates that fit your family.</p>
           </div>
           <div class="cta-actions">
             <a href="tel:9198162426" class="button">919-816-2426</a>
