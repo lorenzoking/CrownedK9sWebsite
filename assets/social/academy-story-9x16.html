@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crowned K9s Academy — Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #111827; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .story {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    box-sizing: border-box;
+    background:
+      radial-gradient(circle at 15% 12%, rgba(230,126,34,0.18), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(230,126,34,0.12), transparent 40%),
+      linear-gradient(180deg, #1F2937 0%, #111827 100%);
+    padding: 40px 60px 250px;
+    overflow: hidden;
+  }
+
+  /* subtle paw watermarks */
+  .paw {
+    position: absolute;
+    width: 150px;
+    opacity: 0.05;
+  }
+  .paw.top-left { top: 30px; left: 30px; transform: rotate(-15deg); }
+  .paw.top-right { top: 60px; right: 30px; transform: rotate(20deg); width: 110px; }
+  .paw.bottom-left { bottom: 40px; left: 40px; transform: rotate(15deg); width: 120px; }
+  .paw.bottom-right { bottom: 80px; right: 40px; transform: rotate(-20deg); width: 160px; }
+
+  .logo-wrap {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .logo-wrap img {
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(0 14px 28px rgba(0,0,0,0.35));
+  }
+
+  .kicker {
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #E67E22;
+    margin-bottom: 10px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 104px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0 0 10px;
+    color: #fff;
+  }
+  .sub {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.82);
+    margin: 0 0 12px;
+  }
+  .divider {
+    width: 110px;
+    height: 4px;
+    background: #E67E22;
+    border-radius: 3px;
+    margin: 0 auto 20px;
+  }
+
+  .tier {
+    position: relative;
+    border-radius: 26px;
+    padding: 26px 40px 28px;
+    margin-bottom: 22px;
+    box-sizing: border-box;
+  }
+  .tier--basic {
+    background: #FFFAF4;
+    border: 1px solid #F3E3CE;
+    color: #1F2937;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  }
+  .tier--advanced {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF3E9 100%);
+    border: 3px solid #E67E22;
+    color: #1F2937;
+    box-shadow:
+      0 0 0 6px rgba(230,126,34,0.22),
+      0 20px 50px rgba(230,126,34,0.28);
+  }
+  .tier-badge {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #E67E22;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border-radius: 999px;
+    box-shadow: 0 10px 18px rgba(230,126,34,0.4);
+    white-space: nowrap;
+  }
+  .tier-kicker {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #E67E22;
+    background: #FFF3E9;
+    border: 1px solid #FFD2A8;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .tier h2 {
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin: 0 0 14px;
+    color: #1F2937;
+  }
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+  }
+  .features li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1F2937;
+    padding: 4px 0;
+  }
+  .features li::before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #E67E22 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>") center/22px no-repeat;
+    flex-shrink: 0;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 2px dashed rgba(31,41,55,0.14);
+    padding-top: 16px;
+  }
+  .price {
+    font-size: 82px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #1F2937;
+    line-height: 1;
+  }
+  .price .unit {
+    font-size: 34px;
+    font-weight: 700;
+    color: #6B7280;
+    margin-left: 2px;
+  }
+  .price-note {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4B5563;
+    line-height: 1.25;
+    text-align: right;
+  }
+
+  .footer {
+    position: absolute;
+    left: 0; right: 0; bottom: 95px;
+    text-align: center;
+    padding: 0 60px;
+  }
+  .footer .line-top {
+    width: 150px;
+    height: 4px;
+    background: rgba(230,126,34,0.75);
+    border-radius: 2px;
+    margin: 0 auto 18px;
+  }
+  .footer .location {
+    font-size: 44px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .footer .serve {
+    font-size: 26px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.78);
+    margin: 6px 0 12px;
+  }
+  .footer .contact {
+    font-size: 24px;
+    font-weight: 700;
+    color: #E67E22;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+<div class="story">
+  <!-- subtle paw watermarks (simple svg paws) -->
+  <svg class="paw top-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><circle cx="25" cy="30" r="10"/><circle cx="50" cy="18" r="11"/><circle cx="75" cy="30" r="10"/><circle cx="88" cy="55" r="9"/><ellipse cx="50" cy="70" rx="26" ry="22"/></svg>
+  <svg class="paw top-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><circle cx="25" cy="30" r="10"/><circle cx="50" cy="18" r="11"/><circle cx="75" cy="30" r="10"/><circle cx="88" cy="55" r="9"/><ellipse cx="50" cy="70" rx="26" ry="22"/></svg>
+  <svg class="paw bottom-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><circle cx="25" cy="30" r="10"/><circle cx="50" cy="18" r="11"/><circle cx="75" cy="30" r="10"/><circle cx="88" cy="55" r="9"/><ellipse cx="50" cy="70" rx="26" ry="22"/></svg>
+  <svg class="paw bottom-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><circle cx="25" cy="30" r="10"/><circle cx="50" cy="18" r="11"/><circle cx="75" cy="30" r="10"/><circle cx="88" cy="55" r="9"/><ellipse cx="50" cy="70" rx="26" ry="22"/></svg>
+
+  <div class="logo-wrap">
+    <img src="../../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy">
+  </div>
+
+  <span class="kicker">Now Accepting</span>
+  <h1>Board &amp; Train<br>Programs</h1>
+  <p class="sub">Pick your tier.</p>
+  <div class="divider"></div>
+
+  <article class="tier tier--basic">
+    <span class="tier-kicker">Tier 1</span>
+    <h2>Basic Board &amp; Train</h2>
+    <ul class="features">
+      <li>Structure &amp; Boundaries</li>
+      <li>Impulse Control</li>
+      <li>Safe Socialization</li>
+    </ul>
+    <div class="price-row">
+      <div class="price">$95<span class="unit">/day</span></div>
+      <div class="price-note">$80/day for University Elite<br>&amp; Academy graduates</div>
+    </div>
+  </article>
+
+  <article class="tier tier--advanced">
+    <span class="tier-badge">Most Comprehensive</span>
+    <span class="tier-kicker">Tier 2</span>
+    <h2>Advanced Board &amp; Train</h2>
+    <ul class="features">
+      <li>Foundational Obedience</li>
+      <li>Behavior Modification</li>
+      <li>Reactivity &amp; Aggression</li>
+    </ul>
+    <div class="price-row">
+      <div class="price">$180<span class="unit">/day</span></div>
+      <div class="price-note">2 weeks $2,500<br>3 weeks $3,000</div>
+    </div>
+  </article>
+
+  <div class="footer">
+    <div class="line-top"></div>
+    <p class="location">Based in Wendell, NC</p>
+    <p class="serve">Serving all of North Carolina</p>
+    <p class="contact">crownedk9s.com · 919-816-2426</p>
+  </div>
+</div>
+</body>
+</html>
