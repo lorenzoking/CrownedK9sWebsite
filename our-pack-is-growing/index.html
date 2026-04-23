@@ -266,16 +266,26 @@
     }
     
     .fund-btn {
-      display: block;
-      width: 100%;
-      padding: 0.85rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      width: clamp(120px, 48%, 180px);
+      max-width: 100%;
+      min-height: 40px;
+      padding: 0 0.85rem;
       background: var(--pack-warm);
       color: #fff;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.86rem;
+      line-height: 1;
       text-align: center;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 999px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      margin: 0 auto;
       transition: background 0.3s ease, transform 0.2s ease;
     }
     
@@ -762,8 +772,9 @@
             <div class="support-card-icon">💛</div>
             <h3>Send Some Love</h3>
             <p>Every little bit helps us prepare for baby, from essentials to medical costs and time to rest and bond as a family. This is the easiest fund-first option on the page.</p>
-            <a href="https://example.com/stripe-general-contribution" 
+            <a href="https://donate.stripe.com/fZufZh59j1jS8Soa5a4wM0D" 
                class="pack-cta-btn" 
+               data-pack-fund-slug="general-contribution"
                target="_blank" 
                rel="noopener noreferrer"
                aria-label="Make a general contribution via Stripe">
@@ -783,9 +794,9 @@
           <div class="support-card reveal reveal-delay-4">
             <div class="support-card-icon">🎁</div>
             <h3>Help Fund a Specific Item</h3>
-            <p>Want your gift tied to something more specific? Start with the nursery funds below, then scroll into the registry items section to browse by category and individual gift.</p>
+            <p>Want your gift tied to something more specific? Start with the category funds below, then scroll into the registry items section to browse by category and individual gift.</p>
             <a href="#funds" class="pack-cta-btn" style="background: transparent; color: var(--pack-warm); border: 2px solid var(--pack-warm);">
-              See Nursery Funds
+              See Category Funds
             </a>
           </div>
         </div>
@@ -798,149 +809,189 @@
     <section class="pack-section" id="funds" style="background: #fff;">
       <div class="container">
         <div class="pack-section-header">
-          <h2 class="pack-section-title reveal">Help Us Build the Nursery</h2>
-          <p class="pack-section-subtitle reveal reveal-delay-1">You can contribute any amount to a specific nursery fund here first, then use the registry items section below if you'd like to connect your gift to a specific item or category.</p>
+          <h2 class="pack-section-title reveal">Give by Category</h2>
+          <p class="pack-section-subtitle reveal reveal-delay-1">Each card below matches one of the category filters on the registry. Pick the fund that best fits the gift you'd like to give — every contribution goes toward the actual items in that category.</p>
         </div>
-        
+
         <div class="fund-grid">
-          <article class="fund-card reveal reveal-delay-2" data-fund-id="crib">
-            <div class="fund-card-icon">🛏️</div>
-            <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Baby's First Bed Fund</h4>
-            <p>We're still deciding on the final crib model. This fund helps us cover the crib and setup without duplicate purchases.</p>
-            <div class="fund-goal">Goal: $849</div>
-            <div class="fund-progress">
-              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
-              <p class="fund-progress-meta">Loading progress...</p>
-            </div>
-            <a href="https://example.com/stripe-crib-fund"
-               class="fund-btn"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Baby's First Bed Fund">
-              Chip In
-            </a>
-            <a href="https://www.nestig.com/products/the-wave-crib?_pos=4&_sid=b3d3231ef&_ss=r&variant=34526002118824" class="fund-item-link" target="_blank" rel="noopener noreferrer">View one crib option</a>
-          </article>
-
-          <article class="fund-card reveal reveal-delay-3" data-fund-id="kiwiChair">
-            <div class="fund-card-icon">🪑</div>
-            <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Cozy Corner Chair Fund</h4>
-            <p>A comfy nursery chair for feedings, snuggles, and long newborn nights at home.</p>
-            <div class="fund-goal">Goal: $899</div>
-            <div class="fund-progress">
-              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
-              <p class="fund-progress-meta">Loading progress...</p>
-            </div>
-            <a href="https://example.com/stripe-cozy-corner-chair-fund"
-               class="fund-btn"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Cozy Corner Chair Fund">
-              Chip In
-            </a>
-            <a href="https://www.target.com/p/babyletto-kiwi-recliner-and-swivel-glider-performance-beach-eco-weave/-/A-1006652465" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
-          </article>
-
-          <article class="fund-card reveal reveal-delay-4" data-fund-id="nurseryGlider">
-            <div class="fund-card-icon">💺</div>
-            <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Nursery Glider Fund</h4>
-            <p>An extra glider option that gives us flexibility and comfort in our nursery setup.</p>
-            <div class="fund-goal">Goal: $550</div>
-            <div class="fund-progress">
-              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
-              <p class="fund-progress-meta">Loading progress...</p>
-            </div>
-            <a href="https://example.com/stripe-nursery-glider-fund"
-               class="fund-btn"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Nursery Glider Fund">
-              Chip In
-            </a>
-            <a href="https://a.co/d/06cYgtSB" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
-          </article>
-
-          <article class="fund-card reveal reveal-delay-5" data-fund-id="changingStation">
-            <div class="fund-card-icon">🧸</div>
-            <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Changing Station Fund</h4>
-            <p>A dedicated setup for safe diaper changes and organized daily essentials.</p>
-            <div class="fund-goal">Goal: $430</div>
-            <div class="fund-progress">
-              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
-              <p class="fund-progress-meta">Loading progress...</p>
-            </div>
-            <a href="https://example.com/stripe-changing-station-fund"
-               class="fund-btn"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Changing Station Fund">
-              Chip In
-            </a>
-            <a href="https://www.wayfair.com/baby-kids/pdp/millwood-pines-55-w-10-drawer-baby-changing-table-with-guardrail-and-anti-tip-kit-natural-finish-w116071078.html" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
-          </article>
-
-          <article class="fund-card reveal reveal-delay-6" data-fund-id="dresser">
-            <div class="fund-card-icon">🗄️</div>
-            <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Baby's Dresser Fund</h4>
-            <p>A roomy dresser to keep clothes, blankets, and nursery essentials organized from day one.</p>
-            <div class="fund-goal">Goal: $379</div>
-            <div class="fund-progress">
-              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
-              <p class="fund-progress-meta">Loading progress...</p>
-            </div>
-            <a href="https://example.com/stripe-baby-dresser-fund"
-               class="fund-btn"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Baby's Dresser Fund">
-              Chip In
-            </a>
-            <a href="https://www.ashleyfurniture.com/p/davinci_jayden_6_drawer_double_wide_dresser/B600000890.html" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
-          </article>
-
-          <article class="fund-card reveal reveal-delay-2" data-fund-id="bassinet">
+          <article class="fund-card reveal reveal-delay-2" data-fund-category="Feeding" data-fund-id="feeding-fund">
             <div class="fund-card-icon">🍼</div>
             <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Bedside Bassinet Fund</h4>
-            <p>Helps us keep baby close at night in a safe bedside sleeper during the early months.</p>
-            <div class="fund-goal">Goal: $190</div>
+            <h4>Feeding Fund</h4>
+            <p>Bottles, breastfeeding support, burp cloths, and feeding tools for the early months.</p>
+            <div class="fund-goal fund-goal-derived"></div>
             <div class="fund-progress">
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-bedside-bassinet-fund"
+            <a href="https://donate.stripe.com/cNibJ1gS1d2A6Kgelq4wM0E"
                class="fund-btn"
+               data-pack-fund-slug="feeding-fund"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Bedside Bassinet Fund">
+               aria-label="Contribute to the Feeding Fund">
               Chip In
             </a>
-            <a href="https://a.co/d/0jd8FCsM" class="fund-item-link" target="_blank" rel="noopener noreferrer">View the item</a>
           </article>
 
-          <article class="fund-card reveal reveal-delay-3" data-fund-id="essentials">
-            <div class="fund-card-icon">🧷</div>
+          <article class="fund-card reveal reveal-delay-3" data-fund-category="Sleeping" data-fund-id="sleeping-fund">
+            <div class="fund-card-icon">🛏️</div>
             <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Everyday Essentials Fund</h4>
-            <p>Diapers, wipes, bottles, postpartum care, feeding tools, and the little things that add up quickly. Many of the registry items below roll up into this broader essentials lane.</p>
-            <div class="fund-goal">Goal: $500</div>
+            <h4>Sleeping Fund</h4>
+            <p>Bassinet, swaddles, sleep monitor, and everything that helps baby rest safely at night.</p>
+            <div class="fund-goal fund-goal-derived"></div>
             <div class="fund-progress">
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
-            <a href="https://example.com/stripe-everyday-essentials-fund"
+            <a href="https://donate.stripe.com/bJe5kDfNXfaIb0wgty4wM0F"
                class="fund-btn"
+               data-pack-fund-slug="sleeping-fund"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Contribute to the Everyday Essentials Fund">
+               aria-label="Contribute to the Sleeping Fund">
               Chip In
             </a>
-            <p class="fund-affiliate-note">General fund for day-to-day needs.</p>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-4" data-fund-category="Diapering" data-fund-id="diapering-fund">
+            <div class="fund-card-icon">🧷</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Diapering Fund</h4>
+            <p>Diapers, wipes, changing pad, diaper pail, and everything for clean diaper days.</p>
+            <div class="fund-goal fund-goal-derived"></div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://donate.stripe.com/9B64gz1X78Mk8So9164wM0G"
+               class="fund-btn"
+               data-pack-fund-slug="diapering-fund"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Diapering Fund">
+              Chip In
+            </a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-5" data-fund-category="Baby gear" data-fund-id="baby-gear-fund">
+            <div class="fund-card-icon">🚼</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Baby Gear Fund</h4>
+            <p>Car seat, stroller, carrier, playard — the bigger-ticket gear that makes life with baby possible.</p>
+            <div class="fund-goal fund-goal-derived"></div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://donate.stripe.com/eVq6oHatD7IgfgM3GM4wM0H"
+               class="fund-btn"
+               data-pack-fund-slug="baby-gear-fund"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Baby Gear Fund">
+              Chip In
+            </a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-6" data-fund-category="Health & safety" data-fund-id="health-safety-fund">
+            <div class="fund-card-icon">🩺</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Health &amp; Safety Fund</h4>
+            <p>Thermometer, nasal aspirator, pacifiers, choking rescue kit, and postpartum recovery essentials.</p>
+            <div class="fund-goal fund-goal-derived"></div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://donate.stripe.com/14AdR9atDfaIc4Ab9e4wM0I"
+               class="fund-btn"
+               data-pack-fund-slug="health-safety-fund"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Health and Safety Fund">
+              Chip In
+            </a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-2" data-fund-category="Bathing" data-fund-id="bathing-fund">
+            <div class="fund-card-icon">🛁</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Bathing Fund</h4>
+            <p>Hooded towels, baby wash, bath rinser — the things that make first baths warm and cozy.</p>
+            <div class="fund-goal fund-goal-derived"></div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://donate.stripe.com/4gMfZheJT1jS8Sogty4wM0J"
+               class="fund-btn"
+               data-pack-fund-slug="bathing-fund"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Bathing Fund">
+              Chip In
+            </a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-3" data-fund-category="Clothing" data-fund-id="clothing-fund">
+            <div class="fund-card-icon">👕</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Clothing Fund</h4>
+            <p>Onesies, sleep-and-plays, hats, socks, and all the tiny layers babies grow out of in a blink.</p>
+            <div class="fund-goal fund-goal-derived"></div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://donate.stripe.com/cNi6oH8lv7IgecIgty4wM0K"
+               class="fund-btn"
+               data-pack-fund-slug="clothing-fund"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Clothing Fund">
+              Chip In
+            </a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-4" data-fund-category="Playing" data-fund-id="playing-fund">
+            <div class="fund-card-icon">🧸</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Playing Fund</h4>
+            <p>Play couch and other comfy, creative essentials for the days baby starts exploring.</p>
+            <div class="fund-goal fund-goal-derived"></div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://donate.stripe.com/28EaEX45f5A8b0w4KQ4wM0L"
+               class="fund-btn"
+               data-pack-fund-slug="playing-fund"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Playing Fund">
+              Chip In
+            </a>
+          </article>
+
+          <article class="fund-card reveal reveal-delay-5" data-fund-category="Cash & gift cards" data-fund-id="gift-cards-fund">
+            <div class="fund-card-icon">🎁</div>
+            <span class="fund-status-badge" hidden>Fully Funded</span>
+            <h4>Gift Cards Fund</h4>
+            <p>A flexible lane for Babylist and baby-store gift cards so we can grab exactly what we still need.</p>
+            <div class="fund-goal fund-goal-derived"></div>
+            <div class="fund-progress">
+              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
+              <p class="fund-progress-meta">Loading progress...</p>
+            </div>
+            <a href="https://donate.stripe.com/00w6oH1X7d2Ac4A2CI4wM0M"
+               class="fund-btn"
+               data-pack-fund-slug="gift-cards-fund"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Contribute to the Gift Cards Fund">
+              Chip In
+            </a>
           </article>
         </div>
       </div>
@@ -1039,27 +1090,24 @@
 
   <!-- Scroll Animation Script -->
   <script>
-    const FUNDS = {
-      crib: { raised: 0, goal: 849 },
-      kiwiChair: { raised: 0, goal: 899 },
-      nurseryGlider: { raised: 0, goal: 550 },
-      changingStation: { raised: 0, goal: 430, derivedFromItems: true, registryGroups: ['Diapering fund'] },
-      dresser: { raised: 0, goal: 379 },
-      bassinet: { raised: 0, goal: 190, derivedFromItems: true, registryGroups: ['Sleep fund'] },
-      essentials: {
-        raised: 0,
-        goal: 500,
-        derivedFromItems: true,
-        registryGroups: [
-          'Feeding fund',
-          'Diapering fund',
-          'Health & safety fund',
-          'Bathing & care fund',
-          'Clothing fund',
-          'General baby fund'
-        ]
-      }
-    };
+    const CATEGORY_FUNDS = [
+      { slug: 'feeding-fund',       category: 'Feeding',           label: 'Feeding Fund' },
+      { slug: 'sleeping-fund',      category: 'Sleeping',          label: 'Sleeping Fund' },
+      { slug: 'diapering-fund',     category: 'Diapering',         label: 'Diapering Fund' },
+      { slug: 'baby-gear-fund',     category: 'Baby gear',         label: 'Baby Gear Fund' },
+      { slug: 'health-safety-fund', category: 'Health & safety',   label: 'Health & Safety Fund' },
+      { slug: 'bathing-fund',       category: 'Bathing',           label: 'Bathing Fund' },
+      { slug: 'clothing-fund',      category: 'Clothing',          label: 'Clothing Fund' },
+      { slug: 'playing-fund',       category: 'Playing',           label: 'Playing Fund' },
+      { slug: 'gift-cards-fund',    category: 'Cash & gift cards', label: 'Gift Cards Fund' }
+    ];
+
+    const GENERAL_CONTRIBUTION_SLUG = 'general-contribution';
+
+    const CATEGORY_TO_FUND = CATEGORY_FUNDS.reduce((acc, fund) => {
+      acc[fund.category] = fund;
+      return acc;
+    }, {});
 
     const REGISTRY_ITEMS = [
       { id: "feeding-1",  name: "Munchkin Bristle Bottle Brush, Grey", category: "Feeding", fundGroup: "Feeding fund", price: 4.47 },
@@ -1125,85 +1173,85 @@
 
     const BABYLIST_REGISTRY_URL = 'https://my.babylist.com/jennaandlorenzo';
 
-    const REGISTRY_FUND_TO_PAGE_FUND = {
-      'Sleep fund': 'bassinet',
-      'Diapering fund': 'changingStation',
-      'Feeding fund': 'essentials',
-      'Health & safety fund': 'essentials',
-      'Bathing & care fund': 'essentials',
-      'Clothing fund': 'essentials',
-      'General baby fund': 'essentials',
-      'Baby gear fund': 'essentials',
-      'Play fund': 'essentials'
-    };
-
     const formatCurrency = (value) =>
       new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: value % 1 === 0 ? 0 : 2 }).format(value);
 
-    const getRegistryTotalsByFund = () =>
+    const escapeHtml = (value) =>
+      String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    const getRegistryTotalsByCategory = () =>
       REGISTRY_ITEMS.reduce((acc, item) => {
-        if (!acc[item.fundGroup]) {
-          acc[item.fundGroup] = { total: 0, count: 0, items: [] };
+        if (!acc[item.category]) {
+          acc[item.category] = { total: 0, count: 0 };
         }
-        acc[item.fundGroup].total += Number(item.price || 0);
-        acc[item.fundGroup].count += 1;
-        acc[item.fundGroup].items.push(item);
+        acc[item.category].total += Number(item.price || 0);
+        acc[item.category].count += 1;
         return acc;
       }, {});
 
-    const REGISTRY_TOTALS_BY_FUND = getRegistryTotalsByFund();
+    const REGISTRY_TOTALS_BY_CATEGORY = getRegistryTotalsByCategory();
 
-    Object.values(FUNDS).forEach((fund) => {
-      if (!fund.derivedFromItems || !Array.isArray(fund.registryGroups)) return;
-      const derived = fund.registryGroups.reduce((sum, groupName) => sum + (REGISTRY_TOTALS_BY_FUND[groupName]?.total || 0), 0);
-      const itemCount = fund.registryGroups.reduce((sum, groupName) => sum + (REGISTRY_TOTALS_BY_FUND[groupName]?.count || 0), 0);
-      fund.estimatedFromRegistryItems = derived;
-      fund.estimatedItemCount = itemCount;
-    });
+    let categoryToStripeUrl = new Map();
+    let generalContributionUrl = '';
+
+    const buildCategoryToStripeUrl = () => {
+      const map = new Map();
+      document.querySelectorAll('.fund-card[data-fund-category] a[data-pack-fund-slug]').forEach((anchor) => {
+        const card = anchor.closest('.fund-card');
+        const category = card?.getAttribute('data-fund-category');
+        const href = anchor.getAttribute('href');
+        if (category && href) map.set(category, href);
+      });
+      categoryToStripeUrl = map;
+
+      const general = document.querySelector(`a[data-pack-fund-slug="${GENERAL_CONTRIBUTION_SLUG}"]`);
+      generalContributionUrl = general?.getAttribute('href') || '';
+    };
 
     const hydrateFundProgress = () => {
-      const fundCards = document.querySelectorAll('.fund-card[data-fund-id]');
+      const fundCards = document.querySelectorAll('.fund-card[data-fund-category]');
       fundCards.forEach((card) => {
-        const fundId = card.getAttribute('data-fund-id');
-        const fund = FUNDS[fundId];
-        if (!fund) return;
+        const category = card.getAttribute('data-fund-category');
+        const totals = REGISTRY_TOTALS_BY_CATEGORY[category] || { total: 0, count: 0 };
+        const derivedGoal = totals.total;
+        const itemCount = totals.count;
+        const raised = 0;
+        const percent = derivedGoal > 0 ? Math.min((raised / derivedGoal) * 100, 100) : 0;
 
-        const raised = Number(fund.raised || 0);
-        const goal = Number(fund.goal || 0);
-        const percent = goal > 0 ? Math.min((raised / goal) * 100, 100) : 0;
+        const goalEl = card.querySelector('.fund-goal-derived');
         const fill = card.querySelector('.fund-progress-fill');
         const meta = card.querySelector('.fund-progress-meta');
         const badge = card.querySelector('.fund-status-badge');
 
-        if (fill) fill.style.width = `${percent}%`;
-        if (meta) meta.textContent = `${formatCurrency(raised)} of ${formatCurrency(goal)} funded`;
-
-        if (fund.derivedFromItems && fund.estimatedFromRegistryItems > 0 && !card.querySelector('.fund-derived-note')) {
-          const goalEl = card.querySelector('.fund-goal');
-          const derivedNote = document.createElement('p');
-          derivedNote.className = 'fund-derived-note';
-          derivedNote.textContent = `Estimated from registry items: ${formatCurrency(fund.estimatedFromRegistryItems)} across ${fund.estimatedItemCount} item${fund.estimatedItemCount === 1 ? '' : 's'}`;
-          goalEl?.insertAdjacentElement('afterend', derivedNote);
+        if (goalEl) {
+          goalEl.textContent = derivedGoal > 0
+            ? `Estimated from registry: ${formatCurrency(derivedGoal)} across ${itemCount} item${itemCount === 1 ? '' : 's'}`
+            : 'Open fund — any amount helps';
         }
 
-        if (raised >= goal && goal > 0) {
+        if (fill) fill.style.width = `${percent}%`;
+        if (meta) {
+          meta.textContent = derivedGoal > 0
+            ? `${formatCurrency(raised)} of ${formatCurrency(derivedGoal)} funded`
+            : `${formatCurrency(raised)} raised so far`;
+        }
+
+        if (derivedGoal > 0 && raised >= derivedGoal) {
           card.classList.add('is-funded');
           if (badge) badge.hidden = false;
         }
       });
     };
 
-    const getFundButtonLabel = (fundGroup) => {
-      const cleaned = fundGroup.replace(/\s+fund$/i, '');
-      return `Contribute to ${cleaned}`;
-    };
-
-    const highlightFundCard = (fundId) => {
-      const targetCard = document.querySelector(`.fund-card[data-fund-id="${fundId}"]`);
-      if (!targetCard) return;
-
-      targetCard.classList.add('is-highlighted');
-      window.setTimeout(() => targetCard.classList.remove('is-highlighted'), 2600);
+    const getFundButtonLabel = (category) => {
+      const fund = CATEGORY_TO_FUND[category];
+      if (fund) return `Contribute to ${fund.label}`;
+      return 'Contribute to this fund';
     };
 
     const renderRegistryItems = (filterCategory = 'All') => {
@@ -1216,9 +1264,11 @@
         : REGISTRY_ITEMS.filter((item) => item.category === filterCategory);
 
       if (summary) {
-        summary.textContent = filterCategory === 'All'
-          ? `Showing all ${REGISTRY_ITEMS.length} registry items across every category. Start with a fund contribution here, or use any card below to connect your gift to a specific item.`
-          : `Showing ${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'} in ${filterCategory}. Use the primary button to contribute toward the matching fund, or use the secondary action to open our Babylist registry.`;
+        const babylistLink = `<a href="${BABYLIST_REGISTRY_URL}" target="_blank" rel="noopener noreferrer">Open our Babylist registry</a>`;
+        const intro = filterCategory === 'All'
+          ? `Showing all ${REGISTRY_ITEMS.length} registry items across every category. Start with a category fund above, or use any card below to contribute.`
+          : `Showing ${filteredItems.length} item${filteredItems.length === 1 ? '' : 's'} in ${escapeHtml(filterCategory)}. Use the primary button to contribute toward the matching fund, or use the secondary action to open our Babylist registry.`;
+        summary.innerHTML = `${intro} Prefer the full list view? ${babylistLink}.`;
       }
 
       if (!filteredItems.length) {
@@ -1227,47 +1277,44 @@
       }
 
       grid.innerHTML = filteredItems.map((item) => {
-        const mappedFundId = REGISTRY_FUND_TO_PAGE_FUND[item.fundGroup] || 'essentials';
-        const note = item.note ? `<p class="registry-item-note">${item.note}</p>` : '<p class="registry-item-note">This item is part of our registry planning and helps us build the right category without duplicate gifts.</p>';
+        const stripeUrl = categoryToStripeUrl.get(item.category) || generalContributionUrl || BABYLIST_REGISTRY_URL;
+        const fundMeta = CATEGORY_TO_FUND[item.category];
+        const fundLabel = fundMeta ? fundMeta.label : 'General Contribution';
+        const buttonLabel = getFundButtonLabel(item.category);
+        const note = item.note
+          ? `<p class="registry-item-note">${escapeHtml(item.note)}</p>`
+          : '<p class="registry-item-note">This item is part of our registry planning and helps us build the right category without duplicate gifts.</p>';
         return `
-          <article class="registry-item-card reveal is-visible" data-registry-item-id="${item.id}">
-            <span class="registry-item-category">${item.category}</span>
-            <h3>${item.name}</h3>
+          <article class="registry-item-card reveal is-visible" data-registry-item-id="${escapeHtml(item.id)}">
+            <span class="registry-item-category">${escapeHtml(item.category)}</span>
+            <h3>${escapeHtml(item.name)}</h3>
             <div class="registry-item-price">${formatCurrency(item.price)}</div>
-            <div class="registry-item-fund">Grouped under: ${item.fundGroup}</div>
+            <div class="registry-item-fund">Grouped under: ${escapeHtml(fundLabel)}</div>
             ${note}
             <div class="registry-item-actions">
-              <button
-                type="button"
+              <a
+                href="${escapeHtml(stripeUrl)}"
                 class="registry-item-primary"
-                data-registry-fund-target="${mappedFundId}"
-                data-registry-fund-group="${item.fundGroup}"
-                aria-label="${getFundButtonLabel(item.fundGroup)}">
-                ${getFundButtonLabel(item.fundGroup)}
-              </button>
+                data-registry-category="${escapeHtml(item.category)}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="${escapeHtml(buttonLabel)}">
+                ${escapeHtml(buttonLabel)}
+              </a>
               <a
                 href="${BABYLIST_REGISTRY_URL}"
                 class="registry-item-secondary"
-                data-registry-id="${item.id}"
-                data-registry-name="${item.name}"
+                data-registry-id="${escapeHtml(item.id)}"
+                data-registry-name="${escapeHtml(item.name)}"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View item details or buy this gift for ${item.name}">
+                aria-label="View item details or buy this gift for ${escapeHtml(item.name)}">
                 View item details / Buy this gift
               </a>
             </div>
           </article>
         `;
       }).join('');
-
-      grid.querySelectorAll('[data-registry-fund-target]').forEach((button) => {
-        button.addEventListener('click', () => {
-          const fundId = button.getAttribute('data-registry-fund-target');
-          if (fundId) highlightFundCard(fundId);
-        });
-      });
-
-      // Secondary action now routes to the live Babylist registry.
     };
 
     const setupRegistryFilters = () => {
@@ -1309,6 +1356,7 @@
           revealElements.forEach((el) => observer.observe(el));
         }
       }
+      buildCategoryToStripeUrl();
       hydrateFundProgress();
       setupRegistryFilters();
       renderRegistryItems();

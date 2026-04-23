@@ -1,0 +1,20 @@
+{
+  "name": "stripe-registry-generator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local utility that bulk-creates Stripe Payment Links for the Crowned K9s 'Our Pack Is Growing' baby registry. Reads registry-items.json, creates Products + Prices + Payment Links in Stripe, and writes a clean JSON/CSV ready to paste into the website.",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "generate": "node generate-links.js",
+    "start": "node generate-links.js",
+    "cleanup:dry-run": "node generate-links.js --cleanup --dry-run --no-wire",
+    "cleanup:apply": "node generate-links.js --cleanup --apply --no-wire"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "stripe": "^17.5.0"
+  }
+}
