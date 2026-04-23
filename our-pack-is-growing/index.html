@@ -59,6 +59,16 @@
       margin-bottom: 1rem;
       display: block;
     }
+
+    .pack-featured-image {
+      display: block;
+      width: min(100%, 620px);
+      margin: 0 auto 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      object-fit: contain;
+    }
     
     .pack-cta-btn {
       display: inline-block;
@@ -166,7 +176,92 @@
       color: var(--muted);
       font-style: italic;
     }
-    
+
+    .is-hidden {
+      display: none !important;
+    }
+
+    /* Contributor wheel */
+    .contributor-wheel-section {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contributor-wheel-frame {
+      position: relative;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .contributor-wheel-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(260px, 1fr);
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      padding-bottom: 0.35rem;
+    }
+
+    .contributor-wheel-item {
+      scroll-snap-align: start;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .contributor-wheel-message {
+      margin: 0 0 0.7rem;
+      color: var(--text-dark);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .contributor-wheel-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .contributor-wheel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .contributor-wheel-empty {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0.25rem 0 0;
+    }
+
+    .contributor-wheel-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-dark);
+      border-radius: 999px;
+      min-width: 42px;
+      min-height: 42px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .contributor-wheel-btn:hover,
+    .contributor-wheel-btn:focus-visible {
+      border-color: var(--pack-warm);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
     /* Fund Cards Grid */
     .fund-grid {
       display: grid;
@@ -321,6 +416,37 @@
       font-size: 0.8rem;
       color: var(--muted);
       margin: -0.35rem 0 1rem;
+    }
+
+    .fund-contributor-strip {
+      margin: 0 0 0.9rem;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 12px;
+      padding: 0.65rem 0.75rem;
+    }
+
+    .fund-contributor-label {
+      margin: 0 0 0.35rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--pack-warm);
+    }
+
+    .fund-contributor-message {
+      margin: 0;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--text-dark);
+    }
+
+    .fund-contributor-meta {
+      margin: 0.35rem 0 0;
+      font-size: 0.76rem;
+      color: var(--muted);
+      font-weight: 600;
     }
 
     .fund-card.is-highlighted {
@@ -579,6 +705,11 @@
         padding: 0 1rem;
       }
 
+      .pack-featured-image {
+        margin-bottom: 1.4rem;
+        border-radius: 12px;
+      }
+
       .pack-hero {
         padding: 4.25rem 0 3.25rem;
       }
@@ -597,6 +728,10 @@
 
       .fund-card {
         padding: 1.35rem;
+      }
+
+      .contributor-wheel-track {
+        grid-auto-columns: minmax(86%, 1fr);
       }
 
       .registry-item-grid {
@@ -752,6 +887,13 @@
         <p class="hero-subtext reveal reveal-delay-2">
           We're so excited, our family is growing. If you'd like to help us get ready for our newest little one, this page is a simple way to do it. The easiest path is to contribute toward a fund here on our site, and if you'd rather connect your gift to a specific item, we've added our registry list below too. Every bit of love and support means the world to us.
         </p>
+        <img
+          src="./ourpackisgrowing.PNG"
+          alt="Lorenzo and family celebrating that our pack is growing"
+          class="pack-featured-image reveal reveal-delay-2"
+          loading="eager"
+          decoding="async"
+        />
         <a href="#support" class="pack-cta-btn reveal reveal-delay-3">See How You Can Help</a>
       </div>
     </section>
@@ -782,12 +924,15 @@
             </a>
           </div>
           
-          <!-- Option B: Zelle -->
+          <!-- Option B: Peer-to-peer options -->
           <div class="support-card reveal reveal-delay-3">
             <div class="support-card-icon">📱</div>
-            <h3>Zelle Us Directly</h3>
-            <p>Quick and easy with no fees. If you already use Zelle, this is the fastest way to help.</p>
-            <div class="zelle-info">Zelle tag: crownedk9s</div>
+            <h3>Peer-to-Peer Options</h3>
+            <p>If you'd rather send support directly, you can use any of these payment options.</p>
+            <div class="zelle-info">Zelle: crownedk9s</div>
+            <div class="zelle-info">Cash App: $renking3</div>
+            <div class="zelle-info">Venmo: Lorenzo-King</div>
+            <div class="zelle-info">Bitcoin: <span style="font-family: monospace; font-size: 0.82rem; word-break: break-all;">bc1qzj8p9v6jkgfesgj3wu5eaegpz30u4022z0ruxtlxe3dd2g9q68xqek86f5</span></div>
           </div>
           
           <!-- Option C: Specific Essentials -->
@@ -798,6 +943,27 @@
             <a href="#funds" class="pack-cta-btn" style="background: transparent; color: var(--pack-warm); border: 2px solid var(--pack-warm);">
               See Category Funds
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CONTRIBUTOR WHEEL
+    ════════════════════════════════════════════════════════════ -->
+    <section class="pack-section contributor-wheel-section" id="contributors">
+      <div class="container">
+        <div class="pack-section-header">
+          <h2 class="pack-section-title reveal">Love From Our Village</h2>
+          <p class="pack-section-subtitle reveal reveal-delay-1">Kind messages from friends and family supporting our growing pack.</p>
+        </div>
+
+        <div class="contributor-wheel-frame reveal reveal-delay-2" id="contributor-wheel-frame">
+          <div class="contributor-wheel-track" id="contributor-wheel-track" tabindex="0" aria-label="Contributor messages carousel"></div>
+          <p class="contributor-wheel-empty is-hidden" id="contributor-wheel-empty">No contributors yet. Be the first to send some love.</p>
+          <div class="contributor-wheel-controls is-hidden" id="contributor-wheel-controls">
+            <button type="button" class="contributor-wheel-btn" id="contributor-wheel-prev" aria-label="Previous contributor message">←</button>
+            <button type="button" class="contributor-wheel-btn" id="contributor-wheel-next" aria-label="Next contributor message">→</button>
           </div>
         </div>
       </div>
@@ -824,6 +990,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="feeding-fund"></div>
             <a href="https://donate.stripe.com/cNibJ1gS1d2A6Kgelq4wM0E"
                class="fund-btn"
                data-pack-fund-slug="feeding-fund"
@@ -844,6 +1011,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="sleeping-fund"></div>
             <a href="https://donate.stripe.com/bJe5kDfNXfaIb0wgty4wM0F"
                class="fund-btn"
                data-pack-fund-slug="sleeping-fund"
@@ -864,6 +1032,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="diapering-fund"></div>
             <a href="https://donate.stripe.com/9B64gz1X78Mk8So9164wM0G"
                class="fund-btn"
                data-pack-fund-slug="diapering-fund"
@@ -884,6 +1053,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="baby-gear-fund"></div>
             <a href="https://donate.stripe.com/eVq6oHatD7IgfgM3GM4wM0H"
                class="fund-btn"
                data-pack-fund-slug="baby-gear-fund"
@@ -904,6 +1074,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="health-safety-fund"></div>
             <a href="https://donate.stripe.com/14AdR9atDfaIc4Ab9e4wM0I"
                class="fund-btn"
                data-pack-fund-slug="health-safety-fund"
@@ -924,6 +1095,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="bathing-fund"></div>
             <a href="https://donate.stripe.com/4gMfZheJT1jS8Sogty4wM0J"
                class="fund-btn"
                data-pack-fund-slug="bathing-fund"
@@ -944,6 +1116,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="clothing-fund"></div>
             <a href="https://donate.stripe.com/cNi6oH8lv7IgecIgty4wM0K"
                class="fund-btn"
                data-pack-fund-slug="clothing-fund"
@@ -964,6 +1137,7 @@
               <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
               <p class="fund-progress-meta">Loading progress...</p>
             </div>
+            <div class="fund-contributor-strip is-hidden" data-fund-contributors="playing-fund"></div>
             <a href="https://donate.stripe.com/28EaEX45f5A8b0w4KQ4wM0L"
                class="fund-btn"
                data-pack-fund-slug="playing-fund"
@@ -974,25 +1148,7 @@
             </a>
           </article>
 
-          <article class="fund-card reveal reveal-delay-5" data-fund-category="Cash & gift cards" data-fund-id="gift-cards-fund">
-            <div class="fund-card-icon">🎁</div>
-            <span class="fund-status-badge" hidden>Fully Funded</span>
-            <h4>Gift Cards Fund</h4>
-            <p>A flexible lane for Babylist and baby-store gift cards so we can grab exactly what we still need.</p>
-            <div class="fund-goal fund-goal-derived"></div>
-            <div class="fund-progress">
-              <div class="fund-progress-track"><span class="fund-progress-fill"></span></div>
-              <p class="fund-progress-meta">Loading progress...</p>
-            </div>
-            <a href="https://donate.stripe.com/00w6oH1X7d2Ac4A2CI4wM0M"
-               class="fund-btn"
-               data-pack-fund-slug="gift-cards-fund"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Contribute to the Gift Cards Fund">
-              Chip In
-            </a>
-          </article>
+        
         </div>
       </div>
     </section>
@@ -1172,6 +1328,10 @@
     ];
 
     const BABYLIST_REGISTRY_URL = 'https://my.babylist.com/jennaandlorenzo';
+    const CONTRIBUTORS_PATH = './contributors.json';
+    const SHOW_TARGET_AMOUNTS = false;
+    const CONTRIBUTOR_FALLBACK = [];
+    const CONTRIBUTOR_AUTO_ROTATE_MS = 5500;
 
     const formatCurrency = (value) =>
       new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: value % 1 === 0 ? 0 : 2 }).format(value);
@@ -1183,6 +1343,148 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+
+    const safeArray = (value) => (Array.isArray(value) ? value : []);
+
+    const parseContributorDate = (value) => {
+      const parsed = new Date(value || '');
+      return Number.isNaN(parsed.getTime()) ? 0 : parsed.getTime();
+    };
+
+    const normalizeContributors = (value) =>
+      safeArray(value)
+        .filter((entry) => entry && typeof entry === 'object' && entry.approved === true)
+        .map((entry) => ({
+          id: String(entry.id || ''),
+          name: String(entry.name || 'Anonymous'),
+          message: String(entry.message || ''),
+          fund_slug: entry.fund_slug == null ? '' : String(entry.fund_slug),
+          amount: Number.isFinite(Number(entry.amount)) ? Number(entry.amount) : null,
+          date: String(entry.date || ''),
+          approved: true,
+        }))
+        .sort((a, b) => parseContributorDate(b.date) - parseContributorDate(a.date));
+
+    async function loadContributors() {
+      try {
+        const response = await fetch(CONTRIBUTORS_PATH, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`contributors fetch failed (${response.status})`);
+        const parsed = await response.json();
+        return normalizeContributors(parsed);
+      } catch (err) {
+        console.warn('Contributor data fallback in use:', err?.message || err);
+        return normalizeContributors(CONTRIBUTOR_FALLBACK);
+      }
+    }
+
+    const buildContributorMetaLine = (entry) => {
+      const metaParts = [escapeHtml(entry.name)];
+      if (entry.amount != null && entry.amount > 0) {
+        metaParts.push(formatCurrency(entry.amount / 100));
+      }
+      if (entry.date) {
+        metaParts.push(escapeHtml(entry.date));
+      }
+      return metaParts.join(' · ');
+    };
+
+    function renderGlobalContributors(contributors) {
+      const section = document.getElementById('contributors');
+      const track = document.getElementById('contributor-wheel-track');
+      const controls = document.getElementById('contributor-wheel-controls');
+      const empty = document.getElementById('contributor-wheel-empty');
+      if (!track || !controls || !section || !empty) return;
+
+      if (!contributors.length) {
+        section.classList.remove('is-hidden');
+        track.innerHTML = '';
+        controls.classList.add('is-hidden');
+        empty.classList.remove('is-hidden');
+        return;
+      }
+
+      section.classList.remove('is-hidden');
+      empty.classList.add('is-hidden');
+      track.innerHTML = contributors.map((entry) => `
+        <article class="contributor-wheel-item" data-contributor-id="${escapeHtml(entry.id)}">
+          <p class="contributor-wheel-message">“${escapeHtml(entry.message)}”</p>
+          <p class="contributor-wheel-meta">${buildContributorMetaLine(entry)}</p>
+        </article>
+      `).join('');
+
+      controls.classList.remove('is-hidden');
+
+      const next = document.getElementById('contributor-wheel-next');
+      const prev = document.getElementById('contributor-wheel-prev');
+      const slideAmount = () => Math.max(260, Math.floor(track.clientWidth * 0.9));
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      next?.addEventListener('click', () => {
+        track.scrollBy({ left: slideAmount(), behavior: 'smooth' });
+      });
+      prev?.addEventListener('click', () => {
+        track.scrollBy({ left: -slideAmount(), behavior: 'smooth' });
+      });
+
+      track.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          track.scrollBy({ left: slideAmount(), behavior: 'smooth' });
+        }
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          track.scrollBy({ left: -slideAmount(), behavior: 'smooth' });
+        }
+      });
+
+      if (!prefersReducedMotion && contributors.length > 1) {
+        let paused = false;
+        const tick = () => {
+          if (paused) return;
+          const maxLeft = Math.max(0, track.scrollWidth - track.clientWidth);
+          const nextLeft = track.scrollLeft + slideAmount();
+          const left = nextLeft >= maxLeft - 2 ? 0 : nextLeft;
+          track.scrollTo({ left, behavior: 'smooth' });
+        };
+        const timer = window.setInterval(tick, CONTRIBUTOR_AUTO_ROTATE_MS);
+        const pause = () => { paused = true; };
+        const resume = () => { paused = false; };
+        track.addEventListener('mouseenter', pause);
+        track.addEventListener('mouseleave', resume);
+        track.addEventListener('focusin', pause);
+        track.addEventListener('focusout', resume);
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) paused = true;
+        });
+        window.addEventListener('beforeunload', () => window.clearInterval(timer), { once: true });
+      }
+    }
+
+    function renderFundContributors(contributors) {
+      const contributorsByFund = contributors.reduce((acc, entry) => {
+        if (!entry.fund_slug) return acc;
+        if (!acc[entry.fund_slug]) acc[entry.fund_slug] = [];
+        acc[entry.fund_slug].push(entry);
+        return acc;
+      }, {});
+
+      document.querySelectorAll('[data-fund-contributors]').forEach((strip) => {
+        const slug = strip.getAttribute('data-fund-contributors') || '';
+        const matches = contributorsByFund[slug] || [];
+        if (!matches.length) {
+          strip.classList.add('is-hidden');
+          strip.innerHTML = '';
+          return;
+        }
+        const entry = matches[0];
+        strip.classList.remove('is-hidden');
+        strip.innerHTML = `
+          <p class="fund-contributor-label">Kind words from supporters</p>
+          <p class="fund-contributor-message">“${escapeHtml(entry.message)}”</p>
+          <p class="fund-contributor-meta">${buildContributorMetaLine(entry)}</p>
+        `;
+      });
+    }
 
     const getRegistryTotalsByCategory = () =>
       REGISTRY_ITEMS.reduce((acc, item) => {
@@ -1224,9 +1526,20 @@
         const percent = derivedGoal > 0 ? Math.min((raised / derivedGoal) * 100, 100) : 0;
 
         const goalEl = card.querySelector('.fund-goal-derived');
+        const progressBlock = card.querySelector('.fund-progress');
         const fill = card.querySelector('.fund-progress-fill');
         const meta = card.querySelector('.fund-progress-meta');
         const badge = card.querySelector('.fund-status-badge');
+
+        if (!SHOW_TARGET_AMOUNTS) {
+          goalEl?.classList.add('is-hidden');
+          progressBlock?.classList.add('is-hidden');
+          if (badge) badge.hidden = true;
+          return;
+        }
+
+        goalEl?.classList.remove('is-hidden');
+        progressBlock?.classList.remove('is-hidden');
 
         if (goalEl) {
           goalEl.textContent = derivedGoal > 0
@@ -1332,7 +1645,7 @@
       });
     };
 
-    (() => {
+    (async () => {
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReducedMotion) {
         document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
@@ -1358,6 +1671,9 @@
       }
       buildCategoryToStripeUrl();
       hydrateFundProgress();
+      const contributorEntries = await loadContributors();
+      renderGlobalContributors(contributorEntries);
+      renderFundContributors(contributorEntries);
       setupRegistryFilters();
       renderRegistryItems();
     })();
