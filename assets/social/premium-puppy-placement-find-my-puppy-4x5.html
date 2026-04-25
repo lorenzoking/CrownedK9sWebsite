@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Puppy Placement — Personal Puppy Agent (4:5)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-1: #0B1220;
+    --bg-2: #111827;
+    --ink: #0B1220;
+    --paper: #FFF7EC;
+    --orange: #E67E22;
+    --orange-bright: #F59E0B;
+    --orange-soft: rgba(230,126,34,0.14);
+    --line: rgba(255,255,255,0.12);
+  }
+  html, body { margin: 0; padding: 0; background: #000; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .post {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    box-sizing: border-box;
+    padding: 44px 52px 42px;
+    background:
+      radial-gradient(ellipse at 8% 4%, rgba(245,158,11,0.22), transparent 45%),
+      radial-gradient(ellipse at 96% 96%, rgba(230,126,34,0.22), transparent 45%),
+      linear-gradient(170deg, var(--bg-2) 0%, var(--bg-1) 60%, #080d18 100%);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .orange-bar {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 14px;
+    background: linear-gradient(180deg, var(--orange-bright), var(--orange));
+  }
+  .orange-dot {
+    position: absolute;
+    top: 44px;
+    right: 52px;
+    width: 18px; height: 18px;
+    background: var(--orange);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(230,126,34,0.18);
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .logo { width: 130px; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35)); }
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .badge {
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 12px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--orange);
+    margin: 0 0 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 3px;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: 'Fraunces', 'Inter', serif;
+    font-weight: 900;
+    font-size: 126px;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    color: #fff;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--orange);
+    font-weight: 900;
+  }
+
+  .sub {
+    margin: 16px 0 18px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: rgba(255,255,255,0.92);
+    max-width: 880px;
+  }
+
+  .callout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: 0 18px 34px rgba(0,0,0,0.26);
+    border: 2px solid var(--orange);
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .callout::before {
+    content: "WHY IT'S DIFFERENT";
+    position: absolute;
+    top: -14px; left: 20px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    font-weight: 900;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .callout h2 {
+    margin: 0 0 6px;
+    font-family: 'Fraunces', 'Inter', serif;
+    font-size: 30px;
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+  .callout p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.32;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 14px;
+    margin: 0 0 16px;
+    flex: 1;
+    align-content: stretch;
+  }
+  .pillar {
+    position: relative;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--orange);
+    border-radius: 14px;
+    padding: 22px 22px 22px 24px;
+  }
+  .pillar .num {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--orange);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .pillar strong {
+    display: block;
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .pillar span {
+    display: block;
+    margin-top: 6px;
+    font-size: 18px;
+    line-height: 1.3;
+    color: rgba(255,255,255,0.82);
+    font-weight: 600;
+  }
+
+  .compliance {
+    border-radius: 14px;
+    padding: 16px 20px;
+    background: linear-gradient(90deg, rgba(230,126,34,0.22), rgba(245,158,11,0.08));
+    border: 1px solid rgba(230,126,34,0.6);
+    font-size: 16px;
+    line-height: 1.35;
+    color: #fff;
+    font-weight: 700;
+  }
+  .compliance strong { color: var(--orange); letter-spacing: 0.06em; text-transform: uppercase; font-size: 13px; display: block; margin-bottom: 4px; }
+
+  .cta {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 14px 18px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.26);
+  }
+  .cta .text {
+    margin: 0;
+    font-family: 'Fraunces', 'Inter', serif;
+    color: var(--ink);
+    font-size: 24px;
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+  .cta .text em { font-style: italic; color: var(--orange); }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--orange);
+    color: #fff;
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 20px;
+    font-weight: 900;
+    white-space: nowrap;
+    box-shadow: 0 10px 20px rgba(230,126,34,0.45);
+  }
+  .pill .arrow { font-size: 22px; line-height: 1; margin-top: -2px; }
+
+  .footer {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+    color: rgba(255,255,255,0.78);
+  }
+  .footer span { color: var(--orange); }
+</style>
+</head>
+<body>
+  <div class="post">
+    <div class="orange-bar"></div>
+    <div class="orange-dot"></div>
+
+    <div class="top">
+      <img class="logo" src="../../pictures/Logos/whitebadgetransCK9s.png" alt="Crowned K9s">
+      <div class="badges">
+        <span class="badge">NC-Compliant</span>
+        <span class="badge">Training-First</span>
+        <span class="badge">Personal Agent</span>
+      </div>
+    </div>
+
+    <p class="eyebrow">Premium Puppy Placement</p>
+    <h1>Find My<br><em>Puppy</em></h1>
+    <p class="sub">Training-first personal puppy agent placement for families who want it done right the first time.</p>
+
+    <div class="callout">
+      <h2>You hire me first. I handle sourcing, selection, pickup, raising, and training for your family.</h2>
+      <p>Same PPP standard. Structured 3-week board-and-train start before go-home.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><span class="num">01</span><strong>You delegate the search</strong><span>I source ethical breeders under Crowned K9s standards.</span></div>
+      <div class="pillar"><span class="num">02</span><strong>I help select the right puppy</strong><span>Temperament matched to your home, schedule, and goals.</span></div>
+      <div class="pillar"><span class="num">03</span><strong>I handle pickup and logistics</strong><span>Communication, paperwork, and breeder coordination handled.</span></div>
+      <div class="pillar"><span class="num">04</span><strong>I raise and train your puppy</strong><span>Structured Academy development and foundational obedience.</span></div>
+      <div class="pillar"><span class="num">05</span><strong>I keep health and records on track</strong><span>Vet care, health screening, and genetic testing included.</span></div>
+      <div class="pillar"><span class="num">06</span><strong>I deliver a prepared puppy</strong><span>Organized handoff with continued follow-up support.</span></div>
+    </div>
+
+    <p class="compliance">
+      <strong>NC-Compliant Process</strong>
+      Ownership is secured before pickup, then your puppy begins board-and-train with Crowned K9s.
+    </p>
+
+    <div class="cta">
+      <p class="text">Want the <em>right dog, first time?</em></p>
+      <span class="pill">DM "AGENT" <span class="arrow">→</span></span>
+    </div>
+
+    <p class="footer">crownedk9s.com <span>·</span> 919-816-2426</p>
+  </div>
+</body>
+</html>

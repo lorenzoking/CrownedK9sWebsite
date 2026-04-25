@@ -373,7 +373,7 @@ nav ul li.has-dropdown input.dropdown-toggle {
 .cta-banner p { margin: 0.25rem 0 0; opacity: 0.9; }
 
 /* CTA actions layout */
-.cta-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: flex-end; }
+.cta-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
 @media (max-width: 700px) {
   .cta-banner { grid-template-columns: 1fr; }
   .cta-actions { justify-content: center; }

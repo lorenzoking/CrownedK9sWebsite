@@ -1,6 +1,6 @@
 # Stella’s Go-Home Playbook (slideshow / ebook)
 
-Private **Crowned K9s Foundations Rescue** handoff for Stella’s adopter. Same slideshow pattern as Kobe’s playbook: **save as PDF** and/or share the URL.
+Private **Crowned K9s Premium Puppy Placement** handoff for Stella’s adopter. Same slideshow pattern as Kobe’s playbook: **save as PDF** and/or share the URL.
 
 ## View on the web
 
