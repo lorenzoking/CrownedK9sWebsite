@@ -381,6 +381,10 @@
       padding: 0.35rem 0.65rem;
       margin-bottom: 0.8rem;
     }
+
+    .fund-status-badge[hidden] {
+      display: none !important;
+    }
     
     .fund-btn {
       display: inline-flex;
@@ -1560,10 +1564,13 @@
         const meta = card.querySelector('.fund-progress-meta');
         const badge = card.querySelector('.fund-status-badge');
 
+        // Reset before applying fresh calculations so stale states never persist.
+        card.classList.remove('is-funded');
+        if (badge) badge.hidden = true;
+
         if (!SHOW_TARGET_AMOUNTS) {
           goalEl?.classList.add('is-hidden');
           progressBlock?.classList.add('is-hidden');
-          if (badge) badge.hidden = true;
           return;
         }
 
