@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Koda’s Go-Home Playbook | Crowned K9s</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../kobe-go-home-playbook/style.css">
+  <link rel="icon" type="image/png" href="../pictures/Logos/Crowned Icons-02.png">
+  <style>
+    .poster-panel {
+      text-align: center;
+    }
+
+    .poster-image {
+      width: min(100%, 520px);
+      margin: 0 auto;
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(12, 18, 32, 0.12);
+    }
+
+    @media print {
+      @page {
+        margin: 7mm 8mm;
+        size: letter portrait;
+      }
+
+      body {
+        font-size: 10.4pt !important;
+        line-height: 1.32 !important;
+      }
+
+      h1 {
+        font-size: 22pt !important;
+      }
+
+      h2 {
+        font-size: 16pt !important;
+      }
+
+      h3 {
+        font-size: 12.4pt !important;
+      }
+
+      .slide {
+        padding-bottom: 0 !important;
+      }
+
+      .slide[data-slide]:not([data-slide="1"]) {
+        break-before: auto !important;
+        page-break-before: auto !important;
+      }
+
+      .slide[data-slide="1"] {
+        break-after: page !important;
+        page-break-after: always !important;
+        min-height: 250mm !important;
+      }
+
+      .slide[data-slide="3"],
+      .slide[data-slide="4"],
+      .slide[data-slide="5"],
+      .slide[data-slide="6"],
+      .slide[data-slide="7"],
+      .slide[data-slide="8"] {
+        margin-top: 4mm !important;
+      }
+
+      .slide[data-slide="9"] {
+        break-before: page !important;
+        page-break-before: always !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        min-height: 249mm !important;
+        display: flex !important;
+        align-items: stretch !important;
+      }
+
+      .slide[data-slide="9"] .slide-shell {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 249mm !important;
+      }
+
+      .slide[data-slide="9"] .slide-footer {
+        margin-top: auto !important;
+      }
+
+      .section-kicker,
+      h2,
+      .support-copy {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+      }
+
+      .panel,
+      .concept-card,
+      .callout {
+        padding: 0.58rem 0.68rem !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .panel + .panel,
+      .callout {
+        margin-top: 0.35rem !important;
+      }
+
+      .concept-card {
+        padding: 0.58rem 0.68rem 0.58rem 2.85rem !important;
+      }
+
+      .concept-card::before {
+        left: 0.68rem !important;
+        top: 0.62rem !important;
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        border-radius: 9px !important;
+        font-size: 0.78rem !important;
+      }
+
+      .concept-card h3 {
+        line-height: 1.15 !important;
+        margin-bottom: 0.28rem !important;
+      }
+
+      .grid-2,
+      .concept-grid {
+        gap: 0.35rem !important;
+        margin-top: 0.35rem !important;
+      }
+
+      .poster-panel {
+        break-before: page !important;
+        break-after: page !important;
+        page-break-before: always !important;
+        page-break-after: always !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        min-height: 249mm !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding: 3mm !important;
+      }
+
+      .poster-panel h3 {
+        margin-bottom: 2mm !important;
+      }
+
+      .poster-image {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 238mm !important;
+        margin: 0 auto !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="ebook-topbar" aria-label="Playbook toolbar">
+    <a class="ebook-topbar__brand" href="https://crownedk9s.com" target="_blank" rel="noopener">
+      <img src="../pictures/Logos/Crowned Icons-02.png" alt="Crowned K9s">
+      <div>
+        <div class="ebook-topbar__title">Koda’s Go-Home Playbook</div>
+        <div class="ebook-topbar__sub">Crowned K9s · Premium Puppy Placement</div>
+      </div>
+    </a>
+    <div class="ebook-topbar__actions">
+      <button type="button" class="btn-accent" data-action="print">Save / Print PDF</button>
+      <a class="btn-ghost" href="https://crownedk9s.com/contact" target="_blank" rel="noopener">Contact</a>
+    </div>
+  </header>
+
+  <main class="slideshow" aria-label="Koda go-home playbook slideshow">
+    <!-- 1 Cover -->
+    <section class="slide slide--hero is-active" data-slide="1" aria-label="Cover">
+      <div class="slide-shell">
+        <p class="eyebrow">Crowned K9s Premium Puppy Placement</p>
+        <h1>Koda’s Go-Home Playbook</h1>
+        <p class="lead lead--center">Your guide to living with a Crowned K9s premium puppy: potty rhythm, communication, commands, and the mindset that keeps training simple.</p>
+        <p class="hero-badge"><span>Koda, formerly Owen</span> · Born Feb 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
+        <p class="cover-meta">Golden Retriever · Private PPP family playbook</p>
+        <div class="cover-frame">
+          <img class="cover-photo" src="../pictures/PRP/Owen/owen-ppp-hero.jpg" alt="Koda, formerly Owen, Golden Retriever puppy" width="640" height="640" loading="eager" decoding="async">
+        </div>
+        <p class="cover-tagline">Lead with Confidence, Train with Crowned K9s.</p>
+      </div>
+    </section>
+
+    <!-- 2 Potty -->
+    <section class="slide" data-slide="2" aria-label="Potty training and schedule">
+      <div class="slide-shell">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">🐾</span>
+          <p class="eyebrow" style="margin:0">Your #1 priority</p>
+        </div>
+        <h2>Potty training &amp; daily rhythm</h2>
+        <p class="support-copy"><strong>Here’s the truth:</strong> If you protect Koda’s potty rhythm, everything else becomes 10× easier.</p>
+
+        <div class="panel panel--highlight" style="margin-top:1.25rem">
+          <h3>The four potty triggers</h3>
+          <p>Koda will need to go outside after these four events:</p>
+          <ol>
+            <li><strong>After eating</strong> — 5–15 minutes after meals</li>
+            <li><strong>After drinking</strong> — plan for potty about 20 minutes after water</li>
+            <li><strong>After waking up</strong> — nap ends, potty starts</li>
+            <li><strong>After playing</strong> — when play slows down, go out immediately</li>
+          </ol>
+        </div>
+
+        <div class="panel poster-panel">
+          <h3>Potty triggers visual reminder</h3>
+          <img class="poster-image" src="../pictures/Posters/potty%20triggers.png" alt="The four potty triggers for puppies: after eating, drinking, waking up, and playing">
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <h3>Morning routine</h3>
+            <p>Bathroom → Train (5–10 min) → Eat → Bathroom → Nap/alone time → Bathroom → Play → Bathroom</p>
+          </div>
+          <div class="panel">
+            <h3>The rules</h3>
+            <ul>
+              <li>Take Koda out <strong>first thing</strong> when you see him in the morning.</li>
+              <li>Use <strong>“Hurry Up”</strong> every time; reward immediately when he goes.</li>
+              <li>After he drinks water, expect him to need to pee around <strong>20 minutes later</strong>.</li>
+              <li>If he falls asleep, wake him up and take him out <strong>before he wakes up on his own</strong>.</li>
+              <li>If he doesn’t go: crate ~2 minutes → straight back outside. Repeat until he goes.</li>
+              <li>Limit water after 8:30 PM. Final potty right before bed.</li>
+              <li><strong>At night (if needed):</strong> alarm every 4–5 hours for boring potty breaks if he truly needs one. Ice if thirsty, not a full water bowl.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Why this matters:</strong> Potty training <em>is</em> structure. Protect his rhythm and everything else falls into place.
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Personality -->
+    <section class="slide" data-slide="3" aria-label="Who Koda is">
+      <div class="slide-shell">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">🐕</span>
+          <p class="eyebrow" style="margin:0">Know your pup</p>
+        </div>
+        <h2>Who Koda is &amp; what to watch for</h2>
+
+        <div class="panel">
+          <h3>Koda’s personality</h3>
+          <ul>
+            <li><strong>Very loyal to his person</strong> — he bonds deeply with the person who gives him clarity, structure, and consistency.</li>
+            <li><strong>Selective with affection</strong> — he does not care for too much random human affection. Let him choose connection instead of forcing attention from strangers.</li>
+            <li><strong>A little attitude / slight stubbornness</strong> — when you ask for a command he knows, be patient and make sure he follows through. Do not teach him that he can hear a known command and blow it off.</li>
+            <li><strong>Neutral around people and dogs</strong> — he is less phased by other humans and dogs, which is an amazing trait for service-animal potential.</li>
+            <li><strong>Very playful</strong> — he loves toys and does great when toys are used as a training reward.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Good things to look for</h3>
+          <ul>
+            <li>Reward <strong>offered calm</strong>: Sit, Down, eye contact, and settling without being asked.</li>
+            <li>Use toy rewards in training. A tug, fetch, or toy chase can be more meaningful than food in the right moment.</li>
+            <li>Keep name response valuable. When he hears <strong>“Koda”</strong>, it should mean “look at my person.”</li>
+            <li>Celebrate neutrality. If people or dogs are around and he stays focused or unbothered, pay that choice.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>When he gets tired (important)</h3>
+          <p>Koda gets <strong>zoomies</strong> when he is tired. That is usually not disobedience; it is a puppy needing a reset.</p>
+          <p><strong>How to handle it:</strong></p>
+          <ol>
+            <li>Calm, clear <strong>“No.” or "Hey!"</strong></li>
+            <li>Redirect to something appropriate: toy, chew, obedience command, crate nap, or short Place rep.</li>
+            <li>Use the leash to prevent rehearsing bad choices, especially grabbing things off the ground.</li>
+            <li><strong>“Yes”</strong> and reward when he gives you attention instead.</li>
+            <li>Use the zoomies as information: potty check if needed, then crate nap or quiet reset.</li>
+          </ol>
+          <p class="callout" style="margin-top:0.85rem;margin-bottom:0"><strong>Pro tip:</strong> Tired puppies = trouble puppies. When behavior gets silly, think nap before more training.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 How he learns -->
+    <section class="slide" data-slide="4" aria-label="Training philosophy">
+      <div class="slide-shell slide-shell--wide">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">🧠</span>
+          <p class="eyebrow" style="margin:0">Premium Puppy Placement</p>
+        </div>
+        <h2>How Koda learns: core concepts</h2>
+        <p class="support-copy">These ideas shaped his training. They keep progress simple instead of overwhelming.</p>
+
+        <div class="concept-grid">
+          <article class="concept-card" data-step="1">
+            <h3>The staircase</h3>
+            <p>Training is step by step. Start with heavy guidance (treats, leash, hands); <strong>fade</strong> help over time. If he struggles, take a step back. Don’t rush to the “top step.”</p>
+          </article>
+          <article class="concept-card" data-step="2">
+            <h3>The cliffhanger</h3>
+            <p>Sessions stay <strong>1–2 minutes</strong>. End on success while he’s still engaged. Leave him wanting more.</p>
+          </article>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card" data-step="3">
+            <h3>The scoreboard (3 Ds)</h3>
+            <p>A rep only “scores” if <strong>you</strong> release him. Held Sit 4 sec + <strong>“Free”</strong> = counts. Pushed to 10 sec and he broke himself = doesn’t count. Reset easier and win smaller.</p>
+          </article>
+          <article class="concept-card" data-step="4">
+            <h3>Five reward types</h3>
+            <p>Rotate: <strong>food, toys, praise, freedom, access</strong> (“Free,” sniff, run, explore, go to the yard). Mix rewards; don’t accidentally pay unwanted behavior with attention.</p>
+          </article>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card" data-step="5">
+            <h3>Luring: hands before words</h3>
+            <p>Guide movement with food; mark <strong>“Yes”</strong> at the right instant; release with <strong>“Free.”</strong> Name the behavior after he understands the movement.</p>
+          </article>
+          <article class="concept-card" data-step="6">
+            <h3>Say commands once</h3>
+            <p>Say the command one time. If he does not respond, use silence, patience, body position, leash guidance, and hand motions to help him finish. If you can get your pup to do something without saying anything, then you should never have to say a command more than once.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Yes Good Free -->
+    <section class="slide" data-slide="5" aria-label="Communication system">
+      <div class="slide-shell">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">💬</span>
+          <p class="eyebrow" style="margin:0">Communication</p>
+        </div>
+        <h2>Yes · Good · Free</h2>
+        <p class="support-copy">Koda is trained on a simple, consistent system. These three words are the foundation.</p>
+
+        <div class="panel panel--highlight">
+          <h3>Yes</h3>
+          <p>Marks the <strong>exact moment</strong> he’s right: the bridge to the reward (replaces a clicker). Say it immediately, then pay him.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Good</h3>
+          <p>Tells him to <strong>keep doing what he’s doing</strong> (duration on Sit, Place, etc.) without releasing yet.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Free</h3>
+          <p>His <strong>release word</strong>: freedom after a command. He should not self-release from Sit, Down, Inside, Wait, or Place until <strong>“Free.”</strong> Use “Free” through the day so puppy life stays normal.</p>
+        </div>
+
+        <div class="callout">
+          <strong>Your homework:</strong> Use Yes, Good, and Free all day. Always <strong>Yes</strong> before food/rewards. Always release with <strong>Free</strong>.
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Commands A -->
+    <section class="slide" data-slide="6" aria-label="Commands part one">
+      <div class="slide-shell slide-shell--wide">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">🎯</span>
+          <p class="eyebrow" style="margin:0">Maintenance &amp; transfer</p>
+        </div>
+        <h2>Commands Koda knows (part 1)</h2>
+        <p class="support-copy">He understands these behaviors. Now he needs to learn that you speak this language too. Say each command once, then help him follow through with silence, hand motions, patience, and clear guidance.</p>
+
+        <article class="panel panel--cmd">
+          <h3>Koda (name)</h3>
+          <p class="label">Means</p>
+          <p>Look at me.</p>
+          <p class="label">How we taught it</p>
+          <p>Food near your face → sounds → the instant he meets your eyes, <strong>Yes</strong> → reward. Add “Koda” right before the look as it becomes consistent.</p>
+          <p class="label">Your practice</p>
+          <p>Short games, several times a day. His name = eyes on you, not “I heard a noise.”</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Sit</h3>
+          <p class="label">Means</p>
+          <p>Polite default for greetings, food, waiting.</p>
+          <p class="label">Your practice</p>
+          <p>Before meals, doorways, greetings. <strong>Yes</strong> when his bottom hits the floor. Reward calm choices before excitement takes over.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Down</h3>
+          <p class="label">Means</p>
+          <p>Settle and relax.</p>
+          <p class="label">Your practice</p>
+          <p>Capture downs throughout the day. If he offers a Down on his own, pay it. Calm choices should feel profitable.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Place</h3>
+          <p class="label">Means</p>
+          <p>Go to his spot and stay until released.</p>
+          <p class="label">Your practice</p>
+          <p>Short reps; build duration with the scoreboard. Release at 5s, then 8s, then 10s. End on a win.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Come (recall)</h3>
+          <p class="label">Means</p>
+          <p>Run to me.</p>
+          <p class="label">How it started</p>
+          <p>A game: <strong>“Come”</strong> only when he was already moving toward you for a stacked success rate.</p>
+          <p class="label">Now</p>
+          <p>Use <strong>“Come”</strong> when you’re confident he’ll make it. If not sure, get attention first (name, movement), then call. Build proof in low distraction first.</p>
+        </article>
+
+        <div class="callout">
+          <strong>One-command rule:</strong> Do not repeat commands he knows. Repeating teaches him the first word does not matter. Say it once, then calmly help him complete the behavior.
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 Commands B -->
+    <section class="slide" data-slide="7" aria-label="Commands part two">
+      <div class="slide-shell slide-shell--wide">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">🎯</span>
+          <p class="eyebrow" style="margin:0">Maintenance &amp; transfer</p>
+        </div>
+        <h2>Commands &amp; transfer notes (part 2)</h2>
+
+        <article class="panel panel--cmd">
+          <h3>Wait</h3>
+          <p class="label">Means</p>
+          <p>Pause. Don’t move through the threshold until <strong>Free</strong>.</p>
+          <p class="label">Your practice</p>
+          <p>Meals, crate door, front door, gates. If he can’t wait at doorways, impulse control outside gets harder.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Inside (crate)</h3>
+          <p class="label">Means</p>
+          <p>Go in the crate on his own.</p>
+          <p class="label">Your practice</p>
+          <p>Make the crate a <strong>choice</strong>: treats, toys, chews. Daily alone time in crate helps prevent separation anxiety.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Toy rewards</h3>
+          <p class="label">Means</p>
+          <p>Training can be paid with play, not just food.</p>
+          <p class="label">Your practice</p>
+          <p>Use a toy as the reward after obedience reps: Sit → Yes → tug, Down → Yes → toy chase, Come → Yes → play. Keep the toy controlled so it rewards the behavior you asked for.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Commands still in progress</h3>
+          <p>Koda does <strong>not</strong> know Touch or Leave It yet. Do not assume those words have meaning. Build them later as new skills with the same system: lure or guide, mark with <strong>Yes</strong>, reward, then name the behavior after he understands it.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>Hurry Up</h3>
+          <p class="label">Means</p>
+          <p>Go potty now.</p>
+          <p class="label">Your practice</p>
+          <p>Say it once as he starts; stay neutral. When he finishes, <strong>Yes</strong> and a big payoff.</p>
+        </article>
+
+        <article class="panel panel--cmd">
+          <h3>No Biting</h3>
+          <p class="label">Means</p>
+          <p>Stop mouthing hands.</p>
+          <p class="label">Your practice</p>
+          <p>Calm “No Biting,” redirect to a toy, reward for choosing the toy. Consistency wins. This phase passes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8 Boundaries -->
+    <section class="slide" data-slide="8" aria-label="Household manners">
+      <div class="slide-shell">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">🏠</span>
+          <p class="eyebrow" style="margin:0">Calm comes from clarity</p>
+        </div>
+        <h2>Boundaries, focus, &amp; household manners</h2>
+
+        <div class="panel panel--highlight">
+          <h3>Doorway manners</h3>
+          <p>Koda is released through <strong>every</strong> doorway: inside, outside, gates, crate. He pauses until <strong>Free</strong>. This builds impulse control, safety, and respect for thresholds.</p>
+          <p class="callout" style="margin-top:0.75rem;margin-bottom:0"><strong>Golden rule:</strong> If he can’t control doorways, he won’t control distractions outside. Master this first.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Commands happen once</h3>
+          <p>Say the word once, then use silence and guidance. If Koda hears “Sit, sit, sit,” he learns the first two did not matter. Your patience after the first command is what teaches him to listen the first time.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Boundaries = clarity = calm</h3>
+          <p>Be consistent on furniture rules, food waits, and doorways. Dogs want expectations, not chaos.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Focus &amp; engagement</h3>
+          <p>Reward eye contact and calm choices. <strong>Choosing you</strong> unlocks rewards. Keep that bank account full.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 Closing -->
+    <section class="slide" data-slide="9" aria-label="Support and next steps">
+      <div class="slide-shell">
+        <div class="section-kicker">
+          <span class="section-kicker__icon" aria-hidden="true">👑</span>
+          <p class="eyebrow" style="margin:0">Welcome to the family</p>
+        </div>
+        <h2>You’re not alone</h2>
+        <p class="support-copy">Premium Puppy Placement includes an ongoing support system, not just a puppy.</p>
+
+        <div class="panel panel--highlight">
+          <h3>What comes with your PPP membership</h3>
+          <ul class="checklist">
+            <li><strong>Lifetime support</strong> — text, call, or email with questions.</li>
+            <li><strong>Private community</strong> — PPP families (link sent by email).</li>
+            <li><strong>Discounts</strong> on future services — Crowned K9s Academy board &amp; train (Basic &amp; Advanced), private sessions, and refreshers.</li>
+            <li><strong>Training refreshers</strong> when you need a tune-up.</li>
+            <li><strong>Priority scheduling</strong> when you need help.</li>
+            <li><strong>Path to advanced programs</strong> as he matures.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Your next steps</h3>
+          <ol>
+            <li>Read this playbook together.</li>
+            <li>Practice commands so Koda learns your voice.</li>
+            <li>Join the private community when you get the link.</li>
+            <li>Reach out when unsure. Don’t guess.</li>
+            <li>Enjoy life with Koda.</li>
+          </ol>
+        </div>
+
+        <div class="slide-footer">
+          <p><strong>Lead with Confidence, Train with Crowned K9s.</strong></p>
+          <p class="contact-line">
+            <a href="tel:9198162426">Text: 919-816-2426</a>
+            ·
+            <a href="mailto:lorenzo@crownedk9s.com">lorenzo@crownedk9s.com</a>
+            ·
+            <a href="https://crownedk9s.com" target="_blank" rel="noopener">crownedk9s.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="slide-controls" aria-label="Playbook controls">
+      <button class="nav-button" type="button" data-action="prev" aria-label="Previous slide">Previous</button>
+      <div class="slide-progress">
+        <span class="slide-progress-current">01</span>
+        <span class="slide-progress-divider">/</span>
+        <span class="slide-progress-total">09</span>
+      </div>
+      <button class="nav-button" type="button" data-action="next" aria-label="Next slide">Next</button>
+    </div>
+
+    <div class="slide-dots" aria-label="Slide selection">
+      <button class="slide-dot is-active" type="button" data-target="1" aria-label="Go to slide 1"></button>
+      <button class="slide-dot" type="button" data-target="2" aria-label="Go to slide 2"></button>
+      <button class="slide-dot" type="button" data-target="3" aria-label="Go to slide 3"></button>
+      <button class="slide-dot" type="button" data-target="4" aria-label="Go to slide 4"></button>
+      <button class="slide-dot" type="button" data-target="5" aria-label="Go to slide 5"></button>
+      <button class="slide-dot" type="button" data-target="6" aria-label="Go to slide 6"></button>
+      <button class="slide-dot" type="button" data-target="7" aria-label="Go to slide 7"></button>
+      <button class="slide-dot" type="button" data-target="8" aria-label="Go to slide 8"></button>
+      <button class="slide-dot" type="button" data-target="9" aria-label="Go to slide 9"></button>
+    </div>
+  </main>
+
+  <script src="../kobe-go-home-playbook/script.js"></script>
+  <script>
+    (function () {
+      function parseIsoDate(isoDate) {
+        var parts = isoDate.split("-").map(Number);
+        if (parts.length !== 3 || parts.some(Number.isNaN)) return null;
+        return new Date(parts[0], parts[1] - 1, parts[2]);
+      }
+
+      function getCalendarAge(isoDate) {
+        var birth = parseIsoDate(isoDate);
+        if (!birth) return null;
+
+        var now = new Date();
+        var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        var days = Math.floor((today - birth) / 86400000);
+        if (Number.isNaN(days) || days < 0) return { weeks: 0, months: 0 };
+
+        var weeks = Math.floor(days / 7);
+        var months = (today.getFullYear() - birth.getFullYear()) * 12 + (today.getMonth() - birth.getMonth());
+        if (today.getDate() < birth.getDate()) months -= 1;
+        if (months < 0) months = 0;
+
+        return { weeks: weeks, months: months };
+      }
+
+      function formatAge(isoDate) {
+        var age = getCalendarAge(isoDate);
+        if (!age) return "";
+
+        if (age.weeks <= 16) {
+          return age.weeks + (age.weeks === 1 ? " week old" : " weeks old");
+        }
+
+        if (age.months <= 12) {
+          return age.months + (age.months === 1 ? " month old" : " months old");
+        }
+
+        var years = Math.floor(age.months / 12);
+        var remMonths = age.months % 12;
+        if (remMonths === 0) {
+          return years + (years === 1 ? " year old" : " years old");
+        }
+
+        return years + (years === 1 ? " year, " : " years, ") + remMonths + (remMonths === 1 ? " month old" : " months old");
+      }
+
+      function renderAges() {
+        document.querySelectorAll(".pup-age-weeks[data-birthdate]").forEach(function (el) {
+          var iso = el.getAttribute("data-birthdate");
+          el.textContent = formatAge(iso);
+        });
+      }
+      renderAges();
+      setInterval(renderAges, 86400000);
+    })();
+  </script>
+</body>
+</html>

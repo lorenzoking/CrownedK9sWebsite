@@ -70,6 +70,14 @@
       object-fit: contain;
     }
     
+    .pack-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
     .pack-cta-btn {
       display: inline-block;
       padding: 1rem 2rem;
@@ -86,6 +94,20 @@
       background: #b39561;
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(196, 165, 116, 0.3);
+    }
+
+    .pack-cta-btn--quiet {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .pack-cta-btn--quiet:hover {
+      background: #fff;
+      color: var(--text-dark);
+      border-color: var(--pack-warm);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     }
     
     /* Section Styling */
@@ -893,7 +915,15 @@
           loading="eager"
           decoding="async"
         />
-        <a href="#support" class="pack-cta-btn reveal reveal-delay-3">See How You Can Help</a>
+        <div class="pack-hero-actions reveal reveal-delay-3">
+          <a href="#support" class="pack-cta-btn">See How You Can Help</a>
+          <a href="https://my.babylist.com/jennaandlorenzo"
+             class="pack-cta-btn pack-cta-btn--quiet"
+             target="_blank"
+             rel="noopener noreferrer">
+            Looking for Babylist?
+          </a>
+        </div>
       </div>
     </section>
 
