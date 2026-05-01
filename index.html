@@ -102,6 +102,95 @@
     .home-lead-magnet-form input[type="email"]::placeholder {
       color: rgba(107,114,128,0.9);
     }
+    .find-my-puppy-feature {
+      padding: 4rem 0;
+      background:
+        radial-gradient(circle at top left, rgba(196, 165, 116, 0.18), transparent 34%),
+        linear-gradient(180deg, #fff 0%, #f7f3ec 100%);
+    }
+    .find-my-puppy-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 2rem;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: clamp(1.35rem, 3vw, 2.25rem);
+      box-shadow: 0 18px 46px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .find-my-puppy-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      background: rgba(196, 165, 116, 0.14);
+      color: var(--accent-orange);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .find-my-puppy-card h2 {
+      margin: 0 0 0.85rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      color: var(--text-dark);
+    }
+    .find-my-puppy-card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .find-my-puppy-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 1.25rem 0 1.35rem;
+    }
+    .find-my-puppy-step {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.85rem;
+      background: #fbfaf7;
+    }
+    .find-my-puppy-step strong {
+      display: block;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+    .find-my-puppy-step span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .find-my-puppy-media {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 360px;
+      background: #111827;
+    }
+    .find-my-puppy-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+    }
+    .find-my-puppy-media-note {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 14px;
+      background: rgba(17, 24, 39, 0.82);
+      color: #fff;
+      backdrop-filter: blur(10px);
+      font-weight: 700;
+      line-height: 1.4;
+    }
     @media (max-width: 520px) {
       .home-lead-magnet-form {
         flex-direction: column;
@@ -112,6 +201,18 @@
       }
       .home-lead-magnet {
         padding: 1.5rem 1rem;
+      }
+    }
+    @media (max-width: 840px) {
+      .find-my-puppy-card {
+        grid-template-columns: 1fr;
+      }
+      .find-my-puppy-steps {
+        grid-template-columns: 1fr;
+      }
+      .find-my-puppy-media,
+      .find-my-puppy-media img {
+        min-height: 300px;
       }
     }
   </style>
@@ -195,6 +296,43 @@
           <div class="logo-box"><img src="pictures/Logos/ck9swhite.png" alt="Crowned K9s Wordmark" class="trust-logo" loading="lazy" decoding="async" /></div>
           <div class="logo-box"><img src="pictures/Logos/ck9straining.jpg" alt="Crowned K9s Training" class="trust-logo" loading="lazy" decoding="async" /></div>
           <div class="logo-box"><img src="pictures/Logos/Crowned Icons-02.png" alt="Crowned K9s Icon" class="trust-logo" loading="lazy" decoding="async" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIND MY PUPPY FEATURE -->
+    <section class="find-my-puppy-feature reveal" id="find-my-puppy-home">
+      <div class="container">
+        <div class="find-my-puppy-card">
+          <div>
+            <span class="find-my-puppy-eyebrow">Find My Puppy</span>
+            <h2>Don’t search alone. Let us find, select, and train the right puppy for your family.</h2>
+            <p>
+              Find My Puppy is our done-for-you placement path inside Premium Puppy Placement. You hire Crowned K9s before you have a puppy, then we help source an ethical breeder, evaluate the litter, choose the right temperament, handle pickup logistics, and start Academy training before go-home.
+            </p>
+            <div class="find-my-puppy-steps" aria-label="Find My Puppy process">
+              <div class="find-my-puppy-step">
+                <strong>1. Source</strong>
+                <span>We screen breeder options, health standards, timing, and fit.</span>
+              </div>
+              <div class="find-my-puppy-step">
+                <strong>2. Select</strong>
+                <span>We match temperament to your household, goals, and schedule.</span>
+              </div>
+              <div class="find-my-puppy-step">
+                <strong>3. Start</strong>
+                <span>Your puppy begins Crowned K9s Academy before coming home.</span>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <a href="/premium-puppy-placement#find-my-puppy" class="cta-button">Explore Find My Puppy</a>
+              <a href="/contact" class="button button-secondary">Ask About Availability</a>
+            </div>
+          </div>
+          <div class="find-my-puppy-media">
+            <img src="pictures/PRP/Charlie/IMG_0051.jpg" alt="Charlie, a Golden Retriever puppy selected through Find My Puppy" loading="lazy" decoding="async">
+            <div class="find-my-puppy-media-note">Charlie’s family hired us before they had a puppy. We found him, selected him, and started his training-first transition.</div>
+          </div>
         </div>
       </div>
     </section>
