@@ -63,11 +63,20 @@
     .pack-featured-image {
       display: block;
       width: min(100%, 620px);
-      margin: 0 auto 2rem;
+      margin: 0 auto 0.75rem;
       border-radius: 16px;
       border: 1px solid var(--border);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
       object-fit: contain;
+    }
+
+    .pack-image-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.55;
+      font-style: italic;
     }
     
     .pack-hero-actions {
@@ -732,8 +741,14 @@
       }
 
       .pack-featured-image {
-        margin-bottom: 1.4rem;
+        margin-bottom: 0.6rem;
         border-radius: 12px;
+      }
+
+      .pack-image-note {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+        margin-bottom: 1.4rem;
       }
 
       .pack-hero {
@@ -913,12 +928,15 @@
           We're so excited, our family is growing. If you'd like to help us get ready for our newest little one, this page is a simple way to do it. The easiest path is to contribute toward a fund here on our site, and if you'd rather connect your gift to a specific item, we've added our registry list below too. Every bit of love and support means the world to us.
         </p>
         <img
-          src="./ourpackisgrowing.PNG"
-          alt="Lorenzo and family celebrating that our pack is growing"
+          src="./family-cartoon.png"
+          alt="Cartoon illustration of Lorenzo, Jenna, and their dogs with a baby on the way"
           class="pack-featured-image reveal reveal-delay-2"
           loading="eager"
           decoding="async"
         />
+        <p class="pack-image-note reveal reveal-delay-2">
+          We're in the process of getting real maternity pictures—bear with us!
+        </p>
         <div class="pack-hero-actions reveal reveal-delay-3">
           <a href="#support" class="pack-cta-btn">See How You Can Help</a>
           <a href="https://my.babylist.com/jennaandlorenzo"
