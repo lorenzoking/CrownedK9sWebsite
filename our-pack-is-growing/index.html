@@ -562,6 +562,44 @@
       border-color: rgba(196, 165, 116, 0.3);
     }
 
+    .registry-item-card.is-purchased {
+      border-color: rgba(100, 140, 110, 0.4);
+      background: linear-gradient(180deg, #f7fbf8 0%, #fff 45%);
+    }
+
+    .registry-item-card.is-purchased:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-color: rgba(100, 140, 110, 0.45);
+    }
+
+    .registry-item-purchased-pill {
+      display: inline-flex;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #2a5c38;
+      background: #d9eedf;
+      border-radius: 999px;
+      padding: 0.32rem 0.65rem;
+      margin: 0 0 0.65rem;
+    }
+
+    .registry-item-purchased-status {
+      display: block;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px dashed rgba(0, 0, 0, 0.12);
+      line-height: 1.45;
+    }
+
     .registry-item-category {
       display: inline-flex;
       align-self: flex-start;
@@ -1001,7 +1039,7 @@
       <div class="container">
         <div class="pack-section-header">
           <h2 class="pack-section-title reveal">Love From Our Village</h2>
-          <p class="pack-section-subtitle reveal reveal-delay-1">Kind messages from friends and family supporting our growing pack.</p>
+          <p class="pack-section-subtitle reveal reveal-delay-1">Notes from people who supported us through a nursery fund or by gifting something from our registry. We only share kind words here—not who purchased which specific item—so everyone’s privacy stays protected.</p>
         </div>
 
         <div class="contributor-wheel-frame reveal reveal-delay-2" id="contributor-wheel-frame">
@@ -1338,7 +1376,7 @@
       { id: "diaper-14",  name: "Amazon Elements Baby Wipes", category: "Diapering", fundGroup: "Diapering fund", price: 20.45 },
 
       { id: "gear-1",     name: "Graco TriRide 3-in-1 Reclining Car Seat", category: "Baby gear", fundGroup: "Baby gear fund", price: 199.99 },
-      { id: "gear-2",     name: "Graco Close2Baby Playard", category: "Baby gear", fundGroup: "Baby gear fund", price: 199.99 },
+      { id: "gear-2",     name: "Graco Close2Baby Playard", category: "Baby gear", fundGroup: "Baby gear fund", price: 199.99, purchased: true, note: "This one is already covered off our list—thank you to whoever gifted it!" },
       { id: "gear-3",     name: "Graco Redmond Modes Pramette Stroller", category: "Baby gear", fundGroup: "Baby gear fund", price: 249.99 },
       { id: "gear-4",     name: "Large Baby Playpen", category: "Baby gear", fundGroup: "Baby gear fund", price: 69.98 },
       { id: "gear-5",     name: "Funbliss Baby Car Mirror", category: "Baby gear", fundGroup: "Baby gear fund", price: 9.99 },
@@ -1525,7 +1563,7 @@
         const entry = matches[0];
         strip.classList.remove('is-hidden');
         strip.innerHTML = `
-          <p class="fund-contributor-label">Kind words from supporters</p>
+          <p class="fund-contributor-label">Love from supporters</p>
           <p class="fund-contributor-message">“${escapeHtml(entry.message)}”</p>
           <p class="fund-contributor-meta">${buildContributorMetaLine(entry)}</p>
         `;
@@ -1533,7 +1571,7 @@
     }
 
     const getRegistryTotalsByCategory = () =>
-      REGISTRY_ITEMS.reduce((acc, item) => {
+      REGISTRY_ITEMS.filter((item) => !item.purchased).reduce((acc, item) => {
         if (!acc[item.category]) {
           acc[item.category] = { total: 0, count: 0 };
         }
@@ -1639,6 +1677,7 @@
       }
 
       grid.innerHTML = filteredItems.map((item) => {
+        const purchased = Boolean(item.purchased);
         const stripeUrl = categoryToStripeUrl.get(item.category) || generalContributionUrl || BABYLIST_REGISTRY_URL;
         const fundMeta = CATEGORY_TO_FUND[item.category];
         const fundLabel = fundMeta ? fundMeta.label : 'General Contribution';
@@ -1646,14 +1685,12 @@
         const note = item.note
           ? `<p class="registry-item-note">${escapeHtml(item.note)}</p>`
           : '<p class="registry-item-note">This item is part of our registry planning and helps us build the right category without duplicate gifts.</p>';
-        return `
-          <article class="registry-item-card reveal is-visible" data-registry-item-id="${escapeHtml(item.id)}">
-            <span class="registry-item-category">${escapeHtml(item.category)}</span>
-            <h3>${escapeHtml(item.name)}</h3>
-            <div class="registry-item-price">${formatCurrency(item.price)}</div>
-            <div class="registry-item-fund">Grouped under: ${escapeHtml(fundLabel)}</div>
-            ${note}
-            <div class="registry-item-actions">
+        const purchasedPill = purchased ? '<span class="registry-item-purchased-pill">Purchased</span>' : '';
+        const actions = purchased
+          ? `<div class="registry-item-actions">
+              <span class="registry-item-purchased-status">No need to gift this one again—we are all set here.</span>
+            </div>`
+          : `<div class="registry-item-actions">
               <a
                 href="${escapeHtml(stripeUrl)}"
                 class="registry-item-primary"
@@ -1673,7 +1710,16 @@
                 aria-label="View item details or buy this gift for ${escapeHtml(item.name)}">
                 View item details / Buy this gift
               </a>
-            </div>
+            </div>`;
+        return `
+          <article class="registry-item-card reveal is-visible${purchased ? ' is-purchased' : ''}" data-registry-item-id="${escapeHtml(item.id)}">
+            <span class="registry-item-category">${escapeHtml(item.category)}</span>
+            ${purchasedPill}
+            <h3>${escapeHtml(item.name)}</h3>
+            <div class="registry-item-price">${formatCurrency(item.price)}</div>
+            <div class="registry-item-fund">Grouped under: ${escapeHtml(fundLabel)}</div>
+            ${note}
+            ${actions}
           </article>
         `;
       }).join('');
