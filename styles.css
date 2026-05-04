@@ -598,6 +598,12 @@ main > section:first-of-type {
   align-items: stretch;
   gap: 1.75rem;
 }
+/* Home: Charlie & Owen side by side (two equal columns when space allows) */
+@media (min-width: 901px) {
+  .puppy-placement-split--brothers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .puppy-placement-card {
   background: #ffffff;
   border-radius: 18px;
