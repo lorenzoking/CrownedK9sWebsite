@@ -12,17 +12,17 @@ For every item listed in `registry-items.json` it will:
 
 1. Find-or-create a **Stripe Product** (matched by metadata `campaign` + `registry_item`). Title / description / image / active are kept in sync with the JSON on every run.
 2. Find-or-create a **Stripe Price** using `custom_unit_amount` so the giver types in any amount they want, with an optional **suggested preset**, **minimum**, and **maximum**.
-3. Find-or-create a **Stripe Payment Link** that uses that price, with `submit_type="donate"` (shows a "Donate" button at checkout) and an optional redirect URL after completion.
+3. Find-or-create a **Stripe Payment Link** that uses that price, with `submit_type="donate"` (shows a "Donate" button at checkout), an **optional text field** so guests can leave a note for your *Love From Our Village* section, and an optional redirect URL after completion.
 4. Tag everything with useful metadata:
-   - `campaign: our-pack-is-growing`
-   - `registry_type: baby-registry`
-   - `registry_item: <slug>`
-   - `source: crowned-k9s-site`
-   - `config_signature: <hash>` on Prices + Payment Links so we can cleanly distinguish "current config" from "stale config".
+  - `campaign: our-pack-is-growing`
+  - `registry_type: baby-registry`
+  - `registry_item: <slug>`
+  - `source: crowned-k9s-site`
+  - `config_signature: <hash>` on Prices + Payment Links so we can cleanly distinguish "current config" from "stale config".
 5. **Auto-wire** the website: every `<a data-pack-fund-slug="…">` in `our-pack-is-growing/index.html` has its `href` rewritten to the matching (or reused) Stripe URL.
 6. Write the finished, ready-to-use links to:
-   - `output/payment-links.json`
-   - `output/payment-links.csv`
+  - `output/payment-links.json`
+  - `output/payment-links.csv`
 
 ---
 
@@ -30,18 +30,20 @@ For every item listed in `registry-items.json` it will:
 
 The registry is modeled as **1 general contribution + 9 category funds** — one per filter pill on the page:
 
-| Slug                   | Category              |
-| ---------------------- | --------------------- |
-| `general-contribution` | _(general — site-wide)_ |
-| `feeding-fund`         | Feeding               |
-| `sleeping-fund`        | Sleeping              |
-| `diapering-fund`       | Diapering             |
-| `baby-gear-fund`       | Baby gear             |
-| `health-safety-fund`   | Health & safety       |
-| `bathing-fund`         | Bathing               |
-| `clothing-fund`        | Clothing              |
-| `playing-fund`         | Playing               |
-| `gift-cards-fund`      | Cash & gift cards     |
+
+| Slug                   | Category                |
+| ---------------------- | ----------------------- |
+| `general-contribution` | *(general — site-wide)* |
+| `feeding-fund`         | Feeding                 |
+| `sleeping-fund`        | Sleeping                |
+| `diapering-fund`       | Diapering               |
+| `baby-gear-fund`       | Baby gear               |
+| `health-safety-fund`   | Health & safety         |
+| `bathing-fund`         | Bathing                 |
+| `clothing-fund`        | Clothing                |
+| `playing-fund`         | Playing                 |
+| `gift-cards-fund`      | Cash & gift cards       |
+
 
 When a visitor clicks "Contribute to Feeding Fund" on any registry item card, they're routed straight to the Feeding Fund Payment Link. No per-item Stripe product sprawl.
 
@@ -67,20 +69,40 @@ On `npm run generate`, the `href` is replaced with the real Stripe URL. Everythi
 1. Install Node.js 18.17 or newer.
 2. Open a terminal in this folder.
 3. Copy the env file and paste your Stripe key:
-
-   ```bash
+  ```bash
    cp .env.example .env
-   ```
-
+  ```
    Open `.env` and fill in:
-   - `STRIPE_SECRET_KEY` – start with your **test** key (`sk_test_...`) while you're experimenting.
-   - `DEFAULT_SUCCESS_URL` – optional, the page Stripe redirects to after a gift is completed.
-
+  - `STRIPE_SECRET_KEY` – start with your **test** key (`sk_test_...`) while you're experimenting.
+  - `DEFAULT_SUCCESS_URL` – optional, the page Stripe redirects to after a gift is completed.
 4. Install dependencies:
-
-   ```bash
+  ```bash
    npm install
-   ```
+  ```
+
+---
+
+## Optional checkout message (Love From Our Village)
+
+Stripe Payment Links do **not** have a built-in “gift message” box. The supported approach is a **Checkout custom field** (one optional text field).
+
+**What the generator does**
+
+- Every **new** Payment Link it creates includes one optional field labeled **“Optional message (may be shared on our page)”** (API key `villageLoveNote`, up to 255 characters).
+- On **reuse**, the next `npm run generate` run tries to **add the same field** to existing script-managed links if it is missing (metadata + custom fields are updated in one Stripe call when needed).
+
+**Where you read the text**
+
+- **Dashboard:** Payments → open the successful payment → under Checkout details, look for **Custom fields** / the field key `villageLoveNote`.
+- **Automation (optional):** listen for `checkout.session.completed` and read `session.custom_fields`.
+
+**Links you created only in the Dashboard** (for example *Crowned K9s Registry — General Contribution*) are **not** updated by this script unless they carry the same `metadata.source=crowned-k9s-site` matching rules. For those, add the field manually:
+
+1. Stripe Dashboard → **Payment Links** → open the link → **Edit** (or the `⋯` menu → **Edit payment link**).
+2. Find **Custom fields** / **Collect additional information** (wording varies).
+3. Add a **Text** field, mark it **Optional**, label something like *Optional message for the family*, max length **255**.
+
+Use the same workflow for every fund link you want to collect notes on. Stripe’s reference: [Checkout custom fields](https://docs.stripe.com/payments/checkout/custom-fields).
 
 ---
 
@@ -88,20 +110,22 @@ On `npm run generate`, the `href` is replaced with the real Stripe URL. Everythi
 
 All items live in `registry-items.json`. Shape of each item:
 
-| Field              | Type    | Required | Notes                                                                 |
-| ------------------ | ------- | -------- | --------------------------------------------------------------------- |
-| `slug`             | string  | yes      | Stable ID. Must match the `data-pack-fund-slug` on the page anchor.   |
-| `title`            | string  | yes      | Shown in Stripe Checkout.                                             |
-| `description`      | string  | no       | Shown in Stripe Checkout.                                             |
-| `image`            | string  | no       | Public HTTPS URL. Used for product image.                             |
-| `currency`         | string  | yes      | Lowercase ISO code, e.g. `"usd"`.                                     |
-| `suggested_amount` | integer | no       | **In cents.** Pre-fills the amount at checkout.                       |
-| `minimum_amount`   | integer | no       | **In cents.** Stripe enforces this lower bound.                       |
-| `maximum_amount`   | integer | no       | **In cents.** Stripe enforces this upper bound.                       |
-| `active`           | boolean | no       | Default `true`. Set `false` to skip the item on the next run.         |
-| `category`         | string  | no       | Must match a filter-pill category on the page (exact label).          |
-| `thank_you_note`   | string  | no       | Used only if no success URL is set (hosted Stripe "thank you" page).  |
-| `success_url`      | string  | no       | Overrides `DEFAULT_SUCCESS_URL` for this specific item.               |
+
+| Field              | Type    | Required | Notes                                                                |
+| ------------------ | ------- | -------- | -------------------------------------------------------------------- |
+| `slug`             | string  | yes      | Stable ID. Must match the `data-pack-fund-slug` on the page anchor.  |
+| `title`            | string  | yes      | Shown in Stripe Checkout.                                            |
+| `description`      | string  | no       | Shown in Stripe Checkout.                                            |
+| `image`            | string  | no       | Public HTTPS URL. Used for product image.                            |
+| `currency`         | string  | yes      | Lowercase ISO code, e.g. `"usd"`.                                    |
+| `suggested_amount` | integer | no       | **In cents.** Pre-fills the amount at checkout.                      |
+| `minimum_amount`   | integer | no       | **In cents.** Stripe enforces this lower bound.                      |
+| `maximum_amount`   | integer | no       | **In cents.** Stripe enforces this upper bound.                      |
+| `active`           | boolean | no       | Default `true`. Set `false` to skip the item on the next run.        |
+| `category`         | string  | no       | Must match a filter-pill category on the page (exact label).         |
+| `thank_you_note`   | string  | no       | Used only if no success URL is set (hosted Stripe "thank you" page). |
+| `success_url`      | string  | no       | Overrides `DEFAULT_SUCCESS_URL` for this specific item.              |
+
 
 > **Amounts are in cents.** `$25.00 = 2500`, `$1.00 = 100`.
 
@@ -174,7 +198,7 @@ node generate-links.js --cleanup --apply --no-wire
 - whether each price will be reused or created
 - whether each payment link will be reused or created
 - how many stale script-generated prices/payment links would be deactivated
-- final aggregate tally of \"would change\" counts
+- final aggregate tally of would change counts
 
 ### What apply does
 
@@ -271,3 +295,4 @@ stripe-registry-generator/
 │   └── payment-links.csv   ← generated
 └── README.md             ← you're reading it
 ```
+

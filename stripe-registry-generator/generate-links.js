@@ -57,6 +57,27 @@ const PAGE_PATH = path.resolve(__dirname, '..', 'our-pack-is-growing', 'index.ht
 const CAMPAIGN = 'our-pack-is-growing';
 const REGISTRY_TYPE = 'baby-registry';
 const SOURCE = 'crowned-k9s-site';
+
+/** Checkout custom field: donors can leave an optional note (read in Dashboard or via webhook). */
+const VILLAGE_NOTE_FIELD_KEY = 'villageLoveNote';
+
+function packCheckoutCustomFields() {
+  return [
+    {
+      key: VILLAGE_NOTE_FIELD_KEY,
+      label: { type: 'custom', custom: 'Optional message (may be shared on our page)' },
+      type: 'text',
+      optional: true,
+      text: { maximum_length: 255 },
+    },
+  ];
+}
+
+function paymentLinkHasVillageNoteField(link) {
+  const fields = link?.custom_fields;
+  if (!Array.isArray(fields) || !fields.length) return false;
+  return fields.some((f) => f?.key === VILLAGE_NOTE_FIELD_KEY);
+}
 const LEGACY_SLUG_ALIASES = {
   'general-contribution': ['family-love-gift'],
   'feeding-fund': ['baby-essentials-fund', 'baby-essentials'],
@@ -105,7 +126,7 @@ const KEY_MODE = /^(sk|rk)_live_/.test(STRIPE_SECRET_KEY) ? 'live' : 'test';
 const stripe = new Stripe(STRIPE_SECRET_KEY, {
   appInfo: {
     name: 'crowned-k9s-registry-generator',
-    version: '2.0.0',
+    version: '2.1.0',
   },
 });
 
@@ -480,14 +501,24 @@ async function upsertPaymentLink(product, price, item, options = {}) {
     const desiredMeta = buildPricingMetadata(item);
     const metaKeys = Object.keys(desiredMeta);
     const metaDrift = metaKeys.some((k) => (match.metadata?.[k] || '') !== (desiredMeta[k] || ''));
-    if (metaDrift) {
+    const needsVillageField = !paymentLinkHasVillageNoteField(match);
+    if (metaDrift || needsVillageField) {
       if (dryRun) {
-        console.log(`   ~  Would update payment link metadata ${match.id}`);
+        console.log(
+          `   ~  Would update payment link ${match.id}${metaDrift ? ' metadata' : ''}${
+            needsVillageField ? ' + optional village message field' : ''
+          }`
+        );
       } else {
         try {
-          await stripe.paymentLinks.update(match.id, { metadata: desiredMeta });
-        } catch (_) {
-          // metadata update failures are non-fatal
+          const payload = {};
+          if (metaDrift) payload.metadata = desiredMeta;
+          if (needsVillageField) payload.custom_fields = packCheckoutCustomFields();
+          if (Object.keys(payload).length) {
+            await stripe.paymentLinks.update(match.id, payload);
+          }
+        } catch (err) {
+          console.warn(`   !  Could not update payment link ${match.id}: ${err.message}`);
         }
       }
     }
@@ -503,6 +534,7 @@ async function upsertPaymentLink(product, price, item, options = {}) {
         line_items: [{ price: price.id, quantity: 1 }],
         submit_type: 'donate',
         metadata: buildPricingMetadata(item),
+        custom_fields: packCheckoutCustomFields(),
       };
       if (successUrl) {
         params.after_completion = { type: 'redirect', redirect: { url: successUrl } };
