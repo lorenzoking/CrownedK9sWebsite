@@ -567,6 +567,87 @@
       line-height: 1.65;
       color: var(--text-dark);
     }
+    .zoey-feature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+      align-items: stretch;
+    }
+    .zoey-feature-grid .coming-pup-card {
+      min-width: 0;
+    }
+    .zoey-benefit-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .zoey-benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.55;
+      color: var(--text-dark);
+    }
+    .zoey-benefit-list li::before {
+      content: "✓";
+      flex: 0 0 auto;
+      margin-top: 0.05rem;
+      color: var(--accent-orange);
+      font-weight: 800;
+    }
+    .zoey-benefit-list li span {
+      display: block;
+      min-width: 0;
+    }
+    .zoey-benefit-list li strong {
+      display: block;
+      margin-bottom: 0.12rem;
+      color: var(--text-dark);
+    }
+    .zoey-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .zoey-price-card {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+    }
+    .zoey-price-card--best {
+      border-color: rgba(230,126,34,0.45);
+      box-shadow: 0 14px 32px rgba(230,126,34,0.13);
+    }
+    .zoey-price-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.25rem 0.55rem;
+      margin-bottom: 0.65rem;
+      background: #fff3e9;
+      color: #9a4a00;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .zoey-price-card h4 {
+      margin: 0 0 0.45rem;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+    .zoey-price-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
     .coming-owen-note {
       font-size: 0.95rem;
       color: var(--muted);
@@ -638,6 +719,8 @@
     }
     @media (max-width: 900px) {
       .coming-soon-grid,
+      .zoey-feature-grid,
+      .zoey-pricing-grid,
       .parents-media-grid {
         grid-template-columns: 1fr;
       }
@@ -1752,10 +1835,10 @@
         <div class="availability-strip">
           <div>
             <p class="availability-strip-eyebrow">PPP Update</p>
-            <p class="availability-strip-title">Charlie &amp; Owen &mdash; officially home</p>
-            <p class="availability-strip-meta">Both Golden brothers finished Crowned K9s Academy and are home with their families. Want the <strong>next Crowned K9s puppy</strong> to be yours? Hire me to source, select, and train the puppy <strong>for your family</strong>.</p>
+            <p class="availability-strip-title">Zoey the Cavapoo is looking for her home</p>
+            <p class="availability-strip-meta">Zoey is hypoallergenic, expected to be about <strong>25 pounds full grown</strong>, and starts Crowned K9s Academy training on <strong>May 9</strong>.</p>
           </div>
-          <a href="#find-my-puppy" class="button button-secondary">See Find My Puppy</a>
+          <a href="#next-ppp" class="button button-secondary">Meet Zoey</a>
         </div>
       </div>
     </section>
@@ -2187,86 +2270,74 @@
 
         <div class="program-details-cta">
           <a href="/contact" class="cta-button">Inquire / Apply</a>
-          <a href="#next-ppp" class="button button-secondary">See Real Placement Story</a>
+          <a href="#next-ppp" class="button button-secondary">Meet Zoey</a>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         CHARLIE & OWEN — PPP (STORY + INQUIRIES)
+         ZOEY — CURRENT AVAILABLE PPP PUPPY
     ════════════════════════════════════════════════════════════ -->
     <section class="pup-feature" id="next-ppp">
       <div class="container">
         <div class="pup-feature-header reveal">
-          <p class="coming-kicker">Success story</p>
-          <h2 class="section-title">Meet Charlie &amp; Owen</h2>
-          <p class="coming-intro">Both Golden brothers are <strong>officially home</strong> after Crowned K9s Academy &mdash; a real example of the <a href="#find-my-puppy"><strong>Find My Puppy</strong></a> model plus classic PPP working side by side.</p>
-          <div class="coming-story">
-            <p><strong>Charlie was placed through Find My Puppy.</strong> His family hired me <em>before</em> they had a puppy and delegated the search. I selected him from a litter of nine based on their lifestyle, schedule, and goals, then moved him through Academy for a training-first start before go-home.</p>
-            <p><strong>Owen followed the standard PPP path.</strong> When I arrived to pick up Charlie, one puppy was still without a home &mdash; that was Owen. I brought him into Premium Puppy Placement, trained both brothers together, and matched him with the same training-first standard.</p>
-            <p>The parents met every standard we look for &mdash; health-tested, intentional early socialization, microchipped puppies, current vaccinations, AKC registration, and consistent transparency.</p>
-          </div>
+          <p class="coming-kicker">Available PPP puppy</p>
+          <h2 class="section-title">Meet Zoey</h2>
         </div>
 
-        <div class="coming-soon-grid">
-          <article class="coming-pup-card reveal">
+        <div class="zoey-feature-grid">
+          <article class="coming-pup-card coming-pup-card--featured reveal">
             <div class="coming-pup-media">
-              <img src="../pictures/PRP/Charlie/IMG_0032.jpg" alt="Charlie, Golden Retriever, at home after Crowned K9s placement" width="1600" height="1200" loading="lazy" decoding="async">
+              <img src="../pictures/PRP/Zoey/IMG_8332.jpg" alt="Zoey, an available Cavapoo puppy for Premium Puppy Placement" width="1600" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="coming-pup-header">
               <div>
-                <h3>Charlie</h3>
-                <p class="coming-pup-meta">Golden Retriever · Male · Born February 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
-                <p class="coming-pup-lane coming-pup-lane--fmp">Find My Puppy · Family-first placement</p>
+                <h3>Zoey</h3>
+                <p class="coming-pup-meta">Cavapoo · Female · Born April 12, 2026 · <span class="pup-age-weeks" data-birthdate="2026-04-12"></span></p>
+                <p class="coming-pup-lane coming-pup-lane--fmp">Available · Starts training May 9</p>
               </div>
-              <span class="coming-status coming-status--home">Home</span>
+              <span class="coming-status coming-status--available">Available</span>
             </div>
-            <p>Charlie&rsquo;s family hired me <em>before</em> they had a puppy. I picked him from a litter of nine based on their energy level, schedule, and the activities they wanted to share with their dog. He completed Crowned K9s Academy and is <strong>officially home</strong> alongside Owen.</p>
+            <p>Zoey is ready for a family to claim her placement path before she starts training. Her Academy work will focus on structure, crate comfort, potty rhythm, leash foundations, calm handling, and the daily manners that make go-home smoother.</p>
           </article>
 
-          <article class="coming-pup-card coming-pup-card--featured reveal reveal-delay-1">
-            <div class="coming-pup-media">
-              <img src="../pictures/PRP/Charlie/IMG_0032.jpg" alt="Owen, Golden Retriever, at home after Crowned K9s placement" width="1600" height="1200" loading="lazy" decoding="async">
-            </div>
+          <article class="coming-pup-card reveal reveal-delay-1">
             <div class="coming-pup-header">
               <div>
-                <h3>Owen</h3>
-                <p class="coming-pup-meta">Golden Retriever · Male · Born February 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
-                <p class="coming-pup-lane coming-pup-lane--ppp">Classic PPP · I picked, then placed</p>
+                <h3>Why Zoey is a strong fit</h3>
+                <p class="coming-pup-meta">Small companion size · Health-tested background · Training-first placement</p>
               </div>
-              <span class="coming-status coming-status--home">Home</span>
             </div>
-            <p class="coming-owen-note">In photos of the brothers together, <strong>Owen</strong> is the golden with the lighter &ldquo;mask&rdquo; around his eyes and nose.</p>
-            <p>When I arrived to pick up Charlie, Owen was the one puppy still at the breeder&rsquo;s without a home &mdash; the outlier of the pack. I trained both brothers at once through standard Premium Puppy Placement. He&rsquo;s <strong>officially home</strong> too.</p>
+            <ul class="zoey-benefit-list">
+              <li><span><strong>Hypoallergenic Cavapoo</strong> Coat profile for families who need an allergy-conscious option.</span></li>
+              <li><span><strong>Expected around 25 pounds full grown</strong> A manageable size for many homes.</span></li>
+              <li><span><strong>Health-tested background</strong> Parents and grandparents were genetic and health tested.</span></li>
+              <li><span><strong>Training starts May 9</strong> Crowned K9s Academy development before go-home.</span></li>
+              <li><span><strong>Available now</strong> Looking for the right family match.</span></li>
+            </ul>
           </article>
         </div>
 
         <div class="parents-media-block reveal reveal-delay-2">
-          <h3>Meet the Parents</h3>
-          <p class="parents-media-copy">Both brothers come from health-tested parents and a well-cared-for background.</p>
-          <p class="parents-names-line"><strong>Summer</strong> (mom) is the darker golden; <strong>Cooper</strong> (dad) is the classic lighter golden.</p>
-          <p class="parents-health-links">
-            <span>Health testing (Wisdom Panel):</span>
-            <a href="https://www.wisdompanel.com/app/s/nc0q2mz" target="_blank" rel="noopener noreferrer">Cooper (dad)</a>
-            <span aria-hidden="true">&middot;</span>
-            <a href="https://www.wisdompanel.com/app/s/51lhdz9" target="_blank" rel="noopener noreferrer">Summer (mom)</a>
-          </p>
-          <div class="parents-media-grid">
-            <div class="parents-media-item">
-              <img src="../pictures/PRP/charlieandowenparents/dadandmom.jpg" alt="Cooper and Summer, Golden Retriever parents—Summer is the darker golden and Cooper the lighter" width="1200" height="900" loading="lazy" decoding="async">
-            </div>
-            <div class="parents-media-item">
-              <video controls playsinline preload="metadata" poster="../pictures/PRP/charlieandowenparents/dadandmom.jpg" aria-label="Charlie and Owen&rsquo;s parents playing">
-                <source src="../pictures/PRP/charlieandowenparents/parentsplaying.MP4" type="video/mp4">
-              </video>
-            </div>
+          <h3>Zoey&rsquo;s Placement Options</h3>
+          <p class="parents-media-copy">Both options include Zoey&rsquo;s PPP placement path and professional training start. The higher package gives your family a built-in future tune-up when real life begins.</p>
+          <div class="zoey-pricing-grid">
+            <article class="zoey-price-card">
+              <h4>$4,500</h4>
+              <p>Includes Zoey&rsquo;s placement path plus <strong>3 follow-up training sessions</strong> after go-home.</p>
+            </article>
+            <article class="zoey-price-card zoey-price-card--best">
+              <span class="zoey-price-badge">Best value</span>
+              <h4>$5,000</h4>
+              <p>Includes Zoey&rsquo;s placement path plus a <strong>1-week follow-up board and train</strong> to be used within one year.</p>
+            </article>
           </div>
 
           <div class="cta-block coming-cta-block">
-            <h3>Want the next Crowned K9s puppy to be yours?</h3>
-            <p>Charlie and Owen are home &mdash; see them in <a href="#success"><strong>Success Stories</strong></a>. You can still secure the next placement through <strong>Find My Puppy</strong>: you delegate the process, and I handle sourcing, selection, pickup, raising, and training before go-home.</p>
+            <h3>Interested in Zoey?</h3>
+            <p>Zoey does not have a home yet. If she sounds like the right fit, reach out now so we can discuss your family, her training timeline, and which support option makes the most sense.</p>
             <div class="hero-actions">
-              <a href="#find-my-puppy" class="button">See Find My Puppy</a>
+              <a href="/contact" class="button">Ask About Zoey</a>
               <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
             </div>
           </div>

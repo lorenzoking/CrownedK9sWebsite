@@ -598,10 +598,11 @@ main > section:first-of-type {
   align-items: stretch;
   gap: 1.75rem;
 }
-/* Home: Charlie & Owen side by side (two equal columns when space allows) */
+/* Home: single PPP spotlight card stays readable on wide screens. */
 @media (min-width: 901px) {
-  .puppy-placement-split--brothers {
-    grid-template-columns: 1fr 1fr;
+  .puppy-placement-split--featured {
+    grid-template-columns: minmax(0, 780px);
+    justify-content: center;
   }
 }
 .puppy-placement-card {
@@ -616,6 +617,12 @@ main > section:first-of-type {
   width: 100%;
   height: 320px;
   object-fit: cover;
+}
+.puppy-placement-card img.zoey-home-photo {
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+  background: #f8faf5;
 }
 
 /* Skye family photo: show the full image (no cover crop). Height follows width × native aspect ratio. */
@@ -649,6 +656,12 @@ main > section:first-of-type {
   .puppy-placement-card img.skye-family-photo {
     height: auto;
     max-height: none;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .puppy-placement-card img.zoey-home-photo {
+    height: auto;
     object-fit: contain;
     object-position: center center;
   }
