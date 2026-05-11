@@ -368,6 +368,14 @@
       padding: 4rem 0;
       background: linear-gradient(180deg, #ffffff 0%, #f8faf5 100%);
     }
+    .success-section .card-grid {
+      align-items: stretch;
+    }
+    .success-section .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 460px;
+    }
     .testimonial-badge {
       display: inline-block;
       background: var(--accent-orange);
@@ -387,15 +395,29 @@
       margin-top: 0.75rem;
       border-radius: 0 8px 8px 0;
       font-style: italic;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      line-height: 1.45;
       color: var(--text-dark);
+      min-height: 7.25rem;
+      max-height: 7.25rem;
+      overflow-y: auto;
+      scrollbar-width: thin;
     }
     .pup-testimonial-author {
       font-style: normal;
       font-weight: 600;
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin-top: 0.4rem;
+    }
+    @media (max-width: 760px) {
+      .success-section .card {
+        min-height: 0;
+      }
+      .pup-testimonial {
+        min-height: 6.6rem;
+        max-height: 6.6rem;
+      }
     }
     
     /* CTA Blocks */
@@ -2323,12 +2345,12 @@
           <p class="parents-media-copy">Both options include Zoey&rsquo;s PPP placement path and professional training and can give you the option to create a built-in future tune-up when real life begins.</p>
           <div class="zoey-pricing-grid">
             <article class="zoey-price-card">
-              <h4>$5,500</h4>
+              <h4>$6,000</h4>
               <p>Includes Zoey&rsquo;s placement path plus <strong>3 follow-up training sessions</strong> after go-home.</p>
             </article>
             <article class="zoey-price-card zoey-price-card--best">
               <span class="zoey-price-badge">Best value</span>
-              <h4>$6,000</h4>
+              <h4>$7,000</h4>
               <p>Includes Zoey&rsquo;s placement path plus a <strong>1-week follow-up board and train</strong> to be used within one year.</p>
             </article>
           </div>
@@ -2359,7 +2381,8 @@
             <h3>Charlie</h3>
             <p class="subtext">Golden Retriever · Born Feb 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
             <div class="pup-testimonial">
-              Find My Puppy placement: finished Crowned K9s Academy and officially home with his family &mdash; alongside his brother Owen.
+              "He is following commands incredibly well! He waited to be fed and sits down by the door before going potty. He is staying in a place for a long time!!!! And best of all he slept all night in his crate at the kitchen spot!!! 🙏❤️❤️ Thank you so much!! I can definitely see the hard work you two put into Charlie&rsquo;s training!!! We feel so blessed to have you in our lives!!!"
+              <p class="pup-testimonial-author">— Charlie&rsquo;s Family</p>
             </div>
           </article>
 
@@ -2389,7 +2412,8 @@
             <h3>Kobe</h3>
             <p class="subtext">Golden Retriever · Born Dec 29, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
             <div class="pup-testimonial">
-              Finished Crowned K9s Academy and went home through Premium Puppy Placement so his family started with structure and calm from day one.
+              "Hey, he has been the best pup. He is getting bigger. I am so happy I found him. Thank you so much for him"
+              <p class="pup-testimonial-author">— Kobe&rsquo;s Family</p>
             </div>
           </article>
 
@@ -2399,7 +2423,7 @@
             <h3>Miley</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 25, 2025 · <span class="pup-age-weeks" data-birthdate="2025-11-25"></span></p>
             <div class="pup-testimonial">
-              "I have never had such a smart puppy! Going through Crowned K9s has been a really good experience."
+              "I have never had such a smart puppy! Going through Crowned K9s has been a really good experience. I will for sure recommend them to anyone looking to add a sweet pup to their family!"
               <p class="pup-testimonial-author">— Miley's Family</p>
             </div>
           </article>
@@ -2409,6 +2433,10 @@
             <img src="../pictures/PRP/rocko.jpg" alt="Rocko the pup" class="gallery-img lightbox-img" loading="lazy" />
             <h3>Rocko</h3>
             <p class="subtext">French Bulldog · Born May 21, 2025 · <span class="pup-age-weeks" data-birthdate="2025-05-21"></span></p>
+            <div class="pup-testimonial">
+              "Rocko and Gucci are doing great they play everyday with each other and bonded really well I&rsquo;ve also continued basic training with them such as place,break,cage,yes,good even the one you showed me &ldquo;leave it&rdquo; I still do everytime I hand Rocko a treat or kibble he would bite my hand so I taught him how to do it gently with the command &ldquo;easy&rdquo; I love them there in a good home. Ur the best bro !!! Thank you so much"
+              <p class="pup-testimonial-author">— Rocko&rsquo;s Family</p>
+            </div>
           </article>
 
           <!-- Mozzie -->
@@ -2437,6 +2465,10 @@
             <img src="../pictures/PRP/Charlie.jpeg" alt="Charlie the pup" class="gallery-img lightbox-img" loading="lazy" />
             <h3>Charlie</h3>
             <p class="subtext">Olde English Bulldogge · Born Aug 21, 2024 · <span class="pup-age-weeks" data-birthdate="2024-08-21"></span></p>
+            <div class="pup-testimonial">
+              "Our kids tell me how much they love Charlie every single day. Im so happy we ran into you that night. He is the chillest, sweetest chunk."
+              <p class="pup-testimonial-author">— Charlie's Family</p>
+            </div>
           </article>
 
           <!-- Kai -->
@@ -2444,6 +2476,10 @@
             <img src="../pictures/PRP/Kai.jpeg" alt="Kai the pup" class="gallery-img lightbox-img" loading="lazy" />
             <h3>Kai</h3>
             <p class="subtext">Olde English Bulldogge · Born Aug 21, 2024 · <span class="pup-age-weeks" data-birthdate="2024-08-21"></span></p>
+            <div class="pup-testimonial">
+              "Everywhere we go, he is so loved! He has the most confidence and sweet disposition of any dog I have ever known."
+              <p class="pup-testimonial-author">— Kai's Family</p>
+            </div>
           </article>
 
           <!-- Gwen -->
@@ -2476,11 +2512,11 @@
 
           <!-- Nyla -->
           <article class="card">
-            <div class="gallery-img" style="display:flex;align-items:center;justify-content:center;min-height:240px;background:#f3f4f6;color:#6b7280;font-weight:600;">Nyla photo coming soon</div>
+            <img src="../pictures/PRP/nyla.jpg" alt="Nyla with her family" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
             <h3>Nyla</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 14, 2023 · <span class="pup-age-weeks" data-birthdate="2023-11-14"></span></p>
             <div class="pup-testimonial">
-              Matched with our own family. No public image yet.
+              Matched with our own family.
             </div>
           </article>
         </div>
