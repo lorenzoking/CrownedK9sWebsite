@@ -1278,6 +1278,150 @@
       }
       .concierge-proof-media img { max-height: 280px; }
     }
+
+    .service-pathway-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 1.35rem;
+      align-items: stretch;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1rem;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.07);
+      margin: 0 0 1.4rem;
+    }
+    .service-pathway-media {
+      min-height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #eef2f7;
+      border: 1px solid rgba(230,126,34,0.18);
+    }
+    .service-pathway-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .service-pathway-body {
+      padding: 0.35rem 0.25rem 0.35rem 0;
+      min-width: 0;
+    }
+    .service-pathway-story {
+      background:
+        radial-gradient(120% 100% at 0% 0%, rgba(230,126,34,0.10), transparent 55%),
+        #fbf8f3;
+      border: 1px solid #eadfce;
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 16px;
+      padding: 1.05rem 1.15rem;
+      margin: 0 0 1rem;
+    }
+    .service-pathway-story h3 {
+      margin: 0 0 0.45rem;
+      color: var(--text-dark);
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+    .service-pathway-story p,
+    .service-pathway-body > p {
+      margin: 0;
+      color: var(--text-dark);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+    .service-pathway-body > p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .service-pathway-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.15rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+    .service-pathway-list li {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      gap: 0.5rem;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #f8faf5;
+      color: var(--text-dark);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .service-pathway-list li::before {
+      content: "\2713";
+      color: var(--accent-orange);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .service-pathway-investment {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.85rem 1rem;
+      align-items: center;
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: 16px;
+      padding: 1rem 1.1rem;
+      margin: 0 0 1rem;
+    }
+    .service-pathway-price {
+      font-size: clamp(1.45rem, 3vw, 1.9rem);
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .service-pathway-investment p {
+      margin: 0;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+      font-size: 0.94rem;
+    }
+    .service-pathway-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+    .service-pathway-cta-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 860px) {
+      .service-pathway-card {
+        grid-template-columns: 1fr;
+      }
+      .service-pathway-media img {
+        min-height: 0;
+        max-height: 420px;
+      }
+      .service-pathway-body {
+        padding: 0.1rem 0.1rem 0.2rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .service-pathway-card {
+        padding: 0.85rem;
+      }
+      .service-pathway-list,
+      .service-pathway-investment {
+        grid-template-columns: 1fr;
+      }
+      .service-pathway-cta .cta-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
     .concierge-cta {
       display: flex;
       flex-wrap: wrap;
@@ -1692,6 +1836,35 @@
       box-sizing: border-box;
       max-width: 100%;
     }
+    .placement-page .hero-actions,
+    .placement-page .concierge-cta,
+    .placement-page .service-pathway-cta {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .placement-page .hero-actions > a,
+    .placement-page .concierge-cta > a,
+    .placement-page .program-details-cta > a,
+    .placement-page .cta-actions > a,
+    .placement-page #next-ppp .coming-cta-block .hero-actions > a {
+      min-width: 190px;
+    }
+    .placement-page .hero-actions > a,
+    .placement-page .hero-actions > a.button,
+    .placement-page .hero-actions > a.cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 190px;
+      height: 56px;
+      white-space: nowrap;
+      font-size: 0.92rem;
+    }
+    .placement-page .service-pathway-cta-note {
+      text-align: center;
+      max-width: 620px;
+    }
 
     /* On phones/tablets, keep PPP CTAs centered and content-width
        (avoid full-width stretch/overflow from inherited width:100 rules). */
@@ -1705,6 +1878,50 @@
       .placement-page .cta-actions .button,
       .placement-page .cta-actions .cta-button {
         width: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .placement-page .hero-actions,
+      .placement-page .concierge-cta,
+      .placement-page .program-details-cta,
+      .placement-page .cta-actions,
+      .placement-page #next-ppp .coming-cta-block .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .placement-page .hero-actions > a,
+      .placement-page .concierge-cta > a,
+      .placement-page .program-details-cta > a,
+      .placement-page .availability-strip .button,
+      .placement-page .presentation-cta-bar .button,
+      .placement-page .service-pathway-cta .cta-button,
+      .placement-page .cta-actions > a,
+      .placement-page #next-ppp .coming-cta-block .hero-actions > a {
+        width: 100%;
+        max-width: 360px;
+        min-width: 0;
+        text-align: center;
+      }
+      .placement-page .service-pathway-card,
+      .placement-page .coming-pup-card,
+      .placement-page .zoey-price-card,
+      .placement-page .disclosure {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .placement-page .hero-actions > a.button,
+      .placement-page .hero-actions > a.cta-button,
+      .placement-page .concierge-cta > a.button,
+      .placement-page .concierge-cta > a.cta-button,
+      .placement-page .program-details-cta > a.button,
+      .placement-page .program-details-cta > a.cta-button,
+      .placement-page .service-pathway-cta > a.cta-button,
+      .placement-page #next-ppp .coming-cta-block .hero-actions > a.button,
+      .placement-page #next-ppp .coming-cta-block .hero-actions > a.cta-button {
+        width: 100%;
+        max-width: 360px;
       }
     }
 
@@ -1833,7 +2050,8 @@
           </ul>
 
           <div class="hero-actions">
-            <a href="#find-my-puppy" class="cta-button">Start Find My Puppy</a>
+            <a href="#next-ppp" class="cta-button">Meet Zoey</a>
+            <a href="#find-my-puppy" class="button button-secondary">Start Find My Puppy</a>
             <a href="/contact" class="button button-secondary">Inquire / Apply</a>
           </div>
 
@@ -1940,15 +2158,37 @@
             <span>Post-placement support</span>
           </div>
 
-          <div class="concierge-proof">
-            <div class="concierge-proof-media">
-              <img src="../pictures/PRP/Charlie/IMG_0032.jpg" alt="Charlie and Owen, Golden Retriever brothers, at home after Crowned K9s placement" width="1600" height="1200" loading="lazy" decoding="async">
+          <div class="service-pathway-card">
+            <div class="service-pathway-media">
+              <img src="../pictures/PRP/Marley.jpeg" alt="Marley, a Find My Puppy service dog prospect pathway client" class="lightbox-img" width="1800" height="1350" loading="lazy" decoding="async">
             </div>
-            <div class="concierge-proof-body">
-              <p class="concierge-proof-eyebrow">Real example &middot; Find My Puppy + PPP</p>
-              <h3>Charlie &amp; Owen &mdash; from search to home.</h3>
-              <p>Charlie&rsquo;s family hired me <em>before</em> they had a puppy. I picked him from a <strong>litter of nine</strong> based on the family&rsquo;s energy level, schedule, and the activities they wanted to share with their dog. He moved through Crowned K9s Academy on a Find My Puppy path and is <strong>officially home</strong>.</p>
-              <p class="concierge-proof-aside">When I arrived for pick-up, one brother was still without a home &mdash; that&rsquo;s Owen. He entered classic Premium Puppy Placement, trained alongside Charlie, and is <strong>home</strong> too. <a href="#next-ppp">Read the brothers&rsquo; story &rarr;</a> · <a href="#success">See Success Stories &rarr;</a></p>
+            <div class="service-pathway-body">
+              <div class="service-pathway-story">
+                <p class="concierge-proof-eyebrow">Current example &middot; Find My Puppy service dog prospect pathway</p>
+                <h3>Meet Marley</h3>
+                <p>Marley is a Find My Puppy client whose family chose a year-long service dog prospect training pathway. The goal is not to rush a puppy into finished service work in a few weeks. It is to develop the right puppy over time with calmness, engagement, structure, obedience foundation, environmental confidence, public neutrality, and emotional stability.</p>
+              </div>
+
+              <p>One area of focus is learning to notice environmental or behavioral cues that can signal anxiety, such as hair pulling, and beginning to pair those moments with calm comfort and support in an age-appropriate way. Each phase is built around the puppy&rsquo;s maturity, temperament, and the family&rsquo;s real needs.</p>
+
+              <ul class="service-pathway-list">
+                <li>Puppy sourcing and selection based on family needs and temperament fit.</li>
+                <li>Early foundation training and structured raising.</li>
+                <li>Multiple development phases throughout the first year.</li>
+                <li>Coaching and follow-up support for the family.</li>
+                <li>Age-appropriate progress toward future service work.</li>
+                <li>Training-first guidance without medical or legal guarantees.</li>
+              </ul>
+
+              <div class="service-pathway-investment">
+                <div class="service-pathway-price">Starting at $10,000</div>
+                <p>A premium done-with-you and done-for-you development pathway, not a one-time puppy purchase.</p>
+              </div>
+
+              <div class="service-pathway-cta">
+                <a href="/contact" class="cta-button">Ask About the Service Dog Prospect Pathway</a>
+                <p class="service-pathway-cta-note">Best fit for families who want the right puppy, the right foundation, and a guided path forward.</p>
+              </div>
             </div>
           </div>
 
@@ -2386,10 +2626,10 @@
             </div>
           </article>
 
-          <!-- Owen (Golden Retriever, classic PPP) -->
+          <!-- Koda (Golden Retriever, classic PPP) -->
           <article class="card">
-            <img src="../pictures/PRP/Owen/owen-ppp-hero.jpg" alt="Owen, Golden Retriever, at home after Crowned K9s placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
-            <h3>Owen</h3>
+            <img src="../pictures/PRP/Owen/owen-ppp-hero.jpg" alt="Koda, Golden Retriever, at home after Crowned K9s placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <h3>Koda</h3>
             <p class="subtext">Golden Retriever · Born Feb 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
             <div class="pup-testimonial">
               Classic Premium Puppy Placement: trained alongside Charlie and officially home with the same training-first standard.
@@ -2586,7 +2826,7 @@
         <div class="cta-banner">
           <div>
             <h2>Ready to Meet Your New Best Friend?</h2>
-            <p>Charlie and Owen are <a href="#success"><strong>officially home</strong></a> &mdash; the active path for the <strong>next</strong> Crowned K9s puppy is <a href="#find-my-puppy"><strong>Find My Puppy</strong></a>. Hire me to source, select, health/genetic test, and train the puppy for your family. Sky (formerly Stella), Rocko, Brutus, and Maple are in our Premium Puppy Placement success stories too.</p>
+            <p>Charlie and Koda are <a href="#success"><strong>officially home</strong></a> &mdash; the active path for the <strong>next</strong> Crowned K9s puppy is <a href="#find-my-puppy"><strong>Find My Puppy</strong></a>. Hire me to source, select, health/genetic test, and train the puppy for your family. Sky (formerly Stella), Rocko, Brutus, and Maple are in our Premium Puppy Placement success stories too.</p>
           </div>
           <div class="cta-actions">
             <a href="#find-my-puppy" class="button">See Find My Puppy</a>
