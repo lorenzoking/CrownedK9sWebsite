@@ -2100,6 +2100,80 @@
       }
     }
 
+    /* Final CTA banner — high-contrast, scannable copy on dark background */
+    .placement-page .placement-cta .cta-banner {
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2.25rem 2rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .placement-page .placement-cta .cta-banner h2 {
+      margin: 0 0 0.25rem;
+      font-size: clamp(1.5rem, 3.2vw, 1.95rem);
+      line-height: 1.2;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .placement-page .placement-cta .cta-banner .cta-banner-lede {
+      margin: 0 0 0.85rem;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.02rem;
+      line-height: 1.5;
+      max-width: 52ch;
+      opacity: 1;
+    }
+    .placement-page .placement-cta .cta-banner .cta-banner-points {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      max-width: 54ch;
+    }
+    .placement-page .placement-cta .cta-banner .cta-banner-points li {
+      margin: 0;
+      padding-left: 1.15rem;
+      position: relative;
+      color: rgba(255,255,255,0.96);
+      font-size: 1.04rem;
+      line-height: 1.55;
+    }
+    .placement-page .placement-cta .cta-banner .cta-banner-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
+    }
+    .placement-page .placement-cta .cta-banner .cta-banner-points a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,176,87,0.95);
+      text-underline-offset: 3px;
+    }
+    .placement-page .placement-cta .cta-banner .cta-banner-points a:hover {
+      text-decoration-color: #fff;
+    }
+    .placement-page .placement-cta .cta-banner .cta-banner-points strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    @media (max-width: 700px) {
+      .placement-page .placement-cta .cta-banner {
+        padding: 1.75rem 1.35rem;
+      }
+      .placement-page .placement-cta .cta-banner .cta-actions {
+        margin-top: 0.35rem;
+      }
+    }
+
     /* Sticky mobile CTA keeps inquiry action in reach on small screens. */
     .mobile-sticky-cta {
       display: none;
@@ -3027,7 +3101,12 @@
         <div class="cta-banner">
           <div>
             <h2>Ready to find your next dog?</h2>
-            <p><a href="#next-ppp"><strong>Zoey</strong></a> is currently available through <a href="#paths"><strong>Premium Puppy Placement</strong></a>, and <a href="#find-my-puppy"><strong>Find My Puppy</strong></a> is open for families who want a puppy sourced and raised just for them. Charlie, Koda, Sky, Rocko, Brutus, and Maple are already <a href="#success"><strong>officially home</strong></a>.</p>
+            <p class="cta-banner-lede">Two ways in. Same Crowned K9s training-first standard.</p>
+            <ul class="cta-banner-points">
+              <li><a href="#next-ppp"><strong>Zoey</strong></a> is available now through <a href="#paths">Premium Puppy Placement</a>.</li>
+              <li><a href="#find-my-puppy"><strong>Find My Puppy</strong></a> is our private, by-application path: a puppy sourced and raised for your family.</li>
+              <li>Charlie, Koda, Sky, Rocko, Brutus, and Maple are already <a href="#success">home with their families</a>.</li>
+            </ul>
           </div>
           <div class="cta-actions">
             <a href="#next-ppp" class="button">Meet Zoey</a>
