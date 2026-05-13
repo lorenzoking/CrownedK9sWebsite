@@ -1363,27 +1363,46 @@
       line-height: 1.35;
     }
     .service-pathway-investment {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 0.85rem 1rem;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
       background: var(--primary-dark);
       color: #fff;
       border-radius: 16px;
       padding: 1rem 1.1rem;
       margin: 0 0 1rem;
     }
+    .service-pathway-investment-eyebrow {
+      margin: 0;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.35;
+    }
     .service-pathway-price {
       font-size: clamp(1.45rem, 3vw, 1.9rem);
       font-weight: 800;
-      line-height: 1;
-      white-space: nowrap;
+      line-height: 1.15;
+      margin: 0;
     }
     .service-pathway-investment p {
       margin: 0;
       color: rgba(255,255,255,0.88);
       line-height: 1.5;
       font-size: 0.94rem;
+    }
+    .service-pathway-investment-fmp-range {
+      margin-top: 0.15rem !important;
+      padding-top: 0.65rem;
+      border-top: 1px dashed rgba(255,255,255,0.22);
+      font-size: 0.88rem !important;
+      color: rgba(255,255,255,0.82) !important;
+    }
+    .service-pathway-investment-fmp-range strong {
+      color: #fff;
+      font-weight: 700;
     }
     .service-pathway-cta {
       display: flex;
@@ -1413,8 +1432,7 @@
       .service-pathway-card {
         padding: 0.85rem;
       }
-      .service-pathway-list,
-      .service-pathway-investment {
+      .service-pathway-list {
         grid-template-columns: 1fr;
       }
       .service-pathway-cta .cta-button {
@@ -2266,8 +2284,8 @@
               <li>Custom timelines, including service-dog prospect pathways.</li>
             </ul>
             <div class="path-card-meta">
-              <span class="path-card-meta-item"><strong>Custom investment</strong><span>quoted by scope &amp; breed</span></span>
-              <span class="path-card-meta-item"><strong>Fit call required</strong><span>before we begin</span></span>
+              <span class="path-card-meta-item"><strong>Typically $4,000&ndash;$8,000</strong><span>Find My Puppy placement; varies by breed, sourcing, travel, training scope, and timeline</span></span>
+              <span class="path-card-meta-item"><strong>Fit call required</strong><span>before we begin; advanced pathways quoted separately</span></span>
             </div>
             <a href="#find-my-puppy" class="cta-button path-card-cta">Start Find My Puppy</a>
           </article>
@@ -2432,8 +2450,10 @@
               </ul>
 
               <div class="service-pathway-investment">
-                <div class="service-pathway-price">Starting at $10,000</div>
-                <p>A premium done-with-you and done-for-you development pathway, not a one-time puppy purchase.</p>
+                <p class="service-pathway-investment-eyebrow">Year-one service dog prospect pathway only</p>
+                <p class="service-pathway-price">Starting at $10,000</p>
+                <p>This figure is for the specialized year-long service dog prospect development plan (the pathway Marley&rsquo;s family chose). It is <strong>not</strong> the standard Find My Puppy placement fee.</p>
+                <p class="service-pathway-investment-fmp-range">Most Find My Puppy placements typically fall between <strong>$4,000</strong> and <strong>$8,000</strong> depending on those factors. Your exact investment is confirmed after a fit call.</p>
               </div>
 
               <div class="service-pathway-cta">
@@ -2444,7 +2464,7 @@
           </div>
 
           <div class="concierge-fee">
-            <strong>One expert. One process. The right dog.</strong> Scope and timing vary by breed and availability, so I confirm your exact placement investment on a quick call. Clear expectations, high standards, and full control start to finish.
+            <strong>One expert. One process. The right dog.</strong> Most Find My Puppy placements typically run <strong>$4,000&ndash;$8,000</strong> depending on breed, sourcing, travel, training scope, and timeline. The year-long service dog prospect pathway (see Marley above) is a separate, advanced track and starts at <strong>$10,000</strong>. I confirm your exact investment on a quick fit call.
           </div>
 
           <div class="concierge-cta">
@@ -2525,7 +2545,7 @@
               <span class="disclosure-icon" aria-hidden="true"></span>
             </summary>
             <div class="disclosure-body">
-              <p>Find My Puppy is quoted privately by scope and breed. The breakdown below covers <strong>Premium Puppy Placement</strong>, where the puppy is already in our care. Health and genetic testing are included for every placement puppy, and Academy development reflects a typical <strong>3&ndash;4 week</strong> stay &mdash; not a shorter board-and-train window.</p>
+              <p>Find My Puppy is quoted privately; most placements typically fall between <strong>$4,000</strong> and <strong>$8,000</strong> depending on breed, sourcing, travel, training scope, and timeline. Advanced pathways (such as the year-long service dog prospect development plan) are quoted separately. The breakdown below covers <strong>Premium Puppy Placement</strong>, where the puppy is already in our care. Health and genetic testing are included for every placement puppy, and Academy development reflects a typical <strong>3&ndash;4 week</strong> stay &mdash; not a shorter board-and-train window.</p>
               <div class="value-table-wrapper">
           <!-- Desktop: Table View -->
           <table class="value-table">
