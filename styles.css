@@ -211,7 +211,9 @@ nav ul li.has-dropdown input.dropdown-toggle {
 
 /* Buttons */
 .button, .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--accent-orange);
     color: var(--text-light);
     padding: 0.9rem 1.4rem;
@@ -220,6 +222,11 @@ nav ul li.has-dropdown input.dropdown-toggle {
     font-weight: 650;
     letter-spacing: 0.2px;
     transition: background-color 0.25s ease, transform 0.05s ease;
+    box-sizing: border-box;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+    text-align: center;
 }
 .button:hover, .cta-button:hover { background-color: var(--accent-orange-dark); }
 .button:active, .cta-button:active { transform: translateY(1px); }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Premium Puppy Placement – Crowned K9s</title>
-  <meta name="description" content="Adopt a trained puppy from Crowned K9s. PPP pups include a 3–4 week Academy stay, genetic testing for every puppy, foundational obedience, and ongoing support.">
+  <meta name="description" content="Premium Puppy Placement from Crowned K9s: Find My Puppy and Crowned K9s Puppy pathways with Academy training, genetic testing, and ongoing support.">
   <link rel="canonical" href="https://crownedk9s.com/premium-puppy-placement/">
   
   <!-- Favicon -->
@@ -1291,6 +1291,18 @@
       box-shadow: 0 14px 34px rgba(0,0,0,0.07);
       margin: 0 0 1.4rem;
     }
+    .service-pathway-card--compact {
+      grid-template-columns: 1fr;
+      padding: 1.25rem 1.35rem;
+    }
+    .service-pathway-card--compact .service-pathway-body {
+      padding: 0;
+    }
+    .service-pathway-card--compact h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+    }
     .service-pathway-media {
       min-height: 100%;
       border-radius: 16px;
@@ -1608,8 +1620,6 @@
       gap: 0.75rem;
       align-items: center;
     }
-    .concierge-cta .button,
-    .concierge-cta .cta-button { white-space: nowrap; }
     @media (max-width: 720px) {
       .concierge-section { padding: 3rem 0 3.25rem; }
       .concierge-positioning { grid-template-columns: 1fr; }
@@ -1997,8 +2007,8 @@
        Start My Puppy Search, Inquire / Apply, See Find My Puppy, Text/Call */
     .placement-page .hero-actions,
     .placement-page .program-details-cta,
-    .placement-page #next-ppp .coming-cta-block .hero-actions,
-    .placement-page #next-ppp .coming-pup-card .hero-actions {
+    .placement-page #current-puppy .pup-feature-actions,
+    .placement-page #current-puppy .coming-pup-card .hero-actions {
       justify-content: center;
       align-items: center;
       width: 100%;
@@ -2006,8 +2016,8 @@
     }
     .placement-page .hero-actions > a,
     .placement-page .program-details-cta > a,
-    .placement-page #next-ppp .coming-cta-block .hero-actions > a,
-    .placement-page #next-ppp .coming-pup-card .hero-actions > a {
+    .placement-page #current-puppy .pup-feature-actions > a,
+    .placement-page #current-puppy .coming-pup-card .hero-actions > a {
       margin-left: 0;
       margin-right: 0;
     }
@@ -2018,116 +2028,121 @@
     }
     .placement-page .hero-actions,
     .placement-page .concierge-cta,
-    .placement-page .service-pathway-cta {
+    .placement-page .service-pathway-cta,
+    .placement-page .pup-feature-actions,
+    .placement-page .path-card-cta {
       justify-content: center;
       align-items: center;
       text-align: center;
     }
+  /* All placement CTAs: wrap text inside buttons, no fixed narrow boxes */
     .placement-page .hero-actions > a,
+    .placement-page .hero-actions > a.button,
+    .placement-page .hero-actions > a.cta-button,
     .placement-page .concierge-cta > a,
     .placement-page .program-details-cta > a,
     .placement-page .cta-actions > a,
-    .placement-page #next-ppp .coming-cta-block .hero-actions > a {
-      min-width: 190px;
-    }
-    .placement-page .hero-actions > a,
-    .placement-page .hero-actions > a.button,
-    .placement-page .hero-actions > a.cta-button {
+    .placement-page .path-card-cta,
+    .placement-page .service-pathway-cta > a,
+    .placement-page .pup-feature-actions > a,
+    .placement-page .presentation-cta-bar .button,
+    .placement-page .presentation-cta-bar .cta-button,
+    .placement-page .mobile-sticky-cta > a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 190px;
-      height: 56px;
-      white-space: nowrap;
+      min-width: 0;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      min-height: 48px;
+      white-space: normal;
+      line-height: 1.35;
+      padding: 0.85rem 1.15rem;
       font-size: 0.92rem;
+      text-align: center;
+      box-sizing: border-box;
     }
     .placement-page .service-pathway-cta-note {
       text-align: center;
       max-width: 620px;
     }
 
-    /* Zoey "Let's find your puppy" CTAs — long labels must wrap inside buttons. */
-    .placement-page #next-ppp .coming-cta-block .hero-actions {
-      flex-direction: column;
-      align-items: stretch;
-      max-width: min(100%, 380px);
-      margin-inline: auto;
-      gap: 0.75rem;
-    }
-    .placement-page #next-ppp .coming-cta-block .hero-actions > a,
-    .placement-page #next-ppp .coming-cta-block .hero-actions > a.button,
-    .placement-page #next-ppp .coming-cta-block .hero-actions > a.cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
-      height: auto;
-      min-height: 52px;
-      white-space: normal;
-      line-height: 1.35;
-      padding: 0.85rem 1.15rem;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    /* On phones/tablets, keep PPP CTAs centered and content-width
-       (avoid full-width stretch/overflow from inherited width:100 rules). */
     @media (max-width: 900px) {
-      .placement-page .hero-actions .button,
-      .placement-page .hero-actions .cta-button,
-      .placement-page .program-details-cta .button,
-      .placement-page .program-details-cta .cta-button,
-      .placement-page .availability-strip .button,
-      .placement-page .presentation-cta-bar .button,
-      .placement-page .cta-actions .button,
-      .placement-page .cta-actions .cta-button {
-        width: auto;
+      .placement-page .paths-header h2 {
+        font-size: clamp(1.45rem, 5vw, 1.85rem);
+      }
+      .placement-page .concierge-heading {
+        font-size: clamp(1.5rem, 5.5vw, 2rem);
+      }
+      .placement-page .pup-feature-header .section-title {
+        font-size: clamp(1.55rem, 5.5vw, 2rem);
+      }
+      .placement-page .service-pathway-card {
+        grid-template-columns: 1fr;
+      }
+      .placement-page .zoey-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
 
     @media (max-width: 640px) {
+      .placement-page .hero.hero--light {
+        padding: 2.5rem 0 2.75rem;
+      }
+      .placement-page .paths-section,
+      .placement-page .pup-feature,
+      .placement-page .concierge-section {
+        padding: 2.5rem 0;
+      }
+      .placement-page .path-card {
+        padding: 1.15rem;
+      }
+      .placement-page .coming-pup-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+      }
       .placement-page .hero-actions,
       .placement-page .concierge-cta,
       .placement-page .program-details-cta,
       .placement-page .cta-actions,
-      .placement-page #next-ppp .coming-cta-block .hero-actions {
+      .placement-page .pup-feature-actions {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 0.7rem;
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
       }
       .placement-page .hero-actions > a,
       .placement-page .concierge-cta > a,
       .placement-page .program-details-cta > a,
-      .placement-page .availability-strip .button,
-      .placement-page .presentation-cta-bar .button,
-      .placement-page .service-pathway-cta .cta-button,
       .placement-page .cta-actions > a,
-      .placement-page #next-ppp .coming-cta-block .hero-actions > a {
+      .placement-page .path-card-cta,
+      .placement-page .pup-feature-actions > a,
+      .placement-page .service-pathway-cta > a.cta-button,
+      .placement-page .mobile-sticky-cta > a {
         width: 100%;
-        max-width: 360px;
-        min-width: 0;
-        text-align: center;
+        max-width: 100%;
       }
       .placement-page .service-pathway-card,
       .placement-page .coming-pup-card,
-      .placement-page .zoey-price-card,
       .placement-page .disclosure {
         margin-left: auto;
         margin-right: auto;
       }
-      .placement-page .hero-actions > a.button,
-      .placement-page .hero-actions > a.cta-button,
-      .placement-page .concierge-cta > a.button,
-      .placement-page .concierge-cta > a.cta-button,
-      .placement-page .program-details-cta > a.button,
-      .placement-page .program-details-cta > a.cta-button,
-      .placement-page .service-pathway-cta > a.cta-button,
-      .placement-page #next-ppp .coming-cta-block .hero-actions > a.button,
-      .placement-page #next-ppp .coming-cta-block .hero-actions > a.cta-button {
-        width: 100%;
-        max-width: 360px;
+      .placement-page .mobile-sticky-cta {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.65rem 0.85rem calc(0.65rem + env(safe-area-inset-bottom));
+      }
+      .placement-page .placement-cta .cta-banner {
+        padding: 1.75rem 1.25rem;
+      }
+      .placement-page .placement-cta .cta-actions {
+        max-width: 100%;
       }
     }
 
@@ -2307,7 +2322,7 @@
         <div class="presentation-cta-bar">
           <div>
             <p class="presentation-cta-eyebrow">New Overview</p>
-            <p class="presentation-cta-copy">Prefer the visual walkthrough first? Watch the placement presentation covering both Premium Puppy Placement and Find My Puppy.</p>
+            <p class="presentation-cta-copy">Prefer the visual walkthrough first? Watch the presentation covering Premium Puppy Placement, Find My Puppy, and Crowned K9s Puppy.</p>
           </div>
           <a href="/ppp-presentation" class="button button-secondary">Watch the Placement Presentation</a>
         </div>
@@ -2320,7 +2335,7 @@
       <div class="container">
         <div>
           <h1>Premium Puppy Placement, the Crowned K9s way.</h1>
-          <p>A training-first puppy program with two clear paths: meet a puppy already in our care, or hire us to source and raise one specifically for your family. Same Crowned K9s standard. Two ways in.</p>
+          <p>Our umbrella placement program with two pathways: <strong>Find My Puppy</strong> (private sourcing for your family) and <strong>Crowned K9s Puppy</strong> (a puppy we raise and place). No puppies are publicly available right now &mdash; inquire to become the next Find My Puppy client.</p>
 
           <ul class="hero-outcome-bullets">
             <li><strong>Sleep through the night</strong><span class="hero-outcome-desc">Calm crate routine already in place.</span></li>
@@ -2330,14 +2345,13 @@
           </ul>
 
           <div class="hero-actions">
-            <a href="#find-my-puppy" class="cta-button">Start Find My Puppy</a>
-            <a href="#next-ppp" class="button button-secondary">About Zoey</a>
-            <a href="/contact" class="button button-secondary">Inquire / Apply</a>
+            <a href="/contact" class="cta-button">Inquire for Find My Puppy</a>
+            <a href="#paths" class="button button-secondary">See Both Pathways</a>
           </div>
 
           <p class="hero-trust-line">
             <span>Genetic testing every pup</span>
-            <span>17 pups officially placed</span>
+            <span>18 pups officially placed</span>
             <span>Lifetime trainer support</span>
           </p>
         </div>
@@ -2348,113 +2362,76 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         TWO PATHS OVERVIEW — PPP vs Find My Puppy
+         TWO PATHWAYS UNDER PREMIUM PUPPY PLACEMENT
     ════════════════════════════════════════════════════════════ -->
     <section class="paths-section" id="paths">
       <div class="container">
         <div class="paths-header reveal">
-          <p class="paths-eyebrow">Two paths, one standard</p>
-          <h2>Premium Puppy Placement &mdash; or Find My Puppy.</h2>
-          <p class="paths-lede">Both paths share the same Crowned K9s training-first system. Choose the one that matches how you want to find your dog.</p>
+          <p class="paths-eyebrow">Premium Puppy Placement</p>
+          <h2>Two pathways. One Crowned K9s standard.</h2>
+          <p class="paths-lede"><strong>Find My Puppy</strong> and <strong>Crowned K9s Puppy</strong> share the same training-first system under one umbrella program.</p>
         </div>
 
         <div class="paths-grid">
-          <article class="path-card path-card--ppp reveal">
-            <span class="path-card-tag path-card-tag--placed">Next puppy by application</span>
-            <div class="path-card-head">
-              <h3>Premium Puppy Placement</h3>
-              <p class="path-card-sub">I select, raise, and train the puppy &mdash; then place her with the right family. Apply, meet, bring her home.</p>
-            </div>
-            <ul class="path-card-list">
-              <li>Puppy is already in our care and training.</li>
-              <li>Fit-first application process to confirm match.</li>
-              <li><strong>Zoey</strong> is reserved &mdash; finishing Academy training before go-home.</li>
-            </ul>
-            <div class="path-card-meta">
-              <span class="path-card-meta-item"><strong>Typical PPP range</strong><span>$6,000&ndash;$7,000 when a puppy is listed</span></span>
-              <span class="path-card-meta-item"><strong>Training-first</strong><span>3&ndash;4 week Academy stay</span></span>
-            </div>
-            <a href="#next-ppp" class="cta-button path-card-cta">See Zoey&rsquo;s Story</a>
-          </article>
-
-          <article class="path-card path-card--fmp reveal reveal-delay-1">
-            <span class="path-card-tag path-card-tag--private">Private &middot; by application</span>
+          <article class="path-card path-card--fmp reveal">
+            <span class="path-card-tag path-card-tag--available">Active pathway</span>
             <div class="path-card-head">
               <h3>Find My Puppy</h3>
-              <p class="path-card-sub">You hire me as your puppy agent. I source, raise, and train a puppy <em>specifically for your family</em>. Never publicly available.</p>
+              <p class="path-card-sub">You hire me first. I source, raise, and train a puppy <em>for your family</em> &mdash; reserved for you, never publicly listed.</p>
             </div>
             <ul class="path-card-list">
-              <li>You hire me first &mdash; the puppy is reserved for you.</li>
-              <li>Breeder sourcing, pickup, raising, training, delivery.</li>
-              <li>Custom timelines, including service-dog prospect pathways.</li>
+              <li>Ethical breeder sourcing and temperament matching.</li>
+              <li>Academy training before go-home.</li>
+              <li>Typically <strong>$4,000&ndash;$8,000</strong> after a fit call.</li>
             </ul>
-            <div class="path-card-meta">
-              <span class="path-card-meta-item"><strong>Typically $4,000&ndash;$8,000</strong><span>Find My Puppy placement; varies by breed, sourcing, travel, training scope, and timeline</span></span>
-              <span class="path-card-meta-item"><strong>Fit call required</strong><span>before we begin; advanced pathways quoted separately</span></span>
+            <a href="/contact" class="cta-button path-card-cta">Inquire for Find My Puppy</a>
+          </article>
+
+          <article class="path-card path-card--ppp reveal reveal-delay-1">
+            <span class="path-card-tag path-card-tag--placed">Listed when available</span>
+            <div class="path-card-head">
+              <h3>Crowned K9s Puppy</h3>
+              <p class="path-card-sub">I select, raise, and train the puppy first &mdash; then place her with the right approved family.</p>
             </div>
-            <a href="#find-my-puppy" class="cta-button path-card-cta">Start Find My Puppy</a>
+            <ul class="path-card-list">
+              <li>Puppy is already in our care when announced.</li>
+              <li>Typically <strong>$6,000&ndash;$7,000</strong> when listed.</li>
+              <li><strong>Zoey</strong> (Crowned K9s Puppy) and <strong>Marley</strong> (Find My Puppy) are officially home.</li>
+            </ul>
+            <a href="#success" class="cta-button path-card-cta">See Success Stories</a>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         ZOEY — RESERVED PPP PUPPY
+         WINNIE — CURRENT RESERVED FIND MY PUPPY PUPPY
     ════════════════════════════════════════════════════════════ -->
-    <section class="pup-feature" id="next-ppp">
+    <section class="pup-feature" id="current-puppy">
       <div class="container">
         <div class="pup-feature-header reveal">
-          <p class="coming-kicker">Premium Puppy Placement &middot; Reserved</p>
-          <h2 class="section-title">Zoey is reserved</h2>
+          <p class="coming-kicker">Current in training &middot; Find My Puppy</p>
+          <h2 class="section-title">Meet Winnie</h2>
         </div>
 
-        <div class="zoey-feature-grid">
-          <article class="coming-pup-card coming-pup-card--featured reveal">
-            <div class="coming-pup-media">
-              <img src="../pictures/PRP/Zoey/zoeyupdate.jpg" alt="Zoey the Cavapoo, reserved through Crowned K9s Premium Puppy Placement" width="828" height="1800" loading="lazy" decoding="async">
-            </div>
-            <div class="coming-pup-header">
-              <div>
-                <h3>Zoey</h3>
-                <p class="coming-pup-meta">Cavapoo · Female · Born March 12, 2026 · <span class="pup-age-weeks" data-birthdate="2026-03-12"></span></p>
-                <p class="coming-pup-lane coming-pup-lane--ppp">Reserved · Academy training in progress</p>
-              </div>
-              <span class="coming-status coming-status--reserved">Reserved</span>
-            </div>
-            <p>Zoey is reserved for her forever family and is not available for new placements. She is still with us at Crowned K9s Academy while we finish her training before go-home. Thank you to everyone who reached out about her.</p>
-          </article>
-
-          <article class="coming-pup-card reveal reveal-delay-1">
-            <div class="coming-pup-header">
-              <div>
-                <h3>What Zoey&rsquo;s match shows</h3>
-                <p class="coming-pup-meta">The same training-first PPP standard families ask for</p>
-              </div>
-            </div>
-            <ul class="zoey-benefit-list">
-              <li><span><strong>Hypoallergenic Cavapoo</strong> The kind of allergy-conscious companion many families want.</span></li>
-              <li><span><strong>Expected around 25 pounds full grown</strong> A manageable size for many homes.</span></li>
-              <li><span><strong>Health-tested background</strong> Parents and grandparents were genetic and health tested.</span></li>
-              <li><span><strong>Academy development</strong> Structure, potty training, crate comfort, and manners before go-home.</span></li>
-              <li><span><strong>Fit-first placement</strong> The right family match, not a random puppy listing.</span></li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="parents-media-block reveal reveal-delay-2">
-          <h3>Were you interested in Zoey?</h3>
-          <p class="parents-media-copy">You do not have to start over. If Zoey felt like the right fit, I can still help you find <strong>your</strong> perfect puppy &mdash; through <a href="#find-my-puppy">Find My Puppy</a> (private sourcing for your family) or by letting me know what you loved about her so we can match the next PPP puppy or build a custom search.</p>
-
-          <div class="cta-block coming-cta-block">
-            <h3>Let&rsquo;s find your puppy</h3>
-            <p>Tell me what drew you to Zoey &mdash; breed, size, temperament, timeline &mdash; and we will talk through whether Find My Puppy or the next Premium Puppy Placement puppy is the better path for your home.</p>
-            <div class="hero-actions">
-              <a href="#find-my-puppy" class="cta-button">Start Find My Puppy</a>
-              <a href="/contact" class="button button-secondary">Tell Me What You Want</a>
-              <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
-            </div>
+        <article class="coming-pup-card coming-pup-card--featured reveal" style="max-width:720px; margin:0 auto;">
+          <div class="coming-pup-media">
+            <img src="../pictures/PRP/Winnie/winnie.jpg" alt="Winnie, a Golden Retriever puppy reserved through Find My Puppy" width="1800" height="1350" loading="lazy" decoding="async">
           </div>
-        </div>
+          <div class="coming-pup-header">
+            <div>
+              <h3>Winnie</h3>
+              <p class="coming-pup-meta">Golden Retriever · Female · Born April 12, 2026 · <span class="pup-age-weeks" data-birthdate="2026-04-12"></span></p>
+              <p class="coming-pup-lane coming-pup-lane--ppp">Reserved · Academy training in progress</p>
+            </div>
+            <span class="coming-status coming-status--reserved">Reserved</span>
+          </div>
+          <p>Winnie is reserved for her Find My Puppy family and is not available for new placements. She shows what the private pathway looks like in action while she finishes Academy training before go-home.</p>
+          <div class="hero-actions pup-feature-actions" style="margin-top:1rem;">
+            <a href="/contact" class="cta-button">Inquire for Find My Puppy</a>
+            <a href="#find-my-puppy" class="button button-secondary">How It Works</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -2465,9 +2442,9 @@
       <div class="container">
         <div class="concierge-wrap">
           <div>
-            <span class="concierge-eyebrow">Concierge path &middot; By application</span>
-            <h2 class="concierge-heading">Find My Puppy &mdash; a puppy sourced for your family.</h2>
-            <p class="concierge-lede"><strong>You don&rsquo;t search. I handle it.</strong> Find My Puppy is our private, done-for-you path. You hire me as your puppy agent and I run the full process &mdash; ethical breeder sourcing, selection, pickup, health and genetic testing, raising, training, and delivery &mdash; all under one high-standard system. The puppy is reserved for you, not publicly available.</p>
+            <span class="concierge-eyebrow">Find My Puppy pathway</span>
+            <h2 class="concierge-heading">How Find My Puppy works.</h2>
+            <p class="concierge-lede"><strong>You don&rsquo;t search. I handle it.</strong> From breeder sourcing through Academy training and go-home, one expert runs the full process under the Premium Puppy Placement standard.</p>
           </div>
 
           <div class="concierge-steps">
@@ -2522,49 +2499,24 @@
             <span>Post-placement support</span>
           </div>
 
-          <div class="service-pathway-card">
-            <div class="service-pathway-media">
-              <img src="../pictures/PRP/Marley.jpeg" alt="Marley, a Find My Puppy service dog prospect pathway client" class="lightbox-img" width="1800" height="1350" loading="lazy" decoding="async">
-            </div>
+          <div class="service-pathway-card service-pathway-card--compact">
             <div class="service-pathway-body">
-              <div class="service-pathway-story">
-                <p class="concierge-proof-eyebrow">Current example &middot; Find My Puppy service dog prospect pathway</p>
-                <h3>Meet Marley</h3>
-                <p>Marley is a Find My Puppy client whose family chose a year-long service dog prospect training pathway. The goal is not to rush a puppy into finished service work in a few weeks. It is to develop the right puppy over time with calmness, engagement, structure, obedience foundation, environmental confidence, public neutrality, and emotional stability.</p>
-              </div>
-
-              <p>One area of focus is learning to notice environmental or behavioral cues that can signal anxiety, such as hair pulling, and beginning to pair those moments with calm comfort and support in an age-appropriate way. Each phase is built around the puppy&rsquo;s maturity, temperament, and the family&rsquo;s real needs.</p>
-
-              <ul class="service-pathway-list">
-                <li>Puppy sourcing and selection based on family needs and temperament fit.</li>
-                <li>Early foundation training and structured raising.</li>
-                <li>Multiple development phases throughout the first year.</li>
-                <li>Coaching and follow-up support for the family.</li>
-                <li>Age-appropriate progress toward future service work.</li>
-                <li>Training-first guidance without medical or legal guarantees.</li>
-              </ul>
-
-              <div class="service-pathway-investment">
-                <p class="service-pathway-investment-eyebrow">Year-one service dog prospect pathway only</p>
-                <p class="service-pathway-price">Starting at $10,000</p>
-                <p>This figure is for the specialized year-long service dog prospect development plan (the pathway Marley&rsquo;s family chose). It is <strong>not</strong> the standard Find My Puppy placement fee.</p>
-                <p class="service-pathway-investment-fmp-range">Most Find My Puppy placements typically fall between <strong>$4,000</strong> and <strong>$8,000</strong> depending on those factors. Your exact investment is confirmed after a fit call.</p>
-              </div>
-
+              <p class="concierge-proof-eyebrow">Advanced Find My Puppy pathway</p>
+              <h3>Service dog prospect development</h3>
+              <p>Some families choose a year-long service dog prospect pathway through Find My Puppy &mdash; the track <a href="#success">Marley&rsquo;s family</a> completed. That advanced plan starts at <strong>$10,000</strong> and is separate from the standard <strong>$4,000&ndash;$8,000</strong> Find My Puppy range.</p>
               <div class="service-pathway-cta">
-                <a href="/contact" class="cta-button">Ask About the Service Dog Prospect Pathway</a>
-                <p class="service-pathway-cta-note">Best fit for families who want the right puppy, the right foundation, and a guided path forward.</p>
+                <a href="/contact" class="cta-button">Ask About This Pathway</a>
               </div>
             </div>
           </div>
 
           <div class="concierge-fee">
-            <strong>One expert. One process. The right dog.</strong> Most Find My Puppy placements typically run <strong>$4,000&ndash;$8,000</strong> depending on breed, sourcing, travel, training scope, and timeline. The year-long service dog prospect pathway (see Marley above) is a separate, advanced track and starts at <strong>$10,000</strong>. I confirm your exact investment on a quick fit call.
+            <strong>Standard Find My Puppy placements typically run $4,000&ndash;$8,000.</strong> Your exact investment is confirmed on a fit call after we talk through breed, sourcing, travel, training scope, and timeline.
           </div>
 
           <div class="concierge-cta">
-            <a href="/contact" class="cta-button">Apply for Premium Puppy Placement</a>
-            <a href="tel:9198162426" class="button button-secondary">Text/Call 919-816-2426</a>
+            <a href="/contact" class="cta-button">Inquire for Find My Puppy</a>
+            <a href="tel:9198162426" class="button button-secondary">Text/Call</a>
           </div>
         </div>
       </div>
@@ -2578,7 +2530,7 @@
         <div class="program-details-header">
           <p class="program-details-eyebrow">Program Details</p>
           <h2>Inside our placement programs.</h2>
-          <p class="lede">Open any section for the full breakdown &mdash; the foundation every puppy learns, what&rsquo;s included for Premium Puppy Placement, how Find My Puppy is different, and exactly what happens after go-home.</p>
+          <p class="lede">Open any section for the full breakdown &mdash; the foundation every puppy learns, what&rsquo;s included for Crowned K9s Puppy, how Find My Puppy differs, and exactly what happens after go-home.</p>
         </div>
 
         <div class="disclosure-list">
@@ -2634,13 +2586,13 @@
           <details id="value" class="disclosure">
             <summary>
               <span class="disclosure-summary-text">
-                <span class="title">Premium Puppy Placement: what&rsquo;s included &amp; investment</span>
-                <span class="meta">Full value breakdown vs. the PPP placement fee</span>
+                <span class="title">Crowned K9s Puppy: what&rsquo;s included &amp; investment</span>
+                <span class="meta">Full value breakdown vs. the Crowned K9s Puppy placement fee</span>
               </span>
               <span class="disclosure-icon" aria-hidden="true"></span>
             </summary>
             <div class="disclosure-body">
-              <p>Find My Puppy is quoted privately; most placements typically fall between <strong>$4,000</strong> and <strong>$8,000</strong> depending on breed, sourcing, travel, training scope, and timeline. Advanced pathways (such as the year-long service dog prospect development plan) are quoted separately. The breakdown below covers <strong>Premium Puppy Placement</strong>, where the puppy is already in our care. The puppy itself is valued at <strong>$2,000&ndash;$3,000</strong>; the typical <strong>3&ndash;4 week</strong> Academy stay at <strong>$3,500&ndash;$4,500</strong> &mdash; with health testing, go-home support, and credits, bundled value is typically <strong>closer to $10,000</strong> than the placement fee you pay.</p>
+              <p>Find My Puppy is quoted privately; most placements typically fall between <strong>$4,000</strong> and <strong>$8,000</strong> depending on breed, sourcing, travel, training scope, and timeline. Advanced pathways (such as the year-long service dog prospect development plan) are quoted separately. The breakdown below covers the <strong>Crowned K9s Puppy</strong> pathway, where the puppy is already in our care. The puppy itself is valued at <strong>$2,000&ndash;$3,000</strong>; the typical <strong>3&ndash;4 week</strong> Academy stay at <strong>$3,500&ndash;$4,500</strong> &mdash; with health testing, go-home support, and credits, bundled value is typically <strong>closer to $10,000</strong> than the placement fee you pay.</p>
               <div class="value-table-wrapper">
           <!-- Desktop: Table View -->
           <table class="value-table">
@@ -2683,7 +2635,7 @@
                 <td>✓ Yes</td>
               </tr>
               <tr>
-                <td><span class="value-item-name">Genetic Testing (Embark / DNA health &amp; breed profile—every PPP puppy)</span></td>
+                <td><span class="value-item-name">Genetic Testing (Embark / DNA health &amp; breed profile—every Crowned K9s Puppy)</span></td>
                 <td><span class="value-item-value">$150</span></td>
                 <td>✓ Yes</td>
               </tr>
@@ -2751,7 +2703,7 @@
             </div>
             <div class="value-card">
               <div class="value-card-header">
-                <span class="value-card-name">Genetic Testing (every PPP puppy)</span>
+                <span class="value-card-name">Genetic Testing (every Crowned K9s Puppy)</span>
                 <span class="value-card-included">✓ Included</span>
               </div>
               <p class="value-card-value">Typical value: $150</p>
@@ -2791,12 +2743,12 @@
                 <p class="value-summary-amount">$6,000 – $7,000</p>
               </div>
             </div>
-            <p class="value-summary-note">The puppy ($2,000&ndash;$3,000) and a typical <strong>3&ndash;4 week</strong> Academy stay ($3,500&ndash;$4,500) are the core of the bundle. Add genetic testing, go-home gear, vet care, follow-up sessions, University Elite access, and a 1-week board &amp; train credit, and total included value is typically <strong>closer to $10,000</strong> &mdash; well ahead of the PPP placement fee.</p>
+            <p class="value-summary-note">The puppy ($2,000&ndash;$3,000) and a typical <strong>3&ndash;4 week</strong> Academy stay ($3,500&ndash;$4,500) are the core of the bundle. Add genetic testing, go-home gear, vet care, follow-up sessions, University Elite access, and a 1-week board &amp; train credit, and total included value is typically <strong>closer to $10,000</strong> &mdash; well ahead of the Crowned K9s Puppy placement fee.</p>
           </div>
               </div>
 
               <div class="pricing-note">
-                <p><strong>Premium Puppy Placement fees are typically $6,000&ndash;$7,000</strong> depending on the puppy and which go-home support option you choose. <strong>Find My Puppy</strong> placements typically run <strong>$4,000&ndash;$8,000</strong> depending on breed, sourcing, travel, training scope, and timeline.</p>
+                <p><strong>Crowned K9s Puppy</strong> placement fees are typically <strong>$6,000&ndash;$7,000</strong> when a puppy is listed. <strong>Find My Puppy</strong> placements typically run <strong>$4,000&ndash;$8,000</strong> depending on breed, sourcing, travel, training scope, and timeline.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted);">Payment plans may be available after fit is confirmed.</p>
               </div>
             </div>
@@ -2811,7 +2763,7 @@
               <span class="disclosure-icon" aria-hidden="true"></span>
             </summary>
             <div class="disclosure-body">
-              <p>You don&rsquo;t leave Academy and lose support. Every placement family &mdash; Premium Puppy Placement or Find My Puppy &mdash; is set up for the first year and beyond.</p>
+              <p>You don&rsquo;t leave Academy and lose support. Every placement family &mdash; Crowned K9s Puppy or Find My Puppy &mdash; is set up for the first year and beyond.</p>
               <ul class="feature-list">
                 <li><strong>2 follow-up training sessions.</strong><span class="feature-desc">Scheduled with you after go-home so the foundation sticks.</span></li>
                 <li><strong>1-week board &amp; train credit.</strong><span class="feature-desc">Redeem anytime before your pup&rsquo;s first birthday.</span></li>
@@ -2871,7 +2823,7 @@
               <span class="disclosure-icon" aria-hidden="true"></span>
             </summary>
             <div class="disclosure-body">
-              <p>Both Premium Puppy Placement and Find My Puppy are premium, training-first paths &mdash; not for everyone. Here&rsquo;s how to tell.</p>
+              <p>Both Crowned K9s Puppy and Find My Puppy are premium, training-first pathways under Premium Puppy Placement &mdash; not for everyone. Here&rsquo;s how to tell.</p>
               <div class="fit-grid">
                 <div class="fit-card fit-card--yes">
                   <h4>You&rsquo;ll love this model if you&hellip;</h4>
@@ -2897,8 +2849,8 @@
         </div>
 
         <div class="program-details-cta">
-          <a href="/contact" class="cta-button">Inquire / Apply</a>
-          <a href="#find-my-puppy" class="button button-secondary">Start Find My Puppy</a>
+          <a href="/contact" class="cta-button">Inquire for Find My Puppy</a>
+          <a href="#find-my-puppy" class="button button-secondary">How Find My Puppy Works</a>
         </div>
       </div>
     </section>
@@ -2909,15 +2861,25 @@
     <section class="success-section" id="success">
       <div class="container">
         <h2 class="section-title" style="text-align: center;">Success Stories</h2>
-        <p class="section-subtext" style="text-align: center;"><span class="pill" style="font-size: 1rem;">🏠 16 Pups Officially Placed</span></p>
+        <p class="section-subtext" style="text-align: center;"><span class="pill" style="font-size: 1rem;">🏠 18 Pups Officially Placed</span></p>
         <div class="card-grid">
-          <!-- Zoey (Cavapoo, PPP) — reserved, training in progress -->
+          <!-- Marley (Find My Puppy, service dog prospect pathway) -->
           <article class="card">
-            <img src="../pictures/PRP/Zoey/zoeyupdate.jpg" alt="Zoey the Cavapoo, reserved through Premium Puppy Placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
-            <h3>Zoey</h3>
-            <p class="subtext">Cavapoo · Born March 12, 2026 · <span class="pup-age-weeks" data-birthdate="2026-03-12"></span></p>
+            <img src="../pictures/PRP/Marley.jpeg" alt="Marley, officially home after Find My Puppy service dog prospect placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <h3>Marley</h3>
+            <p class="subtext">Find My Puppy · Service dog prospect pathway</p>
             <div class="pup-testimonial">
-              Reserved for her forever family and completing Crowned K9s Academy training before go-home. A hypoallergenic Cavapoo on the same training-first PPP path Crowned K9s is known for.
+              Officially home with her forever family after a year-long service dog prospect development path through Find My Puppy. A training-first example of the advanced pathway Crowned K9s offers.
+            </div>
+          </article>
+
+          <!-- Zoey (Cavapoo, Crowned K9s Puppy) -->
+          <article class="card">
+            <img src="../pictures/PRP/Zoey/zoeyupdate.jpg" alt="Zoey the Cavapoo, officially home through Crowned K9s Puppy placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <h3>Zoey</h3>
+            <p class="subtext">Cavapoo · Crowned K9s Puppy · Born March 12, 2026 · <span class="pup-age-weeks" data-birthdate="2026-03-12"></span></p>
+            <div class="pup-testimonial">
+              Officially home with her forever family through the Crowned K9s Puppy pathway. A hypoallergenic Cavapoo on the same training-first Premium Puppy Placement standard.
             </div>
           </article>
 
@@ -2932,13 +2894,13 @@
             </div>
           </article>
 
-          <!-- Koda (Golden Retriever, classic PPP) -->
+          <!-- Koda (Golden Retriever, Crowned K9s Puppy) -->
           <article class="card">
             <img src="../pictures/PRP/Owen/owen-ppp-hero.jpg" alt="Koda, Golden Retriever, at home after Crowned K9s placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
             <h3>Koda</h3>
             <p class="subtext">Golden Retriever · Born Feb 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
             <div class="pup-testimonial">
-              Classic Premium Puppy Placement: trained alongside Charlie and officially home with the same training-first standard.
+              Crowned K9s Puppy pathway: trained alongside Charlie and officially home with the same training-first standard.
             </div>
           </article>
 
@@ -3132,16 +3094,16 @@
         <div class="cta-banner">
           <div>
             <h2>Ready to find your next dog?</h2>
-            <p class="cta-banner-lede">Two ways in. Same Crowned K9s training-first standard.</p>
+            <p class="cta-banner-lede">Premium Puppy Placement has two pathways. No public availability right now &mdash; inquire for Find My Puppy.</p>
             <ul class="cta-banner-points">
-              <li><a href="#next-ppp"><strong>Zoey</strong></a> is reserved and finishing Academy training &mdash; interested in a puppy like her? <a href="#find-my-puppy">Start Find My Puppy</a> or <a href="/contact">reach out</a>.</li>
-              <li><a href="#find-my-puppy"><strong>Find My Puppy</strong></a> is our private, by-application path: a puppy sourced and raised for your family.</li>
-              <li>Charlie, Koda, Sky, Rocko, Brutus, and Maple are <a href="#success">home with their families</a>; Zoey is reserved and finishing training.</li>
+              <li><strong>Find My Puppy</strong> &mdash; private sourcing for your family (see <a href="#current-puppy">Winnie</a>, reserved and in training).</li>
+              <li><strong>Crowned K9s Puppy</strong> &mdash; listed when we have a puppy in our care; none available now.</li>
+              <li><strong>Zoey</strong> and <strong>Marley</strong> are officially home; see more <a href="#success">success stories</a>.</li>
             </ul>
           </div>
           <div class="cta-actions">
-            <a href="#find-my-puppy" class="button">Start Find My Puppy</a>
-            <a href="/contact" class="button button-secondary">Tell Me What You Want</a>
+            <a href="/contact" class="button">Inquire for Find My Puppy</a>
+            <a href="#find-my-puppy" class="button button-secondary">How It Works</a>
             <a href="tel:9198162426" class="button button-secondary">Text/Call</a>
           </div>
         </div>
@@ -3149,7 +3111,7 @@
     </section>
 
     <div class="mobile-sticky-cta" aria-label="Quick actions">
-      <a href="/contact" class="cta-button">Inquire / Apply</a>
+      <a href="/contact" class="cta-button">Inquire for Find My Puppy</a>
       <a href="tel:9198162426" class="button button-secondary">Text/Call</a>
     </div>
   </main>
