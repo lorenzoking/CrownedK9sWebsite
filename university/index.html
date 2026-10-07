@@ -33,16 +33,16 @@
     ───────────────────────────────────────────── */
     
     :root {
-      --uni-bg: #FDFBF7;
-      --uni-bg-alt: #F7F4ED;
-      --uni-text: #2D2A24;
-      --uni-text-muted: #6B6560;
-      --uni-accent: #7A9E6F;
-      --uni-accent-dark: #5C7A52;
-      --uni-warm: #C4A574;
-      --uni-warm-dark: #A68B5B;
-      --uni-border: #E8E4DC;
-      --uni-white: #FFFFFF;
+      --uni-bg: #f5f2ea;
+      --uni-bg-alt: #efece3;
+      --uni-text: #1a1814;
+      --uni-text-muted: #6b6560;
+      --uni-accent: #c4a574;
+      --uni-accent-dark: #a68b5b;
+      --uni-warm: #c4a574;
+      --uni-warm-dark: #a68b5b;
+      --uni-border: rgba(26, 24, 20, 0.1);
+      --uni-white: #ffffff;
     }
     
     .uni-page {
@@ -119,9 +119,10 @@
       align-items: center;
       justify-content: center;
       padding: 8rem 5% 6rem;
-      background: linear-gradient(180deg, var(--uni-bg) 0%, var(--uni-bg-alt) 100%);
+      background: var(--uni-bg);
       position: relative;
       text-align: center;
+      color: var(--uni-text);
     }
     
     .uni-hero::before {
@@ -132,8 +133,8 @@
       right: 0;
       bottom: 0;
       background: 
-        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(122, 158, 111, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(196, 165, 116, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(196, 165, 116, 0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(196, 165, 116, 0.08) 0%, transparent 50%);
       pointer-events: none;
     }
     
@@ -147,9 +148,9 @@
     
     .uni-hero h1 {
       font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
       margin: 0 0 1.5rem;
       color: var(--uni-text);
     }
@@ -157,7 +158,7 @@
     .uni-tagline {
       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       font-weight: 500;
-      color: var(--uni-accent-dark);
+      color: #c4a574;
       margin: 0 0 2rem;
       line-height: 1.5;
     }
@@ -168,6 +169,14 @@
       color: var(--uni-text-muted);
       max-width: 650px;
       margin: 0 auto;
+    }
+
+    .uni-hero-actions {
+      display: flex;
+      gap: 0.85rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
     }
     
     /* Decorative element */
@@ -330,7 +339,7 @@
     }
     
     .uni-audience-icon--green {
-      background: linear-gradient(135deg, rgba(122, 158, 111, 0.15), rgba(122, 158, 111, 0.25));
+      background: linear-gradient(135deg, rgba(196, 165, 116, 0.15), rgba(196, 165, 116, 0.25));
     }
     
     .uni-audience-icon--warm {
@@ -474,7 +483,7 @@
       left: 50%;
       transform: translateX(-50%);
       background: var(--uni-warm);
-      color: var(--uni-white);
+      color: #0b0b0d;
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -533,7 +542,7 @@
       font-size: 0.95rem;
       line-height: 1.5;
       color: var(--uni-text);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--uni-border);
     }
     
     .uni-plan-features li:last-child {
@@ -597,12 +606,12 @@
     
     .uni-plan-btn--outline:hover {
       background: var(--uni-warm);
-      color: var(--uni-white);
+      color: #0b0b0d;
     }
     
     .uni-plan-btn--solid {
       background: var(--uni-warm);
-      color: var(--uni-white);
+      color: #0b0b0d;
     }
     
     .uni-plan-btn--solid:hover {
@@ -632,8 +641,8 @@
     ───────────────────────────────────────────── */
     
     .uni-cta {
-      background: var(--uni-text);
-      color: var(--uni-white);
+      background: var(--uni-bg-alt);
+      color: var(--uni-text);
       text-align: center;
       padding: 5rem 5%;
     }
@@ -647,7 +656,7 @@
       font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 800;
       margin: 0 0 1rem;
-      color: var(--uni-white);
+      color: var(--uni-text);
     }
     
     .uni-cta p {
@@ -681,24 +690,24 @@
     
     .uni-btn--primary {
       background: var(--uni-accent);
-      color: var(--uni-white);
+      color: #0b0b0d;
     }
     
     .uni-btn--primary:hover {
       background: var(--uni-accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(122, 158, 111, 0.3);
+      transform: translateY(1px);
+      box-shadow: none;
     }
     
     .uni-btn--secondary {
       background: transparent;
-      color: var(--uni-white);
-      border: 2px solid rgba(255,255,255,0.3);
+      color: var(--uni-text);
+      border: 2px solid rgba(36,31,26,0.18);
     }
     
     .uni-btn--secondary:hover {
-      border-color: rgba(255,255,255,0.6);
-      background: rgba(255,255,255,0.05);
+      border-color: var(--uni-accent);
+      background: rgba(196,165,116,0.12);
     }
     
     .uni-cta-url {
@@ -713,7 +722,8 @@
     ───────────────────────────────────────────── */
     
     .uni-page footer {
-      background: var(--uni-text);
+      background: #efe7da;
+      color: var(--uni-text);
     }
     
     /* ─────────────────────────────────────────────
@@ -749,7 +759,7 @@
   </style>
 </head>
 <body class="uni-page">
-  <header>
+    <header>
     <div class="header-container">
       <div class="logo-container">
         <a href="/">
@@ -764,32 +774,15 @@
       </label>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About us</a></li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="training-dropdown" class="dropdown-toggle" />
-            <label for="training-dropdown"><a href="/training">Training</a></label>
-            <ul class="dropdown">
-              <li><a href="/training">Training Programs</a></li>
-              <li><a href="/university" class="active">Crowned K9s University</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="placement-dropdown" class="dropdown-toggle" />
-            <label for="placement-dropdown"><a href="/ppp-presentation">Placement</a></label>
-            <ul class="dropdown">
-              <li><a href="/premium-puppy-placement">Premium Puppy Placement</a></li>
-                          </ul>
-          </li>
-          <li><a href="/our-pack-is-growing">Our Pack Is Growing</a></li>
+          <li><a href="/training">Training</a></li>
           <li><a href="/boarding">Academy</a></li>
-          <li><a href="/#schedule">Schedule</a></li>
-          <li><a href="/contact">Contact us</a></li>
-          <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
+          <li><a href="/premium-puppy-placement">Placement</a></li>
+          <li><a href="/university" class="active">University</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
       <div class="header-cta">
-        <a href="tel:9198162426" class="header-cta-button">Text Lorenzo: 919-816-2426</a>
+        <a href="/university#plans" class="header-cta-button">Subscribe</a>
       </div>
     </div>
   </header>
@@ -803,6 +796,10 @@
         <h1>Crowned K9s University</h1>
         <p class="uni-tagline">Long-Term Structure, Consistency, and Accountability for Lasting Dog Training Success</p>
         <p class="uni-intro">A premium ongoing program providing professional guidance and real-world resources — not a one-time course, but a lifelong support system.</p>
+        <div class="uni-hero-actions">
+          <a href="#plans" class="cta-button">Subscribe</a>
+          <a href="#elite" class="button button-secondary">See Elite</a>
+        </div>
         <div class="uni-hero-accent"></div>
       </div>
     </section>
@@ -943,7 +940,7 @@
           </article>
 
           <!-- University Elite -->
-          <article class="uni-plan-card uni-plan-card--featured animate-on-scroll delay-2">
+          <article class="uni-plan-card uni-plan-card--featured animate-on-scroll delay-2" id="elite">
             <span class="uni-plan-badge">Most Popular</span>
             <div class="uni-plan-header">
               <h3>University Elite</h3>
@@ -1026,5 +1023,10 @@
       });
     });
   </script>
+  <div class="mobile-bottom-bar" aria-label="Quick actions">
+    <a href="tel:9198162426">Text</a>
+    <a href="/university#plans" class="mobile-bottom-bar__cta">Subscribe</a>
+  </div>
+<script src="../scripts/enlarge.js" defer></script>
 </body>
 </html>

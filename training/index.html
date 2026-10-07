@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="training-page">
-  <header>
+    <header>
     <div class="header-container">
       <div class="logo-container">
         <a href="/">
@@ -42,177 +42,90 @@
       </label>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About us</a></li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="training-dropdown" class="dropdown-toggle" />
-            <label for="training-dropdown"><a href="/training" class="active">Training</a></label>
-            <ul class="dropdown">
-              <li><a href="/training">Training Programs</a></li>
-              <li><a href="/university">Crowned K9s University</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="placement-dropdown" class="dropdown-toggle" />
-            <label for="placement-dropdown"><a href="/ppp-presentation">Placement</a></label>
-            <ul class="dropdown">
-              <li><a href="/premium-puppy-placement">Premium Puppy Placement</a></li>
-                          </ul>
-          </li>
-          <li><a href="/our-pack-is-growing">Our Pack Is Growing</a></li>
+          <li><a href="/training" class="active">Training</a></li>
           <li><a href="/boarding">Academy</a></li>
-          <li><a href="/#schedule">Schedule</a></li>
-          <li><a href="/contact">Contact us</a></li>
-          <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
+          <li><a href="/premium-puppy-placement">Placement</a></li>
+          <li><a href="/university">University</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
       <div class="header-cta">
-        <a href="tel:9198162426" class="header-cta-button">Text Lorenzo: 919-816-2426</a>
+        <a href="/contact" class="header-cta-button">Schedule</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="program-finder-hero">
-      <div class="container program-finder-hero-grid program-finder-hero-grid--compact">
-        <div class="program-finder-hero-copy">
-          <p class="program-finder-eyebrow">Training Program Match</p>
-          <h1>Not sure which training program you need?</h1>
-          <p class="program-finder-lead">Answer 5 quick questions and we'll match you with the best Crowned K9s program for your dog.</p>
-          <div class="hero-actions">
-            <a href="/find-my-dogs-program" class="cta-button">Find My Dog's Program</a>
-          </div>
-          <p class="program-finder-note">This quiz lives on its own page so you can focus on the questions without the rest of the training page getting in the way.</p>
+    <section class="hero-split hero-split--people">
+      <div class="hero-split__copy">
+        <p class="caption">Training programs</p>
+        <h1 class="display">The right plan for your household.</h1>
+        <p>Private sessions, Transformation packages, and Academy board-and-train. Raleigh–Durham in person; Academy clients welcome from anywhere in North Carolina.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="cta-button">See plans</a>
+          <a href="/contact" class="button button-secondary">Schedule</a>
         </div>
+        <a href="/find-my-dogs-program" class="quiz-chip" style="margin-top:1.1rem; align-self:flex-start;">Not sure? Take the 5-question match</a>
+      </div>
+      <div class="hero-split__media">
+        <img src="../pictures/Trainers/IMG_5113.jpg" alt="Lorenzo King with Crowned K9s puppies" fetchpriority="high" decoding="async">
       </div>
     </section>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div>
-          <h1>CROWNED K9S<br>ACADEMY</h1>
-          <p>Our Board &amp; Train program is built to create big change in a short time. Your dog lives and trains with us daily—perfect if you need to travel and want to come home to a calmer, better‑mannered dog.</p>
-          <p class="section-subtext">Based in the Raleigh–Durham area, with Board &amp; Train clients welcome from anywhere in North Carolina.</p>
-          <p class="pill">Best Value</p>
-          <div class="hero-actions">
-            <a href="#pricing" class="cta-button">View Pricing</a>
-            <a href="https://calendly.com/crownedk9s/consultation" target="_blank" class="button button-secondary">Schedule Now</a>
-          </div>
-        </div>
-        <div>
-          <img src="../pictures/Posters/CKAcademy.png" alt="Crowned K9s Academy Poster" />
-        </div>
-      </div>
-    </section>
-
-    <!-- TRANSFORMATION TRAINING PROGRAM HIGHLIGHT -->
-    <section id="ttp">
-      <div class="container split">
-        <div>
-          <img src="../pictures/Posters/TTP Poster.png" alt="Transformation Training Program Poster" class="poster-img" />
-        </div>
-        <div class="ttp-copy">
-          <h2>Transformation Training Package</h2>
-          <p class="section-subtext">Most affordable option that makes a real difference.</p>
-          <p>A 3-session package is one session per week for 3 weeks in a row. A 4-session package is one session per week for 4 weeks in a row. You lead the hands-on work at home while I guide the plan, coach in real time, and keep you on track.</p>
-          <ul>
-            <li>Unlimited consultations during your package so you are never guessing what to do next.</li>
-            <li>Training documentation and homework after every session so progress stays consistent between visits.</li>
-            <li>Online package available for puppy foundations; for reactivity or aggression, we typically recommend in-person sessions.</li>
-          </ul>
-          <div class="hero-actions">
-            <a href="#pricing" class="cta-button">View Pricing</a>
-            <a href="https://calendly.com/crownedk9s/consultation" target="_blank" class="cta-button">Schedule Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST STRIP / PARTNERS -->
-    <section class="trust-strip">
-      <div class="container">
-        <div class="logos">
-          <div class="logo-box">Family Owned</div>
-          <div class="logo-box">Certified</div>
-          <div class="logo-box">Transparent</div>
-          <div class="logo-box">Trustworthy</div>
-          <div class="logo-box">Local NC</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING (single unified section) -->
     <section id="pricing">
       <div class="container">
-        <h2 class="section-title">Pricing</h2>
-        <div class="card-grid">
-          <article class="card" id="transformation-program-card">
-            <h3>Transformation Training Package</h3>
-            <p class="subtext">One session per week, in person (Raleigh-Durham area)</p>
-            <p class="subtext"><strong>3 sessions = 1 session/week for 3 weeks. 4 sessions = 1 session/week for 4 weeks.</strong></p>
-            <ul>
-              <li>Unlimited consultations during the program so you’re never guessing what to do next</li>
-              <li>Training documentation with homework after every session so you know exactly what to practice</li>
-              <li>Clear summary plan and next‑step roadmap you can follow after we finish</li>
-              <li>Flexible scheduling to fit your week and real life</li>
-            </ul>
-            <div class="price-group">
-              <p class="price">3 weeks: $400 total</p>
-              <p class="price">4 weeks: $550 total</p>
+        <h2 class="title">Choose a plan.</h2>
+        <p class="section-subtext">Three paths. Same Crowned K9s standard. Starting at $150 a session or $80 a day at Academy.</p>
+        <div class="plan-picker">
+          <article class="plan-card-photo" id="plan-private">
+            <img class="plan-card-photo__session" src="../pictures/Doggies/IMG_1303.jpg" alt="Lorenzo King working with a dog during a private training session" loading="lazy">
+            <div class="plan-card-photo__body">
+              <h3>Private Session</h3>
+              <p class="subtext">One focused hour on your top 1–2 problems.</p>
+              <ul>
+                <li>Walk away with steps you can start the same day</li>
+                <li>Follow-up guidance so momentum does not stall</li>
+                <li>Elite &amp; Academy grads: $125</li>
+              </ul>
+              <p class="price">$150</p>
             </div>
           </article>
-          <article class="card" id="puppy-package-card">
-            <h3>3-4 Session Puppy Training Package</h3>
-            <p class="subtext">Weekly coaching for puppies—online from anywhere or in person in the Raleigh-Durham area.</p>
-            <ul>
-              <li>Best for puppy foundations, manners, and early structure</li>
-              <li>Unlimited consultations and homework after each session</li>
-              <li>For reactivity or aggression we recommend in-person; package details at consultation</li>
-            </ul>
-            <div class="price-group">
-              <p class="price">Online: $100 per session</p>
-              <p class="subtext" style="margin-top: 0.25rem;">In person: $150 per session, or discounted 3- or 4-session package.</p>
-              <p class="subtext" style="margin-top: 0.5rem;">Schedule a consultation for package rates and full program details.</p>
+          <article class="plan-card-photo" id="plan-ttp">
+            <img class="plan-card-photo__poster" src="../pictures/Posters/TTP.png" alt="Transformation Training Package poster" loading="lazy">
+            <div class="plan-card-photo__body">
+              <h3>Transformation</h3>
+              <p class="subtext">One session a week for 3 or 4 weeks, plus unlimited consults during the package.</p>
+              <ul>
+                <li>Homework after every session</li>
+                <li>A written plan you can follow after we finish</li>
+                <li>Puppy foundations also available online at $100/session</li>
+              </ul>
+              <p class="price">$400–$550</p>
             </div>
           </article>
-          <article class="card" id="academy-program-card">
-            <h3>Crowned K9s Academy — Board &amp; Train</h3>
-            <p class="subtext">Every Academy stay is a board-and-train. Two tiers — pick the fit for your dog.</p>
-            <p class="subtext" style="margin-top: 0.5rem;"><strong>Basic Board &amp; Train</strong> — structure, boundaries, impulse control, separation-anxiety support, and safe supervised socialization in a real home setting.</p>
-            <div class="price-group">
-              <p class="price">$80 per day</p>
-              <p class="subtext" style="margin-top: 0.25rem;">University Elite &amp; Crowned K9s Academy graduates</p>
-              <p class="price" style="margin-top: 0.5rem;">$95 per day</p>
-              <p class="subtext" style="margin-top: 0.25rem;">All other clients</p>
+          <article class="plan-card-photo" id="plan-academy">
+            <img class="plan-card-photo__poster" src="../pictures/Posters/CKAcademy.png" alt="Crowned K9s Academy poster with the board-and-train breakdown" loading="lazy">
+            <div class="plan-card-photo__body">
+              <h3>Academy</h3>
+              <p class="subtext">Board and train in our home. Not a kennel stay.</p>
+              <ul>
+                <li>Basic from $80/day · Advanced from $180/day</li>
+                <li>Daily structure, videos, and lifetime support on Advanced</li>
+                <li>Full tier details on the Academy page</li>
+              </ul>
+              <p class="price"><a href="/boarding">Full Academy details</a></p>
             </div>
-            <p class="subtext" style="margin-top: 1rem;"><strong>Advanced Board &amp; Train</strong> — full Academy protocol: three daily training sessions, foundational obedience, behavior modification (reactivity, aggression), daily progress videos, and lifetime support.</p>
-            <div class="price-group">
-              <p class="price">$180 per day</p>
-              <p class="subtext" style="margin-top: 0.25rem;">2 weeks: <strong>$2,500</strong> · 3 weeks: <strong>$3,000</strong></p>
-              <p class="subtext" style="margin-top: 0.25rem;">Stays over 3 weeks: <strong>$1,000 / week</strong> (4 weeks = $4,000)</p>
-            </div>
-            <p class="subtext" style="margin-top: 0.75rem;"><a href="/boarding" style="color: var(--accent-orange);">See full Academy details &rarr;</a></p>
-          </article>
-          <article class="card">
-            <h3>Single Private Session</h3>
-            <p class="subtext">One session (1 hour)</p>
-            <ul>
-              <li>Tackle your top 1–2 problems in a focused working session</li>
-              <li>Walk away with simple at‑home steps you can start the same day</li>
-              <li>Personalized follow‑up guidance so you know exactly how to keep momentum</li>
-            </ul>
-            <p class="price">$150 per private session</p>
-            <p class="subtext" style="margin-top: 0.5rem;">University Elite &amp; Crowned K9s Academy graduates: <strong>$125 per private session</strong></p>
           </article>
         </div>
+        <p class="section-subtext" style="margin-top:1.25rem;">Need a puppy-only package? Online foundations are $100 per session. In person is $150, or a discounted 3- or 4-week plan at consultation.</p>
 
-        <!-- University Elite Explainer -->
-        <div style="margin-top: 2.5rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(230,126,34,0.1), rgba(230,126,34,0.05)); border-left: 4px solid var(--accent-orange); border-radius: 8px; text-align: center;">
-          <p style="margin: 0; font-size: 1rem; color: var(--text);">
-            <strong>What's University Elite?</strong> Our $160/month membership that unlocks discounted pricing on all services, monthly training sessions, and ongoing support.
-            <a href="/university" style="color: var(--accent-orange); font-weight: 600; margin-left: 0.5rem;">Learn more &#8594;</a>
-          </p>
+        <div class="membership-strip" style="margin-top:1.5rem;">
+          <div>
+            <p class="caption" style="margin:0 0 0.35rem;">University Elite</p>
+            <h3>Unlock $125 sessions and $80 Academy days.</h3>
+            <p>$160/month membership with monthly training included.</p>
+          </div>
+          <a href="/university" class="cta-button">Learn more</a>
         </div>
       </div>
     </section>
@@ -231,17 +144,19 @@
     <section class="trainers">
       <div class="container">
         <h2 class="section-title">Meet Your Trainers</h2>
-        <div class="trainer-grid">
+        <div class="trainer-grid trainer-grid--pair">
           <div class="trainer-card">
-            <img src="../pictures/Trainers/IMG_5113.jpg" alt="Trainer 1" class="trainer-photo" loading="lazy" />
+            <img src="../pictures/Trainers/5Z7A7843.JPEG" alt="Lorenzo King III, Founder and Head Trainer" class="trainer-photo" loading="lazy" />
             <div class="trainer-name">Lorenzo King III</div>
             <p class="trainer-role">Founder & Head Trainer</p>
           </div>
           <div class="trainer-card">
-            <img src="../pictures/Trainers/jen.jpg" alt="Trainer 2" class="trainer-photo" loading="lazy" />
+            <img src="../pictures/Trainers/jen.jpg" alt="Jenna King, Trainer and Operations Manager" class="trainer-photo" loading="lazy" />
             <div class="trainer-name">Jenna King</div>
             <p class="trainer-role">Trainer & Operations Manager</p>
           </div>
+        </div>
+        <div class="trainer-grid trainer-grid--pups">
           <div class="trainer-card">
             <img src="../pictures/Trainers/Artist.jpg" alt="Artist" class="trainer-photo" loading="lazy" />
             <div class="trainer-name">Artist</div>
@@ -265,26 +180,20 @@
     <section id="past-puppy-classes">
       <div class="container">
         <h2 class="section-title">Puppy Group Classes</h2>
-        <p class="section-subtext">Small-group puppy classes hosted with local partners around Raleigh.</p>
-
-        <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">Next Class: April 19th at Oak City Brewery</h3>
-        <p>Our March 21st class with AST went great. Join us for the next puppy group class on April 19th at Oak City Brewery and reserve your spot now.</p>
-        <div class="hero-posters" style="margin-bottom: 2rem;">
-          <img src="../pictures/Posters/PAWS&amp;PINTSPACK.png" alt="Paws and Pints Pack Puppy Group Class April 19th – Oak City Brewery" class="poster-img" loading="lazy" />
-        </div>
+        <p class="section-subtext">Small-group puppy classes with local partners around Raleigh. We do not have a class on the calendar right now. The next one is coming soon.</p>
         <div class="hero-actions" style="margin-bottom: 2rem;">
-          <a href="/contact" class="cta-button">Reserve Your Spot</a>
-          <a href="mailto:lorenzo@crownedk9s.com" class="button button-secondary">Email Us</a>
+          <a href="tel:9198162426" class="cta-button">Text us to be first in line</a>
+          <a href="mailto:lorenzo@crownedk9s.com" class="button button-secondary button-on-light">Email Us</a>
         </div>
 
-        <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">Past Classes</h3>
-        <p>Our recent puppy classes helped families build fundamentals like focus, leash manners, calm around dogs and people, and confidence in a fun, supportive environment.</p>
+        <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Past classes</h3>
+        <p>Recent classes helped families build focus, leash manners, calm around dogs and people, and confidence in a fun, supportive setting.</p>
         <div class="hero-posters">
-          <img src="../pictures/Posters/CK9GroupClass.pdf.png" alt="Past Puppy Class March 21st at Woof Gang Wendell" class="poster-img" loading="lazy" />
-          <img src="../pictures/Posters/CK9GroupClassOakCity.png" alt="Past Puppy Class at Oak City" class="poster-img" loading="lazy" />
-          <img src="../pictures/Posters/CK9GroupClassWoofGang.png" alt="Past Puppy Class at Woof Gang" class="poster-img" loading="lazy" />
+          <img src="../pictures/Posters/PAWS&amp;PINTSPACK.png" alt="Past Paws and Pints Pack puppy class at Oak City Brewery" class="poster-img" loading="lazy" />
+          <img src="../pictures/Posters/CK9GroupClass.pdf.png" alt="Past puppy class at Woof Gang Wendell" class="poster-img" loading="lazy" />
+          <img src="../pictures/Posters/CK9GroupClassOakCity.png" alt="Past puppy class at Oak City" class="poster-img" loading="lazy" />
+          <img src="../pictures/Posters/CK9GroupClassWoofGang.png" alt="Past puppy class at Woof Gang" class="poster-img" loading="lazy" />
         </div>
-        <p style="margin-top: 1rem;">Want to be notified about future classes? <a href="tel:9198162426">Text/Call 919-816-2426</a> or <a href="mailto:lorenzo@crownedk9s.com">email us</a>.</p>
       </div>
     </section>
 
@@ -368,5 +277,10 @@
       <p>© 2025 Crowned K9s Academy</p>
     </div>
   </footer>
+  <div class="mobile-bottom-bar" aria-label="Quick actions">
+    <a href="tel:9198162426">Text</a>
+    <a href="/contact" class="mobile-bottom-bar__cta">Schedule</a>
+  </div>
+<script src="../scripts/enlarge.js" defer></script>
 </body>
 </html>

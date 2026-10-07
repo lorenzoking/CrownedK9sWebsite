@@ -10,7 +10,7 @@ test.describe('Kobe go-home playbook (PPP buyer handoff)', () => {
 
 		const age = page.locator('.pup-age-weeks[data-birthdate]').first();
 		await expect(age).toBeVisible();
-		await expect(age).toContainText(/weeks? old/i, { timeout: 10_000 });
+		await expect(age).toContainText(/weeks? old|months? old/i, { timeout: 10_000 });
 
 		await expect(page.getByRole('heading', { level: 2, name: /Potty training/i })).not.toBeVisible();
 

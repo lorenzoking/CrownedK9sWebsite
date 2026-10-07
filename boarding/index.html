@@ -26,57 +26,15 @@
   <link rel="stylesheet" href="../styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Academy hero — transparent logo featured prominently */
-    .academy-hero-logo {
-      display: block;
-      width: 100%;
-      max-width: 360px;
-      height: auto;
-      margin: 0 auto 1.5rem;
-      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
-      animation: academyLogoFadeIn 0.9s ease-out both;
-    }
-    @keyframes academyLogoFadeIn {
-      from { opacity: 0; transform: translateY(-12px) scale(0.96); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    @media (max-width: 768px) {
-      .academy-hero-logo { max-width: 240px; margin-bottom: 1rem; }
-    }
-
-    /* Academy branding strip — reinforces the mark on the page */
-    .academy-brand-strip {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 2.5rem 1rem 0;
-    }
-    .academy-brand-strip img {
-      width: 100%;
-      max-width: 140px;
-      height: auto;
-      opacity: 0.9;
-    }
-    .academy-brand-strip p {
-      margin: 0;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
     /* NC compliance notice */
     .compliance-banner {
       padding: 1.15rem 1.25rem;
       margin: 1.25rem auto 0;
       max-width: 980px;
-      border-radius: 14px;
-      border: 1px solid #ffd2a8;
-      background: linear-gradient(135deg, #fffaf4 0%, #fff3e9 100%);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border-radius: var(--radius-l);
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: none;
       display: flex;
       gap: 0.9rem;
       align-items: flex-start;
@@ -88,8 +46,8 @@
       min-width: 2rem;
       height: 2rem;
       border-radius: 999px;
-      background: var(--accent-orange);
-      color: #fff;
+      background: var(--gold);
+      color: var(--bg);
       font-weight: 800;
       font-size: 0.9rem;
       line-height: 1;
@@ -103,7 +61,7 @@
       line-height: 1.55;
     }
     .compliance-banner strong {
-      color: #9a4a00;
+      color: var(--text-dark);
     }
 
     /* Academy Pricing — sleek, modern tier cards */
@@ -122,9 +80,9 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent-orange);
-      background: #fff3e9;
-      border: 1px solid #ffd2a8;
+      color: var(--gold);
+      background: rgba(196,165,116,0.12);
+      border: 1px solid rgba(196,165,116,0.28);
       padding: 0.35rem 0.85rem;
       border-radius: 999px;
       margin-bottom: 1rem;
@@ -168,7 +126,7 @@
     .academy-tier--featured {
       border: 2px solid var(--accent-orange);
       background: linear-gradient(180deg, #ffffff 0%, #fffaf4 100%);
-      box-shadow: 0 18px 50px rgba(230, 126, 34, 0.15);
+      box-shadow: 0 18px 50px rgba(196, 165, 116, 0.15);
     }
     .academy-tier-badge {
       position: absolute;
@@ -184,7 +142,7 @@
       padding: 0.45rem 1rem;
       border-radius: 999px;
       white-space: nowrap;
-      box-shadow: 0 6px 14px rgba(230, 126, 34, 0.35);
+      box-shadow: 0 6px 14px rgba(196, 165, 116, 0.35);
     }
     .academy-tier-kicker {
       font-size: 0.72rem;
@@ -302,12 +260,12 @@
     .academy-tier-cta--solid {
       background: var(--accent-orange);
       color: #fff;
-      box-shadow: 0 8px 18px rgba(230, 126, 34, 0.25);
+      box-shadow: 0 8px 18px rgba(196, 165, 116, 0.25);
     }
     .academy-tier-cta--solid:hover {
       background: var(--accent-orange-dark);
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(230, 126, 34, 0.3);
+      box-shadow: 0 12px 24px rgba(196, 165, 116, 0.3);
     }
     .academy-tier-cta--outline {
       background: transparent;
@@ -346,7 +304,7 @@
   </style>
 </head>
 <body>
-  <header>
+    <header>
     <div class="header-container">
       <div class="logo-container">
         <a href="/">
@@ -361,45 +319,33 @@
       </label>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About us</a></li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="training-dropdown" class="dropdown-toggle" />
-            <label for="training-dropdown"><a href="/training">Training</a></label>
-            <ul class="dropdown">
-              <li><a href="/training">Training Programs</a></li>
-              <li><a href="/university">Crowned K9s University</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="placement-dropdown" class="dropdown-toggle" />
-            <label for="placement-dropdown"><a href="/ppp-presentation">Placement</a></label>
-            <ul class="dropdown">
-              <li><a href="/premium-puppy-placement">Premium Puppy Placement</a></li>
-                          </ul>
-          </li>
-          <li><a href="/our-pack-is-growing">Our Pack Is Growing</a></li>
+          <li><a href="/training">Training</a></li>
           <li><a href="/boarding" class="active">Academy</a></li>
-          <li><a href="/#schedule">Schedule</a></li>
-          <li><a href="/contact">Contact us</a></li>
-          <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
+          <li><a href="/premium-puppy-placement">Placement</a></li>
+          <li><a href="/university">University</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
       <div class="header-cta">
-        <a href="tel:9198162426" class="header-cta-button">Text Lorenzo: 919-816-2426</a>
+        <a href="/contact" class="header-cta-button">Schedule</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero hero-boarding">
-      <div class="container">
-        <div>
-          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="academy-hero-logo" fetchpriority="high" decoding="async" />
-          <h1>Crowned K9s Academy</h1>
-          <p>Every stay at Crowned K9s is a <strong>board-and-train</strong>. Dogs live with us in a structured, training-first environment &mdash; we do not offer standalone boarding.</p>
-          <p class="section-subtext" style="color: rgb(255, 255, 255);">Based in the Raleigh&ndash;Durham area, with Academy clients welcomed from anywhere in North Carolina.</p>
+    <section class="hero-split">
+      <div class="hero-split__copy">
+        <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="academy-mark">
+        <h1 class="display">Board and train. In our home.</h1>
+        <p>Every stay is a board-and-train. Dogs live with us in a structured, training-first home &mdash; not a kennel.</p>
+        <p class="section-subtext">Raleigh–Durham. Clients welcomed from anywhere in North Carolina.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="cta-button">See tiers</a>
+          <a href="/contact" class="button button-secondary">Schedule</a>
         </div>
+      </div>
+      <div class="hero-split__media">
+        <img src="../pictures/Boarding/web/IMG_9891.jpg" alt="A puppy on place during Crowned K9s Academy board and train" fetchpriority="high" decoding="async">
       </div>
     </section>
 
@@ -413,14 +359,23 @@
     </section>
 
     <section>
-      <div class="container card-grid">
-        <article class="card">
-          <h3>Training-First By Design</h3>
-          <p>We are a Board &amp; Train program, not a kennel. Every day includes structure, boundaries, and impulse-control work in a real home setting&mdash;crate etiquette, threshold manners, leash manners around the house, and calm settling. Dogs leave more regulated than they arrived.</p>
+      <div class="container academy-included">
+        <p class="caption">What&rsquo;s included</p>
+        <h2 class="title">The Academy breakdown.</h2>
+        <p class="section-subtext">Daily structure, the skills we build, and how Basic and Advanced differ.</p>
+        <img class="poster-img" src="../pictures/Posters/CKAcademy.png" alt="Crowned K9s Academy poster with the board-and-train breakdown" loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="container split-notes">
+        <article>
+          <h3>Training-first by design</h3>
+          <p>Not a kennel. Every day includes structure, boundaries, and impulse-control work in a real home &mdash; crate etiquette, threshold manners, leash manners, and calm settling.</p>
         </article>
-        <article class="card">
-          <h3>Two Academy Tiers</h3>
-          <p><strong>Basic Board &amp; Train</strong> is perfect for owners who need a trusted stay that also builds structure, impulse control, separation-anxiety support, and safe, supervised socialization. <strong>Advanced Board &amp; Train</strong> is our full Crowned K9s Academy protocol for foundational obedience, behavior modification, reactivity, and aggression work.</p>
+        <article>
+          <h3>Two Academy tiers</h3>
+          <p><strong>Basic</strong> builds everyday structure and safe socialization. <strong>Advanced</strong> is the full Academy protocol for obedience, behavior modification, reactivity, and aggression work.</p>
         </article>
       </div>
     </section>
@@ -428,10 +383,6 @@
     <!-- PRICING -->
     <section id="pricing" class="academy-pricing">
       <div class="container">
-        <div class="academy-brand-strip">
-          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" loading="lazy" decoding="async" />
-          <p>Board &amp; Train Programs</p>
-        </div>
         <div class="academy-pricing-header">
           <span class="academy-pricing-eyebrow">Crowned K9s Academy</span>
           <h2>Pick Your Board &amp; Train Tier</h2>
@@ -623,5 +574,10 @@
       <p>© 2025 Crowned K9s</p>
     </div>
   </footer>
+  <div class="mobile-bottom-bar" aria-label="Quick actions">
+    <a href="tel:9198162426">Text</a>
+    <a href="/#schedule" class="mobile-bottom-bar__cta">Schedule</a>
+  </div>
+<script src="../scripts/enlarge.js" defer></script>
 </body>
 </html>

@@ -43,11 +43,21 @@
       gap: 0.75rem;
     }
     .hero-outcome-bullets li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
+      display: grid;
+      grid-template-columns: 1.1rem minmax(0, 1fr);
+      column-gap: 0.75rem;
+      row-gap: 0.15rem;
+      align-items: start;
       font-size: 1rem;
       line-height: 1.45;
+    }
+    .hero-outcome-bullets li::before {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    .hero-outcome-bullets li strong,
+    .hero-outcome-desc {
+      grid-column: 2;
     }
     .hero-outcome-bullets li strong {
       display: block;
@@ -169,7 +179,7 @@
     /* Value Table Section */
     .value-section {
       padding: 4rem 0;
-      background: linear-gradient(180deg, #f8faf5 0%, #ffffff 100%);
+      background: var(--cream);
     }
     .value-table-wrapper {
       max-width: 800px;
@@ -989,7 +999,60 @@
        PPP REFRESH — calmer hierarchy + accordions
     ───────────────────────────────────────────── */
 
-    /* Slimmer trust microcopy under hero CTAs */
+    .hero-cinematic .hero-trust-line { color: rgba(245,242,234,0.72); }
+    .hero-cinematic .hero-trust-line span + span::before { color: rgba(245,242,234,0.35); }
+    .hero-cinematic .hero-outcome-bullets { color: var(--text-on-dark); }
+    .hero-cinematic .hero-outcome-desc { color: rgba(245,242,234,0.65); }
+    .hero-cinematic .hero-overview-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      color: rgba(245,242,234,0.62);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-cinematic .hero-overview-link:hover { color: var(--gold); }
+
+    .success-section .filmstrip { align-items: stretch; }
+    .success-section .title { color: var(--ink); }
+    .success-section .section-subtext { color: #3f3a34; }
+    .success-section .filmstrip .card {
+      flex: 0 0 min(72vw, 280px);
+      scroll-snap-align: start;
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--border);
+      box-shadow: none;
+      padding: 0;
+    }
+    .success-section .filmstrip .card h3 { color: var(--ink); padding: 0.9rem 1.05rem 0.2rem; }
+    .success-section .filmstrip .card .subtext { color: #3f3a34; padding: 0 1.05rem; }
+    .success-section .filmstrip .card img.gallery-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: center 18%;
+      border-radius: 0;
+      aspect-ratio: auto;
+      box-shadow: none;
+    }
+    .success-section .filmstrip .pup-testimonial {
+      color: #2c2824;
+      background: transparent;
+      border: none;
+      min-height: 0;
+      max-height: none;
+      padding: 0.35rem 1.05rem 1.15rem;
+      margin-top: 0;
+      border-radius: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 0.86rem;
+    }
+
+    .placement-page .mobile-sticky-cta { display: none !important; }
     .hero-trust-line {
       margin: 1.1rem 0 0;
       font-size: 0.92rem;
@@ -1482,7 +1545,7 @@
       margin: 0 0 0.55rem;
     }
     .paths-header h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: clamp(1.75rem, 3.6vw, 2.35rem);
       line-height: 1.15;
       letter-spacing: -0.01em;
@@ -1514,8 +1577,8 @@
       box-shadow: 0 14px 34px rgba(0,0,0,0.06);
       position: relative;
     }
-    .path-card--ppp { border-left: 5px solid var(--accent-orange); }
-    .path-card--fmp { border-left: 5px solid #5d78b8; }
+    .path-card--ppp { border-left: 5px solid var(--gold); }
+    .path-card--fmp { border-left: 5px solid var(--gold-soft); }
     .path-card-tag {
       display: inline-flex;
       align-items: center;
@@ -2226,45 +2289,7 @@
       }
     }
 
-    /* Sticky mobile CTA keeps inquiry action in reach on small screens. */
-    .mobile-sticky-cta {
-      display: none;
-    }
-    @media (max-width: 768px) {
-      body {
-        padding-bottom: calc(88px + env(safe-area-inset-bottom));
-      }
-      .mobile-sticky-cta {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 999;
-        display: flex;
-        gap: 0.6rem;
-        padding: 0.65rem 0.8rem calc(0.65rem + env(safe-area-inset-bottom));
-        background: rgba(255,255,255,0.96);
-        border-top: 1px solid var(--border);
-        backdrop-filter: blur(8px);
-        box-shadow: 0 -10px 24px rgba(0,0,0,0.08);
-      }
-      .mobile-sticky-cta a {
-        flex: 1;
-        margin: 0;
-        min-height: 46px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 10px;
-        text-align: center;
-        font-size: 0.92rem;
-        font-weight: 700;
-      }
-      .mobile-sticky-cta .button-secondary {
-        color: var(--primary-dark);
-        border-color: #d1d5db;
-      }
-    }
+    /* Placement uses the shared mobile bottom bar. */
 
     /* Honor reduced motion */
     @media (prefers-reduced-motion: reduce) {
@@ -2276,7 +2301,7 @@
   </style>
 </head>
 <body>
-  <header>
+    <header>
     <div class="header-container">
       <div class="logo-container">
         <a href="/">
@@ -2291,95 +2316,44 @@
       </label>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About us</a></li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="training-dropdown" class="dropdown-toggle" />
-            <label for="training-dropdown"><a href="/training">Training</a></label>
-            <ul class="dropdown">
-              <li><a href="/training">Training Programs</a></li>
-              <li><a href="/university">Crowned K9s University</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <input type="checkbox" id="placement-dropdown" class="dropdown-toggle" />
-            <label for="placement-dropdown"><a href="/ppp-presentation">Placement</a></label>
-            <ul class="dropdown">
-              <li><a href="/premium-puppy-placement" class="active">Premium Puppy Placement</a></li>
-              
-            </ul>
-          </li>
-          <li><a href="/our-pack-is-growing">Our Pack Is Growing</a></li>
+          <li><a href="/training">Training</a></li>
           <li><a href="/boarding">Academy</a></li>
-          <li><a href="/#schedule">Schedule</a></li>
-          <li><a href="/contact">Contact us</a></li>
-          <li class="mobile-cta"><a href="tel:9198162426">Text Lorenzo: 919-816-2426</a></li>
+          <li><a href="/premium-puppy-placement" class="active">Placement</a></li>
+          <li><a href="/university">University</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
       <div class="header-cta">
-        <a href="tel:9198162426" class="header-cta-button">Text Lorenzo: 919-816-2426</a>
+        <a href="/contact" class="header-cta-button">Apply</a>
       </div>
     </div>
   </header>
 
   <main class="placement-page">
-    <section class="presentation-cta-bar-section">
-      <div class="container">
-        <div class="presentation-cta-bar">
-          <div>
-            <p class="presentation-cta-eyebrow">New Overview</p>
-            <p class="presentation-cta-copy">Prefer the visual walkthrough first? Watch the presentation covering Premium Puppy Placement, Find My Puppy, and Crowned K9s Puppy.</p>
-          </div>
-          <a href="/ppp-presentation" class="button button-secondary">Watch the Placement Presentation</a>
-        </div>
+    <section class="hero hero-cinematic" id="current-puppy">
+      <div class="hero-cinematic__media">
+        <img src="../pictures/PRP/Winnie/winnie-cover.jpg" alt="Winnie, a Golden Retriever placed through Crowned K9s" fetchpriority="high" decoding="async">
       </div>
-    </section>
-    <!-- ═══════════════════════════════════════════════════════════
-         A) HERO SECTION - Outcome-first messaging
-    ════════════════════════════════════════════════════════════ -->
-    <section class="hero hero--light hero--pattern">
       <div class="container">
-        <div>
-          <h1>Premium Puppy Placement, the Crowned K9s way.</h1>
-          <p>Our umbrella placement program with two pathways: <strong>Find My Puppy</strong> (private sourcing for your family) and <strong>Crowned K9s Puppy</strong> (a puppy we raise and place). No puppies are publicly available right now &mdash; we are accepting applications for the next Find My Puppy family.</p>
-
-          <ul class="hero-outcome-bullets">
-            <li><strong>Sleep through the night</strong><span class="hero-outcome-desc">Calm crate routine already in place.</span></li>
-            <li><strong>Clear communication</strong><span class="hero-outcome-desc">Foundational obedience your pup actually understands.</span></li>
-            <li><strong>Potty habits underway</strong><span class="hero-outcome-desc">Fewer accidents, less stress from day one.</span></li>
-            <li><strong>Academy head start</strong><span class="hero-outcome-desc">Typically a 3&ndash;4 week Crowned K9s Academy stay before go-home.</span></li>
-          </ul>
-
-          <div class="hero-actions">
-            <a href="/contact" class="cta-button">Apply for Find My Puppy</a>
-            <a href="#paths" class="button button-secondary">See Both Pathways</a>
-          </div>
-
-          <p class="hero-trust-line">
-            <span>Genetic testing every pup</span>
-            <span>18 pups officially placed</span>
-            <span>Lifetime trainer support</span>
-          </p>
+        <p class="caption" id="next-ppp">Now accepting applications</p>
+        <h1 class="display">A trained puppy. Ready for your home.</h1>
+        <p>Find My Puppy or Crowned K9s Puppy &mdash; the same Academy standard. No puppies are on the books right now. We are ready for the next Find My Puppy family, and we are searching for the next Crowned K9s Puppy.</p>
+        <ul class="hero-outcome-bullets">
+          <li><strong>Sleep through the night</strong><span class="hero-outcome-desc">Calm crate routine already in place.</span></li>
+          <li><strong>Clear communication</strong><span class="hero-outcome-desc">Foundational obedience your pup actually understands.</span></li>
+          <li><strong>Potty habits underway</strong><span class="hero-outcome-desc">Fewer accidents, less stress from day one.</span></li>
+          <li><strong>Academy head start</strong><span class="hero-outcome-desc">Typically a 3&ndash;4 week Crowned K9s Academy stay before go-home.</span></li>
+        </ul>
+        <div class="hero-actions">
+          <a href="/contact" class="cta-button">Apply for Find My Puppy</a>
+          <a href="#paths" class="button button-secondary">See both pathways</a>
         </div>
-        <div>
-          <img src="../pictures/Logos/CK9s_Academy-01.png" alt="Crowned K9s Academy" class="poster-img" onclick="openLightbox(this.src)" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         AVAILABILITY STRIP — Find My Puppy applications open
-    ════════════════════════════════════════════════════════════ -->
-    <section class="availability-strip-section" id="current-puppy">
-      <div class="container">
-        <div class="availability-strip" id="next-ppp">
-          <div>
-            <p class="availability-strip-eyebrow">Now accepting applications</p>
-            <p class="availability-strip-title">Apply for the next Find My Puppy</p>
-            <p class="availability-strip-meta">No puppies are publicly listed right now. Tell us the breed, temperament, timeline, and household you have in mind, and we will source, select, and train a puppy for your family. <strong>Ellie</strong> (formerly Zoey), <strong>Winnie</strong>, and <strong>Marley</strong> are officially home.</p>
-          </div>
-          <a href="/contact" class="button button-secondary">Apply for Find My Puppy</a>
-        </div>
+        <p class="hero-trust-line">
+          <span>Genetic testing every pup</span>
+          <span>18 pups officially placed</span>
+          <span>Lifetime trainer support</span>
+        </p>
+        <a href="/ppp-presentation" class="hero-overview-link">Watch overview</a>
       </div>
     </section>
 
@@ -2404,7 +2378,7 @@
             <ul class="path-card-list">
               <li>Ethical breeder sourcing and temperament matching.</li>
               <li>Academy training before go-home.</li>
-              <li>Typically <strong>$4,000&ndash;$8,000</strong> after a fit call.</li>
+              <li>We confirm the plan on a fit call before anything is reserved.</li>
             </ul>
             <a href="/contact" class="cta-button path-card-cta">Apply for Find My Puppy</a>
           </article>
@@ -2417,8 +2391,8 @@
             </div>
             <ul class="path-card-list">
               <li>Puppy is already in our care when announced.</li>
-              <li>Typically <strong>$6,000&ndash;$7,000</strong> when listed.</li>
-              <li><strong>Ellie</strong> (formerly Zoey), <strong>Winnie</strong>, and <strong>Marley</strong> are officially home.</li>
+              <li>None are in our care right now. We are searching for the next puppy.</li>
+              <li>Eighteen pups are already home with their families.</li>
             </ul>
             <a href="#success" class="cta-button path-card-cta">See Success Stories</a>
           </article>
@@ -2852,12 +2826,14 @@
     ════════════════════════════════════════════════════════════ -->
     <section class="success-section" id="success">
       <div class="container">
-        <h2 class="section-title" style="text-align: center;">Success Stories</h2>
-        <p class="section-subtext" style="text-align: center;"><span class="pill" style="font-size: 1rem;">🏠 18 Pups Officially Placed</span></p>
-        <div class="card-grid">
+        <h2 class="title">They’re home.</h2>
+        <p class="section-subtext">Eighteen families. Use the arrows, the scrollbar, or your scroll wheel to meet them.</p>
+        <div class="filmstrip-wrap">
+          <button class="filmstrip-btn filmstrip-btn--prev" type="button" aria-label="Previous placed pups">‹</button>
+          <div class="filmstrip" data-filmstrip>
           <!-- Ellie (Golden Cavapoo, Crowned K9s Puppy; formerly Zoey) -->
           <article class="card">
-            <img src="../pictures/PRP/Zoey/UpdateZoey.jpg" alt="Ellie, formerly Zoey, a Golden Cavapoo officially home through Crowned K9s Puppy placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <img src="../pictures/PRP/Zoey/UpdateZoey.jpg" alt="Ellie, formerly Zoey, a Golden Cavapoo officially home through Crowned K9s Puppy placement" class="gallery-img lightbox-img" decoding="async" />
             <h3>Ellie</h3>
             <p class="subtext">Golden Cavapoo · Crowned K9s Puppy · Born March 12, 2026 · Formerly Zoey · <span class="pup-age-weeks" data-birthdate="2026-03-12"></span></p>
             <div class="pup-testimonial">
@@ -2867,7 +2843,7 @@
 
           <!-- Winnie (Golden Retriever, Find My Puppy) -->
           <article class="card">
-            <img src="../pictures/PRP/Winnie/winnie-cover.jpg" alt="Winnie the Golden Retriever, officially home through Find My Puppy placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <img src="../pictures/PRP/Winnie/winnie-cover.jpg" alt="Winnie the Golden Retriever, officially home through Find My Puppy placement" class="gallery-img lightbox-img" decoding="async" />
             <h3>Winnie</h3>
             <p class="subtext">Golden Retriever · Find My Puppy · Born April 12, 2026 · <span class="pup-age-weeks" data-birthdate="2026-04-12"></span></p>
             <div class="pup-testimonial">
@@ -2877,7 +2853,7 @@
 
           <!-- Marley (Find My Puppy, service dog prospect pathway) -->
           <article class="card">
-            <img src="../pictures/PRP/Marley.jpeg" alt="Marley, officially home after Find My Puppy service dog prospect placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <img src="../pictures/PRP/Marley.jpeg" alt="Marley, officially home after Find My Puppy service dog prospect placement" class="gallery-img lightbox-img" decoding="async" />
             <h3>Marley</h3>
             <p class="subtext">Find My Puppy · Service dog prospect pathway</p>
             <div class="pup-testimonial">
@@ -2887,7 +2863,7 @@
 
           <!-- Charlie (Golden Retriever, Find My Puppy) -->
           <article class="card">
-            <img src="../pictures/PRP/Charlie/IMG_0032.jpg" alt="Charlie, Golden Retriever, at home after Crowned K9s placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <img src="../pictures/PRP/Charlie/IMG_0032.jpg" alt="Charlie, Golden Retriever, at home after Crowned K9s placement" class="gallery-img lightbox-img" decoding="async" />
             <h3>Charlie</h3>
             <p class="subtext">Golden Retriever · Born Feb 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
             <div class="pup-testimonial">
@@ -2898,7 +2874,7 @@
 
           <!-- Koda (Golden Retriever, Crowned K9s Puppy) -->
           <article class="card">
-            <img src="../pictures/PRP/Owen/owen-ppp-hero.jpg" alt="Koda, Golden Retriever, at home after Crowned K9s placement" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <img src="../pictures/PRP/Owen/owen-ppp-hero.jpg" alt="Koda, Golden Retriever, at home after Crowned K9s placement" class="gallery-img lightbox-img" decoding="async" />
             <h3>Koda</h3>
             <p class="subtext">Golden Retriever · Born Feb 13, 2026 · <span class="pup-age-weeks" data-birthdate="2026-02-13"></span></p>
             <div class="pup-testimonial">
@@ -2908,7 +2884,7 @@
 
           <!-- Sky -->
           <article class="card">
-            <img src="../pictures/PRP/Stella/StellaFamily.jpg" alt="Sky with her forever family" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Stella/StellaFamily.jpg" alt="Sky with her forever family" class="gallery-img lightbox-img" />
             <h3>Sky</h3>
             <p class="subtext">Pit Mix · Born Dec 22, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-22"></span></p>
             <div class="pup-testimonial">
@@ -2918,7 +2894,7 @@
 
           <!-- Kobe -->
           <article class="card">
-            <img src="../pictures/PRP/Kobe/KobeHome.jpg" alt="Kobe with his adopter and Crowned K9s trainer at go-home" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Kobe/KobeHome.jpg" alt="Kobe with his adopter and Crowned K9s trainer at go-home" class="gallery-img lightbox-img" />
             <h3>Kobe</h3>
             <p class="subtext">Golden Retriever · Born Dec 29, 2025 · <span class="pup-age-weeks" data-birthdate="2025-12-29"></span></p>
             <div class="pup-testimonial">
@@ -2929,7 +2905,7 @@
 
           <!-- Miley -->
           <article class="card">
-            <img src="../pictures/PRP/Izzy_family.jpeg" alt="Miley with her forever family" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Izzy_family.jpeg" alt="Miley with her forever family" class="gallery-img lightbox-img" />
             <h3>Miley</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 25, 2025 · <span class="pup-age-weeks" data-birthdate="2025-11-25"></span></p>
             <div class="pup-testimonial">
@@ -2940,7 +2916,7 @@
 
           <!-- Rocko -->
           <article class="card">
-            <img src="../pictures/PRP/rocko.jpg" alt="Rocko the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/rocko.jpg" alt="Rocko the pup" class="gallery-img lightbox-img" />
             <h3>Rocko</h3>
             <p class="subtext">French Bulldog · Born May 21, 2025 · <span class="pup-age-weeks" data-birthdate="2025-05-21"></span></p>
             <div class="pup-testimonial">
@@ -2951,28 +2927,28 @@
 
           <!-- Mozzie -->
           <article class="card">
-            <img src="../pictures/PRP/mozzie.jpeg" alt="Mozzie the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/mozzie.jpeg" alt="Mozzie the pup" class="gallery-img lightbox-img" />
             <h3>Mozzie</h3>
             <p class="subtext">Mini Australian Shepherd · Born May 3, 2025 · <span class="pup-age-weeks" data-birthdate="2025-05-03"></span></p>
           </article>
 
           <!-- Maple -->
           <article class="card">
-            <img src="../pictures/PRP/maple.jpeg" alt="Maple the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/maple.jpeg" alt="Maple the pup" class="gallery-img lightbox-img" />
             <h3>Maple</h3>
             <p class="subtext">American Staffordshire Terrier · Born Mar 13, 2025 · <span class="pup-age-weeks" data-birthdate="2025-03-13"></span></p>
           </article>
 
           <!-- Brutus -->
           <article class="card">
-            <img src="../pictures/PRP/brutus.jpg" alt="Brutus the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/brutus.jpg" alt="Brutus the pup" class="gallery-img lightbox-img" />
             <h3>Brutus</h3>
             <p class="subtext">American Staffordshire Terrier · Born Mar 13, 2025 · <span class="pup-age-weeks" data-birthdate="2025-03-13"></span></p>
           </article>
 
           <!-- Charlie (Olde English Bulldogge) -->
           <article class="card">
-            <img src="../pictures/PRP/Charlie.jpeg" alt="Charlie the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Charlie.jpeg" alt="Charlie the pup" class="gallery-img lightbox-img" />
             <h3>Charlie</h3>
             <p class="subtext">Olde English Bulldogge · Born Aug 21, 2024 · <span class="pup-age-weeks" data-birthdate="2024-08-21"></span></p>
             <div class="pup-testimonial">
@@ -2983,7 +2959,7 @@
 
           <!-- Kai -->
           <article class="card">
-            <img src="../pictures/PRP/Kai.jpeg" alt="Kai the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/Kai.jpeg" alt="Kai the pup" class="gallery-img lightbox-img" />
             <h3>Kai</h3>
             <p class="subtext">Olde English Bulldogge · Born Aug 21, 2024 · <span class="pup-age-weeks" data-birthdate="2024-08-21"></span></p>
             <div class="pup-testimonial">
@@ -2994,41 +2970,43 @@
 
           <!-- Gwen -->
           <article class="card">
-            <img src="../pictures/PRP/gwen.jpg" alt="Gwen the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/gwen.jpg" alt="Gwen the pup" class="gallery-img lightbox-img" />
             <h3>Gwen</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 14, 2023 · <span class="pup-age-weeks" data-birthdate="2023-11-14"></span></p>
           </article>
 
           <!-- Pawly -->
           <article class="card">
-            <img src="../pictures/PRP/pawly.jpeg" alt="Pawly the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/pawly.jpeg" alt="Pawly the pup" class="gallery-img lightbox-img" />
             <h3>Pawly</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 14, 2023 · <span class="pup-age-weeks" data-birthdate="2023-11-14"></span></p>
           </article>
 
           <!-- Wynter -->
           <article class="card">
-            <img src="../pictures/PRP/wynter.jpg" alt="Wynter the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/wynter.jpg" alt="Wynter the pup" class="gallery-img lightbox-img" />
             <h3>Wynter</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 14, 2023 · <span class="pup-age-weeks" data-birthdate="2023-11-14"></span></p>
           </article>
 
           <!-- Puma -->
           <article class="card">
-            <img src="../pictures/PRP/puma.jpg" alt="Puma the pup" class="gallery-img lightbox-img" loading="lazy" />
+            <img src="../pictures/PRP/puma.jpg" alt="Puma the pup" class="gallery-img lightbox-img" />
             <h3>Puma</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 14, 2023 · <span class="pup-age-weeks" data-birthdate="2023-11-14"></span></p>
           </article>
 
           <!-- Nyla -->
           <article class="card">
-            <img src="../pictures/PRP/nyla.jpg" alt="Nyla with her family" class="gallery-img lightbox-img" loading="lazy" decoding="async" />
+            <img src="../pictures/PRP/nyla.jpg" alt="Nyla with her family" class="gallery-img lightbox-img" decoding="async" />
             <h3>Nyla</h3>
             <p class="subtext">Olde English Bulldogge · Born Nov 14, 2023 · <span class="pup-age-weeks" data-birthdate="2023-11-14"></span></p>
             <div class="pup-testimonial">
               Matched with our own family.
             </div>
           </article>
+        </div>
+          <button class="filmstrip-btn filmstrip-btn--next" type="button" aria-label="Next placed pups">›</button>
         </div>
       </div>
     </section>
@@ -3096,26 +3074,21 @@
         <div class="cta-banner">
           <div>
             <h2>Ready to find your next dog?</h2>
-            <p class="cta-banner-lede">Premium Puppy Placement has two pathways. No public availability right now &mdash; we are accepting applications for the next Find My Puppy family.</p>
+            <p class="cta-banner-lede">Premium Puppy Placement has two pathways. No puppies are on the books right now.</p>
             <ul class="cta-banner-points">
               <li><strong>Find My Puppy</strong> &mdash; private sourcing for your family. Apply to become the next client.</li>
-              <li><strong>Crowned K9s Puppy</strong> &mdash; listed when we have a puppy in our care; none available now.</li>
-              <li><strong>Ellie</strong> (formerly Zoey), <strong>Winnie</strong>, and <strong>Marley</strong> are officially home; see more <a href="#success">success stories</a>.</li>
+              <li><strong>Crowned K9s Puppy</strong> &mdash; we are searching for the next puppy to raise and place.</li>
+              <li>Eighteen pups are already home. Meet them in the <a href="#success">success stories</a>.</li>
             </ul>
           </div>
           <div class="cta-actions">
-            <a href="/contact" class="button">Apply for Find My Puppy</a>
+            <a href="/contact" class="cta-button">Apply for Find My Puppy</a>
             <a href="#find-my-puppy" class="button button-secondary">How It Works</a>
             <a href="tel:9198162426" class="button button-secondary">Text/Call</a>
           </div>
         </div>
       </div>
     </section>
-
-    <div class="mobile-sticky-cta" aria-label="Quick actions">
-      <a href="/contact" class="cta-button">Apply for Find My Puppy</a>
-      <a href="tel:9198162426" class="button button-secondary">Text/Call</a>
-    </div>
   </main>
 
   <footer>
@@ -3252,6 +3225,30 @@
       // Re-render once per day so it stays accurate without code updates.
       window.setInterval(render, 24 * 60 * 60 * 1000);
     })();
+
+    (() => {
+      document.querySelectorAll('[data-filmstrip]').forEach((strip) => {
+        const wrap = strip.closest('.filmstrip-wrap');
+        if (!wrap) return;
+        const amount = () => Math.min(strip.clientWidth * 0.85, 280);
+        wrap.querySelector('.filmstrip-btn--prev')?.addEventListener('click', () => {
+          strip.scrollBy({ left: -amount(), behavior: 'smooth' });
+        });
+        wrap.querySelector('.filmstrip-btn--next')?.addEventListener('click', () => {
+          strip.scrollBy({ left: amount(), behavior: 'smooth' });
+        });
+        strip.addEventListener('wheel', (event) => {
+          if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+          event.preventDefault();
+          strip.scrollLeft += event.deltaY;
+        }, { passive: false });
+      });
+    })();
   </script>
+  <div class="mobile-bottom-bar" aria-label="Quick actions">
+    <a href="tel:9198162426">Text</a>
+    <a href="/contact" class="mobile-bottom-bar__cta">Apply</a>
+  </div>
+<script src="../scripts/enlarge.js" defer></script>
 </body>
 </html>
