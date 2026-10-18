@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get the Bearded Bee Brewery Manners Guide</title>
+  <meta name="description" content="Free brewery manners guide for dog owners visiting Bearded Bee. Leave your email or phone and Crowned K9s will send you the link." />
+  <meta property="og:title" content="Bearded Bee Brewery Manners Guide" />
+  <meta property="og:description" content="A free guide for bringing a calm, well-mannered dog to Bearded Bee. Leave your email or phone to get the link." />
+  <meta property="og:url" content="https://crownedk9s.com/brewery-manners/" />
+  <link rel="icon" type="image/png" href="../pictures/Logos/Crowned Icons-02.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f7f1e7;
+      --color-text: #26180d;
+      --color-text-muted: #6d5947;
+      --color-primary: #6b3f1f;
+      --color-gold: #d8a646;
+      --color-danger: #9a3c24;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top right, rgba(216,166,70,0.22), transparent 32%),
+        radial-gradient(circle at left center, rgba(107,63,31,0.08), transparent 24%),
+        var(--color-bg);
+    }
+
+    .page {
+      width: min(720px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    .card {
+      background: rgba(255,250,243,0.9);
+      border: 1px solid rgba(107,63,31,0.12);
+      border-radius: 1.75rem;
+      box-shadow: 0 12px 28px rgba(38,24,13,0.08);
+      padding: clamp(1.4rem, 3vw, 2.4rem);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 999px;
+      background: var(--color-gold);
+      box-shadow: 0 0 0 6px rgba(216,166,70,0.18);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.1rem, 1.5rem + 2.4vw, 3.4rem);
+      line-height: 1.05;
+      margin: 0 0 0.9rem;
+      max-width: 14ch;
+    }
+
+    p { margin: 0; color: var(--color-text-muted); line-height: 1.6; }
+
+    .lede { font-size: 1.05rem; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 0;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.65rem;
+      align-items: start;
+      color: var(--color-text);
+    }
+
+    li span {
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(216,166,70,0.22);
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 0.15rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(107,63,31,0.18);
+      background: #fff;
+      color: var(--color-text);
+      font: inherit;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: 2px solid rgba(216,166,70,0.7);
+      border-color: transparent;
+    }
+
+    .or {
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9d8a78;
+      font-weight: 700;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 0.95rem 1.2rem;
+      background: var(--color-primary);
+      color: #fffaf3;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover { background: #532f15; }
+    button:disabled { opacity: 0.7; cursor: wait; }
+
+    .note, .error, .success {
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .error { color: var(--color-danger); min-height: 1.3em; }
+    .success { color: #4a6a2f; font-weight: 600; }
+
+    .brand {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .brand a { color: var(--color-primary); font-weight: 700; }
+
+    .hp {
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <span class="eyebrow">Free guide · Bearded Bee × Crowned K9s</span>
+      <h1>Bring a dog, not a brewery tornado.</h1>
+      <p class="lede">This short guide is free. Leave your email or phone number and we’ll send you the link.</p>
+      <ul>
+        <li><span>1</span>How to walk in without your dog leading the way.</li>
+        <li><span>2</span>Why neutrality beats greeting every dog and person.</li>
+        <li><span>3</span>The treats, sits, and water habits that keep the visit easy.</li>
+      </ul>
+
+      <form id="guide-form" novalidate>
+        <div class="hp" aria-hidden="true">
+          <label for="company">Company</label>
+          <input id="company" name="_honey" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <label for="email">
+          Email
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
+        </label>
+        <div class="or">or</div>
+        <label for="phone">
+          Phone number
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="919-555-0123">
+        </label>
+        <p class="error" id="form-error" role="alert"></p>
+        <button type="submit" id="submit-btn">Send me the guide</button>
+        <p class="note">One is enough. If you leave an email, the link goes to your inbox. Either way, the guide opens as soon as this form goes through.</p>
+        <p class="success" id="form-success" role="status" hidden></p>
+      </form>
+
+      <p class="brand">From <a href="/">Crowned K9s</a> for guests at Bearded Bee.</p>
+    </section>
+  </main>
+  <script>
+    const GUIDE_URL = "https://crownedk9s.com/brewery-manners/guide/";
+    const form = document.getElementById("guide-form");
+    const errorEl = document.getElementById("form-error");
+    const successEl = document.getElementById("form-success");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const emailOk = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    const phoneDigits = (value) => value.replace(/\D/g, "");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      errorEl.textContent = "";
+      successEl.hidden = true;
+
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const honey = document.getElementById("company").value;
+
+      if (honey) return;
+
+      if (!email && !phone) {
+        errorEl.textContent = "Add an email or a phone number so we can send the guide.";
+        return;
+      }
+      if (email && !emailOk(email)) {
+        errorEl.textContent = "That email doesn’t look complete.";
+        return;
+      }
+      if (phone && phoneDigits(phone).length < 10) {
+        errorEl.textContent = "Enter a phone number with at least 10 digits.";
+        return;
+      }
+
+      const payload = {
+        _subject: "Bearded Bee Brewery Manners Guide request",
+        _template: "table",
+        _captcha: "false",
+        source: "Bearded Bee brewery manners guide",
+        guide_link: GUIDE_URL
+      };
+      if (email) {
+        payload.email = email;
+        payload._replyto = email;
+        payload._autoresponse = "Your free Bearded Bee Brewery Manners Guide is ready:\n\n" + GUIDE_URL + "\n\nSave the link on your phone before your next visit.\n\n— Crowned K9s";
+      }
+      if (phone) payload.phone = phone;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending the link…";
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/lorenzo@crownedk9s.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || String(data.success) !== "true") {
+          throw new Error(data.message || "Form submit failed");
+        }
+
+        const sentTo = email ? " We also emailed it to " + email + "." : "";
+        successEl.hidden = false;
+        successEl.textContent = "You’re in. Opening the guide now." + sentTo;
+        window.setTimeout(() => {
+          window.location.href = "/brewery-manners/guide/";
+        }, 900);
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send me the guide";
+        errorEl.textContent = "We couldn’t send that just now. Check the email or phone and try again.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Bearded Bee Brewery Manners Guide</title>
+  <meta name="description" content="A quick, engaging brewery manners guide for dog owners from Crowned K9s and Bearded Bee." />
+  <link rel="icon" type="image/png" href="../../pictures/Logos/Crowned Icons-02.png" />
+  <meta property="og:title" content="Bearded Bee Brewery Manners Guide" />
+  <meta property="og:description" content="Simple rules to help your dog stay calm, neutral, and well-mannered at the brewery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --color-bg: #f7f1e7;
+      --color-surface: #fffaf3;
+      --color-surface-2: #f4eadb;
+      --color-surface-offset: #efe1cd;
+      --color-border: #dcc8ad;
+      --color-text: #26180d;
+      --color-text-muted: #6d5947;
+      --color-text-faint: #9d8a78;
+      --color-primary: #6b3f1f;
+      --color-primary-hover: #532f15;
+      --color-gold: #d8a646;
+      --color-success: #4a6a2f;
+      --color-danger: #9a3c24;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.875rem;
+      --radius-lg: 1.25rem;
+      --radius-xl: 1.75rem;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --text-xs: clamp(0.75rem, 0.72rem + 0.18vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 1rem);
+      --text-base: clamp(1rem, 0.97rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.7vw, 1.45rem);
+      --text-xl: clamp(1.5rem, 1.25rem + 1.2vw, 2.2rem);
+      --text-2xl: clamp(2.2rem, 1.6rem + 2.5vw, 4rem);
+      --shadow-sm: 0 2px 10px rgba(38,24,13,0.06);
+      --shadow-md: 0 12px 28px rgba(38,24,13,0.10);
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top right, rgba(216,166,70,0.18), transparent 28%),
+        radial-gradient(circle at left center, rgba(107,63,31,0.08), transparent 22%),
+        var(--color-bg);
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    .page {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: var(--space-8) 0 var(--space-16);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-8);
+      align-items: stretch;
+      margin-bottom: var(--space-8);
+    }
+
+    .hero-copy,
+    .hero-card,
+    .card,
+    .tip-banner,
+    .cta {
+      background: rgba(255,250,243,0.82);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(107,63,31,0.12);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-copy {
+      padding: clamp(1.5rem, 3vw, 3rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 999px;
+      background: var(--color-gold);
+      box-shadow: 0 0 0 6px rgba(216,166,70,0.18);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      line-height: 1.05;
+      margin: 0;
+      color: var(--color-text);
+    }
+
+    h1 {
+      font-size: var(--text-2xl);
+      max-width: 12ch;
+      margin-bottom: var(--space-4);
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-3);
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-2);
+    }
+
+    p {
+      margin: 0;
+      color: var(--color-text-muted);
+      max-width: 64ch;
+    }
+
+    .hero-copy p + p { margin-top: var(--space-3); }
+
+    .brand-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: var(--space-6);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .logo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(107,63,31,0.12);
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .logo-pill svg { width: 1.5rem; height: 1.5rem; color: var(--color-gold); }
+
+    .hero-card {
+      padding: var(--space-6);
+      display: grid;
+      grid-template-rows: auto auto auto;
+      gap: var(--space-5);
+      overflow: hidden;
+    }
+
+    .dog-scene {
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-lg);
+      background: #fff4dd;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dog-scene img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .quick-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-8) 0;
+    }
+
+    .card {
+      padding: var(--space-6);
+    }
+
+    .card p { margin-bottom: var(--space-4); }
+
+    .list {
+      display: grid;
+      gap: 0.75rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.75rem;
+      align-items: start;
+      color: var(--color-text);
+    }
+
+    .bullet {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: rgba(216,166,70,0.2);
+      color: var(--color-primary);
+      margin-top: 0.15rem;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+
+    .mini-tile {
+      padding: var(--space-4);
+      background: rgba(255,255,255,0.68);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(107,63,31,0.1);
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      justify-content: space-between;
+    }
+
+    .mini-icon {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 0.9rem;
+      background: rgba(216,166,70,0.22);
+      display: grid;
+      place-items: center;
+      color: var(--color-primary);
+    }
+
+    .mini-icon svg { width: 1.3rem; height: 1.3rem; }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    .tip-banner {
+      padding: var(--space-6);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-4);
+      align-items: start;
+      margin-bottom: var(--space-6);
+      background: linear-gradient(135deg, rgba(255,248,234,0.92), rgba(241,225,205,0.88));
+    }
+
+    .tip-banner .mini-icon {
+      background: rgba(74,106,47,0.18);
+      color: var(--color-success);
+    }
+
+    .rule-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+
+    .rule {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.66);
+      border: 1px solid rgba(107,63,31,0.1);
+    }
+
+    .rule strong { display: block; margin-bottom: 0.3rem; color: var(--color-text); }
+
+    .cta {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-6);
+      align-items: center;
+      background: linear-gradient(135deg, rgba(107,63,31,0.92), rgba(58,33,15,0.94));
+      color: #fff7ed;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta p, .cta li { color: rgba(255,247,237,0.86); }
+    .cta h2 { color: #fffdf8; }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: var(--space-4);
+    }
+
+    .badge {
+      padding: 0.7rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    .footer-note {
+      margin-top: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--color-text-faint);
+      text-align: center;
+    }
+
+    .print-hint {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-4);
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .section-grid,
+      .cta,
+      .quick-points,
+      .rule-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .icon-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { max-width: 14ch; }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+      .hero-copy,
+      .hero-card,
+      .card,
+      .tip-banner,
+      .cta {
+        background: white;
+        box-shadow: none;
+        border: 1px solid #d6c4a8;
+      }
+      .cta {
+        color: #26180d;
+      }
+      .cta p, .cta li, .cta h2 { color: #26180d; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Free guide for Bearded Bee visitors</span>
+        <h1>Bring a dog, not a brewery tornado.</h1>
+        <p>This quick guide helps dog owners enjoy Bearded Bee with a dog that is calm, neutral, and easy to handle in public.</p>
+        <p>The goal is not for your dog to greet everybody. The goal is a dog that can settle, listen, and make good decisions around food, people, and other dogs.</p>
+        <div class="brand-row">
+          <div class="logo-pill" aria-label="Bearded Bee x Crowned K9s">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M32 9 44 16v14c0 12-7.6 20.8-12 24-4.4-3.2-12-12-12-24V16L32 9Z" fill="currentColor" opacity="0.18"/>
+              <path d="M32 9 44 16v14c0 12-7.6 20.8-12 24-4.4-3.2-12-12-12-24V16L32 9Z" stroke="currentColor" stroke-width="3"/>
+              <path d="M25 28h14M25 34h14M29 22h6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            Bearded Bee × Crowned K9s
+          </div>
+          <span>Lead with Confidence, Train with Crowned K9s.</span>
+        </div>
+        <div class="print-hint">Save or print this page as a PDF for an easy take-home guide.</div>
+      </div>
+
+      <aside class="hero-card" aria-label="Illustrated brewery dog manners card">
+        <div>
+          <span class="eyebrow">What great brewery behavior looks like</span>
+          <h2>Calm, close, and checking in.</h2>
+        </div>
+        <div class="dog-scene">
+          <img src="brewery-dog-manners.jpg" alt="Cartoon of a calm dog sitting beside a brewery table, checking in for a treat. A loose leash, water bowl, and pint of beer sit nearby.">
+        </div>
+        <div class="rule-strip">
+          <div class="rule"><strong>Best vibe:</strong> Quiet, neutral, ready to listen.</div>
+          <div class="rule"><strong>Not the goal:</strong> Super excited, pulling, greeting everybody.</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="quick-points">
+      <article class="card">
+        <span class="eyebrow">Before you walk in</span>
+        <h2>Start at the door.</h2>
+        <p>Your dog should not lead you into the brewery. An open doorway is not permission to pull forward. They should pause, wait, and go through with you.</p>
+        <ul class="list">
+          <li><span class="bullet">1</span><span>Approach the entrance under control.</span></li>
+          <li><span class="bullet">2</span><span>If they surge ahead, reset and try again.</span></li>
+          <li><span class="bullet">3</span><span>Go in when the leash is loose and their brain is with you.</span></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Neutrality wins</span>
+        <h2>Your dog does not have to greet everyone.</h2>
+        <p>Do not create a dog that expects to meet every person and every dog in public. The public goal is neutrality, not a super excited uncontrollable dog.</p>
+        <div class="icon-grid">
+          <div class="mini-tile">
+            <div class="mini-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <div><strong>Calm is allowed.</strong><br>Quietly hanging out is a win.</div>
+          </div>
+          <div class="mini-tile">
+            <div class="mini-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m15 6 6 6-6 6"/></svg>
+            </div>
+            <div><strong>Check in first.</strong><br>They should look to you before acting.</div>
+          </div>
+          <div class="mini-tile">
+            <div class="mini-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
+            </div>
+            <div><strong>No forced greetings.</strong><br>Skip the meet-and-greet unless it is truly appropriate.</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="tip-banner">
+      <div class="mini-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10h10"/><path d="M12 3v18"/><path d="M5 21h14"/></svg>
+      </div>
+      <div>
+        <h2>Strong sit and down commands make breweries easier.</h2>
+        <p>Sit and down are management tools. When your dog knows how to settle in one spot, you can keep them calm, keep them out of trouble, and help them ignore the chaos around them.</p>
+      </div>
+    </section>
+
+    <section class="section-grid">
+      <article class="card">
+        <span class="eyebrow">Public manners</span>
+        <h2>Ask before your dog approaches another dog.</h2>
+        <p>Do not let your dog walk up to other dogs without asking the owners first. Even friendly dogs can create a messy situation when one side did not agree to the interaction.</p>
+        <ul class="list">
+          <li><span class="bullet">✓</span><span>Ask first, every time.</span></li>
+          <li><span class="bullet">✓</span><span>If the answer is no, move on and keep your dog neutral.</span></li>
+          <li><span class="bullet">✓</span><span>Reward your dog for passing by calmly.</span></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Attention</span>
+        <h2>Name recognition matters.</h2>
+        <p>When you say your dog’s name, they should actually look at you. Good name recognition is one of the easiest ways to interrupt bad ideas before they become a problem.</p>
+        <ul class="list">
+          <li><span class="bullet">1</span><span>Say the name once.</span></li>
+          <li><span class="bullet">2</span><span>The moment they look at you, reward it.</span></li>
+          <li><span class="bullet">3</span><span>Use that check-in to guide the next choice.</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section-grid">
+      <article class="card">
+        <span class="eyebrow">Be ready</span>
+        <h2>Bring high-value treats.</h2>
+        <p>If you get beer, your dog deserves something good too. High-value treats make it much easier to reward calmness, check-ins, and good decisions around distractions.</p>
+        <div class="rule-strip">
+          <div class="rule"><strong>Reward:</strong> Looking at you, settling down, ignoring distractions.</div>
+          <div class="rule"><strong>Skip rewarding:</strong> Pulling, whining, staring, or overexcitement.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Hydration</span>
+        <h2>Use the sponsored water dispenser.</h2>
+        <p>If your dog is thirsty, use the sponsored water dispenser and make hydration part of the outing. A comfortable dog is easier to manage than a hot, stressed, dehydrated one.</p>
+        <div class="rule-strip">
+          <div class="rule"><strong>Quick tip:</strong> Offer water before your dog gets frantic.</div>
+          <div class="rule"><strong>Bonus:</strong> A short water reset can help break fixation too.</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="cta">
+      <div>
+        <span class="eyebrow" style="color: rgba(255,247,237,0.78);">The simple brewery checklist</span>
+        <h2>What to remember at Bearded Bee.</h2>
+        <div class="badge-row">
+          <span class="badge">Do not lead through the door.</span>
+          <span class="badge">Ask before dog greetings.</span>
+          <span class="badge">Use Sit and Down for management.</span>
+          <span class="badge">Bring high-value treats.</span>
+          <span class="badge">Use the water dispenser.</span>
+          <span class="badge">Reward name recognition.</span>
+          <span class="badge">Neutrality over chaos.</span>
+        </div>
+      </div>
+      <div>
+        <p>A well-mannered brewery dog is not the most social dog in the room. It is the dog that can stay calm, stay close, and stay thoughtful.</p>
+        <p style="margin-top: 1rem;">Want help building that kind of dog? Crowned K9s focuses on communication, structure, and real-world reliability.</p>
+        <p style="margin-top: 1rem;"><a href="/contact" style="color:#fffdf8;font-weight:700;">Talk with Crowned K9s</a></p>
+      </div>
+    </section>
+
+    <p class="footer-note">Free guide by Crowned K9s for guests at Bearded Bee. Save this page, or print to PDF for an easy handout.</p>
+  </main>
+</body>
+</html>
