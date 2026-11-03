@@ -292,6 +292,175 @@
     }
     .academy-pricing-foot a:hover { border-bottom-color: var(--accent-orange); }
 
+    .stay-estimator {
+      padding: 4.5rem 0;
+      background: var(--bg);
+    }
+    .stay-estimator-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .stay-estimator-copy,
+    .stay-estimator-card {
+      min-width: 0;
+    }
+    .stay-estimator-copy {
+      padding: 1rem 0;
+    }
+    .stay-estimator-copy h2 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+    .stay-estimator-copy > p {
+      color: var(--muted);
+      margin: 0;
+    }
+    .calendar-day-example {
+      margin-top: 1.5rem;
+      padding: 1rem 1.1rem;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 14px 14px 0;
+      background: rgba(196, 165, 116, 0.12);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .early-dropoff-callout {
+      margin: 0 0 1.1rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(196, 165, 116, 0.4);
+      border-radius: 14px;
+      background: rgba(196, 165, 116, 0.12);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .early-dropoff-callout strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .calendar-day-example-title {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .stay-estimator-card {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: #fff;
+    }
+    .stay-estimator-form {
+      display: grid;
+      gap: 1rem;
+    }
+    .stay-estimator-field {
+      display: grid;
+      gap: 0.4rem;
+      min-width: 0;
+    }
+    .stay-estimator-field label,
+    .stay-estimator-label {
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .stay-estimator-field select,
+    .stay-estimator-field input {
+      width: 100%;
+      min-width: 0;
+      min-height: 48px;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .stay-estimator-field select:focus,
+    .stay-estimator-field input:focus {
+      outline: 3px solid rgba(196, 165, 116, 0.2);
+      border-color: var(--gold);
+    }
+    .stay-estimator-dates {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+    .stay-estimator-error {
+      min-height: 1.45rem;
+      margin: 0;
+      color: #9a3c24;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .stay-estimator-result {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      border-radius: 18px;
+      background: var(--primary-dark);
+      color: var(--text-light);
+    }
+    .stay-estimator-result[hidden] {
+      display: none;
+    }
+    .stay-estimator-result-label {
+      margin: 0 0 0.35rem;
+      color: var(--gold-soft);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .stay-estimator-total {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .stay-estimator-summary {
+      margin: 0.75rem 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.55;
+    }
+    .stay-estimator-breakdown {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin: 1rem 0 0;
+    }
+    .stay-estimator-breakdown div {
+      padding: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .stay-estimator-breakdown dt {
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .stay-estimator-breakdown dd {
+      margin: 0.2rem 0 0;
+      color: #fff;
+      font-weight: 700;
+    }
+    .stay-estimator-disclaimer {
+      margin: 1rem 0 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .stay-estimator-result .button {
+      margin-top: 1rem;
+      width: 100%;
+    }
+
     @media (max-width: 820px) {
       .academy-tier-grid {
         grid-template-columns: 1fr;
@@ -300,6 +469,29 @@
       }
       .academy-tier { padding: 2rem 1.4rem 1.75rem; }
       .academy-price-amount { font-size: 1.75rem; }
+      .stay-estimator-shell {
+        grid-template-columns: 1fr;
+      }
+      .stay-estimator-copy {
+        padding: 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .stay-estimator {
+        padding: 3rem 0;
+      }
+      .stay-estimator-card {
+        padding: 1.1rem;
+        border-radius: 20px;
+      }
+      .stay-estimator-dates,
+      .stay-estimator-breakdown {
+        grid-template-columns: 1fr;
+      }
+      .compliance-banner {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -340,7 +532,8 @@
         <p>Every stay is a board-and-train. Dogs live with us in a structured, training-first home &mdash; not a kennel.</p>
         <p class="section-subtext">Raleigh–Durham. Clients welcomed from anywhere in North Carolina.</p>
         <div class="hero-actions">
-          <a href="#pricing" class="cta-button">See tiers</a>
+          <a href="#estimate" class="cta-button">Estimate your stay</a>
+          <a href="#pricing" class="button button-secondary">See tiers</a>
           <a href="/contact" class="button button-secondary">Schedule</a>
         </div>
       </div>
@@ -386,7 +579,7 @@
         <div class="academy-pricing-header">
           <span class="academy-pricing-eyebrow">Crowned K9s Academy</span>
           <h2>Pick Your Board &amp; Train Tier</h2>
-          <p>Every stay is training-first. Choose the level of work that matches your dog&rsquo;s goals.</p>
+          <p>Every stay is training-first. Daily prices are charged by calendar day, including both drop-off and pickup dates. We strongly recommend an early morning drop-off so your dog gets the most from the first charged day.</p>
         </div>
 
         <div class="academy-tier-grid">
@@ -444,6 +637,76 @@
         </div>
 
         <p class="academy-pricing-foot">Not sure which tier fits? <a href="/find-my-dogs-program">Take the 5-question program finder</a> or <a href="tel:9198162426">text Lorenzo: 919-816-2426</a>.</p>
+      </div>
+    </section>
+
+    <section id="estimate" class="stay-estimator">
+      <div class="container">
+        <div class="stay-estimator-shell">
+          <div class="stay-estimator-copy">
+            <p class="caption">Plan your stay</p>
+            <h2>Estimate your Academy stay.</h2>
+            <p>Choose a service and your dates to see the price you should expect. This estimate uses calendar days, not 24-hour periods.</p>
+            <div class="calendar-day-example">
+              <strong class="calendar-day-example-title">Both dates count.</strong>
+              Drop off Thursday at 3 PM and pick up Friday at 1 PM? That is <strong>2 calendar days</strong>, even though less than 24 hours passed.
+              Because the arrival date is already a charged day, we strongly recommend an <strong>early morning drop-off</strong> so your dog gets the most from day one.
+            </div>
+          </div>
+
+          <div class="stay-estimator-card">
+            <div class="early-dropoff-callout">
+              <strong>Best value: drop off early.</strong>
+              Request an early morning arrival whenever possible. Arrival time does not reduce the calendar-day charge.
+            </div>
+            <form id="stay-estimator-form" class="stay-estimator-form" novalidate>
+              <div class="stay-estimator-field">
+                <label for="stay-service">Service</label>
+                <select id="stay-service" name="service" required>
+                  <option value="basic-standard">Basic Board &amp; Train — $95/day</option>
+                  <option value="basic-member">Basic — University Elite or Academy graduate — $80/day</option>
+                  <option value="advanced">Advanced Board &amp; Train — package pricing</option>
+                </select>
+              </div>
+
+              <div class="stay-estimator-dates">
+                <div class="stay-estimator-field">
+                  <label for="stay-dropoff">Drop-off date (early morning recommended)</label>
+                  <input id="stay-dropoff" name="dropoff" type="date" required>
+                </div>
+                <div class="stay-estimator-field">
+                  <label for="stay-pickup">Pickup date</label>
+                  <input id="stay-pickup" name="pickup" type="date" required>
+                </div>
+              </div>
+
+              <p id="stay-estimator-error" class="stay-estimator-error" role="alert"></p>
+              <button type="submit" class="cta-button">Calculate my estimate</button>
+            </form>
+
+            <div id="stay-estimator-result" class="stay-estimator-result" aria-live="polite" hidden>
+              <p class="stay-estimator-result-label">Estimated stay total</p>
+              <p id="stay-estimator-total" class="stay-estimator-total">$0</p>
+              <p id="stay-estimator-summary" class="stay-estimator-summary"></p>
+              <dl class="stay-estimator-breakdown">
+                <div>
+                  <dt>Charged days</dt>
+                  <dd id="stay-estimator-days">0 calendar days</dd>
+                </div>
+                <div>
+                  <dt>Pricing used</dt>
+                  <dd id="stay-estimator-rate">—</dd>
+                </div>
+                <div>
+                  <dt>Recommended arrival</dt>
+                  <dd>Early morning</dd>
+                </div>
+              </dl>
+              <p id="stay-estimator-disclaimer" class="stay-estimator-disclaimer"></p>
+              <a href="/contact#message" class="button">Check availability</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -514,6 +777,116 @@
       <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
       <img id="lightbox-img" src="" alt="Full size image" decoding="async">
     </div>
+
+    <script>
+      (function () {
+        var form = document.getElementById('stay-estimator-form');
+        if (!form) return;
+
+        var serviceInput = document.getElementById('stay-service');
+        var dropoffInput = document.getElementById('stay-dropoff');
+        var pickupInput = document.getElementById('stay-pickup');
+        var error = document.getElementById('stay-estimator-error');
+        var result = document.getElementById('stay-estimator-result');
+        var total = document.getElementById('stay-estimator-total');
+        var summary = document.getElementById('stay-estimator-summary');
+        var daysOutput = document.getElementById('stay-estimator-days');
+        var rateOutput = document.getElementById('stay-estimator-rate');
+        var disclaimer = document.getElementById('stay-estimator-disclaimer');
+        var dayMs = 24 * 60 * 60 * 1000;
+
+        function parseDate(value) {
+          var parts = value.split('-').map(Number);
+          if (parts.length !== 3 || parts.some(Number.isNaN)) return null;
+          return new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+        }
+
+        function formatDate(date) {
+          return new Intl.DateTimeFormat('en-US', {
+            timeZone: 'UTC',
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          }).format(date);
+        }
+
+        function money(amount) {
+          return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+          }).format(amount);
+        }
+
+        function calculateAdvanced(days) {
+          if (days < 14) {
+            return { amount: days * 180, rate: money(180) + ' × ' + days + ' days' };
+          }
+          if (days <= 20) {
+            return { amount: 2500, rate: '2-week package' };
+          }
+          if (days === 21) {
+            return { amount: 3000, rate: '3-week package' };
+          }
+          var startedWeeks = Math.ceil(days / 7);
+          return {
+            amount: startedWeeks * 1000,
+            rate: startedWeeks + '-week package'
+          };
+        }
+
+        dropoffInput.addEventListener('change', function () {
+          pickupInput.min = dropoffInput.value;
+          if (pickupInput.value && pickupInput.value < dropoffInput.value) {
+            pickupInput.value = dropoffInput.value;
+          }
+        });
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          error.textContent = '';
+          result.hidden = true;
+
+          var dropoff = parseDate(dropoffInput.value);
+          var pickup = parseDate(pickupInput.value);
+          if (!dropoff || !pickup) {
+            error.textContent = 'Choose both a drop-off date and a pickup date.';
+            return;
+          }
+          if (pickup < dropoff) {
+            error.textContent = 'Pickup must be on or after the drop-off date.';
+            return;
+          }
+
+          var days = Math.round((pickup - dropoff) / dayMs) + 1;
+          var service = serviceInput.value;
+          var estimate;
+          var serviceName;
+          var resultDisclaimer = 'Estimate is for one dog and does not reserve dates. Final pricing and availability are confirmed by Crowned K9s.';
+
+          if (service === 'basic-standard') {
+            serviceName = 'Basic Board & Train';
+            estimate = { amount: days * 95, rate: money(95) + ' × ' + days + ' days' };
+          } else if (service === 'basic-member') {
+            serviceName = 'Basic member/graduate rate';
+            estimate = { amount: days * 80, rate: money(80) + ' × ' + days + ' days' };
+            resultDisclaimer = 'The $80 daily rate requires active University Elite membership or Academy graduate status. ' + resultDisclaimer;
+          } else {
+            serviceName = 'Advanced Board & Train';
+            estimate = calculateAdvanced(days);
+            resultDisclaimer = 'Advanced pricing is estimated from the published package for this stay length; your dog’s final program is confirmed during consultation. ' + resultDisclaimer;
+          }
+
+          total.textContent = money(estimate.amount);
+          daysOutput.textContent = days + ' calendar ' + (days === 1 ? 'day' : 'days');
+          rateOutput.textContent = estimate.rate;
+          summary.textContent = serviceName + ' from ' + formatDate(dropoff) + ' through ' + formatDate(pickup) + '. The drop-off and pickup dates both count. Request an early morning drop-off to get the most from day one.';
+          disclaimer.textContent = resultDisclaimer;
+          result.hidden = false;
+          result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      })();
+    </script>
 
     <script>
       (function () {

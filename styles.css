@@ -32,6 +32,16 @@
     --contact-cta-hover: #a68b5b;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -41,6 +51,21 @@ body {
     line-height: 1.65;
     padding-top: var(--header-height);
     -webkit-font-smoothing: antialiased;
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    font: inherit;
 }
 /* Ensure anchored sections don't sit under header */
 [id] { scroll-margin-top: calc(var(--header-height) + 12px); }
@@ -468,6 +493,43 @@ footer { background-color: #efe7da; color: var(--ink); padding: 3rem 5% 4.5rem; 
 @media (max-width: 768px) {
     :root { --header-height: 64px; }
     body { padding-bottom: 76px; }
+    .container {
+        width: 100%;
+        padding-inline: 1rem;
+    }
+    main > section + section {
+        margin-top: 1.75rem;
+    }
+    .section-title {
+        font-size: clamp(1.65rem, 8vw, 2rem);
+        line-height: 1.15;
+    }
+    .section-subtext {
+        margin-bottom: 1.4rem;
+    }
+    .card,
+    .panel,
+    .contact-panel,
+    .info-card {
+        min-width: 0;
+    }
+    .hero-actions,
+    .cta-actions {
+        width: 100%;
+    }
+    .hero-actions .button,
+    .hero-actions .cta-button,
+    .cta-actions .button,
+    .cta-actions .cta-button {
+        width: 100%;
+    }
+    .calendly-inline-widget {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+    .contact-panel {
+        padding: 1.25rem 1rem;
+    }
     header { padding: 0; }
     .header-container {
         display: flex;
