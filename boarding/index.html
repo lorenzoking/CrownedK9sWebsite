@@ -368,6 +368,12 @@
       font-size: 0.9rem;
       font-weight: 700;
     }
+    .stay-estimator-helper {
+      margin: -0.15rem 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
     .stay-estimator-field select,
     .stay-estimator-field input {
       width: 100%;
@@ -479,15 +485,50 @@
 
     @media (max-width: 520px) {
       .stay-estimator {
-        padding: 3rem 0;
+        padding: 2.75rem 0;
+      }
+      .stay-estimator-copy h2 {
+        font-size: clamp(2rem, 10vw, 2.45rem);
+      }
+      .stay-estimator-copy > p {
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+      .calendar-day-example {
+        margin-top: 1.1rem;
+        padding: 0.85rem 0.9rem;
+        font-size: 0.94rem;
+      }
+      .early-dropoff-callout {
+        padding: 0.8rem 0.85rem;
+        font-size: 0.9rem;
       }
       .stay-estimator-card {
-        padding: 1.1rem;
-        border-radius: 20px;
+        padding: 0.9rem;
+        border-radius: 18px;
       }
       .stay-estimator-dates,
       .stay-estimator-breakdown {
         grid-template-columns: 1fr;
+      }
+      .stay-estimator-form {
+        gap: 0.85rem;
+      }
+      .stay-estimator-field select,
+      .stay-estimator-field input {
+        min-height: 52px;
+        padding-inline: 0.8rem;
+        font-size: 1rem;
+      }
+      .stay-estimator-result {
+        padding: 1rem;
+        border-radius: 15px;
+      }
+      .stay-estimator-summary {
+        font-size: 0.94rem;
+      }
+      .stay-estimator-breakdown div {
+        padding: 0.7rem 0.75rem;
       }
       .compliance-banner {
         padding: 1rem;
@@ -663,16 +704,17 @@
               <div class="stay-estimator-field">
                 <label for="stay-service">Service</label>
                 <select id="stay-service" name="service" required>
-                  <option value="basic-standard">Basic Board &amp; Train — $95/day</option>
-                  <option value="basic-member">Basic — University Elite or Academy graduate — $80/day</option>
-                  <option value="advanced">Advanced Board &amp; Train — package pricing</option>
+                  <option value="basic-standard">Basic — Standard ($95/day)</option>
+                  <option value="basic-member">Basic — Member/Graduate ($80/day)</option>
+                  <option value="advanced">Advanced — Package pricing</option>
                 </select>
               </div>
 
               <div class="stay-estimator-dates">
                 <div class="stay-estimator-field">
-                  <label for="stay-dropoff">Drop-off date (early morning recommended)</label>
+                  <label for="stay-dropoff">Drop-off date</label>
                   <input id="stay-dropoff" name="dropoff" type="date" required>
+                  <p class="stay-estimator-helper">Early morning strongly recommended.</p>
                 </div>
                 <div class="stay-estimator-field">
                   <label for="stay-pickup">Pickup date</label>
