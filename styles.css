@@ -2057,7 +2057,7 @@ section:has(> .container > .filmstrip-wrap) > .container > .hero-actions {
 .hero-cinematic.hero-cinematic--low .hero-cinematic__media img { object-position: center 68%; }
 .hero-cinematic.hero-cinematic--pack .hero-cinematic__media img { object-position: center 78%; }
 .hero-cinematic.hero-cinematic--people .hero-cinematic__media img { object-position: center 38%; }
-.hero-cinematic.hero-cinematic--pup .hero-cinematic__media img { object-position: center 45%; }
+.hero-cinematic.hero-cinematic--pup .hero-cinematic__media img { object-position: center 35%; }
 
 .academy-mark {
   display: block;
